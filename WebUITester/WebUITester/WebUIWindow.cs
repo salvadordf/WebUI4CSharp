@@ -1,10 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Diagnostics.Eventing.Reader;
+using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml.Linq;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace WebUI4CSharp
 {
@@ -393,17 +396,6 @@ namespace WebUI4CSharp
         [DllImport("webui-2.dll")]
         private static extern UIntPtr webui_interface_bind(UIntPtr window, [MarshalAs(UnmanagedType.LPUTF8Str)] string element, InterfaceEventCallback func);
 
-        /**
-         * @brief When using `webui_interface_bind()`, you may need this function to easily set a response.
-         *
-         * @param window The window number
-         * @param event_number The event number
-         * @param response The response as string to be send to JavaScript
-         *
-         * @example webui_interface_set_response(myWindow, e->event_number, "Response...");
-         */
-        [DllImport("webui-2.dll")]
-        private static extern void webui_interface_set_response(UIntPtr window, UIntPtr event_number, [MarshalAs(UnmanagedType.LPUTF8Str)] string response);
 
         /**
          * @brief Get a unique window ID.
@@ -417,63 +409,6 @@ namespace WebUI4CSharp
         [DllImport("webui-2.dll")]
         private static extern UIntPtr webui_interface_get_window_id(UIntPtr window);
 
-        /**
-         * @brief Get an argument as string at a specific index
-         *
-         * @param window The window number
-         * @param event_number The event number
-         * @param index The argument position
-         *
-         * @return Returns argument as string
-         *
-         * @example const char* myStr = webui_interface_get_string_at(myWindow, e->event_number, 0);
-         */
-        [DllImport("webui-2.dll")]
-        [return: MarshalAs(UnmanagedType.LPUTF8Str)]
-        private static extern string webui_interface_get_string_at(UIntPtr window, UIntPtr event_number, UIntPtr index);
-
-        /**
-         * @brief Get an argument as integer at a specific index
-         *
-         * @param window The window number
-         * @param event_number The event number
-         * @param index The argument position
-         *
-         * @return Returns argument as integer
-         *
-         * @example long long int myNum = webui_interface_get_int_at(myWindow, e->event_number, 0);
-         */
-        [DllImport("webui-2.dll")]
-        private static extern long webui_interface_get_int_at(UIntPtr window, UIntPtr event_number, UIntPtr index);
-
-        /**
-         * @brief Get an argument as boolean at a specific index
-         *
-         * @param window The window number
-         * @param event_number The event number
-         * @param index The argument position
-         *
-         * @return Returns argument as boolean
-         *
-         * @example bool myBool = webui_interface_get_bool_at(myWindow, e->event_number, 0);
-         */
-        [DllImport("webui-2.dll")]
-        [return: MarshalAs(UnmanagedType.I1)]
-        private static extern bool webui_interface_get_bool_at(UIntPtr window, UIntPtr event_number, UIntPtr index);
-
-        /**
-         * @brief Get the size in bytes of an argument at a specific index
-         *
-         * @param window The window number
-         * @param event_number The event number
-         * @param index The argument position
-         *
-         * @return Returns size in bytes
-         *
-         * @example size_t argLen = webui_interface_get_size_at(myWindow, e->event_number, 0);
-         */
-        [DllImport("webui-2.dll")]
-        private static extern UIntPtr webui_interface_get_size_at(UIntPtr window, UIntPtr event_number, UIntPtr index);
 
         /// <summary>
         /// Window number or Window ID.
@@ -485,6 +420,9 @@ namespace WebUI4CSharp
         /// </summary>
         public bool Initialized { get { return Id > 0; } }
 
+        /// <summary>
+        /// Get the full current URL.
+        /// </summary>
         public string Url
         {
             get
@@ -496,6 +434,41 @@ namespace WebUI4CSharp
                 else
                 {
                     return string.Empty;
+                }
+            }
+        }
+
+        /// <summary>
+        /// Get the ID of the parent process (The web browser may re-create another new process).
+        /// </summary>
+        public UIntPtr ParentProcessId { 
+            get 
+            {
+                if (Initialized)
+                {
+                    return webui_get_parent_process_id(_id);
+                }
+                else
+                {
+                    return 0;
+                }
+            } 
+        }
+
+        /// <summary>
+        /// Get the ID of the last child process.
+        /// </summary>
+        public UIntPtr ChildProcessId
+        {
+            get
+            {
+                if (Initialized)
+                {
+                    return webui_get_child_process_id(_id);
+                }
+                else
+                {
+                    return 0;
                 }
             }
         }
@@ -566,6 +539,24 @@ namespace WebUI4CSharp
             if (Initialized)
             {
                 return webui_bind(_id, element, func);
+            }
+            else
+            {
+                return 0;
+            }
+        }
+
+        /// <summary>
+        /// Bind a specific HTML element click event with a callback function. Empty element means all events.
+        /// </summary>
+        /// <param name="element">The HTML element ID.</param>
+        /// <param name="func">The callback as myFunc(Window, EventType, Element, EventNumber, BindID).</param>
+        /// <returns>Returns unique bind ID.</returns>
+        public UIntPtr Bind(string element, InterfaceEventCallback func)
+        {
+            if (Initialized)
+            {
+                return webui_interface_bind(_id, element, func);
             }
             else
             {
@@ -700,5 +691,117 @@ namespace WebUI4CSharp
                 webui_set_position(_id, x, y);
             }
         }
+
+        /// <summary>
+        /// Set the web browser profile to use. An empty `name` and `path` means the default user profile. Need to be called before `webui_show()`.
+        /// </summary>
+        /// <param name="name">The web browser profile name.</param>
+        /// <param name="path">The web browser profile full path.</param>
+        public void SetProfile(string name, string path)
+        {
+            if (Initialized)
+            {
+                webui_set_profile(_id, name, path);
+            }
+        }
+
+        /// <summary>
+        /// Set the web browser proxy_server to use. Need to be called before 'webui_show()'.
+        /// </summary>
+        /// <param name="proxy_server">The web browser proxy_server. For example 'http://127.0.0.1:8888'</param>
+        public void SetProxy(string proxy_server)
+        {
+            if (Initialized)
+            {
+                webui_set_proxy(_id, proxy_server);
+            }
+        }
+
+        /// <summary>
+        /// Allow a specific window address to be accessible from a public network.
+        /// </summary>
+        /// <param name="status">True or False.</param>
+        public void SetPublic(bool status)
+        {
+            if (Initialized)
+            {
+                webui_set_public(_id, status);
+            }
+        }
+
+        /// <summary>
+        /// Navigate to a specific URL.
+        /// </summary>
+        /// <param name="url">Full HTTP URL.</param>
+        public void Navigate(string url)
+        {
+            if (Initialized)
+            {
+                webui_navigate(_id, url);
+            }
+        }
+
+        /// <summary>
+        /// Delete a specific window web-browser local folder profile.
+        /// </summary>
+        public void DeleteProfile()
+        {
+            if (Initialized)
+            {
+                webui_delete_profile(_id);
+            }
+        }
+
+        /// <summary>
+        /// Set a custom web-server network port to be used by WebUI.
+        /// This can be useful to determine the HTTP link of `webui.js` in case
+        /// you are trying to use WebUI with an external web-server like NGNIX
+        /// </summary>
+        /// <param name="port">The web-server network port WebUI should use.</param>
+        /// <returns>Returns True if the port is free and usable by WebUI.</returns>
+        public bool SetPort(UIntPtr port)
+        {
+            return Initialized && webui_set_port(_id, port);
+        }
+
+        /// <summary>
+        /// Run JavaScript without waiting for the response.
+        /// </summary>
+        /// <param name="script_">The JavaScript to be run.</param>
+        public void Run(string script_)
+        {
+            if (Initialized)
+            {
+                webui_run(_id, script_);
+            }
+        }
+
+        /// <summary>
+        /// Run JavaScript and get the response back.
+        /// Make sure your local buffer can hold the response.
+        /// </summary>
+        /// <param name="script_">The JavaScript to be run.</param>
+        /// <param name="timeout">The execution timeout.</param>
+        /// <param name="buffer">The local buffer to hold the response.</param>
+        /// <param name="buffer_length">The local buffer size.</param>
+        /// <returns>Returns True if there is no execution error.</returns>
+        public bool Script(string script_, UIntPtr timeout, UIntPtr buffer, UIntPtr buffer_length)
+        {
+            return Initialized && webui_script(_id, script_, timeout, buffer, buffer_length);
+        }
+
+        /// <summary>
+        /// Chose between Deno and Nodejs as runtime for .js and .ts files.
+        /// </summary>
+        /// <param name="runtime">Deno or Nodejs.</param>
+        public void SetRuntime(UIntPtr runtime)
+        {
+            if (Initialized)
+            {
+                webui_set_runtime(_id, runtime);
+            }
+        }
+
+
     }
 }

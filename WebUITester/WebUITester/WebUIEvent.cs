@@ -1,4 +1,6 @@
 ﻿using System.Runtime.InteropServices;
+using System.Security.Cryptography;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace WebUI4CSharp
 {
@@ -143,6 +145,76 @@ namespace WebUI4CSharp
         [DllImport("webui-2.dll")]
         private static extern void webui_return_bool(ref webui_event_t e, [MarshalAs(UnmanagedType.I1)] bool b);
 
+        /**
+         * @brief When using `webui_interface_bind()`, you may need this function to easily set a response.
+         *
+         * @param window The window number
+         * @param event_number The event number
+         * @param response The response as string to be send to JavaScript
+         *
+         * @example webui_interface_set_response(myWindow, e->event_number, "Response...");
+         */
+        [DllImport("webui-2.dll")]
+        private static extern void webui_interface_set_response(UIntPtr window, UIntPtr event_number, [MarshalAs(UnmanagedType.LPUTF8Str)] string response);
+
+        /**
+         * @brief Get an argument as string at a specific index
+         *
+         * @param window The window number
+         * @param event_number The event number
+         * @param index The argument position
+         *
+         * @return Returns argument as string
+         *
+         * @example const char* myStr = webui_interface_get_string_at(myWindow, e->event_number, 0);
+         */
+        [DllImport("webui-2.dll")]
+        [return: MarshalAs(UnmanagedType.LPUTF8Str)]
+        private static extern string webui_interface_get_string_at(UIntPtr window, UIntPtr event_number, UIntPtr index);
+
+        /**
+         * @brief Get an argument as integer at a specific index
+         *
+         * @param window The window number
+         * @param event_number The event number
+         * @param index The argument position
+         *
+         * @return Returns argument as integer
+         *
+         * @example long long int myNum = webui_interface_get_int_at(myWindow, e->event_number, 0);
+         */
+        [DllImport("webui-2.dll")]
+        private static extern long webui_interface_get_int_at(UIntPtr window, UIntPtr event_number, UIntPtr index);
+
+        /**
+         * @brief Get an argument as boolean at a specific index
+         *
+         * @param window The window number
+         * @param event_number The event number
+         * @param index The argument position
+         *
+         * @return Returns argument as boolean
+         *
+         * @example bool myBool = webui_interface_get_bool_at(myWindow, e->event_number, 0);
+         */
+        [DllImport("webui-2.dll")]
+        [return: MarshalAs(UnmanagedType.I1)]
+        private static extern bool webui_interface_get_bool_at(UIntPtr window, UIntPtr event_number, UIntPtr index);
+
+        /**
+         * @brief Get the size in bytes of an argument at a specific index
+         *
+         * @param window The window number
+         * @param event_number The event number
+         * @param index The argument position
+         *
+         * @return Returns size in bytes
+         *
+         * @example size_t argLen = webui_interface_get_size_at(myWindow, e->event_number, 0);
+         */
+        [DllImport("webui-2.dll")]
+        private static extern UIntPtr webui_interface_get_size_at(UIntPtr window, UIntPtr event_number, UIntPtr index);
+
         /// <summary>
         /// Returns true if the Window was created successfully.
         /// </summary>
@@ -269,5 +341,16 @@ namespace WebUI4CSharp
             webui_return_bool(ref _event, value);
         }
 
+        /// <summary>
+        /// When using `webui_interface_bind()`, you may need this function to easily set a response.
+        /// </summary>
+        /// <param name="response">The response as string to be send to JavaScript.</param>
+        public void SetResponse(string response)
+        {
+            if (Initialized)
+            {
+                webui_interface_set_response(_event.window, _event.event_number, response);
+            }
+        }
     }
 }
