@@ -1,0 +1,273 @@
+﻿using System.Runtime.InteropServices;
+
+namespace WebUI4CSharp
+{
+    public class WebUIEvent
+    {
+        private webui_event_t _event;
+
+        /**
+         * @brief Get an argument as integer at a specific index
+         *
+         * @param e The event struct
+         * @param index The argument position starting from 0
+         *
+         * @return Returns argument as integer
+         *
+         * @example long long int myNum = webui_get_int_at(e, 0);
+         */
+        [DllImport("webui-2.dll")]
+        private static extern long webui_get_int_at(ref webui_event_t e, UIntPtr index);
+
+        /**
+         * @brief Get the first argument as integer
+         *
+         * @param e The event struct
+         *
+         * @return Returns argument as integer
+         *
+         * @example long long int myNum = webui_get_int(e);
+         */
+        [DllImport("webui-2.dll")]
+        private static extern long webui_get_int(ref webui_event_t e);
+
+        /**
+         * @brief Get an argument as string at a specific index
+         *
+         * @param e The event struct
+         * @param index The argument position starting from 0
+         *
+         * @return Returns argument as string
+         *
+         * @example const char* myStr = webui_get_string_at(e, 0);
+         */
+        [DllImport("webui-2.dll")]
+        [return: MarshalAs(UnmanagedType.LPUTF8Str)]
+        private static extern string webui_get_string_at(ref webui_event_t e, UIntPtr index);
+
+        /**
+         * @brief Get the first argument as string
+         *
+         * @param e The event struct
+         *
+         * @return Returns argument as string
+         *
+         * @example const char* myStr = webui_get_string(e);
+         */
+        [DllImport("webui-2.dll")]
+        [return: MarshalAs(UnmanagedType.LPUTF8Str)]
+        private static extern string webui_get_string(ref webui_event_t e);
+
+        /**
+         * @brief Get an argument as boolean at a specific index
+         *
+         * @param e The event struct
+         * @param index The argument position starting from 0
+         *
+         * @return Returns argument as boolean
+         *
+         * @example bool myBool = webui_get_bool_at(e, 0);
+         */
+        [DllImport("webui-2.dll")]
+        [return: MarshalAs(UnmanagedType.I1)]
+        private static extern bool webui_get_bool_at(ref webui_event_t e, UIntPtr index);
+
+        /**
+         * @brief Get the first argument as boolean
+         *
+         * @param e The event struct
+         *
+         * @return Returns argument as boolean
+         *
+         * @example bool myBool = webui_get_bool(e);
+         */
+        [DllImport("webui-2.dll")]
+        [return: MarshalAs(UnmanagedType.I1)]
+        private static extern bool webui_get_bool(ref webui_event_t e);
+
+        /**
+         * @brief Get the size in bytes of an argument at a specific index
+         *
+         * @param e The event struct
+         * @param index The argument position starting from 0
+         *
+         * @return Returns size in bytes
+         *
+         * @example size_t argLen = webui_get_size_at(e, 0);
+         */
+        [DllImport("webui-2.dll")]
+        private static extern UIntPtr webui_get_size_at(ref webui_event_t e, UIntPtr index);
+
+        /**
+         * @brief Get size in bytes of the first argument
+         *
+         * @param e The event struct
+         *
+         * @return Returns size in bytes
+         *
+         * @example size_t argLen = webui_get_size(e);
+         */
+        [DllImport("webui-2.dll")]
+        private static extern UIntPtr webui_get_size(ref webui_event_t e);
+
+        /**
+         * @brief Return the response to JavaScript as integer.
+         *
+         * @param e The event struct
+         * @param n The integer to be send to JavaScript
+         *
+         * @example webui_return_int(e, 123);
+         */
+        [DllImport("webui-2.dll")]
+        private static extern void webui_return_int(ref webui_event_t e, long n);
+
+        /**
+         * @brief Return the response to JavaScript as string.
+         *
+         * @param e The event struct
+         * @param n The string to be send to JavaScript
+         *
+         * @example webui_return_string(e, "Response...");
+         */
+        [DllImport("webui-2.dll")]
+        private static extern void webui_return_string(ref webui_event_t e, [MarshalAs(UnmanagedType.LPUTF8Str)] string s);
+
+        /**
+         * @brief Return the response to JavaScript as boolean.
+         *
+         * @param e The event struct
+         * @param n The boolean to be send to JavaScript
+         *
+         * @example webui_return_bool(e, true);
+         */
+        [DllImport("webui-2.dll")]
+        private static extern void webui_return_bool(ref webui_event_t e, [MarshalAs(UnmanagedType.I1)] bool b);
+
+        /// <summary>
+        /// Returns true if the Window was created successfully.
+        /// </summary>
+        public bool Initialized { get { return _event.window > 0; } }
+        /// <summary>
+        /// WebUI event struct.
+        /// </summary>
+        public webui_event_t Event { get { return _event; } }
+
+        public WebUIEvent(webui_event_t e)
+        {
+            _event = e;
+        }
+
+        public WebUIEvent(UIntPtr window, UIntPtr event_type, string element, UIntPtr event_number, UIntPtr bind_id)
+        {
+            _event.window = window;
+            _event.event_type = event_type;
+            _event.element = element;
+            _event.event_number = event_number;
+            _event.bind_id = bind_id;
+        }
+
+        /// <summary>
+        /// Get the first argument as integer.
+        /// </summary>
+        /// <returns>Returns argument as integer.</returns>
+        public long GetInt()
+        {
+            return webui_get_int(ref _event);
+        }
+
+        /// <summary>
+        /// Get an argument as integer at a specific index.
+        /// </summary>
+        /// <param name="index">The argument position starting from 0.</param>
+        /// <returns>Returns argument as integer.</returns>
+        public long GetIntAt(UIntPtr index)
+        {
+            return webui_get_int_at(ref _event, index);
+        }
+
+        /// <summary>
+        /// Get the first argument as string.
+        /// </summary>
+        /// <returns>Returns argument as string.</returns>
+        public string GetString() 
+        { 
+            return webui_get_string(ref _event);
+        }
+
+        /// <summary>
+        /// Get an argument as string at a specific index.
+        /// </summary>
+        /// <param name="index">The argument position starting from 0.</param>
+        /// <returns>Returns argument as string.</returns>
+        public string GetStringAt(UIntPtr index)
+        {
+            return webui_get_string_at(ref _event, index);
+        }
+
+        /// <summary>
+        /// Get the first argument as boolean.
+        /// </summary>
+        /// <returns>Returns argument as boolean.</returns>
+        public bool GetBool()
+        {
+            return webui_get_bool(ref _event);
+        }
+
+        /// <summary>
+        /// Get an argument as boolean at a specific index.
+        /// </summary>
+        /// <param name="index">The argument position starting from 0.</param>
+        /// <returns>Returns argument as boolean.</returns>
+        public bool GetBoolAt(UIntPtr index)
+        {
+            return webui_get_bool_at(ref _event, index);
+        }
+
+        /// <summary>
+        /// Get size in bytes of the first argument.
+        /// </summary>
+        /// <returns>Returns size in bytes.</returns>
+        public UIntPtr GetSize()
+        {
+            return webui_get_size(ref _event);
+        }
+
+        /// <summary>
+        /// Get the size in bytes of an argument at a specific index.
+        /// </summary>
+        /// <param name="index">The argument position starting from 0.</param>
+        /// <returns>Returns size in bytes.</returns>
+        public UIntPtr GetSizeAt(UIntPtr index)
+        {
+            return webui_get_size_at(ref _event, index);
+        }
+
+        /// <summary>
+        /// Return the response to JavaScript as integer.
+        /// </summary>
+        /// <param name="value">The integer to be send to JavaScript.</param>
+        public void ReturnInt(int value)
+        {
+            webui_return_int(ref _event, value);
+        }
+
+        /// <summary>
+        /// Return the response to JavaScript as string.
+        /// </summary>
+        /// <param name="value">The string to be send to JavaScript.</param>
+        public void ReturnString(string value)
+        {
+            webui_return_string(ref _event, value);
+        }
+
+        /// <summary>
+        /// Return the response to JavaScript as boolean.
+        /// </summary>
+        /// <param name="value">The boolean to be send to JavaScript.</param>
+        public void ReturnBool(bool value)
+        {
+            webui_return_bool(ref _event, value);
+        }
+
+    }
+}

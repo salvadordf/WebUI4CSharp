@@ -5,7 +5,7 @@ namespace WebUITester
 {
     public partial class Form1 : Form
     {
-        UIntPtr myWindow = 0;
+        WebUIWindow myWindow;
         public Form1()
         {
             InitializeComponent();
@@ -18,8 +18,8 @@ namespace WebUITester
 
         private void button2_Click(object sender, EventArgs e)
         {
-            myWindow = WebUI.webui_new_window();
-            if (WebUI.webui_show_browser(myWindow, "<html><head><script src=\"webui.js\"></script></head> Hello World ! </html>", (UIntPtr)WebUI.webui_browsers.Edge))
+            myWindow = new WebUIWindow();
+            if (myWindow.Show("<html><head><script src=\"webui.js\"></script></head> Hello World ! </html>"))
 
             {
                 label1.Text = "true";
@@ -32,7 +32,7 @@ namespace WebUITester
 
         private void button3_Click(object sender, EventArgs e)
         {
-            label2.Text = WebUI.webui_get_url(myWindow);
+            label2.Text = myWindow.Url;
         }
     }
 }
