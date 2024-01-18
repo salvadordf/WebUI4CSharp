@@ -1,6 +1,5 @@
 ﻿using System.Runtime.InteropServices;
-using System.Security.Cryptography;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement;
+using System.Xml.Linq;
 
 namespace WebUI4CSharp
 {
@@ -44,8 +43,7 @@ namespace WebUI4CSharp
          * @example const char* myStr = webui_get_string_at(e, 0);
          */
         [DllImport("webui-2.dll")]
-        [return: MarshalAs(UnmanagedType.LPUTF8Str)]
-        private static extern string webui_get_string_at(ref webui_event_t e, UIntPtr index);
+        private static extern IntPtr webui_get_string_at(ref webui_event_t e, UIntPtr index);
 
         /**
          * @brief Get the first argument as string
@@ -57,8 +55,7 @@ namespace WebUI4CSharp
          * @example const char* myStr = webui_get_string(e);
          */
         [DllImport("webui-2.dll")]
-        [return: MarshalAs(UnmanagedType.LPUTF8Str)]
-        private static extern string webui_get_string(ref webui_event_t e);
+        private static extern IntPtr webui_get_string(ref webui_event_t e);
 
         /**
          * @brief Get an argument as boolean at a specific index
@@ -169,8 +166,7 @@ namespace WebUI4CSharp
          * @example const char* myStr = webui_interface_get_string_at(myWindow, e->event_number, 0);
          */
         [DllImport("webui-2.dll")]
-        [return: MarshalAs(UnmanagedType.LPUTF8Str)]
-        private static extern string webui_interface_get_string_at(UIntPtr window, UIntPtr event_number, UIntPtr index);
+        private static extern IntPtr webui_interface_get_string_at(UIntPtr window, UIntPtr event_number, UIntPtr index);
 
         /**
          * @brief Get an argument as integer at a specific index
@@ -223,13 +219,37 @@ namespace WebUI4CSharp
         /// WebUI event struct.
         /// </summary>
         public webui_event_t Event { get { return _event; } }
+        /// <summary>
+        /// The window object number or ID.
+        /// </summary>
+        public UIntPtr WindowID { get { return _event.window; } }
+        /// <summary>
+        /// Event type.
+        /// </summary>
+        public UIntPtr EventType { get { return _event.event_type; } }
+        /// <summary>
+        /// HTML element ID.
+        /// </summary>
+        public string? Element { get { return Marshal.PtrToStringUTF8(_event.element); } }
+        /// <summary>
+        /// Event number or Event ID.
+        /// </summary>
+        public UIntPtr EventID { get { return _event.event_number; } }
+        /// <summary>
+        /// Bind ID.
+        /// </summary>
+        public UIntPtr BindID { get { return _event.bind_id; } }
 
         public WebUIEvent(webui_event_t e)
         {
-            _event = e;
+            _event.window = e.window;
+            _event.event_type = e.event_type;
+            _event.element = e.element;
+            _event.event_number = e.event_number;
+            _event.bind_id = e.bind_id;
         }
 
-        public WebUIEvent(UIntPtr window, UIntPtr event_type, string element, UIntPtr event_number, UIntPtr bind_id)
+        public WebUIEvent(UIntPtr window, UIntPtr event_type, IntPtr element, UIntPtr event_number, UIntPtr bind_id)
         {
             _event.window = window;
             _event.event_type = event_type;
@@ -261,9 +281,9 @@ namespace WebUI4CSharp
         /// Get the first argument as string.
         /// </summary>
         /// <returns>Returns argument as string.</returns>
-        public string GetString() 
+        public string? GetString() 
         { 
-            return webui_get_string(ref _event);
+            return Marshal.PtrToStringUTF8(webui_get_string(ref _event));
         }
 
         /// <summary>
@@ -271,9 +291,44 @@ namespace WebUI4CSharp
         /// </summary>
         /// <param name="index">The argument position starting from 0.</param>
         /// <returns>Returns argument as string.</returns>
-        public string GetStringAt(UIntPtr index)
+        public string? GetStringAt(UIntPtr index)
         {
-            return webui_get_string_at(ref _event, index);
+            return Marshal.PtrToStringUTF8(webui_get_string_at(ref _event, index));
+        }
+
+        /// <summary>
+        /// Get the first argument as a stream.
+        /// </summary>
+        /// <returns>Returns argument as a stream.</returns>
+        public MemoryStream GetStream()
+        {
+            IntPtr buffer = webui_get_string(ref _event);
+            UIntPtr buffersize = webui_get_size(ref _event);
+            MemoryStream stream = new MemoryStream((int)buffersize);
+            for (UIntPtr i = 0; i < buffersize; i++) 
+            {
+                stream.WriteByte(Marshal.ReadByte(buffer, (int)i));
+            }
+            stream.Position = 0;
+            return stream;
+        }
+
+        /// <summary>
+        /// Get the first argument as a stream at a specific index.
+        /// </summary>
+        /// <param name="index">The argument position starting from 0.</param>
+        /// <returns>Returns argument as a stream.</returns>
+        public MemoryStream GetStreamAt(UIntPtr index)
+        {
+            IntPtr buffer = webui_get_string_at(ref _event, index);
+            UIntPtr buffersize = webui_get_size_at(ref _event, index);
+            MemoryStream stream = new MemoryStream((int)buffersize);
+            for (UIntPtr i = 0; i < buffersize; i++)
+            {
+                stream.WriteByte(Marshal.ReadByte(buffer, (int)i));
+            }
+            stream.Position = 0;
+            return stream;
         }
 
         /// <summary>
@@ -318,7 +373,7 @@ namespace WebUI4CSharp
         /// Return the response to JavaScript as integer.
         /// </summary>
         /// <param name="value">The integer to be send to JavaScript.</param>
-        public void ReturnInt(int value)
+        public void ReturnInt(long value)
         {
             webui_return_int(ref _event, value);
         }

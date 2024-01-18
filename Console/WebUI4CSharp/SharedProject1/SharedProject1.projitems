@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <MSBuildAllProjects Condition="'$(MSBuildVersion)' == '' Or '$(MSBuildVersion)' &lt; '16.0'">$(MSBuildAllProjects);$(MSBuildThisFileFullPath)</MSBuildAllProjects>
+    <HasSharedItems>true</HasSharedItems>
+    <SharedGUID>cfd1d900-3537-4fa9-9cfc-a8d1b215b8ca</SharedGUID>
+  </PropertyGroup>
+  <PropertyGroup Label="Configuration">
+    <Import_RootNamespace>SharedProject1</Import_RootNamespace>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="$(MSBuildThisFileDirectory)WebUI.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)WebUIBase64.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)WebUIEvent.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)WebUIWindow.cs" />
+  </ItemGroup>
+</Project>

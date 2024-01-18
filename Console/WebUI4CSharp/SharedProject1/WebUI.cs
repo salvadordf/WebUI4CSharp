@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Runtime.InteropServices;
-using System.Text;
-using System.Windows.Forms.VisualStyles;
-using static System.Windows.Forms.AxHost;
+﻿using System.Runtime.InteropServices;
 
 namespace WebUI4CSharp
 {
@@ -45,8 +40,7 @@ namespace WebUI4CSharp
     {
         public UIntPtr window;       // The window object number
         public UIntPtr event_type;   // Event type
-        [MarshalAs(UnmanagedType.LPUTF8Str)]
-        public string element;       // HTML element ID
+        public IntPtr element;       // HTML element ID   
         public UIntPtr event_number; // Internal WebUI
         public UIntPtr bind_id;      // Bind ID
     }

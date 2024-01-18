@@ -1,0 +1,38 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.8.34511.84
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Minimal", "Minimal\Minimal.csproj", "{1A932921-6E35-4636-A068-8B3B9BDDE7CD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "call_csharp_from_js", "..\call_csharp_from_js\call_csharp_from_js.csproj", "{03750055-5560-432D-BF5E-3A3962846A21}"
+EndProject
+Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "WebUI4CSharp", "..\WebUI4CSharp\SharedProject1\WebUI4CSharp.shproj", "{CFD1D900-3537-4FA9-9CFC-A8D1B215B8CA}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1A932921-6E35-4636-A068-8B3B9BDDE7CD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1A932921-6E35-4636-A068-8B3B9BDDE7CD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1A932921-6E35-4636-A068-8B3B9BDDE7CD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1A932921-6E35-4636-A068-8B3B9BDDE7CD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{03750055-5560-432D-BF5E-3A3962846A21}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{03750055-5560-432D-BF5E-3A3962846A21}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{03750055-5560-432D-BF5E-3A3962846A21}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{03750055-5560-432D-BF5E-3A3962846A21}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {5237BADE-AA89-4D5C-94F1-B9D8EAB93D11}
+	EndGlobalSection
+	GlobalSection(SharedMSBuildProjectFiles) = preSolution
+		..\WebUI4CSharp\SharedProject1\SharedProject1.projitems*{03750055-5560-432d-bf5e-3a3962846a21}*SharedItemsImports = 5
+		..\WebUI4CSharp\SharedProject1\SharedProject1.projitems*{1a932921-6e35-4636-a068-8b3b9bdde7cd}*SharedItemsImports = 5
+		..\WebUI4CSharp\SharedProject1\SharedProject1.projitems*{cfd1d900-3537-4fa9-9cfc-a8d1b215b8ca}*SharedItemsImports = 13
+	EndGlobalSection
+EndGlobal
