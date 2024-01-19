@@ -1,5 +1,4 @@
-﻿// See https://aka.ms/new-console-template for more information
-using call_csharp_from_js;
+﻿using call_csharp_from_js;
 using WebUI4CSharp;
 
 string my_html = 
@@ -75,3 +74,4 @@ window.Bind("MyID_Four", WebUI_Events.my_function_with_response);
 window.Bind("MyID_RawBinary", WebUI_Events.my_function_raw_binary);
 window.Show(my_html);
 WebUI.Wait();
+WebUI.Clean();

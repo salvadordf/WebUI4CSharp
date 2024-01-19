@@ -360,7 +360,7 @@ namespace WebUI4CSharp
          */
         [DllImport("webui-2")]
         [return: MarshalAs(UnmanagedType.I1)]
-        private static extern bool webui_script(UIntPtr window, [MarshalAs(UnmanagedType.LPUTF8Str)] string script, UIntPtr timeout, UIntPtr buffer, UIntPtr buffer_length);
+        private static extern bool webui_script(UIntPtr window, [MarshalAs(UnmanagedType.LPUTF8Str)] string script, UIntPtr timeout, IntPtr buffer, UIntPtr buffer_length);
 
         /**
          * @brief Chose between Deno and Nodejs as runtime for .js and .ts files.
@@ -771,16 +771,35 @@ namespace WebUI4CSharp
 
         /// <summary>
         /// Run JavaScript and get the response back.
-        /// Make sure your local buffer can hold the response.
+        /// Make sure response_length is big enough to hold the response.
         /// </summary>
         /// <param name="script_">The JavaScript to be run.</param>
         /// <param name="timeout">The execution timeout.</param>
-        /// <param name="buffer">The local buffer to hold the response.</param>
-        /// <param name="buffer_length">The local buffer size.</param>
+        /// <param name="response">The response in string format.</param>
+        /// <param name="response_length">The response size.</param>
         /// <returns>Returns True if there is no execution error.</returns>
-        public bool Script(string script_, UIntPtr timeout, UIntPtr buffer, UIntPtr buffer_length)
+        public bool Script(string script_, UIntPtr timeout, out string response, UIntPtr response_length)
         {
-            return Initialized && webui_script(_id, script_, timeout, buffer, buffer_length);
+            if (Initialized)
+            {
+                IntPtr buffer = WebUI.Malloc(response_length);
+                string? tempResponse = null;
+
+                if (webui_script(_id, script_, timeout, buffer, response_length))
+                {
+                    tempResponse = Marshal.PtrToStringUTF8(buffer);
+                }
+
+                WebUI.Free(buffer);
+
+                if (tempResponse != null)
+                {
+                    response = tempResponse;
+                    return true;
+                }
+            }
+            response = string.Empty;
+            return false;
         }
 
         /// <summary>
