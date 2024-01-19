@@ -55,9 +55,12 @@ namespace call_csharp_from_js
             // webui.call('MyID_RawBinary', new Uint8Array([0x41,0x42,0x43]), big_arr);
 
             WebUIEvent lEvent = new WebUIEvent(e);
-            MemoryStream stream = lEvent.GetStream();
-            string hexstring = Convert.ToHexString(stream.ToArray());
-            Console.WriteLine("my_function_raw_binary: " + hexstring);
+            MemoryStream? stream = lEvent.GetStream();
+            if (stream != null)
+            {
+                string hexstring = Convert.ToHexString(stream.ToArray());
+                Console.WriteLine("my_function_raw_binary: " + hexstring);
+            }
         }
 
         public static void my_function_with_response(ref webui_event_t e)

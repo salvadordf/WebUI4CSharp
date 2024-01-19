@@ -17,7 +17,7 @@ namespace WebUI4CSharp
          *
          * @example long long int myNum = webui_get_int_at(e, 0);
          */
-        [DllImport("webui-2.dll")]
+        [DllImport("webui-2")]
         private static extern long webui_get_int_at(ref webui_event_t e, UIntPtr index);
 
         /**
@@ -29,7 +29,7 @@ namespace WebUI4CSharp
          *
          * @example long long int myNum = webui_get_int(e);
          */
-        [DllImport("webui-2.dll")]
+        [DllImport("webui-2")]
         private static extern long webui_get_int(ref webui_event_t e);
 
         /**
@@ -42,7 +42,7 @@ namespace WebUI4CSharp
          *
          * @example const char* myStr = webui_get_string_at(e, 0);
          */
-        [DllImport("webui-2.dll")]
+        [DllImport("webui-2")]
         private static extern IntPtr webui_get_string_at(ref webui_event_t e, UIntPtr index);
 
         /**
@@ -54,7 +54,7 @@ namespace WebUI4CSharp
          *
          * @example const char* myStr = webui_get_string(e);
          */
-        [DllImport("webui-2.dll")]
+        [DllImport("webui-2")]
         private static extern IntPtr webui_get_string(ref webui_event_t e);
 
         /**
@@ -67,7 +67,7 @@ namespace WebUI4CSharp
          *
          * @example bool myBool = webui_get_bool_at(e, 0);
          */
-        [DllImport("webui-2.dll")]
+        [DllImport("webui-2")]
         [return: MarshalAs(UnmanagedType.I1)]
         private static extern bool webui_get_bool_at(ref webui_event_t e, UIntPtr index);
 
@@ -80,7 +80,7 @@ namespace WebUI4CSharp
          *
          * @example bool myBool = webui_get_bool(e);
          */
-        [DllImport("webui-2.dll")]
+        [DllImport("webui-2")]
         [return: MarshalAs(UnmanagedType.I1)]
         private static extern bool webui_get_bool(ref webui_event_t e);
 
@@ -94,7 +94,7 @@ namespace WebUI4CSharp
          *
          * @example size_t argLen = webui_get_size_at(e, 0);
          */
-        [DllImport("webui-2.dll")]
+        [DllImport("webui-2")]
         private static extern UIntPtr webui_get_size_at(ref webui_event_t e, UIntPtr index);
 
         /**
@@ -106,7 +106,7 @@ namespace WebUI4CSharp
          *
          * @example size_t argLen = webui_get_size(e);
          */
-        [DllImport("webui-2.dll")]
+        [DllImport("webui-2")]
         private static extern UIntPtr webui_get_size(ref webui_event_t e);
 
         /**
@@ -117,7 +117,7 @@ namespace WebUI4CSharp
          *
          * @example webui_return_int(e, 123);
          */
-        [DllImport("webui-2.dll")]
+        [DllImport("webui-2")]
         private static extern void webui_return_int(ref webui_event_t e, long n);
 
         /**
@@ -128,7 +128,7 @@ namespace WebUI4CSharp
          *
          * @example webui_return_string(e, "Response...");
          */
-        [DllImport("webui-2.dll")]
+        [DllImport("webui-2")]
         private static extern void webui_return_string(ref webui_event_t e, [MarshalAs(UnmanagedType.LPUTF8Str)] string s);
 
         /**
@@ -139,7 +139,7 @@ namespace WebUI4CSharp
          *
          * @example webui_return_string(e, "Response...");
          */
-        [DllImport("webui-2.dll", EntryPoint = "webui_return_string")]
+        [DllImport("webui-2", EntryPoint = "webui_return_string")]
         private static extern void webui_return_buffer(ref webui_event_t e, ref byte[] buffer);
 
         /**
@@ -150,7 +150,7 @@ namespace WebUI4CSharp
          *
          * @example webui_return_bool(e, true);
          */
-        [DllImport("webui-2.dll")]
+        [DllImport("webui-2")]
         private static extern void webui_return_bool(ref webui_event_t e, [MarshalAs(UnmanagedType.I1)] bool b);
 
         /**
@@ -162,7 +162,7 @@ namespace WebUI4CSharp
          *
          * @example webui_interface_set_response(myWindow, e->event_number, "Response...");
          */
-        [DllImport("webui-2.dll")]
+        [DllImport("webui-2")]
         private static extern void webui_interface_set_response(UIntPtr window, UIntPtr event_number, [MarshalAs(UnmanagedType.LPUTF8Str)] string response);
 
         /**
@@ -174,7 +174,7 @@ namespace WebUI4CSharp
          *
          * @example webui_interface_set_response(myWindow, e->event_number, "Response...");
          */
-        [DllImport("webui-2.dll", EntryPoint = "webui_interface_set_response")]
+        [DllImport("webui-2", EntryPoint = "webui_interface_set_response")]
         private static extern void webui_interface_set_buffer_response(UIntPtr window, UIntPtr event_number, ref byte[] buffer);
 
         /**
@@ -188,7 +188,7 @@ namespace WebUI4CSharp
          *
          * @example const char* myStr = webui_interface_get_string_at(myWindow, e->event_number, 0);
          */
-        [DllImport("webui-2.dll")]
+        [DllImport("webui-2")]
         private static extern IntPtr webui_interface_get_string_at(UIntPtr window, UIntPtr event_number, UIntPtr index);
 
         /**
@@ -202,7 +202,7 @@ namespace WebUI4CSharp
          *
          * @example long long int myNum = webui_interface_get_int_at(myWindow, e->event_number, 0);
          */
-        [DllImport("webui-2.dll")]
+        [DllImport("webui-2")]
         private static extern long webui_interface_get_int_at(UIntPtr window, UIntPtr event_number, UIntPtr index);
 
         /**
@@ -216,7 +216,7 @@ namespace WebUI4CSharp
          *
          * @example bool myBool = webui_interface_get_bool_at(myWindow, e->event_number, 0);
          */
-        [DllImport("webui-2.dll")]
+        [DllImport("webui-2")]
         [return: MarshalAs(UnmanagedType.I1)]
         private static extern bool webui_interface_get_bool_at(UIntPtr window, UIntPtr event_number, UIntPtr index);
 
@@ -231,7 +231,7 @@ namespace WebUI4CSharp
          *
          * @example size_t argLen = webui_interface_get_size_at(myWindow, e->event_number, 0);
          */
-        [DllImport("webui-2.dll")]
+        [DllImport("webui-2")]
         private static extern UIntPtr webui_interface_get_size_at(UIntPtr window, UIntPtr event_number, UIntPtr index);
 
         /// <summary>
@@ -242,6 +242,10 @@ namespace WebUI4CSharp
         /// WebUI event struct.
         /// </summary>
         public webui_event_t Event { get { return _event; } }
+        /// <summary>
+        /// Window wrapper for the Window object of this event.
+        /// </summary>
+        public WebUIWindow? Window { get { return WebUI.SearchWindow(_event.window); } } 
         /// <summary>
         /// The window object number or ID.
         /// </summary>

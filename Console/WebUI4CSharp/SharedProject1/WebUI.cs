@@ -67,12 +67,15 @@ namespace WebUI4CSharp
         /// </summary>
         public const int WEBUI_MAX_ARG = 16;
 
+        private static object _lockObj = new object();
+        private static List<WeakReference<WebUIWindow>> _windowList = new List<WeakReference<WebUIWindow>>();
+
         /**
          * @brief Wait until all opened windows get closed.
          *
          * @example webui_wait();
          */
-        [DllImport("webui-2.dll")]
+        [DllImport("webui-2")]
         private static extern void webui_wait();
 
         /**
@@ -80,7 +83,7 @@ namespace WebUI4CSharp
          *
          * @example webui_exit();
          */
-        [DllImport("webui-2.dll")]
+        [DllImport("webui-2")]
         private static extern void webui_exit();
 
         /**
@@ -91,7 +94,7 @@ namespace WebUI4CSharp
          *
          * @example webui_set_default_root_folder("/home/Foo/Bar/");
          */
-        [DllImport("webui-2.dll")]
+        [DllImport("webui-2")]
         [return: MarshalAs(UnmanagedType.I1)]
         private static extern bool webui_set_default_root_folder([MarshalAs(UnmanagedType.LPUTF8Str)] string path);
 
@@ -102,7 +105,7 @@ namespace WebUI4CSharp
          *
          * @example webui_set_timeout(30);
          */
-        [DllImport("webui-2.dll")]
+        [DllImport("webui-2")]
         private static extern void webui_set_timeout(UIntPtr second);
 
         /**
@@ -112,7 +115,7 @@ namespace WebUI4CSharp
          *
          * @example webui_free(myBuffer);
          */
-        [DllImport("webui-2.dll")]
+        [DllImport("webui-2")]
         private static extern void webui_free(IntPtr ptr);
 
         /**
@@ -123,7 +126,7 @@ namespace WebUI4CSharp
          *
          * @example char* myBuffer = (char*)webui_malloc(1024);
          */
-        [DllImport("webui-2.dll")]
+        [DllImport("webui-2")]
         private static extern IntPtr webui_malloc(UIntPtr size);
 
         /**
@@ -133,7 +136,7 @@ namespace WebUI4CSharp
          * webui_wait();
          * webui_clean();
          */
-        [DllImport("webui-2.dll")]
+        [DllImport("webui-2")]
         private static extern void webui_clean();
 
         /**
@@ -145,7 +148,7 @@ namespace WebUI4CSharp
          * webui_delete_all_profiles();
          * webui_clean();
          */
-        [DllImport("webui-2.dll")]
+        [DllImport("webui-2")]
         private static extern void webui_delete_all_profiles();
 
         /**
@@ -161,7 +164,7 @@ namespace WebUI4CSharp
          * @example bool ret = webui_set_tls_certificate("-----BEGIN
          * CERTIFICATE-----\n...", "-----BEGIN PRIVATE KEY-----\n...");
          */
-        [DllImport("webui-2.dll")]
+        [DllImport("webui-2")]
         [return: MarshalAs(UnmanagedType.I1)]
         private static extern bool webui_set_tls_certificate([MarshalAs(UnmanagedType.LPUTF8Str)] string certificate_pem, [MarshalAs(UnmanagedType.LPUTF8Str)] string private_key_pem);
 
@@ -172,7 +175,7 @@ namespace WebUI4CSharp
          *
          * @example bool status = webui_interface_is_app_running();
          */
-        [DllImport("webui-2.dll")]
+        [DllImport("webui-2")]
         [return: MarshalAs(UnmanagedType.I1)]
         private static extern bool webui_interface_is_app_running();
 
@@ -265,6 +268,46 @@ namespace WebUI4CSharp
         public static bool IsAppRunning()
         {
             return webui_interface_is_app_running();
+        }
+
+        public static void AddWindow(WebUIWindow newWindow)
+        {
+            lock(_lockObj)
+            {
+                _windowList.Add(new WeakReference<WebUIWindow>(newWindow));
+
+                WebUIWindow? window;
+                WeakReference<WebUIWindow> windowRef;
+                for (int i = _windowList.Count - 1; i >= 0; i--)
+                {
+                    windowRef = _windowList[i];
+                    if (! windowRef.TryGetTarget(out window))
+                    {
+                        _windowList.RemoveAt(i);
+                    }
+                }
+            }
+        }
+
+        public static WebUIWindow? SearchWindow(UIntPtr windowId)
+        {
+            if (windowId > 0)
+            {
+                lock (_lockObj)
+                {
+                    WebUIWindow? window;
+                    WeakReference<WebUIWindow> windowRef;
+                    for (int i = 0; i < _windowList.Count; i++)
+                    {
+                        windowRef = _windowList[i];
+                        if (windowRef.TryGetTarget(out window) && (window.Id == windowId))
+                        {
+                            return window;
+                        }
+                    }
+                }
+            }
+            return null;
         }
     }
 }

@@ -13,7 +13,7 @@ namespace WebUI4CSharp
          *
          * @example size_t myWindow = webui_new_window();
          */
-        [DllImport("webui-2.dll")]
+        [DllImport("webui-2")]
         private static extern UIntPtr webui_new_window();
 
         /**
@@ -25,7 +25,7 @@ namespace WebUI4CSharp
          *
          * @example size_t myWindow = webui_new_window_id(123);
          */
-        [DllImport("webui-2.dll")]
+        [DllImport("webui-2")]
         private static extern UIntPtr webui_new_window_id(UIntPtr window_number);
 
         /**
@@ -36,7 +36,7 @@ namespace WebUI4CSharp
          *
          * @example size_t myWindowNumber = webui_get_new_window_id();
          */
-        [DllImport("webui-2.dll")]
+        [DllImport("webui-2")]
         private static extern UIntPtr webui_get_new_window_id();
 
         /**
@@ -51,7 +51,7 @@ namespace WebUI4CSharp
          *
          * @example webui_bind(myWindow, "myID", myFunction);
          */
-        [DllImport("webui-2.dll")]
+        [DllImport("webui-2")]
         private static extern UIntPtr webui_bind(UIntPtr window, [MarshalAs(UnmanagedType.LPUTF8Str)] string element, BindCallback func);
 
         /**
@@ -66,7 +66,7 @@ namespace WebUI4CSharp
          * @example webui_show(myWindow, "<html>...</html>"); | webui_show(myWindow,
          * "index.html"); | webui_show(myWindow, "http://...");
          */
-        [DllImport("webui-2.dll")]
+        [DllImport("webui-2")]
         [return: MarshalAs(UnmanagedType.I1)]
         private static extern bool webui_show(UIntPtr window, [MarshalAs(UnmanagedType.LPUTF8Str)] string content);
 
@@ -82,7 +82,7 @@ namespace WebUI4CSharp
          * @example webui_show_browser(myWindow, "<html>...</html>", Chrome); |
          * webui_show(myWindow, "index.html", Firefox);
          */
-        [DllImport("webui-2.dll")]
+        [DllImport("webui-2")]
         [return: MarshalAs(UnmanagedType.I1)]
         private static extern bool webui_show_browser(UIntPtr window, [MarshalAs(UnmanagedType.LPUTF8Str)] string content, UIntPtr browser);
 
@@ -94,7 +94,7 @@ namespace WebUI4CSharp
          *
          * @example webui_set_kiosk(myWindow, true);
          */
-        [DllImport("webui-2.dll")]
+        [DllImport("webui-2")]
         private static extern void webui_set_kiosk(UIntPtr window, [MarshalAs(UnmanagedType.I1)] bool status);
 
         /**
@@ -104,7 +104,7 @@ namespace WebUI4CSharp
          *
          * @example webui_close(myWindow);
          */
-        [DllImport("webui-2.dll")]
+        [DllImport("webui-2")]
         private static extern void webui_close(UIntPtr window);
 
         /**
@@ -114,7 +114,7 @@ namespace WebUI4CSharp
          *
          * @example webui_destroy(myWindow);
          */
-        [DllImport("webui-2.dll")]
+        [DllImport("webui-2")]
         private static extern void webui_destroy(UIntPtr window);
 
         /**
@@ -125,7 +125,7 @@ namespace WebUI4CSharp
          *
          * @example webui_set_root_folder(myWindow, "/home/Foo/Bar/");
          */
-        [DllImport("webui-2.dll")]
+        [DllImport("webui-2")]
         [return: MarshalAs(UnmanagedType.I1)]
         private static extern bool webui_set_root_folder(UIntPtr window, [MarshalAs(UnmanagedType.LPUTF8Str)] string path);
 
@@ -140,7 +140,7 @@ namespace WebUI4CSharp
          *
          * @example webui_set_file_handler(myWindow, myHandlerFunction);
          */
-        [DllImport("webui-2.dll")]
+        [DllImport("webui-2")]
         private static extern void webui_set_file_handler(UIntPtr window, FileHandlerCallback handler);
 
         /**
@@ -150,7 +150,7 @@ namespace WebUI4CSharp
          *
          * @example webui_is_shown(myWindow);
          */
-        [DllImport("webui-2.dll")]
+        [DllImport("webui-2")]
         [return: MarshalAs(UnmanagedType.I1)]
         private static extern bool webui_is_shown(UIntPtr window);
 
@@ -163,7 +163,7 @@ namespace WebUI4CSharp
          *
          * @example webui_set_icon(myWindow, "<svg>...</svg>", "image/svg+xml");
          */
-        [DllImport("webui-2.dll")]
+        [DllImport("webui-2")]
         private static extern void webui_set_icon(UIntPtr window, [MarshalAs(UnmanagedType.LPUTF8Str)] string icon, [MarshalAs(UnmanagedType.LPUTF8Str)] string icon_type);
 
         /**
@@ -177,7 +177,7 @@ namespace WebUI4CSharp
          *
          * @example webui_send_raw(myWindow, "myJavascriptFunction", myBuffer, 64);
          */
-        [DllImport("webui-2.dll")]
+        [DllImport("webui-2")]
         private static extern void webui_send_raw(UIntPtr window, [MarshalAs(UnmanagedType.LPUTF8Str)] string function, UIntPtr raw, UIntPtr size);
 
         /**
@@ -188,7 +188,7 @@ namespace WebUI4CSharp
          *
          * @example webui_set_hide(myWindow, True);
          */
-        [DllImport("webui-2.dll")]
+        [DllImport("webui-2")]
         private static extern void webui_set_hide(UIntPtr window, [MarshalAs(UnmanagedType.I1)] bool status);
 
         /**
@@ -200,7 +200,7 @@ namespace WebUI4CSharp
          *
          * @example webui_set_size(myWindow, 800, 600);
          */
-        [DllImport("webui-2.dll")]
+        [DllImport("webui-2")]
         private static extern void webui_set_size(UIntPtr window, uint width, uint height);
 
         /**
@@ -212,7 +212,7 @@ namespace WebUI4CSharp
          *
          * @example webui_set_position(myWindow, 100, 100);
          */
-        [DllImport("webui-2.dll")]
+        [DllImport("webui-2")]
         private static extern void webui_set_position(UIntPtr window, uint x, uint y);
 
         /**
@@ -226,7 +226,7 @@ namespace WebUI4CSharp
          * @example webui_set_profile(myWindow, "Bar", "/Home/Foo/Bar"); |
          * webui_set_profile(myWindow, "", "");
          */
-        [DllImport("webui-2.dll")]
+        [DllImport("webui-2")]
         private static extern void webui_set_profile(UIntPtr window, [MarshalAs(UnmanagedType.LPUTF8Str)] string name, [MarshalAs(UnmanagedType.LPUTF8Str)] string path);
 
         /**
@@ -237,7 +237,7 @@ namespace WebUI4CSharp
          *
          * @example webui_set_proxy(myWindow, "http://127.0.0.1:8888"); 
          */
-        [DllImport("webui-2.dll")]
+        [DllImport("webui-2")]
         private static extern void webui_set_proxy(UIntPtr window, [MarshalAs(UnmanagedType.LPUTF8Str)] string proxy_server);
 
         /**
@@ -249,7 +249,7 @@ namespace WebUI4CSharp
          *
          * @example const char* url = webui_get_url(myWindow);
          */
-        [DllImport("webui-2.dll")]
+        [DllImport("webui-2")]
         [return: MarshalAs(UnmanagedType.LPUTF8Str)]
         private static extern string webui_get_url(UIntPtr window);
 
@@ -261,7 +261,7 @@ namespace WebUI4CSharp
          *
          * @example webui_set_public(myWindow, true);
          */
-        [DllImport("webui-2.dll")]
+        [DllImport("webui-2")]
         private static extern void webui_set_public(UIntPtr window, [MarshalAs(UnmanagedType.I1)] bool status);
 
         /**
@@ -272,7 +272,7 @@ namespace WebUI4CSharp
          *
          * @example webui_navigate(myWindow, "http://domain.com");
          */
-        [DllImport("webui-2.dll")]
+        [DllImport("webui-2")]
         private static extern void webui_navigate(UIntPtr window, [MarshalAs(UnmanagedType.LPUTF8Str)] string url);
 
         /**
@@ -288,7 +288,7 @@ namespace WebUI4CSharp
          * @note This can break functionality of other windows if using the same
          * web-browser.
          */
-        [DllImport("webui-2.dll")]
+        [DllImport("webui-2")]
         private static extern void webui_delete_profile(UIntPtr window);
 
         /**
@@ -301,7 +301,7 @@ namespace WebUI4CSharp
          *
          * @example size_t id = webui_get_parent_process_id(myWindow);
          */
-        [DllImport("webui-2.dll")]
+        [DllImport("webui-2")]
         private static extern UIntPtr webui_get_parent_process_id(UIntPtr window);
 
         /**
@@ -313,7 +313,7 @@ namespace WebUI4CSharp
          *
          * @example size_t id = webui_get_child_process_id(myWindow);
          */
-        [DllImport("webui-2.dll")]
+        [DllImport("webui-2")]
         private static extern UIntPtr webui_get_child_process_id(UIntPtr window);
 
         /**
@@ -328,7 +328,7 @@ namespace WebUI4CSharp
          *
          * @example bool ret = webui_set_port(myWindow, 8080);
          */
-        [DllImport("webui-2.dll")]
+        [DllImport("webui-2")]
         [return: MarshalAs(UnmanagedType.I1)]
         private static extern bool webui_set_port(UIntPtr window, UIntPtr port);
 
@@ -341,7 +341,7 @@ namespace WebUI4CSharp
          *
          * @example webui_run(myWindow, "alert('Hello');");
          */
-        [DllImport("webui-2.dll")]
+        [DllImport("webui-2")]
         private static extern void webui_run(UIntPtr window, [MarshalAs(UnmanagedType.LPUTF8Str)] string script);
 
         /**
@@ -358,7 +358,7 @@ namespace WebUI4CSharp
          *
          * @example bool err = webui_script(myWindow, "return 4 + 6;", 0, myBuffer, myBufferSize);
          */
-        [DllImport("webui-2.dll")]
+        [DllImport("webui-2")]
         [return: MarshalAs(UnmanagedType.I1)]
         private static extern bool webui_script(UIntPtr window, [MarshalAs(UnmanagedType.LPUTF8Str)] string script, UIntPtr timeout, UIntPtr buffer, UIntPtr buffer_length);
 
@@ -370,7 +370,7 @@ namespace WebUI4CSharp
          *
          * @example webui_set_runtime(myWindow, Deno);
          */
-        [DllImport("webui-2.dll")]
+        [DllImport("webui-2")]
         private static extern void webui_set_runtime(UIntPtr window, UIntPtr runtime);
 
         /**
@@ -384,7 +384,7 @@ namespace WebUI4CSharp
          *
          * @example size_t id = webui_interface_bind(myWindow, "myID", myCallback);
          */
-        [DllImport("webui-2.dll")]
+        [DllImport("webui-2")]
         private static extern UIntPtr webui_interface_bind(UIntPtr window, [MarshalAs(UnmanagedType.LPUTF8Str)] string element, InterfaceEventCallback func);
 
 
@@ -397,7 +397,7 @@ namespace WebUI4CSharp
          *
          * @example size_t id = webui_interface_get_window_id(myWindow);
          */
-        [DllImport("webui-2.dll")]
+        [DllImport("webui-2")]
         private static extern UIntPtr webui_interface_get_window_id(UIntPtr window);
 
 
@@ -470,6 +470,7 @@ namespace WebUI4CSharp
         public WebUIWindow()
         {
             _id = webui_new_window();
+            WebUI.AddWindow(this);
         }
 
         /// <summary>
@@ -485,6 +486,7 @@ namespace WebUI4CSharp
             {
                 _id = webui_new_window();
             }
+            WebUI.AddWindow(this);
         }
 
         /// <summary>

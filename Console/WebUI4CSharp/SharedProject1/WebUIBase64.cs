@@ -12,7 +12,7 @@ namespace WebUI4CSharp
          *
          * @example webui_encode("Hello");
          */
-        [DllImport("webui-2.dll")]
+        [DllImport("webui-2")]
         [return: MarshalAs(UnmanagedType.LPUTF8Str)]
         private static extern string webui_encode([MarshalAs(UnmanagedType.LPUTF8Str)] string str);
 
@@ -24,7 +24,7 @@ namespace WebUI4CSharp
          *
          * @example webui_decode("SGVsbG8=");
          */
-        [DllImport("webui-2.dll")]
+        [DllImport("webui-2")]
         [return: MarshalAs(UnmanagedType.LPUTF8Str)]
         private static extern string webui_decode([MarshalAs(UnmanagedType.LPUTF8Str)] string str);
 
