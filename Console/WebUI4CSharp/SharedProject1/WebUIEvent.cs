@@ -124,12 +124,23 @@ namespace WebUI4CSharp
          * @brief Return the response to JavaScript as string.
          *
          * @param e The event struct
-         * @param n The string to be send to JavaScript
+         * @param s The string to be send to JavaScript
          *
          * @example webui_return_string(e, "Response...");
          */
         [DllImport("webui-2.dll")]
         private static extern void webui_return_string(ref webui_event_t e, [MarshalAs(UnmanagedType.LPUTF8Str)] string s);
+
+        /**
+         * @brief Return the response to JavaScript as a buffer.
+         *
+         * @param e The event struct
+         * @param buffer The buffer to be send to JavaScript
+         *
+         * @example webui_return_string(e, "Response...");
+         */
+        [DllImport("webui-2.dll", EntryPoint = "webui_return_string")]
+        private static extern void webui_return_buffer(ref webui_event_t e, ref byte[] buffer);
 
         /**
          * @brief Return the response to JavaScript as boolean.
@@ -153,6 +164,18 @@ namespace WebUI4CSharp
          */
         [DllImport("webui-2.dll")]
         private static extern void webui_interface_set_response(UIntPtr window, UIntPtr event_number, [MarshalAs(UnmanagedType.LPUTF8Str)] string response);
+
+        /**
+         * @brief When using `webui_interface_bind()`, you may need this function to easily set a response.
+         *
+         * @param window The window number
+         * @param event_number The event number
+         * @param buffer The response as a buffer to be send to JavaScript
+         *
+         * @example webui_interface_set_response(myWindow, e->event_number, "Response...");
+         */
+        [DllImport("webui-2.dll", EntryPoint = "webui_interface_set_response")]
+        private static extern void webui_interface_set_buffer_response(UIntPtr window, UIntPtr event_number, ref byte[] buffer);
 
         /**
          * @brief Get an argument as string at a specific index
@@ -264,7 +287,14 @@ namespace WebUI4CSharp
         /// <returns>Returns argument as integer.</returns>
         public long GetInt()
         {
-            return webui_get_int(ref _event);
+            if (Initialized)
+            {
+                return webui_get_int(ref _event);
+            }
+            else
+            { 
+                return 0;
+            }
         }
 
         /// <summary>
@@ -274,7 +304,14 @@ namespace WebUI4CSharp
         /// <returns>Returns argument as integer.</returns>
         public long GetIntAt(UIntPtr index)
         {
-            return webui_get_int_at(ref _event, index);
+            if (Initialized)
+            {
+                return webui_get_int_at(ref _event, index);
+            }
+            else
+            {
+                return 0;
+            }
         }
 
         /// <summary>
@@ -282,8 +319,15 @@ namespace WebUI4CSharp
         /// </summary>
         /// <returns>Returns argument as string.</returns>
         public string? GetString() 
-        { 
-            return Marshal.PtrToStringUTF8(webui_get_string(ref _event));
+        {
+            if (Initialized)
+            {
+                return Marshal.PtrToStringUTF8(webui_get_string(ref _event));
+            }
+            else
+            {
+                return null;
+            }
         }
 
         /// <summary>
@@ -293,24 +337,38 @@ namespace WebUI4CSharp
         /// <returns>Returns argument as string.</returns>
         public string? GetStringAt(UIntPtr index)
         {
-            return Marshal.PtrToStringUTF8(webui_get_string_at(ref _event, index));
+            if (Initialized)
+            {
+                return Marshal.PtrToStringUTF8(webui_get_string_at(ref _event, index));
+            }
+            else
+            {
+                return null;
+            }
         }
 
         /// <summary>
         /// Get the first argument as a stream.
         /// </summary>
         /// <returns>Returns argument as a stream.</returns>
-        public MemoryStream GetStream()
+        public MemoryStream? GetStream()
         {
-            IntPtr buffer = webui_get_string(ref _event);
-            UIntPtr buffersize = webui_get_size(ref _event);
-            MemoryStream stream = new MemoryStream((int)buffersize);
-            for (UIntPtr i = 0; i < buffersize; i++) 
+            if (Initialized)
             {
-                stream.WriteByte(Marshal.ReadByte(buffer, (int)i));
+                IntPtr buffer = webui_get_string(ref _event);
+                UIntPtr buffersize = webui_get_size(ref _event);
+                MemoryStream stream = new MemoryStream((int)buffersize);
+                for (UIntPtr i = 0; i < buffersize; i++)
+                {
+                    stream.WriteByte(Marshal.ReadByte(buffer, (int)i));
+                }
+                stream.Position = 0;
+                return stream;
             }
-            stream.Position = 0;
-            return stream;
+            else
+            {
+                return null;
+            }
         }
 
         /// <summary>
@@ -318,17 +376,24 @@ namespace WebUI4CSharp
         /// </summary>
         /// <param name="index">The argument position starting from 0.</param>
         /// <returns>Returns argument as a stream.</returns>
-        public MemoryStream GetStreamAt(UIntPtr index)
+        public MemoryStream? GetStreamAt(UIntPtr index)
         {
-            IntPtr buffer = webui_get_string_at(ref _event, index);
-            UIntPtr buffersize = webui_get_size_at(ref _event, index);
-            MemoryStream stream = new MemoryStream((int)buffersize);
-            for (UIntPtr i = 0; i < buffersize; i++)
+            if (Initialized)
             {
-                stream.WriteByte(Marshal.ReadByte(buffer, (int)i));
+                IntPtr buffer = webui_get_string_at(ref _event, index);
+                UIntPtr buffersize = webui_get_size_at(ref _event, index);
+                MemoryStream stream = new MemoryStream((int)buffersize);
+                for (UIntPtr i = 0; i < buffersize; i++)
+                {
+                    stream.WriteByte(Marshal.ReadByte(buffer, (int)i));
+                }
+                stream.Position = 0;
+                return stream;
             }
-            stream.Position = 0;
-            return stream;
+            else
+            {
+                return null;
+            }
         }
 
         /// <summary>
@@ -337,7 +402,7 @@ namespace WebUI4CSharp
         /// <returns>Returns argument as boolean.</returns>
         public bool GetBool()
         {
-            return webui_get_bool(ref _event);
+            return Initialized && webui_get_bool(ref _event);
         }
 
         /// <summary>
@@ -347,7 +412,7 @@ namespace WebUI4CSharp
         /// <returns>Returns argument as boolean.</returns>
         public bool GetBoolAt(UIntPtr index)
         {
-            return webui_get_bool_at(ref _event, index);
+            return Initialized && webui_get_bool_at(ref _event, index);
         }
 
         /// <summary>
@@ -356,7 +421,14 @@ namespace WebUI4CSharp
         /// <returns>Returns size in bytes.</returns>
         public UIntPtr GetSize()
         {
-            return webui_get_size(ref _event);
+            if (Initialized)
+            {
+                return webui_get_size(ref _event);
+            }
+            else
+            {
+                return 0;
+            }
         }
 
         /// <summary>
@@ -366,7 +438,14 @@ namespace WebUI4CSharp
         /// <returns>Returns size in bytes.</returns>
         public UIntPtr GetSizeAt(UIntPtr index)
         {
-            return webui_get_size_at(ref _event, index);
+            if (Initialized)
+            {
+                return webui_get_size_at(ref _event, index);
+            }
+            else
+            {
+                return 0;
+            }
         }
 
         /// <summary>
@@ -375,7 +454,10 @@ namespace WebUI4CSharp
         /// <param name="value">The integer to be send to JavaScript.</param>
         public void ReturnInt(long value)
         {
-            webui_return_int(ref _event, value);
+            if (Initialized)
+            {
+                webui_return_int(ref _event, value);
+            }
         }
 
         /// <summary>
@@ -384,7 +466,23 @@ namespace WebUI4CSharp
         /// <param name="value">The string to be send to JavaScript.</param>
         public void ReturnString(string value)
         {
-            webui_return_string(ref _event, value);
+            if (Initialized)
+            {
+                webui_return_string(ref _event, value);
+            }
+        }
+
+        /// <summary>
+        /// Return the response to JavaScript as a stream.
+        /// </summary>
+        /// <param name="value">The stream to be send to JavaScript.</param>
+        public void ReturnStream(MemoryStream value)
+        {
+            if (Initialized)
+            {
+                byte[] bytes = value.ToArray();
+                webui_return_buffer(ref _event, ref bytes);
+            }
         }
 
         /// <summary>
@@ -393,7 +491,10 @@ namespace WebUI4CSharp
         /// <param name="value">The boolean to be send to JavaScript.</param>
         public void ReturnBool(bool value)
         {
-            webui_return_bool(ref _event, value);
+            if (Initialized)
+            {
+                webui_return_bool(ref _event, value);
+            }
         }
 
         /// <summary>
@@ -405,6 +506,19 @@ namespace WebUI4CSharp
             if (Initialized)
             {
                 webui_interface_set_response(_event.window, _event.event_number, response);
+            }
+        }
+
+        /// <summary>
+        /// When using `webui_interface_bind()`, you may need this function to easily set a response.
+        /// </summary>
+        /// <param name="response">The response as a stream to be send to JavaScript.</param>
+        public void SetResponse(MemoryStream response)
+        {
+            if (Initialized)
+            {
+                byte[] buffer = response.ToArray();
+                webui_interface_set_buffer_response(_event.window, _event.event_number, ref buffer);
             }
         }
     }

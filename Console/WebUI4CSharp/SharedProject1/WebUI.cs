@@ -113,7 +113,7 @@ namespace WebUI4CSharp
          * @example webui_free(myBuffer);
          */
         [DllImport("webui-2.dll")]
-        private static extern void webui_free(UIntPtr ptr);
+        private static extern void webui_free(IntPtr ptr);
 
         /**
          * @brief Safely allocate memory using the WebUI memory management system. It
@@ -124,7 +124,7 @@ namespace WebUI4CSharp
          * @example char* myBuffer = (char*)webui_malloc(1024);
          */
         [DllImport("webui-2.dll")]
-        private static extern UIntPtr webui_malloc(UIntPtr size);
+        private static extern IntPtr webui_malloc(UIntPtr size);
 
         /**
          * @brief Free all memory resources. Should be called only at the end.
@@ -214,7 +214,7 @@ namespace WebUI4CSharp
         /// Safely free a buffer allocated by WebUI using `webui_malloc()`.
         /// </summary>
         /// <param name="ptr">The buffer to be freed.</param>
-        public static void Free(UIntPtr ptr)
+        public static void Free(IntPtr ptr)
         {
             webui_free(ptr);
         }
@@ -224,7 +224,7 @@ namespace WebUI4CSharp
         /// </summary>
         /// <param name="size">The size of memory in bytes.</param>
         /// <returns></returns>
-        public static UIntPtr Malloc(UIntPtr size)
+        public static IntPtr Malloc(UIntPtr size)
         {
             return webui_malloc(size);
         }
