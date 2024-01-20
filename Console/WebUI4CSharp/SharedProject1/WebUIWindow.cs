@@ -805,7 +805,7 @@ namespace WebUI4CSharp
 
                 if (webui_script(_id, script_, timeout, buffer, response_length))
                 {
-                    tempResponse = Marshal.PtrToStringUTF8(buffer);
+                    tempResponse = WebUI.WebUIStringToCSharpString(buffer);
                 }
 
                 WebUI.Free(buffer);
@@ -824,11 +824,11 @@ namespace WebUI4CSharp
         /// Chose between Deno and Nodejs as runtime for .js and .ts files.
         /// </summary>
         /// <param name="runtime">Deno or Nodejs.</param>
-        public void SetRuntime(UIntPtr runtime)
+        public void SetRuntime(webui_runtimes runtime)
         {
             if (Initialized)
             {
-                webui_set_runtime(_id, runtime);
+                webui_set_runtime(_id, (UIntPtr)runtime);
             }
         }
 

@@ -36,7 +36,6 @@ namespace custom_web_server
                         window.Navigate(lUrl);
                     }
                     break;
-
             }
         }
 

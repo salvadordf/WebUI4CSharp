@@ -257,7 +257,7 @@ namespace WebUI4CSharp
         /// <summary>
         /// HTML element ID.
         /// </summary>
-        public string? Element { get { return Marshal.PtrToStringUTF8(_event.element); } }
+        public string? Element { get { return WebUI.WebUIStringToCSharpString(_event.element); } }
         /// <summary>
         /// Event number or Event ID.
         /// </summary>
@@ -326,7 +326,7 @@ namespace WebUI4CSharp
         {
             if (Initialized)
             {
-                return Marshal.PtrToStringUTF8(webui_get_string(ref _event));
+                return WebUI.WebUIStringToCSharpString(webui_get_string(ref _event));
             }
             else
             {
@@ -343,7 +343,7 @@ namespace WebUI4CSharp
         {
             if (Initialized)
             {
-                return Marshal.PtrToStringUTF8(webui_get_string_at(ref _event, index));
+                return WebUI.WebUIStringToCSharpString(webui_get_string_at(ref _event, index));
             }
             else
             {

@@ -1,4 +1,5 @@
 ﻿using System.Runtime.InteropServices;
+using System.Text;
 
 namespace WebUI4CSharp
 {
@@ -47,8 +48,7 @@ namespace WebUI4CSharp
 
     public delegate void BindCallback(ref webui_event_t e);
 
-    [return: MarshalAs(UnmanagedType.LPUTF8Str)]
-    public delegate string FileHandlerCallback([MarshalAs(UnmanagedType.LPUTF8Str)] string filename, out int length);
+    public delegate IntPtr FileHandlerCallback(IntPtr filename, out int length);
 
     public delegate void InterfaceEventCallback(UIntPtr window, UIntPtr event_type, [MarshalAs(UnmanagedType.LPUTF8Str)] string element, UIntPtr event_number, UIntPtr bind_id);
 
@@ -270,6 +270,9 @@ namespace WebUI4CSharp
             return webui_interface_is_app_running();
         }
 
+        /// <summary>
+        /// Add an WebUIWindow instance to the list.
+        /// </summary>
         public static void AddWindow(WebUIWindow newWindow)
         {
             lock(_lockObj)
@@ -289,6 +292,9 @@ namespace WebUI4CSharp
             }
         }
 
+        /// <summary>
+        /// Search a WebUIWindow instance in the list.
+        /// </summary>
         public static WebUIWindow? SearchWindow(UIntPtr windowId)
         {
             if (windowId > 0)
@@ -308,6 +314,37 @@ namespace WebUI4CSharp
                 }
             }
             return null;
+        }
+
+        /// <summary>
+        /// Convert a pointer to a WebUI string in UTF8 format to a C# string.
+        /// </summary>
+        /// <param name="srcString">The pointer to the original UTF8 string.</param>
+        /// <returns>Returns a C# string.</returns>
+        public static string? WebUIStringToCSharpString(IntPtr srcString)
+        {
+            return Marshal.PtrToStringUTF8(srcString);
+        }
+
+        /// <summary>
+        /// Converts a C# string to a WebUI string in UTF8 format.
+        /// This function should only be used by the file handler callback.
+        /// By allocating resources using webui_malloc() WebUI will automaticaly free the resources.         
+        /// </summary>
+        /// <param name="srcString">The original C# string.</param>
+        /// <param name="rsltLength">The length of the result string.</param>
+        /// <returns>Returns a pointer to a UTF8 string.</returns>
+        public static IntPtr CSharpStringToWebUIString(string srcString, out int rsltLength)
+        {
+            byte[] arrayBuffer = Encoding.UTF8.GetBytes(srcString);
+            rsltLength = arrayBuffer.Length + 1;
+            IntPtr rsltBuffer = Malloc((UIntPtr)rsltLength);
+            for (int i = 0; i < arrayBuffer.Length; i++)
+            {
+                Marshal.WriteByte(rsltBuffer, i, arrayBuffer[i]);
+            }
+            Marshal.WriteByte(rsltBuffer, arrayBuffer.Length, 0);
+            return rsltBuffer;
         }
     }
 }

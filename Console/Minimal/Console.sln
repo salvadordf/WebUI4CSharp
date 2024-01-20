@@ -15,7 +15,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "custom_web_server", "..\cus
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "public_network_access", "..\public_network_access\public_network_access.csproj", "{82A0CBD3-DB62-4BA9-AD72-5DA50BCDE934}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "text-editor", "..\text-editor\text-editor.csproj", "{ACCC0C82-2F3C-4FC5-B744-A0F996931A38}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "text-editor", "..\text-editor\text-editor.csproj", "{ACCC0C82-2F3C-4FC5-B744-A0F996931A38}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "serve_a_folder", "..\serve_a_folder\serve_a_folder.csproj", "{822F4E35-6C86-46DF-BCF1-DCFE5D8B3BE6}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -47,6 +49,10 @@ Global
 		{ACCC0C82-2F3C-4FC5-B744-A0F996931A38}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{ACCC0C82-2F3C-4FC5-B744-A0F996931A38}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{ACCC0C82-2F3C-4FC5-B744-A0F996931A38}.Release|Any CPU.Build.0 = Release|Any CPU
+		{822F4E35-6C86-46DF-BCF1-DCFE5D8B3BE6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{822F4E35-6C86-46DF-BCF1-DCFE5D8B3BE6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{822F4E35-6C86-46DF-BCF1-DCFE5D8B3BE6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{822F4E35-6C86-46DF-BCF1-DCFE5D8B3BE6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -57,6 +63,7 @@ Global
 	GlobalSection(SharedMSBuildProjectFiles) = preSolution
 		..\WebUI4CSharp\SharedProject1\SharedProject1.projitems*{03750055-5560-432d-bf5e-3a3962846a21}*SharedItemsImports = 5
 		..\WebUI4CSharp\SharedProject1\SharedProject1.projitems*{1a932921-6e35-4636-a068-8b3b9bdde7cd}*SharedItemsImports = 5
+		..\WebUI4CSharp\SharedProject1\SharedProject1.projitems*{822f4e35-6c86-46df-bcf1-dcfe5d8b3be6}*SharedItemsImports = 5
 		..\WebUI4CSharp\SharedProject1\SharedProject1.projitems*{82a0cbd3-db62-4ba9-ad72-5da50bcde934}*SharedItemsImports = 5
 		..\WebUI4CSharp\SharedProject1\SharedProject1.projitems*{92380e26-0f51-4f82-bb08-e5c8251e9ef3}*SharedItemsImports = 5
 		..\WebUI4CSharp\SharedProject1\SharedProject1.projitems*{accc0c82-2f3c-4fc5-b744-a0f996931a38}*SharedItemsImports = 5
