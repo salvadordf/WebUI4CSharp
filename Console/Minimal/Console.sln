@@ -9,7 +9,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "call_csharp_from_js", "..\c
 EndProject
 Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "WebUI4CSharp", "..\WebUI4CSharp\SharedProject1\WebUI4CSharp.shproj", "{CFD1D900-3537-4FA9-9CFC-A8D1B215B8CA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "call_js_from_csharp", "..\call_js_from_csharp\call_js_from_csharp.csproj", "{B17911FB-A850-43C3-86F6-6272B8559FA3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "call_js_from_csharp", "..\call_js_from_csharp\call_js_from_csharp.csproj", "{B17911FB-A850-43C3-86F6-6272B8559FA3}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "custom_web_server", "..\custom_web_server\custom_web_server.csproj", "{92380E26-0F51-4F82-BB08-E5C8251E9EF3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -29,6 +31,10 @@ Global
 		{B17911FB-A850-43C3-86F6-6272B8559FA3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B17911FB-A850-43C3-86F6-6272B8559FA3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B17911FB-A850-43C3-86F6-6272B8559FA3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{92380E26-0F51-4F82-BB08-E5C8251E9EF3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{92380E26-0F51-4F82-BB08-E5C8251E9EF3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{92380E26-0F51-4F82-BB08-E5C8251E9EF3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{92380E26-0F51-4F82-BB08-E5C8251E9EF3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -39,6 +45,7 @@ Global
 	GlobalSection(SharedMSBuildProjectFiles) = preSolution
 		..\WebUI4CSharp\SharedProject1\SharedProject1.projitems*{03750055-5560-432d-bf5e-3a3962846a21}*SharedItemsImports = 5
 		..\WebUI4CSharp\SharedProject1\SharedProject1.projitems*{1a932921-6e35-4636-a068-8b3b9bdde7cd}*SharedItemsImports = 5
+		..\WebUI4CSharp\SharedProject1\SharedProject1.projitems*{92380e26-0f51-4f82-bb08-e5c8251e9ef3}*SharedItemsImports = 5
 		..\WebUI4CSharp\SharedProject1\SharedProject1.projitems*{b17911fb-a850-43c3-86f6-6272b8559fa3}*SharedItemsImports = 5
 		..\WebUI4CSharp\SharedProject1\SharedProject1.projitems*{cfd1d900-3537-4fa9-9cfc-a8d1b215b8ca}*SharedItemsImports = 13
 	EndGlobalSection

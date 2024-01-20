@@ -558,6 +558,24 @@ namespace WebUI4CSharp
         }
 
         /// <summary>
+        /// <para>Bind all browser events with a callback function.</para>
+        /// </summary>
+        /// <param name="func_">The callback function.</param>
+        /// <returns>Returns a unique bind ID.</returns>
+        public UIntPtr BindAllEvents(BindCallback func)
+        {
+            if (Initialized)
+            {
+                string element = string.Empty;
+                return webui_bind(_id, element, func);
+            }
+            else
+            {
+                return 0;
+            }
+        }
+
+        /// <summary>
         /// Set the window in Kiosk mode (Full screen).
         /// </summary>
         /// <param name="status">True or False.</param>

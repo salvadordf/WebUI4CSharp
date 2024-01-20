@@ -253,7 +253,7 @@ namespace WebUI4CSharp
         /// <summary>
         /// Event type.
         /// </summary>
-        public UIntPtr EventType { get { return _event.event_type; } }
+        public webui_events EventType { get { return (webui_events)_event.event_type; } }
         /// <summary>
         /// HTML element ID.
         /// </summary>
