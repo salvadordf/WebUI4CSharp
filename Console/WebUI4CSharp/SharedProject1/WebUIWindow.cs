@@ -513,9 +513,9 @@ namespace WebUI4CSharp
         /// <param name="content">The HTML, URL, Or a local file.</param>
         /// <param name="browser">The web browser to be used.</param>
         /// <returns>Returns True if showing the window is successed.</returns>
-        public bool ShowBrowser(string content, UIntPtr browser)
+        public bool ShowBrowser(string content, webui_browsers browser)
         {
-            return Initialized && webui_show_browser(_id, content, browser);
+            return Initialized && webui_show_browser(_id, content, (UIntPtr)browser);
         }
 
         /// <summary>
