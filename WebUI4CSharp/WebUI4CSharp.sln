@@ -25,13 +25,15 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "winforms_call_csharp_from_j
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "winforms_call_js_from_csharp", "..\demos\winforms_call_js_from_csharp\winforms_call_js_from_csharp.csproj", "{14D7A22E-C6A3-4556-B7F7-5233F1E29F2C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "winforms_custom_web_server", "..\demos\winforms_custom_web_server\winforms_custom_web_server.csproj", "{02E75C91-BEDE-4DD1-AF13-BB953FD85F2A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "winforms_custom_web_server", "..\demos\winforms_custom_web_server\winforms_custom_web_server.csproj", "{02E75C91-BEDE-4DD1-AF13-BB953FD85F2A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "winforms_public_network_access", "..\demos\winforms_public_network_access\winforms_public_network_access.csproj", "{C36644CE-BCE3-4B91-9DB9-851D8C7DEDF2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "winforms_public_network_access", "..\demos\winforms_public_network_access\winforms_public_network_access.csproj", "{C36644CE-BCE3-4B91-9DB9-851D8C7DEDF2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "winforms_serve_a_folder", "..\demos\winforms_serve_a_folder\winforms_serve_a_folder.csproj", "{A40F5B2E-DCB3-42CC-AEC1-96AE5B4F582E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "winforms_serve_a_folder", "..\demos\winforms_serve_a_folder\winforms_serve_a_folder.csproj", "{A40F5B2E-DCB3-42CC-AEC1-96AE5B4F582E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "winforms_text_editor", "..\demos\winforms_text_editor\winforms_text_editor.csproj", "{3DE6FA90-9A24-4E4B-B491-D64DE041D9CC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "winforms_text_editor", "..\demos\winforms_text_editor\winforms_text_editor.csproj", "{3DE6FA90-9A24-4E4B-B491-D64DE041D9CC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "wpf_minimal", "..\demos\wpf_minimal\wpf_minimal.csproj", "{B534EE4F-D2B3-43B0-BBC0-3B24A15CED15}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -95,6 +97,10 @@ Global
 		{3DE6FA90-9A24-4E4B-B491-D64DE041D9CC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3DE6FA90-9A24-4E4B-B491-D64DE041D9CC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3DE6FA90-9A24-4E4B-B491-D64DE041D9CC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B534EE4F-D2B3-43B0-BBC0-3B24A15CED15}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B534EE4F-D2B3-43B0-BBC0-3B24A15CED15}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B534EE4F-D2B3-43B0-BBC0-3B24A15CED15}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B534EE4F-D2B3-43B0-BBC0-3B24A15CED15}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -111,6 +117,7 @@ Global
 		WebUI4CSharp.projitems*{8e2ce7fe-4662-4198-9669-1cd8a34824e0}*SharedItemsImports = 5
 		WebUI4CSharp.projitems*{97e3335e-1155-4339-be07-5f6f2c70a0c3}*SharedItemsImports = 5
 		WebUI4CSharp.projitems*{a40f5b2e-dcb3-42cc-aec1-96ae5b4f582e}*SharedItemsImports = 5
+		WebUI4CSharp.projitems*{b534ee4f-d2b3-43b0-bbc0-3b24a15ced15}*SharedItemsImports = 5
 		WebUI4CSharp.projitems*{bf1568c6-4b1b-4dd1-a067-5b94fdd4eb19}*SharedItemsImports = 5
 		WebUI4CSharp.projitems*{c36644ce-bce3-4b91-9db9-851d8c7dedf2}*SharedItemsImports = 5
 		WebUI4CSharp.projitems*{f6d4df06-43e8-468e-9d1e-c4f4720702a1}*SharedItemsImports = 5
