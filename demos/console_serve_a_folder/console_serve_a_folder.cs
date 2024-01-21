@@ -23,7 +23,7 @@ WebUI_Events.myWindow.SetSize(800, 800);
 WebUI_Events.myWindow.SetPosition(200, 200);
 
 // Set the root folder for the UI
-string absPath = Path.GetFullPath("..\\..\\..\\assets\\serve_a_folder");
+string absPath = Path.GetFullPath("..\\..\\..\\..\\..\\assets\\serve_a_folder");
 WebUI_Events.myWindow.SetRootFolder(absPath);
 WebUI_Events.mySecondWindow.SetRootFolder(absPath);
 

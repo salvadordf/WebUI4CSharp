@@ -5,7 +5,7 @@ using WebUI4CSharp;
 WebUIWindow window = new WebUIWindow();
 
 // Set the root folder for the UI
-string absPath = Path.GetFullPath("..\\..\\..\\assets\\text_editor");
+string absPath = Path.GetFullPath("..\\..\\..\\..\\..\\assets\\text_editor");
 window.SetRootFolder(absPath);
 
 // Bind HTML elements with the specified ID to C functions
