@@ -37,13 +37,13 @@ WebUI.Wait();
 
 This [text_editor](https://github.com/salvadordf/WebUI4CSharp/tree/main/demos/console_text_editor) is a lightweight and portable example written in C# and JavaScript using WebUI as the GUI.
 
-![text_editor](https://github.com/salvadordf/WebUI4Delphi/assets/17946341/306533de-5885-4bab-9c05-1627ea9b9bc8)
+![text_editor](https://github.com/salvadordf/WebUI4CSharp/assets/17946341/caf363cf-a226-4635-9e1b-8d93f73e3a1e)
 
 
-## Installation
+## Building
 
-* Open the file WebUI4CSharp.sln.
-* 
+* Open the file WebUI4CSharp\WebUI4CSharp.sln.
+* Press Control+Shift+B to build the solution
 
 
 ## Links
