@@ -1,10 +1,36 @@
 ﻿using System.Runtime.InteropServices;
+using System.Xml.Linq;
 
 namespace WebUI4CSharp
 {
+    public class BindEventArgs : EventArgs
+    {
+        public BindEventArgs(WebUIEvent bindEvent)
+        {
+            BindEvent = bindEvent;
+        }
+
+        public WebUIEvent BindEvent { get; }
+    }
+
+    public class FileHandlerEventArgs : EventArgs
+    {
+        public FileHandlerEventArgs(string filename)
+        {
+            FileName = filename;
+            ReturnValue = string.Empty;
+        }
+
+        public string FileName { get; }
+        public string ReturnValue { get; set; }
+    }
+
     public class WebUIWindow
     {
         private UIntPtr _id = 0;
+        private BindCallback? _bindCallback;
+        private InterfaceEventCallback? _interfaceEventCallback;
+        private FileHandlerCallback? _fileHandlerCallback;
 
         /// <summary>
         /// Window number or Window ID.
@@ -70,13 +96,26 @@ namespace WebUI4CSharp
         }
 
         /// <summary>
+        /// Event triggered after binding a webui event.
+        /// </summary>
+        public event EventHandler<BindEventArgs>? OnWebUIEvent;
+
+        /// <summary>
+        /// Event triggered when using a custom file handler.
+        /// </summary>
+        public event EventHandler<FileHandlerEventArgs>? OnFileHandlerEvent;
+
+        /// <summary>
         /// Create a new WebUI window object.
         /// </summary>
         public WebUIWindow()
         {
             _id = WebUILibFunctions.webui_new_window();
             WebUI.AddWindow(this);
-        }
+            _bindCallback = DoBindEvent;
+            _interfaceEventCallback = DoInterfaceBindEvent;
+            _fileHandlerCallback = DoFileHandlerEvent;
+    }
 
         /// <summary>
         /// Create a new webui window object using a specified window number.
@@ -92,6 +131,49 @@ namespace WebUI4CSharp
                 _id = WebUILibFunctions.webui_new_window();
             }
             WebUI.AddWindow(this);
+            _bindCallback = DoBindEvent;
+            _interfaceEventCallback = DoInterfaceBindEvent;
+            _fileHandlerCallback = DoFileHandlerEvent;
+        }
+
+        protected virtual void DoBindEvent(ref webui_event_t e)
+        {
+            EventHandler<BindEventArgs>? eventHandler = OnWebUIEvent;
+            if (eventHandler != null)
+            {
+                WebUIEvent lEvent = new WebUIEvent(e);
+                BindEventArgs lEventArgs = new BindEventArgs(lEvent);
+                eventHandler(this, lEventArgs);
+            }
+        }
+
+        protected virtual void DoInterfaceBindEvent(UIntPtr window, UIntPtr event_type, IntPtr element, UIntPtr event_number, UIntPtr bind_id)
+        {
+            EventHandler<BindEventArgs>? eventHandler = OnWebUIEvent;
+            if (eventHandler != null)
+            {
+                WebUIEvent lEvent = new WebUIEvent(window, event_type, element, event_number, bind_id);
+                BindEventArgs lEventArgs = new BindEventArgs(lEvent);
+                eventHandler(this, lEventArgs);
+            }
+        }
+
+        protected virtual IntPtr DoFileHandlerEvent(IntPtr filename, out int length)
+        {
+            length = 0;
+            EventHandler<FileHandlerEventArgs>? eventHandler = OnFileHandlerEvent;
+            if (eventHandler != null)
+            {
+                string? lFilename = WebUI.WebUIStringToCSharpString(filename);
+                if (lFilename != null)
+                {
+                    FileHandlerEventArgs lEventArgs = new FileHandlerEventArgs(lFilename);
+                    eventHandler(this, lEventArgs);
+                    IntPtr lReturnValue = WebUI.CSharpStringToWebUIString(lEventArgs.ReturnValue, out length);
+                    return lReturnValue;
+                }
+            }
+            return IntPtr.Zero;
         }
 
         /// <summary>
@@ -145,6 +227,27 @@ namespace WebUI4CSharp
         }
 
         /// <summary>
+        /// <para>Bind a specific html element click event with a callback function. Empty element means all events.</para>
+        /// <para>The OnWebUIEvent event will be triggered for each WebUI event.</para>
+        /// </summary>
+        /// <param name="element">The HTML element ID.</param>
+        /// <returns>Returns a unique bind ID.</returns>
+        /// <remarks>
+        /// <para>The callback function will always be executed in a background thread!</para>
+        /// </remarks>
+        public UIntPtr Bind(string element)
+        {
+            if (Initialized && (_bindCallback != null))
+            {
+                return WebUILibFunctions.webui_bind(_id, element, _bindCallback);
+            }
+            else
+            {
+                return 0;
+            }
+        }
+
+        /// <summary>
         /// Bind a specific HTML element click event with a callback function. Empty element means all events.
         /// </summary>
         /// <param name="element">The HTML element ID.</param>
@@ -173,6 +276,24 @@ namespace WebUI4CSharp
             {
                 string element = string.Empty;
                 return WebUILibFunctions.webui_bind(_id, element, func);
+            }
+            else
+            {
+                return 0;
+            }
+        }
+
+        /// <summary>
+        /// <para>Bind all browser events with a callback function.</para>
+        /// <para>The OnWebUIEvent event will be triggered for each WebUI event.</para>
+        /// </summary>
+        /// <returns>Returns a unique bind ID.</returns>
+        public UIntPtr BindAllEvents()
+        {
+            if (Initialized && (_bindCallback != null))
+            {
+                string element = string.Empty;
+                return WebUILibFunctions.webui_bind(_id, element, _bindCallback);
             }
             else
             {
@@ -232,6 +353,17 @@ namespace WebUI4CSharp
             if (Initialized)
             {
                 WebUILibFunctions.webui_set_file_handler(_id, handler);
+            }
+        }
+
+        /// <summary>
+        /// Set a custom handler to serve files. The OnFileHandlerEvent event will be triggered for each file.
+        /// </summary>
+        public void SetFileHandler()
+        {
+            if (Initialized && (_fileHandlerCallback != null))
+            {
+                WebUILibFunctions.webui_set_file_handler(_id, _fileHandlerCallback);
             }
         }
 
