@@ -178,15 +178,23 @@ namespace WebUI4CSharp
         /// <returns>Returns a pointer to a UTF8 string.</returns>
         public static IntPtr CSharpStringToWebUIString(string srcString, out int rsltLength)
         {
-            byte[] arrayBuffer = Encoding.UTF8.GetBytes(srcString);
-            rsltLength = arrayBuffer.Length + 1;
-            IntPtr rsltBuffer = Malloc((UIntPtr)rsltLength);
-            for (int i = 0; i < arrayBuffer.Length; i++)
+            if (srcString == string.Empty)
             {
-                Marshal.WriteByte(rsltBuffer, i, arrayBuffer[i]);
+                rsltLength = 0;
+                return IntPtr.Zero;
             }
-            Marshal.WriteByte(rsltBuffer, arrayBuffer.Length, 0);
-            return rsltBuffer;
+            else
+            {
+                byte[] arrayBuffer = Encoding.UTF8.GetBytes(srcString);
+                rsltLength = arrayBuffer.Length + 1;
+                IntPtr rsltBuffer = Malloc((UIntPtr)rsltLength);
+                for (int i = 0; i < arrayBuffer.Length; i++)
+                {
+                    Marshal.WriteByte(rsltBuffer, i, arrayBuffer[i]);
+                }
+                Marshal.WriteByte(rsltBuffer, arrayBuffer.Length, 0);
+                return rsltBuffer;
+            }
         }
     }
 }
