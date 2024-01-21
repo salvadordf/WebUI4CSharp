@@ -6,401 +6,6 @@ namespace WebUI4CSharp
     {
         private UIntPtr _id = 0;
 
-        /**
-         * @brief Create a new WebUI window object.
-         *
-         * @return Returns the window number.
-         *
-         * @example size_t myWindow = webui_new_window();
-         */
-        [DllImport("webui-2")]
-        private static extern UIntPtr webui_new_window();
-
-        /**
-         * @brief Create a new webui window object using a specified window number.
-         *
-         * @param window_number The window number (should be > 0, and < WEBUI_MAX_IDS)
-         *
-         * @return Returns the window number.
-         *
-         * @example size_t myWindow = webui_new_window_id(123);
-         */
-        [DllImport("webui-2")]
-        private static extern UIntPtr webui_new_window_id(UIntPtr window_number);
-
-        /**
-         * @brief Get a free window number that can be used with
-         * `webui_new_window_id()`.
-         *
-         * @return Returns the first available free window number. Starting from 1.
-         *
-         * @example size_t myWindowNumber = webui_get_new_window_id();
-         */
-        [DllImport("webui-2")]
-        private static extern UIntPtr webui_get_new_window_id();
-
-        /**
-         * @brief Bind a specific html element click event with a function. Empty
-         * element means all events.
-         *
-         * @param window The window number
-         * @param element The HTML ID
-         * @param func The callback function
-         *
-         * @return Returns a unique bind ID.
-         *
-         * @example webui_bind(myWindow, "myID", myFunction);
-         */
-        [DllImport("webui-2")]
-        private static extern UIntPtr webui_bind(UIntPtr window, [MarshalAs(UnmanagedType.LPUTF8Str)] string element, BindCallback func);
-
-        /**
-         * @brief Show a window using embedded HTML, or a file. If the window is already
-         * open, it will be refreshed.
-         *
-         * @param window The window number
-         * @param content The HTML, URL, Or a local file
-         *
-         * @return Returns True if showing the window is successed.
-         *
-         * @example webui_show(myWindow, "<html>...</html>"); | webui_show(myWindow,
-         * "index.html"); | webui_show(myWindow, "http://...");
-         */
-        [DllImport("webui-2")]
-        [return: MarshalAs(UnmanagedType.I1)]
-        private static extern bool webui_show(UIntPtr window, [MarshalAs(UnmanagedType.LPUTF8Str)] string content);
-
-        /**
-         * @brief Same as `webui_show()`. But using a specific web browser.
-         *
-         * @param window The window number
-         * @param content The HTML, Or a local file
-         * @param browser The web browser to be used
-         *
-         * @return Returns True if showing the window is successed.
-         *
-         * @example webui_show_browser(myWindow, "<html>...</html>", Chrome); |
-         * webui_show(myWindow, "index.html", Firefox);
-         */
-        [DllImport("webui-2")]
-        [return: MarshalAs(UnmanagedType.I1)]
-        private static extern bool webui_show_browser(UIntPtr window, [MarshalAs(UnmanagedType.LPUTF8Str)] string content, UIntPtr browser);
-
-        /**
-         * @brief Set the window in Kiosk mode (Full screen)
-         *
-         * @param window The window number
-         * @param status True or False
-         *
-         * @example webui_set_kiosk(myWindow, true);
-         */
-        [DllImport("webui-2")]
-        private static extern void webui_set_kiosk(UIntPtr window, [MarshalAs(UnmanagedType.I1)] bool status);
-
-        /**
-         * @brief Close a specific window only. The window object will still exist.
-         *
-         * @param window The window number
-         *
-         * @example webui_close(myWindow);
-         */
-        [DllImport("webui-2")]
-        private static extern void webui_close(UIntPtr window);
-
-        /**
-         * @brief Close a specific window and free all memory resources.
-         *
-         * @param window The window number
-         *
-         * @example webui_destroy(myWindow);
-         */
-        [DllImport("webui-2")]
-        private static extern void webui_destroy(UIntPtr window);
-
-        /**
-         * @brief Set the web-server root folder path for a specific window.
-         *
-         * @param window The window number
-         * @param path The local folder full path
-         *
-         * @example webui_set_root_folder(myWindow, "/home/Foo/Bar/");
-         */
-        [DllImport("webui-2")]
-        [return: MarshalAs(UnmanagedType.I1)]
-        private static extern bool webui_set_root_folder(UIntPtr window, [MarshalAs(UnmanagedType.LPUTF8Str)] string path);
-
-        /**
-         * @brief Set a custom handler to serve files.
-         *
-         * @param window The window number
-         * @param handler The handler function: `void myHandler(const char* filename,
-         * int* length)`
-         *
-         * @return Returns a unique bind ID.
-         *
-         * @example webui_set_file_handler(myWindow, myHandlerFunction);
-         */
-        [DllImport("webui-2")]
-        private static extern void webui_set_file_handler(UIntPtr window, FileHandlerCallback handler);
-
-        /**
-         * @brief Check if the specified window is still running.
-         *
-         * @param window The window number
-         *
-         * @example webui_is_shown(myWindow);
-         */
-        [DllImport("webui-2")]
-        [return: MarshalAs(UnmanagedType.I1)]
-        private static extern bool webui_is_shown(UIntPtr window);
-
-        /**
-         * @brief Set the default embedded HTML favicon.
-         *
-         * @param window The window number
-         * @param icon The icon as string: `<svg>...</svg>`
-         * @param icon_type The icon type: `image/svg+xml`
-         *
-         * @example webui_set_icon(myWindow, "<svg>...</svg>", "image/svg+xml");
-         */
-        [DllImport("webui-2")]
-        private static extern void webui_set_icon(UIntPtr window, [MarshalAs(UnmanagedType.LPUTF8Str)] string icon, [MarshalAs(UnmanagedType.LPUTF8Str)] string icon_type);
-
-        /**
-         * @brief Safely send raw data to the UI.
-         *
-         * @param window The window number
-         * @param function The JavaScript function to receive raw data: `function
-         * myFunc(myData){}`
-         * @param raw The raw data buffer
-         * @param size The raw data size in bytes
-         *
-         * @example webui_send_raw(myWindow, "myJavascriptFunction", myBuffer, 64);
-         */
-        [DllImport("webui-2")]
-        private static extern void webui_send_raw(UIntPtr window, [MarshalAs(UnmanagedType.LPUTF8Str)] string function, UIntPtr raw, UIntPtr size);
-
-        /**
-         * @brief Set a window in hidden mode. Should be called before `webui_show()`.
-         *
-         * @param window The window number
-         * @param status The status: True or False
-         *
-         * @example webui_set_hide(myWindow, True);
-         */
-        [DllImport("webui-2")]
-        private static extern void webui_set_hide(UIntPtr window, [MarshalAs(UnmanagedType.I1)] bool status);
-
-        /**
-         * @brief Set the window size.
-         *
-         * @param window The window number
-         * @param width The window width
-         * @param height The window height
-         *
-         * @example webui_set_size(myWindow, 800, 600);
-         */
-        [DllImport("webui-2")]
-        private static extern void webui_set_size(UIntPtr window, uint width, uint height);
-
-        /**
-         * @brief Set the window position.
-         *
-         * @param window The window number
-         * @param x The window X
-         * @param y The window Y
-         *
-         * @example webui_set_position(myWindow, 100, 100);
-         */
-        [DllImport("webui-2")]
-        private static extern void webui_set_position(UIntPtr window, uint x, uint y);
-
-        /**
-         * @brief Set the web browser profile to use. An empty `name` and `path` means
-         * the default user profile. Need to be called before `webui_show()`.
-         *
-         * @param window The window number
-         * @param name The web browser profile name
-         * @param path The web browser profile full path
-         *
-         * @example webui_set_profile(myWindow, "Bar", "/Home/Foo/Bar"); |
-         * webui_set_profile(myWindow, "", "");
-         */
-        [DllImport("webui-2")]
-        private static extern void webui_set_profile(UIntPtr window, [MarshalAs(UnmanagedType.LPUTF8Str)] string name, [MarshalAs(UnmanagedType.LPUTF8Str)] string path);
-
-        /**
-         * @brief Set the web browser proxy_server to use. Need to be called before `webui_show()`.
-         *
-         * @param window The window number
-         * @param proxy_server The web browser proxy_server
-         *
-         * @example webui_set_proxy(myWindow, "http://127.0.0.1:8888"); 
-         */
-        [DllImport("webui-2")]
-        private static extern void webui_set_proxy(UIntPtr window, [MarshalAs(UnmanagedType.LPUTF8Str)] string proxy_server);
-
-        /**
-         * @brief Get the full current URL.
-         *
-         * @param window The window number
-         *
-         * @return Returns the full URL string
-         *
-         * @example const char* url = webui_get_url(myWindow);
-         */
-        [DllImport("webui-2")]
-        [return: MarshalAs(UnmanagedType.LPUTF8Str)]
-        private static extern string webui_get_url(UIntPtr window);
-
-        /**
-         * @brief Allow a specific window address to be accessible from a public network
-         *
-         * @param window The window number
-         * @param status True or False
-         *
-         * @example webui_set_public(myWindow, true);
-         */
-        [DllImport("webui-2")]
-        private static extern void webui_set_public(UIntPtr window, [MarshalAs(UnmanagedType.I1)] bool status);
-
-        /**
-         * @brief Navigate to a specific URL
-         *
-         * @param window The window number
-         * @param url Full HTTP URL
-         *
-         * @example webui_navigate(myWindow, "http://domain.com");
-         */
-        [DllImport("webui-2")]
-        private static extern void webui_navigate(UIntPtr window, [MarshalAs(UnmanagedType.LPUTF8Str)] string url);
-
-        /**
-         * @brief Delete a specific window web-browser local folder profile.
-         *
-         * @param window The window number
-         *
-         * @example
-         * webui_wait();
-         * webui_delete_profile(myWindow);
-         * webui_clean();
-         *
-         * @note This can break functionality of other windows if using the same
-         * web-browser.
-         */
-        [DllImport("webui-2")]
-        private static extern void webui_delete_profile(UIntPtr window);
-
-        /**
-         * @brief Get the ID of the parent process (The web browser may re-create
-         * another new process).
-         *
-         * @param window The window number
-         *
-         * @return Returns the the parent process id as integer
-         *
-         * @example size_t id = webui_get_parent_process_id(myWindow);
-         */
-        [DllImport("webui-2")]
-        private static extern UIntPtr webui_get_parent_process_id(UIntPtr window);
-
-        /**
-         * @brief Get the ID of the last child process.
-         *
-         * @param window The window number
-         *
-         * @return Returns the the child process id as integer
-         *
-         * @example size_t id = webui_get_child_process_id(myWindow);
-         */
-        [DllImport("webui-2")]
-        private static extern UIntPtr webui_get_child_process_id(UIntPtr window);
-
-        /**
-         * @brief Set a custom web-server network port to be used by WebUI.
-         * This can be useful to determine the HTTP link of `webui.js` in case
-         * you are trying to use WebUI with an external web-server like NGNIX
-         *
-         * @param window The window number
-         * @param port The web-server network port WebUI should use
-         *
-         * @return Returns True if the port is free and usable by WebUI
-         *
-         * @example bool ret = webui_set_port(myWindow, 8080);
-         */
-        [DllImport("webui-2")]
-        [return: MarshalAs(UnmanagedType.I1)]
-        private static extern bool webui_set_port(UIntPtr window, UIntPtr port);
-
-
-        /**
-         * @brief Run JavaScript without waiting for the response.
-         *
-         * @param window The window number
-         * @param script The JavaScript to be run
-         *
-         * @example webui_run(myWindow, "alert('Hello');");
-         */
-        [DllImport("webui-2")]
-        private static extern void webui_run(UIntPtr window, [MarshalAs(UnmanagedType.LPUTF8Str)] string script);
-
-        /**
-         * @brief Run JavaScript and get the response back.
-         * Make sure your local buffer can hold the response.
-         *
-         * @param window The window number
-         * @param script The JavaScript to be run
-         * @param timeout The execution timeout
-         * @param buffer The local buffer to hold the response
-         * @param buffer_length The local buffer size
-         *
-         * @return Returns True if there is no execution error
-         *
-         * @example bool err = webui_script(myWindow, "return 4 + 6;", 0, myBuffer, myBufferSize);
-         */
-        [DllImport("webui-2")]
-        [return: MarshalAs(UnmanagedType.I1)]
-        private static extern bool webui_script(UIntPtr window, [MarshalAs(UnmanagedType.LPUTF8Str)] string script, UIntPtr timeout, IntPtr buffer, UIntPtr buffer_length);
-
-        /**
-         * @brief Chose between Deno and Nodejs as runtime for .js and .ts files.
-         *
-         * @param window The window number
-         * @param runtime Deno | Nodejs
-         *
-         * @example webui_set_runtime(myWindow, Deno);
-         */
-        [DllImport("webui-2")]
-        private static extern void webui_set_runtime(UIntPtr window, UIntPtr runtime);
-
-        /**
-         * @brief Bind a specific HTML element click event with a function. Empty element means all events.
-         *
-         * @param window The window number
-         * @param element The element ID
-         * @param func The callback as myFunc(Window, EventType, Element, EventNumber, BindID)
-         *
-         * @return Returns unique bind ID
-         *
-         * @example size_t id = webui_interface_bind(myWindow, "myID", myCallback);
-         */
-        [DllImport("webui-2")]
-        private static extern UIntPtr webui_interface_bind(UIntPtr window, [MarshalAs(UnmanagedType.LPUTF8Str)] string element, InterfaceEventCallback func);
-
-
-        /**
-         * @brief Get a unique window ID.
-         *
-         * @param window The window number
-         *
-         * @return Returns the unique window ID as integer
-         *
-         * @example size_t id = webui_interface_get_window_id(myWindow);
-         */
-        [DllImport("webui-2")]
-        private static extern UIntPtr webui_interface_get_window_id(UIntPtr window);
-
-
         /// <summary>
         /// Window number or Window ID.
         /// </summary>
@@ -420,7 +25,7 @@ namespace WebUI4CSharp
             {
                 if (Initialized)
                 {
-                    return webui_get_url(_id);
+                    return WebUILibFunctions.webui_get_url(_id);
                 }
                 else
                 {
@@ -437,7 +42,7 @@ namespace WebUI4CSharp
             {
                 if (Initialized)
                 {
-                    return webui_get_parent_process_id(_id);
+                    return WebUILibFunctions.webui_get_parent_process_id(_id);
                 }
                 else
                 {
@@ -455,7 +60,7 @@ namespace WebUI4CSharp
             {
                 if (Initialized)
                 {
-                    return webui_get_child_process_id(_id);
+                    return WebUILibFunctions.webui_get_child_process_id(_id);
                 }
                 else
                 {
@@ -469,7 +74,7 @@ namespace WebUI4CSharp
         /// </summary>
         public WebUIWindow()
         {
-            _id = webui_new_window();
+            _id = WebUILibFunctions.webui_new_window();
             WebUI.AddWindow(this);
         }
 
@@ -480,11 +85,11 @@ namespace WebUI4CSharp
         {
             if ((windowId > 0) && (windowId < WebUI.WEBUI_MAX_IDS))
             {
-                _id = webui_new_window_id(windowId);
+                _id = WebUILibFunctions.webui_new_window_id(windowId);
             }
             else
             {
-                _id = webui_new_window();
+                _id = WebUILibFunctions.webui_new_window();
             }
             WebUI.AddWindow(this);
         }
@@ -494,7 +99,7 @@ namespace WebUI4CSharp
         /// </summary>
         public static UIntPtr GetNewWindowId()
         {
-            return webui_get_new_window_id();
+            return WebUILibFunctions.webui_get_new_window_id();
         }
 
         /// <summary>
@@ -504,7 +109,7 @@ namespace WebUI4CSharp
         /// <returns>Returns True if showing the window is successed.</returns>
         public bool Show(string content)
         {
-            return Initialized && webui_show(_id, content);
+            return Initialized && WebUILibFunctions.webui_show(_id, content);
         }
 
         /// <summary>
@@ -515,7 +120,7 @@ namespace WebUI4CSharp
         /// <returns>Returns True if showing the window is successed.</returns>
         public bool ShowBrowser(string content, webui_browsers browser)
         {
-            return Initialized && webui_show_browser(_id, content, (UIntPtr)browser);
+            return Initialized && WebUILibFunctions.webui_show_browser(_id, content, (UIntPtr)browser);
         }
 
         /// <summary>
@@ -531,7 +136,7 @@ namespace WebUI4CSharp
         {
             if (Initialized)
             {
-                return webui_bind(_id, element, func);
+                return WebUILibFunctions.webui_bind(_id, element, func);
             }
             else
             {
@@ -549,7 +154,7 @@ namespace WebUI4CSharp
         {
             if (Initialized)
             {
-                return webui_interface_bind(_id, element, func);
+                return WebUILibFunctions.webui_interface_bind(_id, element, func);
             }
             else
             {
@@ -567,7 +172,7 @@ namespace WebUI4CSharp
             if (Initialized)
             {
                 string element = string.Empty;
-                return webui_bind(_id, element, func);
+                return WebUILibFunctions.webui_bind(_id, element, func);
             }
             else
             {
@@ -583,7 +188,7 @@ namespace WebUI4CSharp
         {
             if (Initialized)
             {
-                webui_set_kiosk(_id, status);
+                WebUILibFunctions.webui_set_kiosk(_id, status);
             }
         }
 
@@ -594,7 +199,7 @@ namespace WebUI4CSharp
         {
             if (Initialized)
             {
-                webui_close(_id);
+                WebUILibFunctions.webui_close(_id);
             }
         }
 
@@ -604,7 +209,7 @@ namespace WebUI4CSharp
         public void Destroy() {
             if (Initialized)
             {
-                webui_destroy(_id);
+                WebUILibFunctions.webui_destroy(_id);
                 _id = 0;
             }
         }
@@ -615,7 +220,7 @@ namespace WebUI4CSharp
         /// <param name="path">The local folder full path.</param>
         public bool SetRootFolder(string path)
         {
-            return Initialized && webui_set_root_folder(_id, path);
+            return Initialized && WebUILibFunctions.webui_set_root_folder(_id, path);
         }
 
         /// <summary>
@@ -626,7 +231,7 @@ namespace WebUI4CSharp
         {
             if (Initialized)
             {
-                webui_set_file_handler(_id, handler);
+                WebUILibFunctions.webui_set_file_handler(_id, handler);
             }
         }
 
@@ -635,7 +240,7 @@ namespace WebUI4CSharp
         /// </summary>
         public bool IsShown()
         {
-            return Initialized && webui_is_shown(_id);
+            return Initialized && WebUILibFunctions.webui_is_shown(_id);
         }
 
         /// <summary>
@@ -647,7 +252,7 @@ namespace WebUI4CSharp
         {
             if (Initialized)
             {
-                webui_set_icon(_id, icon, icon_type);
+                WebUILibFunctions.webui_set_icon(_id, icon, icon_type);
             }
         }
 
@@ -661,7 +266,7 @@ namespace WebUI4CSharp
         {
             if (Initialized)
             {
-                webui_send_raw(_id, function, raw, size);
+                WebUILibFunctions.webui_send_raw(_id, function, raw, size);
             }
         }
 
@@ -673,7 +278,7 @@ namespace WebUI4CSharp
         {
             if (Initialized)
             {
-                webui_set_hide(_id, status);
+                WebUILibFunctions.webui_set_hide(_id, status);
             }
         }
 
@@ -685,8 +290,8 @@ namespace WebUI4CSharp
         public void SetSize(uint width, uint height) 
         { 
             if (Initialized) 
-            { 
-                webui_set_size(_id, width, height);
+            {
+                WebUILibFunctions.webui_set_size(_id, width, height);
             } 
         }
 
@@ -699,7 +304,7 @@ namespace WebUI4CSharp
         {
             if (Initialized)
             {
-                webui_set_position(_id, x, y);
+                WebUILibFunctions.webui_set_position(_id, x, y);
             }
         }
 
@@ -712,7 +317,7 @@ namespace WebUI4CSharp
         {
             if (Initialized)
             {
-                webui_set_profile(_id, name, path);
+                WebUILibFunctions.webui_set_profile(_id, name, path);
             }
         }
 
@@ -724,7 +329,7 @@ namespace WebUI4CSharp
         {
             if (Initialized)
             {
-                webui_set_proxy(_id, proxy_server);
+                WebUILibFunctions.webui_set_proxy(_id, proxy_server);
             }
         }
 
@@ -736,7 +341,7 @@ namespace WebUI4CSharp
         {
             if (Initialized)
             {
-                webui_set_public(_id, status);
+                WebUILibFunctions.webui_set_public(_id, status);
             }
         }
 
@@ -748,7 +353,7 @@ namespace WebUI4CSharp
         {
             if (Initialized)
             {
-                webui_navigate(_id, url);
+                WebUILibFunctions.webui_navigate(_id, url);
             }
         }
 
@@ -759,7 +364,7 @@ namespace WebUI4CSharp
         {
             if (Initialized)
             {
-                webui_delete_profile(_id);
+                WebUILibFunctions.webui_delete_profile(_id);
             }
         }
 
@@ -772,7 +377,7 @@ namespace WebUI4CSharp
         /// <returns>Returns True if the port is free and usable by WebUI.</returns>
         public bool SetPort(UIntPtr port)
         {
-            return Initialized && webui_set_port(_id, port);
+            return Initialized && WebUILibFunctions.webui_set_port(_id, port);
         }
 
         /// <summary>
@@ -783,7 +388,7 @@ namespace WebUI4CSharp
         {
             if (Initialized)
             {
-                webui_run(_id, script_);
+                WebUILibFunctions.webui_run(_id, script_);
             }
         }
 
@@ -803,7 +408,7 @@ namespace WebUI4CSharp
                 IntPtr buffer = WebUI.Malloc(response_length);
                 string? tempResponse = null;
 
-                if (webui_script(_id, script_, timeout, buffer, response_length))
+                if (WebUILibFunctions.webui_script(_id, script_, timeout, buffer, response_length))
                 {
                     tempResponse = WebUI.WebUIStringToCSharpString(buffer);
                 }
@@ -828,10 +433,8 @@ namespace WebUI4CSharp
         {
             if (Initialized)
             {
-                webui_set_runtime(_id, (UIntPtr)runtime);
+                WebUILibFunctions.webui_set_runtime(_id, (UIntPtr)runtime);
             }
         }
-
-
     }
 }

@@ -12,6 +12,8 @@
     <Compile Include="$(MSBuildThisFileDirectory)WebUI.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)WebUIBase64.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)WebUIEvent.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)WebUILibFunctions.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)WebUITypes.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)WebUIWindow.cs" />
   </ItemGroup>
 </Project>
