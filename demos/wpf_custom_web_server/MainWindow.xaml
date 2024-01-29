@@ -8,7 +8,7 @@
         Title="custom_web_server" Height="300" Width="400" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" Closing="Window_Closing">
     <DockPanel LastChildFill="False">
         <Button x:Name="PythonBtn" Content="1. Run python script" Width="NaN" DockPanel.Dock="Top" Margin="5,5,5,5" Click="PythonBtn_Click"/>
-        <Button x:Name="ShowBrowserBtn" Content="2. Show browser" Width="NaN" DockPanel.Dock="Top" Margin="5,0,5,5" Click="ShowBrowserBtn_Click"/>
+        <Button x:Name="ShowBrowserBtn" Content="2. Show browser" Width="NaN" DockPanel.Dock="Top" Margin="5,0,5,5" Click="ShowBrowserBtn_Click" IsEnabled="False"/>
         <TextBox x:Name="Memo1" TextWrapping="Wrap" Margin="5,0,5,5" DockPanel.Dock="Bottom" Height="223" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto"/>
     </DockPanel>
 </Window>

@@ -1,0 +1,14 @@
+﻿<Window x:Class="wpf_public_network_access.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:wpf_public_network_access"
+        mc:Ignorable="d"
+        Title="public_network_access" Height="110" Width="346" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
+    <DockPanel LastChildFill="False">
+        <Button x:Name="ShowBrowserBtn" Content="1. Show browser" Width="NaN" DockPanel.Dock="Top" Margin="5,5,5,5" Click="ShowBrowserBtn_Click" Height="29"/>
+        <Button x:Name="OpenDefBrowserBtn" Content="2. Open default web browser" Width="NaN" DockPanel.Dock="Bottom" Margin="5,0,5,5" Click="OpenDefBrowserBtn_Click" IsEnabled="False" Height="31"/>
+    </DockPanel>
+
+</Window>

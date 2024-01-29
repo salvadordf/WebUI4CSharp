@@ -37,9 +37,15 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "wpf_minimal", "..\demos\wpf
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "wpf_call_csharp_from_js", "..\demos\wpf_call_csharp_from_js\wpf_call_csharp_from_js.csproj", "{6E9370D6-3D5C-43E5-8794-48D7631AFAE6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "wpf_call_js_from_csharp", "..\demos\wpf_call_js_from_csharp\wpf_call_js_from_csharp.csproj", "{E1750092-E278-41E1-8479-8B84DFB5E142}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "wpf_call_js_from_csharp", "..\demos\wpf_call_js_from_csharp\wpf_call_js_from_csharp.csproj", "{E1750092-E278-41E1-8479-8B84DFB5E142}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "wpf_custom_web_server", "..\demos\wpf_custom_web_server\wpf_custom_web_server.csproj", "{3A860BE4-8B23-4AB2-9912-5050DDBD6CB7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "wpf_custom_web_server", "..\demos\wpf_custom_web_server\wpf_custom_web_server.csproj", "{3A860BE4-8B23-4AB2-9912-5050DDBD6CB7}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "wpf_public_network_access", "..\demos\wpf_public_network_access\wpf_public_network_access.csproj", "{5BA34C46-3125-4B73-8023-3D36CC45F63C}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "wpf_serve_a_folder", "..\demos\wpf_serve_a_folder\wpf_serve_a_folder.csproj", "{CC1E42D1-FD35-4FBA-9650-D44ACC4DA9D2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "wpf_text_editor", "..\demos\wpf_text_editor\wpf_text_editor.csproj", "{75083401-0D52-4806-8268-55EBC4FB2A66}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -119,6 +125,18 @@ Global
 		{3A860BE4-8B23-4AB2-9912-5050DDBD6CB7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3A860BE4-8B23-4AB2-9912-5050DDBD6CB7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3A860BE4-8B23-4AB2-9912-5050DDBD6CB7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5BA34C46-3125-4B73-8023-3D36CC45F63C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5BA34C46-3125-4B73-8023-3D36CC45F63C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5BA34C46-3125-4B73-8023-3D36CC45F63C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5BA34C46-3125-4B73-8023-3D36CC45F63C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CC1E42D1-FD35-4FBA-9650-D44ACC4DA9D2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CC1E42D1-FD35-4FBA-9650-D44ACC4DA9D2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CC1E42D1-FD35-4FBA-9650-D44ACC4DA9D2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CC1E42D1-FD35-4FBA-9650-D44ACC4DA9D2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{75083401-0D52-4806-8268-55EBC4FB2A66}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{75083401-0D52-4806-8268-55EBC4FB2A66}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{75083401-0D52-4806-8268-55EBC4FB2A66}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{75083401-0D52-4806-8268-55EBC4FB2A66}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -132,14 +150,17 @@ Global
 		WebUI4CSharp.projitems*{14d7a22e-c6a3-4556-b7f7-5233f1e29f2c}*SharedItemsImports = 5
 		WebUI4CSharp.projitems*{3a860be4-8b23-4ab2-9912-5050ddbd6cb7}*SharedItemsImports = 5
 		WebUI4CSharp.projitems*{3de6fa90-9a24-4e4b-b491-d64de041d9cc}*SharedItemsImports = 5
+		WebUI4CSharp.projitems*{5ba34c46-3125-4b73-8023-3d36cc45f63c}*SharedItemsImports = 5
 		WebUI4CSharp.projitems*{6e9370d6-3d5c-43e5-8794-48d7631afae6}*SharedItemsImports = 5
 		WebUI4CSharp.projitems*{6f35fd1f-6a07-4bb7-ab29-86bf280b75b7}*SharedItemsImports = 13
+		WebUI4CSharp.projitems*{75083401-0d52-4806-8268-55ebc4fb2a66}*SharedItemsImports = 5
 		WebUI4CSharp.projitems*{8e2ce7fe-4662-4198-9669-1cd8a34824e0}*SharedItemsImports = 5
 		WebUI4CSharp.projitems*{97e3335e-1155-4339-be07-5f6f2c70a0c3}*SharedItemsImports = 5
 		WebUI4CSharp.projitems*{a40f5b2e-dcb3-42cc-aec1-96ae5b4f582e}*SharedItemsImports = 5
 		WebUI4CSharp.projitems*{b534ee4f-d2b3-43b0-bbc0-3b24a15ced15}*SharedItemsImports = 5
 		WebUI4CSharp.projitems*{bf1568c6-4b1b-4dd1-a067-5b94fdd4eb19}*SharedItemsImports = 5
 		WebUI4CSharp.projitems*{c36644ce-bce3-4b91-9db9-851d8c7dedf2}*SharedItemsImports = 5
+		WebUI4CSharp.projitems*{cc1e42d1-fd35-4fba-9650-d44acc4da9d2}*SharedItemsImports = 5
 		WebUI4CSharp.projitems*{e1750092-e278-41e1-8479-8b84dfb5e142}*SharedItemsImports = 5
 		WebUI4CSharp.projitems*{f6d4df06-43e8-468e-9d1e-c4f4720702a1}*SharedItemsImports = 5
 		WebUI4CSharp.projitems*{f7dfa9c2-86bc-4017-affd-65f41452721e}*SharedItemsImports = 5

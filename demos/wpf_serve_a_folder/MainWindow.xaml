@@ -1,0 +1,13 @@
+﻿<Window x:Class="wpf_serve_a_folder.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:wpf_serve_a_folder"
+        mc:Ignorable="d"
+        Title="serve_a_folder" Height="267" Width="391" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
+    <DockPanel LastChildFill="False">
+        <Button x:Name="ShowBrowserBtn" Content="Show browser" Width="NaN" DockPanel.Dock="Top" Margin="5,5,5,5" Click="ShowBrowserBtn_Click"/>
+        <TextBox x:Name="Memo1" TextWrapping="Wrap" Margin="5,0,5,5" DockPanel.Dock="Bottom" Height="183" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto"/>
+    </DockPanel>
+</Window>
