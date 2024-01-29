@@ -33,7 +33,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "winforms_serve_a_folder", "
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "winforms_text_editor", "..\demos\winforms_text_editor\winforms_text_editor.csproj", "{3DE6FA90-9A24-4E4B-B491-D64DE041D9CC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "wpf_minimal", "..\demos\wpf_minimal\wpf_minimal.csproj", "{B534EE4F-D2B3-43B0-BBC0-3B24A15CED15}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "wpf_minimal", "..\demos\wpf_minimal\wpf_minimal.csproj", "{B534EE4F-D2B3-43B0-BBC0-3B24A15CED15}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "wpf_call_csharp_from_js", "..\demos\wpf_call_csharp_from_js\wpf_call_csharp_from_js.csproj", "{6E9370D6-3D5C-43E5-8794-48D7631AFAE6}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -101,6 +103,10 @@ Global
 		{B534EE4F-D2B3-43B0-BBC0-3B24A15CED15}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B534EE4F-D2B3-43B0-BBC0-3B24A15CED15}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B534EE4F-D2B3-43B0-BBC0-3B24A15CED15}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6E9370D6-3D5C-43E5-8794-48D7631AFAE6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6E9370D6-3D5C-43E5-8794-48D7631AFAE6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6E9370D6-3D5C-43E5-8794-48D7631AFAE6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6E9370D6-3D5C-43E5-8794-48D7631AFAE6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -113,6 +119,7 @@ Global
 		WebUI4CSharp.projitems*{10951db4-2f8c-481e-a379-abaf6dac9f04}*SharedItemsImports = 5
 		WebUI4CSharp.projitems*{14d7a22e-c6a3-4556-b7f7-5233f1e29f2c}*SharedItemsImports = 5
 		WebUI4CSharp.projitems*{3de6fa90-9a24-4e4b-b491-d64de041d9cc}*SharedItemsImports = 5
+		WebUI4CSharp.projitems*{6e9370d6-3d5c-43e5-8794-48d7631afae6}*SharedItemsImports = 5
 		WebUI4CSharp.projitems*{6f35fd1f-6a07-4bb7-ab29-86bf280b75b7}*SharedItemsImports = 13
 		WebUI4CSharp.projitems*{8e2ce7fe-4662-4198-9669-1cd8a34824e0}*SharedItemsImports = 5
 		WebUI4CSharp.projitems*{97e3335e-1155-4339-be07-5f6f2c70a0c3}*SharedItemsImports = 5
