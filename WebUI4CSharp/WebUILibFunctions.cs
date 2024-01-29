@@ -9,6 +9,7 @@ namespace WebUI4CSharp
     {
 #if WEBUIDEMO
         private const string _LibName = "..\\..\\..\\..\\..\\WebUI_binaries\\webui-2";
+        //private const string _LibName = "..\\..\\..\\..\\..\\WebUI_binaries\\webui-2_debug";
 #else
         private const string _LibName = "webui-2";    
 #endif

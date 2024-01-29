@@ -1,13 +1,18 @@
+﻿using System.Windows;
 using WebUI4CSharp;
 
-namespace winforms_custom_web_server
+namespace wpf_custom_web_server
 {
-    public partial class MainForm : Form
+    /// <summary>
+    /// Interaction logic for MainWindow.xaml
+    /// </summary>
+    public partial class MainWindow : Window
     {
         Object _lockObj = new Object();
         List<String> _LogStrings = new List<String>();
+        System.Windows.Threading.DispatcherTimer dispatcherTimer = new System.Windows.Threading.DispatcherTimer();
 
-        public MainForm()
+        public MainWindow()
         {
             InitializeComponent();
         }
@@ -80,7 +85,23 @@ namespace winforms_custom_web_server
             }
         }
 
-        private void ShowBrowserBtn_Click(object sender, EventArgs e)
+        private void PythonBtn_Click(object sender, RoutedEventArgs e)
+        {
+            System.Diagnostics.Process process = new System.Diagnostics.Process();
+            System.Diagnostics.ProcessStartInfo startInfo = new System.Diagnostics.ProcessStartInfo();
+            startInfo.WindowStyle = System.Diagnostics.ProcessWindowStyle.Hidden;
+            startInfo.FileName = "python.exe";
+            startInfo.Arguments = System.IO.Path.GetFullPath("..\\..\\..\\..\\..\\assets\\custom_web_server\\simple_web_server.py");
+            startInfo.WorkingDirectory = System.IO.Path.GetFullPath("..\\..\\..\\..\\..\\assets\\custom_web_server\\");
+            process.StartInfo = startInfo;
+            if (process.Start())
+            {
+                PythonBtn.IsEnabled = false;
+                ShowBrowserBtn.IsEnabled = true;
+            }
+        }
+
+        private void ShowBrowserBtn_Click(object sender, RoutedEventArgs e)
         {
             WebUIWindow window = new WebUIWindow();
 
@@ -102,26 +123,13 @@ namespace winforms_custom_web_server
             // 8080...
             // Run the \assets\custom_web_server\simple_web_server.py script to create a simple web server
             window.Show("http://localhost:8080/");
-            timer1.Enabled = true;
+
+            dispatcherTimer.Tick += new EventHandler(dispatcherTimer_Tick);
+            dispatcherTimer.Interval = new TimeSpan(0, 0, 0, 0, 500, 0);
+            dispatcherTimer.Start();
         }
 
-        private void PythonBtn_Click(object sender, EventArgs e)
-        {
-            System.Diagnostics.Process process = new System.Diagnostics.Process();
-            System.Diagnostics.ProcessStartInfo startInfo = new System.Diagnostics.ProcessStartInfo();
-            startInfo.WindowStyle = System.Diagnostics.ProcessWindowStyle.Hidden;
-            startInfo.FileName = "python.exe";
-            startInfo.Arguments = Path.GetFullPath("..\\..\\..\\..\\..\\assets\\custom_web_server\\simple_web_server.py");
-            startInfo.WorkingDirectory = Path.GetFullPath("..\\..\\..\\..\\..\\assets\\custom_web_server\\");
-            process.StartInfo = startInfo;
-            if (process.Start())
-            {
-                PythonBtn.Enabled = false;
-                ShowBrowserBtn.Enabled = true;
-            }
-        }
-
-        private void timer1_Tick(object sender, EventArgs e)
+        private void dispatcherTimer_Tick(object? sender, EventArgs e)
         {
             lock (_lockObj)
             {
@@ -133,7 +141,7 @@ namespace winforms_custom_web_server
             }
         }
 
-        private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
+        private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
         {
             if (WebUI.IsAppRunning())
             {
