@@ -4,6 +4,8 @@ namespace winforms_call_js_from_csharp
 {
     public partial class MainForm : Form
     {
+        WebUIWindow _window = new WebUIWindow();
+
         public MainForm()
         {
             InitializeComponent();
@@ -126,11 +128,10 @@ namespace winforms_call_js_from_csharp
                                       "  </body>" +
                                       "</html>";
 
-            WebUIWindow window = new WebUIWindow();
-            window.Bind("MyButton1");
-            window.Bind("MyButton2");
-            window.OnWebUIEvent += Window_OnWebUIEvent;
-            window.Show(my_html);
+            _window.Bind("MyButton1");
+            _window.Bind("MyButton2");
+            _window.OnWebUIEvent += Window_OnWebUIEvent;
+            _window.Show(my_html);
         }
     }
 }

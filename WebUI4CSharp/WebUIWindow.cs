@@ -1,4 +1,5 @@
-﻿using System.Runtime.InteropServices;
+﻿using System;
+using System.Runtime.InteropServices;
 using System.Xml.Linq;
 
 namespace WebUI4CSharp
@@ -28,9 +29,9 @@ namespace WebUI4CSharp
     public class WebUIWindow
     {
         private UIntPtr _id = 0;
-        private BindCallback? _bindCallback;
-        private InterfaceEventCallback? _interfaceEventCallback;
         private FileHandlerCallback? _fileHandlerCallback;
+        private static List<UIntPtr> _bindIdList = new List<UIntPtr>();
+        private Object _lockObj = new Object();
 
         /// <summary>
         /// Window number or Window ID.
@@ -112,8 +113,6 @@ namespace WebUI4CSharp
         {
             _id = WebUILibFunctions.webui_new_window();
             WebUI.AddWindow(this);
-            _bindCallback = DoBindEvent;
-            _interfaceEventCallback = DoInterfaceBindEvent;
             _fileHandlerCallback = DoFileHandlerEvent;
     }
 
@@ -131,12 +130,33 @@ namespace WebUI4CSharp
                 _id = WebUILibFunctions.webui_new_window();
             }
             WebUI.AddWindow(this);
-            _bindCallback = DoBindEvent;
-            _interfaceEventCallback = DoInterfaceBindEvent;
             _fileHandlerCallback = DoFileHandlerEvent;
         }
 
-        protected virtual void DoBindEvent(ref webui_event_t e)
+        private void AddBindID(UIntPtr id)
+        {
+            if (id > 0)
+            {
+                lock (_lockObj)
+                {
+                    _bindIdList.Add(id);
+                }
+            }
+        }
+
+        public Boolean HasBindID(UIntPtr id)
+        {
+            if (id > 0)
+            {
+                lock (_lockObj)
+                {
+                    return _bindIdList.IndexOf(id) >= 0;
+                }
+            }
+            return false;
+        }
+
+        public virtual void DoBindEvent(ref webui_event_t e)
         {
             EventHandler<BindEventArgs>? eventHandler = OnWebUIEvent;
             if (eventHandler != null)
@@ -147,18 +167,7 @@ namespace WebUI4CSharp
             }
         }
 
-        protected virtual void DoInterfaceBindEvent(UIntPtr window, UIntPtr event_type, IntPtr element, UIntPtr event_number, UIntPtr bind_id)
-        {
-            EventHandler<BindEventArgs>? eventHandler = OnWebUIEvent;
-            if (eventHandler != null)
-            {
-                WebUIEvent lEvent = new WebUIEvent(window, event_type, element, event_number, bind_id);
-                BindEventArgs lEventArgs = new BindEventArgs(lEvent);
-                eventHandler(this, lEventArgs);
-            }
-        }
-
-        protected virtual IntPtr DoFileHandlerEvent(IntPtr filename, out int length)
+        public virtual IntPtr DoFileHandlerEvent(IntPtr filename, out int length)
         {
             length = 0;
             EventHandler<FileHandlerEventArgs>? eventHandler = OnFileHandlerEvent;
@@ -218,7 +227,9 @@ namespace WebUI4CSharp
         {
             if (Initialized)
             {
-                return WebUILibFunctions.webui_bind(_id, element, func);
+                UIntPtr lBindID = WebUILibFunctions.webui_bind(_id, element, func);
+                AddBindID(lBindID);
+                return lBindID;
             }
             else
             {
@@ -237,27 +248,11 @@ namespace WebUI4CSharp
         /// </remarks>
         public UIntPtr Bind(string element)
         {
-            if (Initialized && (_bindCallback != null))
-            {
-                return WebUILibFunctions.webui_bind(_id, element, _bindCallback);
-            }
-            else
-            {
-                return 0;
-            }
-        }
-
-        /// <summary>
-        /// Bind a specific HTML element click event with a callback function. Empty element means all events.
-        /// </summary>
-        /// <param name="element">The HTML element ID.</param>
-        /// <param name="func">The callback as myFunc(Window, EventType, Element, EventNumber, BindID).</param>
-        /// <returns>Returns unique bind ID.</returns>
-        public UIntPtr Bind(string element, InterfaceEventCallback func)
-        {
             if (Initialized)
             {
-                return WebUILibFunctions.webui_interface_bind(_id, element, func);
+                UIntPtr lBindID = WebUILibFunctions.webui_bind(_id, element, WebUI.CommonBindCallback);
+                AddBindID(lBindID);
+                return lBindID;
             }
             else
             {
@@ -274,8 +269,9 @@ namespace WebUI4CSharp
         {
             if (Initialized)
             {
-                string element = string.Empty;
-                return WebUILibFunctions.webui_bind(_id, element, func);
+                UIntPtr lBindID = WebUILibFunctions.webui_bind(_id, string.Empty, func);
+                AddBindID(lBindID);
+                return lBindID;
             }
             else
             {
@@ -290,10 +286,11 @@ namespace WebUI4CSharp
         /// <returns>Returns a unique bind ID.</returns>
         public UIntPtr BindAllEvents()
         {
-            if (Initialized && (_bindCallback != null))
+            if (Initialized)
             {
-                string element = string.Empty;
-                return WebUILibFunctions.webui_bind(_id, element, _bindCallback);
+                UIntPtr lBindID = WebUILibFunctions.webui_bind(_id, string.Empty, WebUI.CommonBindCallback);
+                AddBindID(lBindID);
+                return lBindID;
             }
             else
             {

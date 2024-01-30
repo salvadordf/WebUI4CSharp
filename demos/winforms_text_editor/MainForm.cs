@@ -4,6 +4,7 @@ namespace winforms_text_editor
 {
     public partial class MainForm : Form
     {
+        WebUIWindow _window = new WebUIWindow();
         public MainForm()
         {
             InitializeComponent();
@@ -21,20 +22,19 @@ namespace winforms_text_editor
 
         private void ShowBrowserBtn_Click(object sender, EventArgs e)
         {
-            WebUIWindow window = new WebUIWindow();
-            window.OnWebUIEvent += Window_OnWebUIEvent;
+            _window.OnWebUIEvent += Window_OnWebUIEvent;
 
             // Set the root folder for the UI
             string absPath = Path.GetFullPath("..\\..\\..\\..\\..\\assets\\text_editor");
-            window.SetRootFolder(absPath);
+            _window.SetRootFolder(absPath);
 
             // Bind HTML elements with the specified ID to C functions
-            window.Bind("__close-btn");
+            _window.Bind("__close-btn");
 
             // Show the window, preferably in a chromium based browser
-            if (!window.ShowBrowser("index.html", webui_browsers.ChromiumBased))
+            if (!_window.ShowBrowser("index.html", webui_browsers.ChromiumBased))
             {
-                window.Show("index.html");
+                _window.Show("index.html");
             }
         }
     }

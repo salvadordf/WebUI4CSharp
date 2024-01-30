@@ -6,6 +6,7 @@ namespace winforms_custom_web_server
     {
         Object _lockObj = new Object();
         List<String> _LogStrings = new List<String>();
+        WebUIWindow _window = new WebUIWindow();
 
         public MainForm()
         {
@@ -82,26 +83,24 @@ namespace winforms_custom_web_server
 
         private void ShowBrowserBtn_Click(object sender, EventArgs e)
         {
-            WebUIWindow window = new WebUIWindow();
-
             // Bind all events
-            window.BindAllEvents();
+            _window.BindAllEvents();
 
             // Bind HTML elements with C functions
-            window.Bind("my_backend_func");
+            _window.Bind("my_backend_func");
 
             // Set web server network port WebUI should use
             // this mean `webui.js` will be available at:
             // http://localhost:8081/webui.js
-            window.SetPort(8081);
+            _window.SetPort(8081);
 
-            window.OnWebUIEvent += Window_OnWebUIEvent;
+            _window.OnWebUIEvent += Window_OnWebUIEvent;
 
             // Show a new window and show our custom web server
             // Assuming the custom web server is running on port
             // 8080...
             // Run the \assets\custom_web_server\simple_web_server.py script to create a simple web server
-            window.Show("http://localhost:8080/");
+            _window.Show("http://localhost:8080/");
             timer1.Enabled = true;
         }
 

@@ -6,6 +6,7 @@ namespace winforms_call_csharp_from_js
     {
         Object _lockObj = new Object();
         List<String> _LogStrings = new List<String>();
+        WebUIWindow _window = new WebUIWindow();
 
         public MainForm()
         {
@@ -160,14 +161,13 @@ namespace winforms_call_csharp_from_js
                     "  </body>" +
                     "</html>";
 
-            WebUIWindow window = new WebUIWindow();
-            window.Bind("MyID_One");
-            window.Bind("MyID_Two");
-            window.Bind("MyID_Three");
-            window.Bind("MyID_Four");
-            window.Bind("MyID_RawBinary");
-            window.OnWebUIEvent += Window_OnWebUIEvent;
-            window.Show(my_html);
+            _window.Bind("MyID_One");
+            _window.Bind("MyID_Two");
+            _window.Bind("MyID_Three");
+            _window.Bind("MyID_Four");
+            _window.Bind("MyID_RawBinary");
+            _window.OnWebUIEvent += Window_OnWebUIEvent;
+            _window.Show(my_html);
             timer1.Enabled = true;
         }
 

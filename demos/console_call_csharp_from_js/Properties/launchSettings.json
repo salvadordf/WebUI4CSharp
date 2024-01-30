@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "console_call_csharp_from_js": {
+      "commandName": "Project",
+      "nativeDebugging": true
+    }
+  }
+}

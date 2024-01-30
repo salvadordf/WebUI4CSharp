@@ -196,5 +196,14 @@ namespace WebUI4CSharp
                 return rsltBuffer;
             }
         }
+
+        public static void CommonBindCallback(ref webui_event_t e)
+        {
+            WebUIWindow? lWindow = SearchWindow(e.window);
+            if ((lWindow != null) && lWindow.HasBindID(e.bind_id))
+            {
+                lWindow.DoBindEvent(ref e);
+            }
+        }
     }
 }

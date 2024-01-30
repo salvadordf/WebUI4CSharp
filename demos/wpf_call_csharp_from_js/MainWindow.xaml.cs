@@ -12,6 +12,7 @@ namespace wpf_call_csharp_from_js
         Object _lockObj = new Object();
         List<String> _LogStrings = new List<String>();
         System.Windows.Threading.DispatcherTimer dispatcherTimer = new System.Windows.Threading.DispatcherTimer();
+        WebUIWindow _window = new WebUIWindow();
 
         public MainWindow()
         {
@@ -162,14 +163,13 @@ namespace wpf_call_csharp_from_js
                     "  </body>" +
                     "</html>";
 
-            WebUIWindow window = new WebUIWindow();
-            window.Bind("MyID_One");
-            window.Bind("MyID_Two");
-            window.Bind("MyID_Three");
-            window.Bind("MyID_Four");
-            window.Bind("MyID_RawBinary");
-            window.OnWebUIEvent += new EventHandler<BindEventArgs>(Window_OnWebUIEvent);
-            window.Show(my_html);
+            _window.Bind("MyID_One");
+            _window.Bind("MyID_Two");
+            _window.Bind("MyID_Three");
+            _window.Bind("MyID_Four");
+            _window.Bind("MyID_RawBinary");
+            _window.OnWebUIEvent += new EventHandler<BindEventArgs>(Window_OnWebUIEvent);
+            _window.Show(my_html);
             
             dispatcherTimer.Tick += new EventHandler(dispatcherTimer_Tick);
             dispatcherTimer.Interval = new TimeSpan(0, 0, 0, 0, 500, 0);
