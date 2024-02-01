@@ -133,6 +133,9 @@ namespace WebUI4CSharp
             _fileHandlerCallback = DoFileHandlerEvent;
         }
 
+        /// <summary>
+        /// Add the id to the list of Bind IDs handled by this window.
+        /// </summary>
         private void AddBindID(UIntPtr id)
         {
             if (id > 0)
@@ -144,6 +147,9 @@ namespace WebUI4CSharp
             }
         }
 
+        /// <summary>
+        /// Returns true if the bind id belongs to this window.
+        /// </summary>
         public Boolean HasBindID(UIntPtr id)
         {
             if (id > 0)
