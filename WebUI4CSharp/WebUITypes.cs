@@ -45,10 +45,13 @@ namespace WebUI4CSharp
         public UIntPtr bind_id;      // Bind ID
     }
 
+    [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
     public delegate void BindCallback(ref webui_event_t e);
 
+    [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
     public delegate IntPtr FileHandlerCallback(IntPtr filename, out int length);
 
+    [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
     public delegate void InterfaceEventCallback(UIntPtr window, UIntPtr event_type, IntPtr element, UIntPtr event_number, UIntPtr bind_id);
 
 }

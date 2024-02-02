@@ -5,8 +5,13 @@ namespace WebUI4CSharp
     public static class WebUILibFunctions
     {
 #if WEBUIDEMO
-        private const string _LibName = "..\\..\\..\\..\\..\\WebUI_binaries\\webui-2";
-        //private const string _LibName = "..\\..\\..\\..\\..\\WebUI_binaries\\webui-2_debug";
+        // The demos define the WEBUIDEMO conditional for convenience
+        // Enable the right library depending on the selected platform target in each demo
+        private const string _LibName = "..\\..\\..\\..\\..\\WebUI_binaries\\64bits\\webui-2.dll";  // Any CPU
+        //private const string _LibName = "..\\..\\..\\..\\..\\..\\WebUI_binaries\\64bits\\webui-2.dll"; // x64 
+        //private const string _LibName = "..\\..\\..\\..\\..\\..\\WebUI_binaries\\64bits\\webui-2_debug.dll"; // x64 (verbose logging) 
+        //private const string _LibName = "..\\..\\..\\..\\..\\..\\WebUI_binaries\\32bits\\webui-2.dll"; // x32 
+        //private const string _LibName = "..\\..\\..\\..\\..\\..\\WebUI_binaries\\32bits\\webui-2_debug.dll"; // x32 (verbose logging)
 #else
         private const string _LibName = "webui-2";    
 #endif
@@ -18,7 +23,7 @@ namespace WebUI4CSharp
          *
          * @example size_t myWindow = webui_new_window();
          */
-        [DllImport(_LibName)]
+        [DllImport(_LibName, CallingConvention=CallingConvention.Cdecl)]
         public static extern UIntPtr webui_new_window();
 
         /**
@@ -30,7 +35,7 @@ namespace WebUI4CSharp
          *
          * @example size_t myWindow = webui_new_window_id(123);
          */
-        [DllImport(_LibName)]
+        [DllImport(_LibName, CallingConvention = CallingConvention.Cdecl)]
         public static extern UIntPtr webui_new_window_id(UIntPtr window_number);
 
         /**
@@ -41,7 +46,7 @@ namespace WebUI4CSharp
          *
          * @example size_t myWindowNumber = webui_get_new_window_id();
          */
-        [DllImport(_LibName)]
+        [DllImport(_LibName, CallingConvention = CallingConvention.Cdecl)]
         public static extern UIntPtr webui_get_new_window_id();
 
         /**
@@ -56,7 +61,7 @@ namespace WebUI4CSharp
          *
          * @example webui_bind(myWindow, "myID", myFunction);
          */
-        [DllImport(_LibName)]
+        [DllImport(_LibName, CallingConvention = CallingConvention.Cdecl)]
         public static extern UIntPtr webui_bind(UIntPtr window, [MarshalAs(UnmanagedType.LPUTF8Str)] string element, BindCallback func);
 
         /**
@@ -71,7 +76,7 @@ namespace WebUI4CSharp
          * @example webui_show(myWindow, "<html>...</html>"); | webui_show(myWindow,
          * "index.html"); | webui_show(myWindow, "http://...");
          */
-        [DllImport(_LibName)]
+        [DllImport(_LibName, CallingConvention = CallingConvention.Cdecl)]
         [return: MarshalAs(UnmanagedType.I1)]
         public static extern bool webui_show(UIntPtr window, [MarshalAs(UnmanagedType.LPUTF8Str)] string content);
 
@@ -87,7 +92,7 @@ namespace WebUI4CSharp
          * @example webui_show_browser(myWindow, "<html>...</html>", Chrome); |
          * webui_show(myWindow, "index.html", Firefox);
          */
-        [DllImport(_LibName)]
+        [DllImport(_LibName, CallingConvention = CallingConvention.Cdecl)]
         [return: MarshalAs(UnmanagedType.I1)]
         public static extern bool webui_show_browser(UIntPtr window, [MarshalAs(UnmanagedType.LPUTF8Str)] string content, UIntPtr browser);
 
@@ -99,7 +104,7 @@ namespace WebUI4CSharp
          *
          * @example webui_set_kiosk(myWindow, true);
          */
-        [DllImport(_LibName)]
+        [DllImport(_LibName, CallingConvention = CallingConvention.Cdecl)]
         public static extern void webui_set_kiosk(UIntPtr window, [MarshalAs(UnmanagedType.I1)] bool status);
 
         /**
@@ -107,7 +112,7 @@ namespace WebUI4CSharp
          *
          * @example webui_wait();
          */
-        [DllImport(_LibName)]
+        [DllImport(_LibName, CallingConvention = CallingConvention.Cdecl)]
         public static extern void webui_wait();
 
         /**
@@ -117,7 +122,7 @@ namespace WebUI4CSharp
          *
          * @example webui_close(myWindow);
          */
-        [DllImport(_LibName)]
+        [DllImport(_LibName, CallingConvention = CallingConvention.Cdecl)]
         public static extern void webui_close(UIntPtr window);
 
         /**
@@ -127,7 +132,7 @@ namespace WebUI4CSharp
          *
          * @example webui_destroy(myWindow);
          */
-        [DllImport(_LibName)]
+        [DllImport(_LibName, CallingConvention = CallingConvention.Cdecl)]
         public static extern void webui_destroy(UIntPtr window);
 
         /**
@@ -135,7 +140,7 @@ namespace WebUI4CSharp
          *
          * @example webui_exit();
          */
-        [DllImport(_LibName)]
+        [DllImport(_LibName, CallingConvention = CallingConvention.Cdecl)]
         public static extern void webui_exit();
 
         /**
@@ -146,7 +151,7 @@ namespace WebUI4CSharp
          *
          * @example webui_set_root_folder(myWindow, "/home/Foo/Bar/");
          */
-        [DllImport(_LibName)]
+        [DllImport(_LibName, CallingConvention = CallingConvention.Cdecl)]
         [return: MarshalAs(UnmanagedType.I1)]
         public static extern bool webui_set_root_folder(UIntPtr window, [MarshalAs(UnmanagedType.LPUTF8Str)] string path);
 
@@ -158,7 +163,7 @@ namespace WebUI4CSharp
          *
          * @example webui_set_default_root_folder("/home/Foo/Bar/");
          */
-        [DllImport(_LibName)]
+        [DllImport(_LibName, CallingConvention = CallingConvention.Cdecl)]
         [return: MarshalAs(UnmanagedType.I1)]
         public static extern bool webui_set_default_root_folder([MarshalAs(UnmanagedType.LPUTF8Str)] string path);
 
@@ -173,7 +178,7 @@ namespace WebUI4CSharp
          *
          * @example webui_set_file_handler(myWindow, myHandlerFunction);
          */
-        [DllImport(_LibName)]
+        [DllImport(_LibName, CallingConvention = CallingConvention.Cdecl)]
         public static extern void webui_set_file_handler(UIntPtr window, FileHandlerCallback handler);
 
         /**
@@ -183,7 +188,7 @@ namespace WebUI4CSharp
          *
          * @example webui_is_shown(myWindow);
          */
-        [DllImport(_LibName)]
+        [DllImport(_LibName, CallingConvention = CallingConvention.Cdecl)]
         [return: MarshalAs(UnmanagedType.I1)]
         public static extern bool webui_is_shown(UIntPtr window);
 
@@ -194,7 +199,7 @@ namespace WebUI4CSharp
          *
          * @example webui_set_timeout(30);
          */
-        [DllImport(_LibName)]
+        [DllImport(_LibName, CallingConvention = CallingConvention.Cdecl)]
         public static extern void webui_set_timeout(UIntPtr second);
 
         /**
@@ -206,7 +211,7 @@ namespace WebUI4CSharp
          *
          * @example webui_set_icon(myWindow, "<svg>...</svg>", "image/svg+xml");
          */
-        [DllImport(_LibName)]
+        [DllImport(_LibName, CallingConvention = CallingConvention.Cdecl)]
         public static extern void webui_set_icon(UIntPtr window, [MarshalAs(UnmanagedType.LPUTF8Str)] string icon, [MarshalAs(UnmanagedType.LPUTF8Str)] string icon_type);
 
         /**
@@ -217,7 +222,7 @@ namespace WebUI4CSharp
          *
          * @example webui_encode("Hello");
          */
-        [DllImport(_LibName)]
+        [DllImport(_LibName, CallingConvention = CallingConvention.Cdecl)]
         [return: MarshalAs(UnmanagedType.LPUTF8Str)]
         public static extern string webui_encode([MarshalAs(UnmanagedType.LPUTF8Str)] string str);
 
@@ -229,7 +234,7 @@ namespace WebUI4CSharp
          *
          * @example webui_decode("SGVsbG8=");
          */
-        [DllImport(_LibName)]
+        [DllImport(_LibName, CallingConvention = CallingConvention.Cdecl)]
         [return: MarshalAs(UnmanagedType.LPUTF8Str)]
         public static extern string webui_decode([MarshalAs(UnmanagedType.LPUTF8Str)] string str);
 
@@ -240,7 +245,7 @@ namespace WebUI4CSharp
          *
          * @example webui_free(myBuffer);
          */
-        [DllImport(_LibName)]
+        [DllImport(_LibName, CallingConvention = CallingConvention.Cdecl)]
         public static extern void webui_free(IntPtr ptr);
 
         /**
@@ -251,7 +256,7 @@ namespace WebUI4CSharp
          *
          * @example char* myBuffer = (char*)webui_malloc(1024);
          */
-        [DllImport(_LibName)]
+        [DllImport(_LibName, CallingConvention = CallingConvention.Cdecl)]
         public static extern IntPtr webui_malloc(UIntPtr size);
 
         /**
@@ -265,7 +270,7 @@ namespace WebUI4CSharp
          *
          * @example webui_send_raw(myWindow, "myJavascriptFunction", myBuffer, 64);
          */
-        [DllImport(_LibName)]
+        [DllImport(_LibName, CallingConvention = CallingConvention.Cdecl)]
         public static extern void webui_send_raw(UIntPtr window, [MarshalAs(UnmanagedType.LPUTF8Str)] string function, UIntPtr raw, UIntPtr size);
 
         /**
@@ -276,7 +281,7 @@ namespace WebUI4CSharp
          *
          * @example webui_set_hide(myWindow, True);
          */
-        [DllImport(_LibName)]
+        [DllImport(_LibName, CallingConvention = CallingConvention.Cdecl)]
         public static extern void webui_set_hide(UIntPtr window, [MarshalAs(UnmanagedType.I1)] bool status);
 
         /**
@@ -288,7 +293,7 @@ namespace WebUI4CSharp
          *
          * @example webui_set_size(myWindow, 800, 600);
          */
-        [DllImport(_LibName)]
+        [DllImport(_LibName, CallingConvention = CallingConvention.Cdecl)]
         public static extern void webui_set_size(UIntPtr window, uint width, uint height);
 
         /**
@@ -300,7 +305,7 @@ namespace WebUI4CSharp
          *
          * @example webui_set_position(myWindow, 100, 100);
          */
-        [DllImport(_LibName)]
+        [DllImport(_LibName, CallingConvention = CallingConvention.Cdecl)]
         public static extern void webui_set_position(UIntPtr window, uint x, uint y);
 
         /**
@@ -314,7 +319,7 @@ namespace WebUI4CSharp
          * @example webui_set_profile(myWindow, "Bar", "/Home/Foo/Bar"); |
          * webui_set_profile(myWindow, "", "");
          */
-        [DllImport(_LibName)]
+        [DllImport(_LibName, CallingConvention = CallingConvention.Cdecl)]
         public static extern void webui_set_profile(UIntPtr window, [MarshalAs(UnmanagedType.LPUTF8Str)] string name, [MarshalAs(UnmanagedType.LPUTF8Str)] string path);
 
         /**
@@ -325,7 +330,7 @@ namespace WebUI4CSharp
          *
          * @example webui_set_proxy(myWindow, "http://127.0.0.1:8888"); 
          */
-        [DllImport(_LibName)]
+        [DllImport(_LibName, CallingConvention = CallingConvention.Cdecl)]
         public static extern void webui_set_proxy(UIntPtr window, [MarshalAs(UnmanagedType.LPUTF8Str)] string proxy_server);
 
         /**
@@ -337,7 +342,7 @@ namespace WebUI4CSharp
          *
          * @example const char* url = webui_get_url(myWindow);
          */
-        [DllImport(_LibName)]
+        [DllImport(_LibName, CallingConvention = CallingConvention.Cdecl)]
         [return: MarshalAs(UnmanagedType.LPUTF8Str)]
         public static extern string webui_get_url(UIntPtr window);
 
@@ -349,7 +354,7 @@ namespace WebUI4CSharp
          *
          * @example webui_set_public(myWindow, true);
          */
-        [DllImport(_LibName)]
+        [DllImport(_LibName, CallingConvention = CallingConvention.Cdecl)]
         public static extern void webui_set_public(UIntPtr window, [MarshalAs(UnmanagedType.I1)] bool status);
 
         /**
@@ -360,7 +365,7 @@ namespace WebUI4CSharp
          *
          * @example webui_navigate(myWindow, "http://domain.com");
          */
-        [DllImport(_LibName)]
+        [DllImport(_LibName, CallingConvention = CallingConvention.Cdecl)]
         public static extern void webui_navigate(UIntPtr window, [MarshalAs(UnmanagedType.LPUTF8Str)] string url);
 
         /**
@@ -370,7 +375,7 @@ namespace WebUI4CSharp
          * webui_wait();
          * webui_clean();
          */
-        [DllImport(_LibName)]
+        [DllImport(_LibName, CallingConvention = CallingConvention.Cdecl)]
         public static extern void webui_clean();
 
         /**
@@ -382,7 +387,7 @@ namespace WebUI4CSharp
          * webui_delete_all_profiles();
          * webui_clean();
          */
-        [DllImport(_LibName)]
+        [DllImport(_LibName, CallingConvention = CallingConvention.Cdecl)]
         public static extern void webui_delete_all_profiles();
 
         /**
@@ -398,7 +403,7 @@ namespace WebUI4CSharp
          * @note This can break functionality of other windows if using the same
          * web-browser.
          */
-        [DllImport(_LibName)]
+        [DllImport(_LibName, CallingConvention = CallingConvention.Cdecl)]
         public static extern void webui_delete_profile(UIntPtr window);
 
         /**
@@ -411,7 +416,7 @@ namespace WebUI4CSharp
          *
          * @example size_t id = webui_get_parent_process_id(myWindow);
          */
-        [DllImport(_LibName)]
+        [DllImport(_LibName, CallingConvention = CallingConvention.Cdecl)]
         public static extern UIntPtr webui_get_parent_process_id(UIntPtr window);
 
         /**
@@ -423,7 +428,7 @@ namespace WebUI4CSharp
          *
          * @example size_t id = webui_get_child_process_id(myWindow);
          */
-        [DllImport(_LibName)]
+        [DllImport(_LibName, CallingConvention = CallingConvention.Cdecl)]
         public static extern UIntPtr webui_get_child_process_id(UIntPtr window);
 
         /**
@@ -438,7 +443,7 @@ namespace WebUI4CSharp
          *
          * @example bool ret = webui_set_port(myWindow, 8080);
          */
-        [DllImport(_LibName)]
+        [DllImport(_LibName, CallingConvention = CallingConvention.Cdecl)]
         [return: MarshalAs(UnmanagedType.I1)]
         public static extern bool webui_set_port(UIntPtr window, UIntPtr port);
 
@@ -455,7 +460,7 @@ namespace WebUI4CSharp
          * @example bool ret = webui_set_tls_certificate("-----BEGIN
          * CERTIFICATE-----\n...", "-----BEGIN PRIVATE KEY-----\n...");
          */
-        [DllImport(_LibName)]
+        [DllImport(_LibName, CallingConvention = CallingConvention.Cdecl)]
         [return: MarshalAs(UnmanagedType.I1)]
         public static extern bool webui_set_tls_certificate([MarshalAs(UnmanagedType.LPUTF8Str)] string certificate_pem, [MarshalAs(UnmanagedType.LPUTF8Str)] string private_key_pem);
 
@@ -467,7 +472,7 @@ namespace WebUI4CSharp
          *
          * @example webui_run(myWindow, "alert('Hello');");
          */
-        [DllImport(_LibName)]
+        [DllImport(_LibName, CallingConvention = CallingConvention.Cdecl)]
         public static extern void webui_run(UIntPtr window, [MarshalAs(UnmanagedType.LPUTF8Str)] string script);
 
         /**
@@ -484,7 +489,7 @@ namespace WebUI4CSharp
          *
          * @example bool err = webui_script(myWindow, "return 4 + 6;", 0, myBuffer, myBufferSize);
          */
-        [DllImport(_LibName)]
+        [DllImport(_LibName, CallingConvention = CallingConvention.Cdecl)]
         [return: MarshalAs(UnmanagedType.I1)]
         public static extern bool webui_script(UIntPtr window, [MarshalAs(UnmanagedType.LPUTF8Str)] string script, UIntPtr timeout, IntPtr buffer, UIntPtr buffer_length);
 
@@ -496,7 +501,7 @@ namespace WebUI4CSharp
          *
          * @example webui_set_runtime(myWindow, Deno);
          */
-        [DllImport(_LibName)]
+        [DllImport(_LibName, CallingConvention = CallingConvention.Cdecl)]
         public static extern void webui_set_runtime(UIntPtr window, UIntPtr runtime);
 
         /**
@@ -509,7 +514,7 @@ namespace WebUI4CSharp
           *
           * @example long long int myNum = webui_get_int_at(e, 0);
           */
-        [DllImport(_LibName)]
+        [DllImport(_LibName, CallingConvention = CallingConvention.Cdecl)]
         public static extern long webui_get_int_at(ref webui_event_t e, UIntPtr index);
 
         /**
@@ -521,7 +526,7 @@ namespace WebUI4CSharp
          *
          * @example long long int myNum = webui_get_int(e);
          */
-        [DllImport(_LibName)]
+        [DllImport(_LibName, CallingConvention = CallingConvention.Cdecl)]
         public static extern long webui_get_int(ref webui_event_t e);
 
         /**
@@ -534,7 +539,7 @@ namespace WebUI4CSharp
          *
          * @example const char* myStr = webui_get_string_at(e, 0);
          */
-        [DllImport(_LibName)]
+        [DllImport(_LibName, CallingConvention = CallingConvention.Cdecl)]
         public static extern IntPtr webui_get_string_at(ref webui_event_t e, UIntPtr index);
 
         /**
@@ -546,7 +551,7 @@ namespace WebUI4CSharp
          *
          * @example const char* myStr = webui_get_string(e);
          */
-        [DllImport(_LibName)]
+        [DllImport(_LibName, CallingConvention = CallingConvention.Cdecl)]
         public static extern IntPtr webui_get_string(ref webui_event_t e);
 
         /**
@@ -559,7 +564,7 @@ namespace WebUI4CSharp
          *
          * @example bool myBool = webui_get_bool_at(e, 0);
          */
-        [DllImport(_LibName)]
+        [DllImport(_LibName, CallingConvention = CallingConvention.Cdecl)]
         [return: MarshalAs(UnmanagedType.I1)]
         public static extern bool webui_get_bool_at(ref webui_event_t e, UIntPtr index);
 
@@ -572,7 +577,7 @@ namespace WebUI4CSharp
          *
          * @example bool myBool = webui_get_bool(e);
          */
-        [DllImport(_LibName)]
+        [DllImport(_LibName, CallingConvention = CallingConvention.Cdecl)]
         [return: MarshalAs(UnmanagedType.I1)]
         public static extern bool webui_get_bool(ref webui_event_t e);
 
@@ -586,7 +591,7 @@ namespace WebUI4CSharp
          *
          * @example size_t argLen = webui_get_size_at(e, 0);
          */
-        [DllImport(_LibName)]
+        [DllImport(_LibName, CallingConvention = CallingConvention.Cdecl)]
         public static extern UIntPtr webui_get_size_at(ref webui_event_t e, UIntPtr index);
 
         /**
@@ -598,7 +603,7 @@ namespace WebUI4CSharp
          *
          * @example size_t argLen = webui_get_size(e);
          */
-        [DllImport(_LibName)]
+        [DllImport(_LibName, CallingConvention = CallingConvention.Cdecl)]
         public static extern UIntPtr webui_get_size(ref webui_event_t e);
 
         /**
@@ -609,7 +614,7 @@ namespace WebUI4CSharp
          *
          * @example webui_return_int(e, 123);
          */
-        [DllImport(_LibName)]
+        [DllImport(_LibName, CallingConvention = CallingConvention.Cdecl)]
         public static extern void webui_return_int(ref webui_event_t e, long n);
 
         /**
@@ -620,7 +625,7 @@ namespace WebUI4CSharp
          *
          * @example webui_return_string(e, "Response...");
          */
-        [DllImport(_LibName)]
+        [DllImport(_LibName, CallingConvention = CallingConvention.Cdecl)]
         public static extern void webui_return_string(ref webui_event_t e, [MarshalAs(UnmanagedType.LPUTF8Str)] string s);
 
         /**
@@ -642,7 +647,7 @@ namespace WebUI4CSharp
          *
          * @example webui_return_bool(e, true);
          */
-        [DllImport(_LibName)]
+        [DllImport(_LibName, CallingConvention = CallingConvention.Cdecl)]
         public static extern void webui_return_bool(ref webui_event_t e, [MarshalAs(UnmanagedType.I1)] bool b);
 
         /**
@@ -656,7 +661,7 @@ namespace WebUI4CSharp
          *
          * @example size_t id = webui_interface_bind(myWindow, "myID", myCallback);
          */
-        [DllImport(_LibName)]
+        [DllImport(_LibName, CallingConvention = CallingConvention.Cdecl)]
         public static extern UIntPtr webui_interface_bind(UIntPtr window, [MarshalAs(UnmanagedType.LPUTF8Str)] string element, InterfaceEventCallback func);
 
         /**
@@ -668,7 +673,7 @@ namespace WebUI4CSharp
          *
          * @example webui_interface_set_response(myWindow, e->event_number, "Response...");
          */
-        [DllImport(_LibName)]
+        [DllImport(_LibName, CallingConvention = CallingConvention.Cdecl)]
         public static extern void webui_interface_set_response(UIntPtr window, UIntPtr event_number, [MarshalAs(UnmanagedType.LPUTF8Str)] string response);
 
         /**
@@ -690,7 +695,7 @@ namespace WebUI4CSharp
          *
          * @example bool status = webui_interface_is_app_running();
          */
-        [DllImport(_LibName)]
+        [DllImport(_LibName, CallingConvention = CallingConvention.Cdecl)]
         [return: MarshalAs(UnmanagedType.I1)]
         public static extern bool webui_interface_is_app_running();
 
@@ -703,7 +708,7 @@ namespace WebUI4CSharp
          *
          * @example size_t id = webui_interface_get_window_id(myWindow);
          */
-        [DllImport(_LibName)]
+        [DllImport(_LibName, CallingConvention = CallingConvention.Cdecl)]
         public static extern UIntPtr webui_interface_get_window_id(UIntPtr window);
 
         /**
@@ -717,7 +722,7 @@ namespace WebUI4CSharp
          *
          * @example const char* myStr = webui_interface_get_string_at(myWindow, e->event_number, 0);
          */
-        [DllImport(_LibName)]
+        [DllImport(_LibName, CallingConvention = CallingConvention.Cdecl)]
         public static extern IntPtr webui_interface_get_string_at(UIntPtr window, UIntPtr event_number, UIntPtr index);
 
         /**
@@ -731,7 +736,7 @@ namespace WebUI4CSharp
          *
          * @example long long int myNum = webui_interface_get_int_at(myWindow, e->event_number, 0);
          */
-        [DllImport(_LibName)]
+        [DllImport(_LibName, CallingConvention = CallingConvention.Cdecl)]
         public static extern long webui_interface_get_int_at(UIntPtr window, UIntPtr event_number, UIntPtr index);
 
         /**
@@ -745,7 +750,7 @@ namespace WebUI4CSharp
          *
          * @example bool myBool = webui_interface_get_bool_at(myWindow, e->event_number, 0);
          */
-        [DllImport(_LibName)]
+        [DllImport(_LibName, CallingConvention = CallingConvention.Cdecl)]
         [return: MarshalAs(UnmanagedType.I1)]
         public static extern bool webui_interface_get_bool_at(UIntPtr window, UIntPtr event_number, UIntPtr index);
 
@@ -760,7 +765,7 @@ namespace WebUI4CSharp
          *
          * @example size_t argLen = webui_interface_get_size_at(myWindow, e->event_number, 0);
          */
-        [DllImport(_LibName)]
+        [DllImport(_LibName, CallingConvention = CallingConvention.Cdecl)]
         public static extern UIntPtr webui_interface_get_size_at(UIntPtr window, UIntPtr event_number, UIntPtr index);
     }
 }
