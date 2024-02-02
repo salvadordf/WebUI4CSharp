@@ -1,51 +1,11 @@
-﻿using System.Runtime.InteropServices;
-using System.IO;
+﻿using System.IO;
+using System.Runtime.InteropServices;
 
 namespace WebUI4CSharp
 {
     public class WebUIEvent
     {
         private webui_event_t _event;
-
-        /// <summary>
-        /// Returns true if the Window was created successfully.
-        /// </summary>
-        public bool Initialized { get { return _event.window > 0; } }
-
-        /// <summary>
-        /// WebUI event struct.
-        /// </summary>
-        public webui_event_t Event { get { return _event; } }
-
-        /// <summary>
-        /// Window wrapper for the Window object of this event.
-        /// </summary>
-        public WebUIWindow? Window { get { return WebUI.SearchWindow(_event.window); } } 
-
-        /// <summary>
-        /// The window object number or ID.
-        /// </summary>
-        public UIntPtr WindowID { get { return _event.window; } }
-
-        /// <summary>
-        /// Event type.
-        /// </summary>
-        public webui_events EventType { get { return (webui_events)_event.event_type; } }
-
-        /// <summary>
-        /// HTML element ID.
-        /// </summary>
-        public string? Element { get { return WebUI.WebUIStringToCSharpString(_event.element); } }
-
-        /// <summary>
-        /// Event number or Event ID.
-        /// </summary>
-        public UIntPtr EventID { get { return _event.event_number; } }
-
-        /// <summary>
-        /// Bind ID.
-        /// </summary>
-        public UIntPtr BindID { get { return _event.bind_id; } }
 
         public WebUIEvent(webui_event_t e)
         {
@@ -64,6 +24,46 @@ namespace WebUI4CSharp
             _event.event_number = event_number;
             _event.bind_id = bind_id;
         }
+
+        /// <summary>
+        /// Returns true if the Window was created successfully.
+        /// </summary>
+        public bool Initialized { get => _event.window > 0; }
+
+        /// <summary>
+        /// WebUI event struct.
+        /// </summary>
+        public webui_event_t Event { get => _event; }
+
+        /// <summary>
+        /// Window wrapper for the Window object of this event.
+        /// </summary>
+        public WebUIWindow? Window { get => WebUI.SearchWindow(_event.window); } 
+
+        /// <summary>
+        /// The window object number or ID.
+        /// </summary>
+        public UIntPtr WindowID { get => _event.window; }
+
+        /// <summary>
+        /// Event type.
+        /// </summary>
+        public webui_events EventType { get => (webui_events)_event.event_type; }
+
+        /// <summary>
+        /// HTML element ID.
+        /// </summary>
+        public string? Element { get => WebUI.WebUIStringToCSharpString(_event.element); }
+
+        /// <summary>
+        /// Event number or Event ID.
+        /// </summary>
+        public UIntPtr EventID { get => _event.event_number; }
+
+        /// <summary>
+        /// Bind ID.
+        /// </summary>
+        public UIntPtr BindID { get => _event.bind_id; }
 
         /// <summary>
         /// Get the first argument as integer.
@@ -140,9 +140,9 @@ namespace WebUI4CSharp
             if (Initialized)
             {
                 IntPtr buffer = WebUILibFunctions.webui_get_string(ref _event);
-                UIntPtr buffersize = WebUILibFunctions.webui_get_size(ref _event);
-                MemoryStream stream = new MemoryStream((int)buffersize);
-                for (UIntPtr i = 0; i < buffersize; i++)
+                UIntPtr bufferSize = WebUILibFunctions.webui_get_size(ref _event);
+                MemoryStream stream = new MemoryStream((int)bufferSize);
+                for (UIntPtr i = 0; i < bufferSize; i++)
                 {
                     stream.WriteByte(Marshal.ReadByte(buffer, (int)i));
                 }
@@ -165,9 +165,9 @@ namespace WebUI4CSharp
             if (Initialized)
             {
                 IntPtr buffer = WebUILibFunctions.webui_get_string_at(ref _event, index);
-                UIntPtr buffersize = WebUILibFunctions.webui_get_size_at(ref _event, index);
-                MemoryStream stream = new MemoryStream((int)buffersize);
-                for (UIntPtr i = 0; i < buffersize; i++)
+                UIntPtr bufferSize = WebUILibFunctions.webui_get_size_at(ref _event, index);
+                MemoryStream stream = new MemoryStream((int)bufferSize);
+                for (UIntPtr i = 0; i < bufferSize; i++)
                 {
                     stream.WriteByte(Marshal.ReadByte(buffer, (int)i));
                 }

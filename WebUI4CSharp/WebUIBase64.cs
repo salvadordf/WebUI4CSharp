@@ -1,6 +1,4 @@
-﻿using System.Runtime.InteropServices;
-
-namespace WebUI4CSharp
+﻿namespace WebUI4CSharp
 {
     public static class WebUIBase64
     {

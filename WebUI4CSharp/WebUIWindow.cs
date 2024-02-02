@@ -34,6 +34,33 @@ namespace WebUI4CSharp
         private Object _lockObj = new Object();
 
         /// <summary>
+        /// Create a new WebUI window object.
+        /// </summary>
+        public WebUIWindow()
+        {
+            _id = WebUILibFunctions.webui_new_window();
+            WebUI.AddWindow(this);
+            _fileHandlerCallback = DoFileHandlerEvent;
+        }
+
+        /// <summary>
+        /// Create a new webui window object using a specified window number.
+        /// </summary>
+        public WebUIWindow(UIntPtr windowId)
+        {
+            if ((windowId > 0) && (windowId < WebUI.WEBUI_MAX_IDS))
+            {
+                _id = WebUILibFunctions.webui_new_window_id(windowId);
+            }
+            else
+            {
+                _id = WebUILibFunctions.webui_new_window();
+            }
+            WebUI.AddWindow(this);
+            _fileHandlerCallback = DoFileHandlerEvent;
+        }
+
+        /// <summary>
         /// Window number or Window ID.
         /// </summary>
         public UIntPtr Id { get => _id; }
@@ -41,7 +68,7 @@ namespace WebUI4CSharp
         /// <summary>
         /// Returns true if the Window was created successfully.
         /// </summary>
-        public bool Initialized { get { return Id > 0; } }
+        public bool Initialized { get => Id > 0; }
 
         /// <summary>
         /// Get the full current URL.
@@ -105,33 +132,6 @@ namespace WebUI4CSharp
         /// Event triggered when using a custom file handler.
         /// </summary>
         public event EventHandler<FileHandlerEventArgs>? OnFileHandlerEvent;
-
-        /// <summary>
-        /// Create a new WebUI window object.
-        /// </summary>
-        public WebUIWindow()
-        {
-            _id = WebUILibFunctions.webui_new_window();
-            WebUI.AddWindow(this);
-            _fileHandlerCallback = DoFileHandlerEvent;
-    }
-
-        /// <summary>
-        /// Create a new webui window object using a specified window number.
-        /// </summary>
-        public WebUIWindow(UIntPtr windowId)
-        {
-            if ((windowId > 0) && (windowId < WebUI.WEBUI_MAX_IDS))
-            {
-                _id = WebUILibFunctions.webui_new_window_id(windowId);
-            }
-            else
-            {
-                _id = WebUILibFunctions.webui_new_window();
-            }
-            WebUI.AddWindow(this);
-            _fileHandlerCallback = DoFileHandlerEvent;
-        }
 
         /// <summary>
         /// Add the id to the list of Bind IDs handled by this window.
