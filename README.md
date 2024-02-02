@@ -4,7 +4,7 @@ WebUI4CSharp is a [WebUI](https://github.com/webui-dev/webui) wrapper, which all
 WebUI allows you to link your console, WinForms or WPF application with a web app that runs in a web browser installed in the operating system. Originally WebUI was created to have all the UI code in the web browser and the rest of the code in your hidden C# application.
 However, you can also decide to have a visible C# application communicating with a HTML5 app. You can get web browser events in your desktop application, call C# functions from JS, call JS functions from C# code, execute JavaScript, etc.
 
-WebUI4CSharp can be used in 64 bit console, WinForms or WPF applications for Windows. 
+WebUI4CSharp can be used console, WinForms or WPF applications for Windows. 
 
 WebUI doesn't embed a web browser in your application. It's used as a bridge between a desktop application and the web browser running an HTML5 app. 
 
