@@ -3,8 +3,14 @@ using System.Text;
 
 namespace WebUI4CSharp
 {
+    /// <summary>
+    /// Main WebUI class used to handle global properties, methods and the Window list.
+    /// </summary>
     public static class WebUI
     {
+        /// <summary>
+        /// WebUI library version.
+        /// </summary>
         public const string WEBUI_VERSION = "2.4.2";
 
         /// <summary>

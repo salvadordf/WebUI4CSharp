@@ -4,7 +4,7 @@ namespace winforms_text_editor
 {
     public partial class MainForm : Form
     {
-        WebUIWindow _window = new WebUIWindow();
+        private WebUIWindow _window = new WebUIWindow();
         public MainForm()
         {
             InitializeComponent();

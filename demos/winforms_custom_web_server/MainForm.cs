@@ -4,9 +4,9 @@ namespace winforms_custom_web_server
 {
     public partial class MainForm : Form
     {
-        Object _lockObj = new Object();
-        List<String> _LogStrings = new List<String>();
-        WebUIWindow _window = new WebUIWindow();
+        private Object _lockObj = new Object();
+        private List<String> _LogStrings = new List<String>();
+        private WebUIWindow _window = new WebUIWindow();
 
         public MainForm()
         {

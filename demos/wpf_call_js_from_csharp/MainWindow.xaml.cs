@@ -8,7 +8,8 @@ namespace wpf_call_js_from_csharp
     /// </summary>
     public partial class MainWindow : Window
     {
-        WebUIWindow _window = new WebUIWindow();
+        private WebUIWindow _window = new WebUIWindow();
+
         public MainWindow()
         {
             InitializeComponent();

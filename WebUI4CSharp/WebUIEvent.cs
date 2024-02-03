@@ -3,6 +3,9 @@ using System.Runtime.InteropServices;
 
 namespace WebUI4CSharp
 {
+    /// <summary>
+    /// Event wrapper for Event objects in WebUI.
+    /// </summary>
     public class WebUIEvent
     {
         private webui_event_t _event;

@@ -8,12 +8,12 @@ namespace wpf_serve_a_folder
     /// </summary>
     public partial class MainWindow : Window
     {
-        Object _lockObj = new Object();
-        List<String> _LogStrings = new List<String>();
+        private Object _lockObj = new Object();
+        private List<String> _LogStrings = new List<String>();
         private WebUIWindow _Window = new WebUIWindow();
         private WebUIWindow _SecondWindow = new WebUIWindow();
         private int _Count = 0;
-        System.Windows.Threading.DispatcherTimer dispatcherTimer = new System.Windows.Threading.DispatcherTimer();
+        private System.Windows.Threading.DispatcherTimer dispatcherTimer = new System.Windows.Threading.DispatcherTimer();
 
         public MainWindow()
         {

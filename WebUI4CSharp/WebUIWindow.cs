@@ -4,6 +4,9 @@ using System.Xml.Linq;
 
 namespace WebUI4CSharp
 {
+    /// <summary>
+    /// Bind arguments used in OnWebUIEvent
+    /// </summary>
     public class BindEventArgs : EventArgs
     {
         public BindEventArgs(WebUIEvent bindEvent)
@@ -14,6 +17,9 @@ namespace WebUI4CSharp
         public WebUIEvent BindEvent { get; }
     }
 
+    /// <summary>
+    /// File handler arguments used in OnFileHandlerEvent
+    /// </summary>
     public class FileHandlerEventArgs : EventArgs
     {
         public FileHandlerEventArgs(string filename)
@@ -26,6 +32,9 @@ namespace WebUI4CSharp
         public string ReturnValue { get; set; }
     }
 
+    /// <summary>
+    /// Window wrapper for Window objects in WebUI.
+    /// </summary>
     public class WebUIWindow
     {
         private UIntPtr _id = 0;
@@ -162,6 +171,10 @@ namespace WebUI4CSharp
             return false;
         }
 
+        /// <summary>
+        /// Trigger the OnWebUIEvent event.
+        /// </summary>
+        /// <param name="e"></param>
         public virtual void DoBindEvent(ref webui_event_t e)
         {
             EventHandler<BindEventArgs>? eventHandler = OnWebUIEvent;
@@ -173,6 +186,12 @@ namespace WebUI4CSharp
             }
         }
 
+        /// <summary>
+        /// Trigger the OnFileHandlerEvent event.
+        /// </summary>
+        /// <param name="filename">Requested file name.</param>
+        /// <param name="length">Length of the buffer returned by this function.</param>
+        /// <returns>Pointer to the buffer with the requested file contents.</returns>
         public virtual IntPtr DoFileHandlerEvent(IntPtr filename, out int length)
         {
             length = 0;

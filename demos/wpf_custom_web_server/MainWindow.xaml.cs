@@ -8,10 +8,10 @@ namespace wpf_custom_web_server
     /// </summary>
     public partial class MainWindow : Window
     {
-        Object _lockObj = new Object();
-        List<String> _LogStrings = new List<String>();
-        System.Windows.Threading.DispatcherTimer dispatcherTimer = new System.Windows.Threading.DispatcherTimer();
-        WebUIWindow _window = new WebUIWindow();
+        private Object _lockObj = new Object();
+        private List<String> _LogStrings = new List<String>();
+        private System.Windows.Threading.DispatcherTimer dispatcherTimer = new System.Windows.Threading.DispatcherTimer();
+        private WebUIWindow _window = new WebUIWindow();
 
         public MainWindow()
         {

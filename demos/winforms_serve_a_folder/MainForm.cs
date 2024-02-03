@@ -1,12 +1,11 @@
 using WebUI4CSharp;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace winforms_serve_a_folder
 {
     public partial class MainForm : Form
     {
-        Object _lockObj = new Object();
-        List<String> _LogStrings = new List<String>();
+        private Object _lockObj = new Object();
+        private List<String> _LogStrings = new List<String>();
         private WebUIWindow _Window = new WebUIWindow();
         private WebUIWindow _SecondWindow = new WebUIWindow();
         private int _Count = 0;

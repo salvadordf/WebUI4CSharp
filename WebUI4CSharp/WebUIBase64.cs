@@ -1,5 +1,8 @@
 ﻿namespace WebUI4CSharp
 {
+    /// <summary>
+    /// Wrapper class for the Base64 conversion functions in WebUI.
+    /// </summary>
     public static class WebUIBase64
     {
         /// <summary>

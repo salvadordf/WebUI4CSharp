@@ -9,9 +9,9 @@ namespace wpf_public_network_access
     /// </summary>
     public partial class MainWindow : Window
     {
-        WebUIWindow pubWindow = new WebUIWindow();
-        WebUIWindow prvWindow = new WebUIWindow();
-        string public_win_url = string.Empty;
+        private WebUIWindow pubWindow = new WebUIWindow();
+        private WebUIWindow prvWindow = new WebUIWindow();
+        private string public_win_url = string.Empty;
 
         public MainWindow()
         {
