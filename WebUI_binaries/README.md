@@ -16,4 +16,5 @@ The 64 bits binaries are a copy from the [WebUI Development Build](https://githu
 ```
 	zig build -Dtarget=x86-windows-gnu -Dis_static=false -Denable_tls=false -Doptimize=ReleaseFast
 ```
+* The binaries will be created in the zig-out\lib directory after a few seconds.
 
