@@ -1,7 +1,7 @@
 # WebUI binaries
 These are the WebUI binaries required to run the demos.
 
-The demos declare the _WEBUI_ constant to load them from these directories but other applications should deploy them in the same directory as the executable.
+The demos declare the _WEBUIDEMO_ constant to load them from these directories but other applications should deploy them in the same directory as the executable.
 
 The 64 bits binaries are a copy from the [WebUI Development Build](https://github.com/webui-dev/webui/releases/tag/nightly) package but the 32 bits binaries were built using [ZIG](https://ziglang.org/).
 
