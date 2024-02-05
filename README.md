@@ -18,6 +18,7 @@ WebUI doesn't embed a web browser in your application. It's used as a bridge bet
 - Using private profile for safety
 - Original library written in Pure C
 - XML documentation.
+- Help file.
 
 
 ## Minimal Example
