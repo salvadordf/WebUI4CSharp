@@ -68,3 +68,4 @@ You can also support this project with Liberapay.
 * [CEF4Delphi](https://github.com/salvadordf/CEF4Delphi) 
 * [WebView4Delphi](https://github.com/salvadordf/WebView4Delphi)
 * [WebUI4Delphi](https://github.com/salvadordf/WebUI4Delphi)
+* [Doxygen](https://github.com/doxygen/doxygen)

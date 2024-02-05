@@ -259,7 +259,7 @@ namespace WebUI4CSharp
         /// Safely send raw data to the UI.
         /// </summary>
         /// <param name="window">The window number.</param>
-        /// <param name="function_">The JavaScript function to receive raw data: `function * myFunc(myData){}`.</param>
+        /// <param name="function">The JavaScript function to receive raw data: `function * myFunc(myData){}`.</param>
         /// <param name="raw">The raw data buffer.</param>
         /// <param name="size">The raw data size in bytes.</param>
         /// <remarks>

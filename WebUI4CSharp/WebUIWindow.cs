@@ -288,7 +288,7 @@ namespace WebUI4CSharp
         /// <summary>
         /// <para>Bind all browser events with a callback function.</para>
         /// </summary>
-        /// <param name="func_">The callback function.</param>
+        /// <param name="func">The callback function.</param>
         /// <returns>Returns a unique bind ID.</returns>
         public UIntPtr BindAllEvents(BindCallback func)
         {
