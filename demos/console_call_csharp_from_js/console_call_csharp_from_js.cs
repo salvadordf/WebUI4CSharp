@@ -38,13 +38,13 @@ string my_html =
         "  <body>" +
         "    <h1>WebUI - Call C from JavaScript</h1>" +
         "    <p>Call C functions with arguments (<em>See the logs in your terminal</em>)</p>" +
-        "    <button onclick=\"webui.call('MyID_One', 'Hello', 'World');\">Call my_function_string()</button>" +
+        "    <button onclick=\"my_function_string('Hello', 'World');\">Call my_function_string()</button>" +
         "    <br>" +
-        "    <button onclick=\"webui.call('MyID_Two', 123, 456, 789);\">Call my_function_integer()</button>" +
+        "    <button onclick=\"my_function_integer(123, 456, 789, 12345.6789);\">Call my_function_integer()</button>" +
         "    <br>" +
-        "    <button onclick=\"webui.call('MyID_Three', true, false);\">Call my_function_boolean()</button>" +
+        "    <button onclick=\"my_function_boolean(true, false);\">Call my_function_boolean()</button>" +
         "    <br>" +
-        "    <button onclick=\"webui.call('MyID_RawBinary', new Uint8Array([0x41,0x42,0x43]), big_arr);\"> " +
+        "    <button onclick=\"my_function_raw_binary(new Uint8Array([0x41,0x42,0x43]), big_arr);\"> " +
         "     Call my_function_raw_binary()</button>" +
         "    <br>" +
         "    <p>Call a C function that returns a response</p>" +
@@ -58,7 +58,7 @@ string my_html =
         "      function MyJS() {" +
         "        const MyInput = document.getElementById('MyInputID');" +
         "        const number = MyInput.value;" +
-        "        webui.call('MyID_Four', number, 2).then((response) => {" +
+        "        my_function_with_response(number, 2).then((response) => {" +
         "            MyInput.value = response;" +
         "        });" +
         "      }" +
@@ -67,11 +67,11 @@ string my_html =
         "</html>";
 
 WebUIWindow window = new WebUIWindow();
-window.Bind("MyID_One", WebUI_Events.my_function_string);
-window.Bind("MyID_Two", WebUI_Events.my_function_integer);
-window.Bind("MyID_Three", WebUI_Events.my_function_boolean);
-window.Bind("MyID_Four", WebUI_Events.my_function_with_response);
-window.Bind("MyID_RawBinary", WebUI_Events.my_function_raw_binary);
+window.Bind("my_function_string", WebUI_Events.my_function_string);
+window.Bind("my_function_integer", WebUI_Events.my_function_integer);
+window.Bind("my_function_boolean", WebUI_Events.my_function_boolean);
+window.Bind("my_function_with_response", WebUI_Events.my_function_with_response);
+window.Bind("my_function_raw_binary", WebUI_Events.my_function_raw_binary);
 window.Show(my_html);
 WebUI.Wait();
 WebUI.Clean();

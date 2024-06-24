@@ -69,7 +69,7 @@ WebUI.SetTimeout(0); // Wait forever (never timeout)
 // Public Window
 WebUI_Events.pubWindow.SetPublic(true); // Make URL accessible from public networks
 WebUI_Events.pubWindow.BindAllEvents(WebUI_Events.public_window_events); // Bind all events
-WebUI_Events.pubWindow.ShowBrowser(public_html, webui_browsers.NoBrowser); // Set public window HTML
+WebUI_Events.pubWindow.ShowBrowser(public_html, webui_browser.NoBrowser); // Set public window HTML
 string public_win_url = WebUI_Events.pubWindow.Url; // Get URL of public window
 
 // Main Private Window

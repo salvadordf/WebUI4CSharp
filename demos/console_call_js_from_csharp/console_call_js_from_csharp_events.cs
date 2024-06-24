@@ -12,7 +12,7 @@ namespace console_call_js_from_csharp
 
         public static void my_function_count(ref webui_event_t e)
         {
-            // This function gets called every time the user clicks on "MyButton1"
+            // This function gets called every time the user clicks on "my_function_count"
             WebUIEvent lEvent = new WebUIEvent(e);
             WebUIWindow? window = lEvent.Window;
 

@@ -11,7 +11,7 @@ namespace WebUI4CSharp
         /// <summary>
         /// WebUI library version.
         /// </summary>
-        public const string WEBUI_VERSION = "2.4.2";
+        public const string WEBUI_VERSION = "2.5.0-beta.1";
 
         /// <summary>
         /// Max windows, servers and threads
@@ -54,7 +54,7 @@ namespace WebUI4CSharp
         }
 
         /// <summary>
-        /// Timeout in seconds before the browser starts. 0 means wait forever.
+        /// Set the maximum time in seconds to wait for the window to connect. This affects `show()` and `wait()`.
         /// </summary>
         public static void SetTimeout(UIntPtr second)
         {
@@ -210,6 +210,16 @@ namespace WebUI4CSharp
             {
                 lWindow.DoBindEvent(ref e);
             }
+        }
+
+        /// <summary>
+        /// Control the WebUI behaviour. It's better to call at the beginning.
+        /// </summary>
+        /// <param name="option">The desired option from `webui_config` enum.</param>
+        /// <param name="status">The status of the option, `true` or `false`.</param>
+        public static void SetConfig(webui_config option, bool status)
+        {
+            WebUILibFunctions.webui_set_config((UIntPtr) option, status);
         }
     }
 }

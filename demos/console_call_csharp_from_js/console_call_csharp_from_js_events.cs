@@ -7,7 +7,7 @@ namespace console_call_csharp_from_js
         public static void my_function_string(ref webui_event_t e)
         {
             // JavaScript:
-            // webui.call('MyID_One', 'Hello', 'World`);
+            // my_function_string('Hello', 'World`);
 
             WebUIEvent lEvent = new WebUIEvent(e);
             string? str_1 = lEvent.GetString(); 
@@ -20,25 +20,29 @@ namespace console_call_csharp_from_js
 
         public static void my_function_integer(ref webui_event_t e)
         {
-
             // JavaScript:
-            // webui.call('MyID_Two', 123, 456, 789);
+            // my_function_integer(123, 456, 789, 12345.6789);
 
             WebUIEvent lEvent = new WebUIEvent(e);
+
+            UIntPtr count = lEvent.GetCount();
+            Console.WriteLine("my_function_integer: There are {0} arguments in this event", count); // 4
+
             long number_1 = lEvent.GetInt(); 
             long number_2 = lEvent.GetIntAt(1);
             long number_3 = lEvent.GetIntAt(2);
+            double float_1 = lEvent.GetFloatAt(3);
             
             Console.WriteLine("my_function_integer 1: {0}", number_1); // 123
             Console.WriteLine("my_function_integer 2: {0}", number_2); // 456
             Console.WriteLine("my_function_integer 3: {0}", number_3); // 789
+            Console.WriteLine("my_function_integer 4: {0}", float_1); // 12345.6789
         }
 
         public static void my_function_boolean(ref webui_event_t e)
         {
-
             // JavaScript:
-            // webui.call('MyID_Three', true, false);
+            // my_function_boolean(true, false);
 
             WebUIEvent lEvent = new WebUIEvent(e);
             bool status_1 = lEvent.GetBool();
@@ -50,9 +54,8 @@ namespace console_call_csharp_from_js
 
         public static void my_function_raw_binary(ref webui_event_t e)
         {
-
             // JavaScript:
-            // webui.call('MyID_RawBinary', new Uint8Array([0x41,0x42,0x43]), big_arr);
+            // my_function_raw_binary(new Uint8Array([0x41]), new Uint8Array([0x42, 0x43]));
 
             WebUIEvent lEvent = new WebUIEvent(e);
             MemoryStream? stream = lEvent.GetStream();
@@ -65,9 +68,8 @@ namespace console_call_csharp_from_js
 
         public static void my_function_with_response(ref webui_event_t e)
         {
-
             // JavaScript:
-            // webui.call('MyID_Four', number, 2).then(...)
+            // my_function_with_response(number, 2).then(...)
 
             WebUIEvent lEvent = new WebUIEvent(e);
             long number = lEvent.GetInt(); 

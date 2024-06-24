@@ -24,36 +24,39 @@ namespace winforms_call_csharp_from_js
         public void my_function_string(WebUIEvent e)
         {
             // JavaScript:
-            // webui.call('MyID_One', 'Hello World', '\u{1F3DD}');
+            // my_function_string('Hello', 'World`);
 
             string? str_1 = e.GetString();
             string? str_2 = e.GetStringAt(1);
 
-            AddLog($"my_function_string 1: {str_1}"); // Hello World
-            AddLog($"my_function_string 2: {str_2}"); // Palmtree
+            AddLog($"my_function_string 1: {str_1}"); // Hello
+            AddLog($"my_function_string 2: {str_2}"); // World
         }
 
 
         public void my_function_integer(WebUIEvent e)
         {
-
             // JavaScript:
-            // webui.call('MyID_Two', 123, 456, 789);
+            // my_function_integer(123, 456, 789, 12345.6789);
+
+            UIntPtr count = e.GetCount();
+            AddLog($"my_function_integer: There are {count} arguments in this event"); // 4
 
             long number_1 = e.GetInt();
             long number_2 = e.GetIntAt(1);
             long number_3 = e.GetIntAt(2);
+            double float_1 = e.GetFloatAt(3);
 
             AddLog($"my_function_integer 1: {number_1}"); // 123
             AddLog($"my_function_integer 2: {number_2}"); // 456
             AddLog($"my_function_integer 3: {number_3}"); // 789
+            AddLog($"my_function_integer 4: {float_1}"); // 12345.6789
         }
 
         public void my_function_boolean(WebUIEvent e)
         {
-
             // JavaScript:
-            // webui.call('MyID_Three', true, false);
+            // my_function_boolean(true, false);
 
             bool status_1 = e.GetBool();
             bool status_2 = e.GetBoolAt(1);
@@ -64,9 +67,8 @@ namespace winforms_call_csharp_from_js
 
         public void my_function_raw_binary(WebUIEvent e)
         {
-
             // JavaScript:
-            // webui.call('MyID_RawBinary', new Uint8Array([0x41,0x42,0x43]), big_arr);
+            // my_function_raw_binary(new Uint8Array([0x41]), new Uint8Array([0x42, 0x43]));
 
             MemoryStream? stream = e.GetStream();
             if (stream != null)
@@ -78,9 +80,8 @@ namespace winforms_call_csharp_from_js
 
         public void my_function_with_response(WebUIEvent e)
         {
-
             // JavaScript:
-            // webui.call('MyID_Four', number, 2).then(...)
+            // my_function_with_response(number, 2).then(...)
 
             long number = e.GetInt();
             long times = e.GetIntAt(1);
@@ -133,13 +134,13 @@ namespace winforms_call_csharp_from_js
                     "  <body>" +
                     "    <h1>WebUI - Call C from JavaScript</h1>" +
                     "    <p>Call C functions with arguments (<em>See the logs in your terminal</em>)</p>" +
-                    "    <button onclick=\"webui.call('MyID_One', 'Hello World', '\\u{1F3DD}');\">Call my_function_string()</button>" +
+                    "    <button onclick=\"my_function_string('Hello', 'World');\">Call my_function_string()</button>" +
                     "    <br>" +
-                    "    <button onclick=\"webui.call('MyID_Two', 123, 456, 789);\">Call my_function_integer()</button>" +
+                    "    <button onclick=\"my_function_integer(123, 456, 789, 12345.6789);\">Call my_function_integer()</button>" +
                     "    <br>" +
-                    "    <button onclick=\"webui.call('MyID_Three', true, false);\">Call my_function_boolean()</button>" +
+                    "    <button onclick=\"my_function_boolean(true, false);\">Call my_function_boolean()</button>" +
                     "    <br>" +
-                    "    <button onclick=\"webui.call('MyID_RawBinary', new Uint8Array([0x41,0x42,0x43]), big_arr);\"> " +
+                    "    <button onclick=\"my_function_raw_binary(new Uint8Array([0x41,0x42,0x43]), big_arr);\"> " +
                     "     Call my_function_raw_binary()</button>" +
                     "    <br>" +
                     "    <p>Call a C function that returns a response</p>" +
@@ -153,7 +154,7 @@ namespace winforms_call_csharp_from_js
                     "      function MyJS() {" +
                     "        const MyInput = document.getElementById('MyInputID');" +
                     "        const number = MyInput.value;" +
-                    "        webui.call('MyID_Four', number, 2).then((response) => {" +
+                    "        my_function_with_response(number, 2).then((response) => {" +
                     "            MyInput.value = response;" +
                     "        });" +
                     "      }" +
@@ -161,11 +162,11 @@ namespace winforms_call_csharp_from_js
                     "  </body>" +
                     "</html>";
 
-            _window.Bind("MyID_One");
-            _window.Bind("MyID_Two");
-            _window.Bind("MyID_Three");
-            _window.Bind("MyID_Four");
-            _window.Bind("MyID_RawBinary");
+            _window.Bind("my_function_string");
+            _window.Bind("my_function_integer");
+            _window.Bind("my_function_boolean");
+            _window.Bind("my_function_with_response");
+            _window.Bind("my_function_raw_binary");
             _window.OnWebUIEvent += Window_OnWebUIEvent;
             _window.Show(my_html);
             timer1.Enabled = true;
@@ -173,23 +174,23 @@ namespace winforms_call_csharp_from_js
 
         private void Window_OnWebUIEvent(object? sender, BindEventArgs e)
         {
-            if (e.BindEvent.Element == "MyID_One")
+            if (e.BindEvent.Element == "my_function_string")
             {
                 my_function_string(e.BindEvent);
             }
-            else if (e.BindEvent.Element == "MyID_Two")
+            else if (e.BindEvent.Element == "my_function_integer")
             {
                 my_function_integer(e.BindEvent);
             }
-            else if (e.BindEvent.Element == "MyID_Three")
+            else if (e.BindEvent.Element == "my_function_boolean")
             {
                 my_function_boolean(e.BindEvent);
             }
-            else if (e.BindEvent.Element == "MyID_Four")
+            else if (e.BindEvent.Element == "my_function_with_response")
             {
                 my_function_with_response(e.BindEvent);
             }
-            else if (e.BindEvent.Element == "MyID_RawBinary")
+            else if (e.BindEvent.Element == "my_function_raw_binary")
             {
                 my_function_raw_binary(e.BindEvent);
             }

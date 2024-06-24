@@ -23,7 +23,7 @@ namespace wpf_call_js_from_csharp
 
         public void my_function_count(WebUIEvent e)
         {
-            // This function gets called every time the user clicks on "MyButton1"
+            // This function gets called every time the user clicks on "my_function_count"
             WebUIWindow? window = e.Window;
 
             if (window != null)
@@ -59,11 +59,11 @@ namespace wpf_call_js_from_csharp
 
         private void Window_OnWebUIEvent(object? sender, BindEventArgs e)
         {
-            if (e.BindEvent.Element == "MyButton1")
+            if (e.BindEvent.Element == "my_function_count")
             {
                 my_function_count(e.BindEvent);
             }
-            else if (e.BindEvent.Element == "MyButton2")
+            else if (e.BindEvent.Element == "my_function_exit")
             {
                 my_function_exit(e.BindEvent);
             }
@@ -111,11 +111,11 @@ namespace wpf_call_js_from_csharp
                                       "    <br>" +
                                       "    <h1 id=\"count\">0</h1>" +
                                       "    <br>" +
-                                      "    <button id=\"MyButton1\">Manual Count</button>" +
+                                      "    <button OnClick=\"my_function_count();\">Manual Count</button>" +
                                       "    <br>" +
                                       "    <button id=\"MyTest\" OnClick=\"AutoTest();\">Auto Count (Every 500ms)</button>" +
                                       "    <br>" +
-                                      "    <button id=\"MyButton2\">Exit</button>" +
+                                      "    <button OnClick=\"my_function_exit();\">Exit</button>" +
                                       "    <script>" +
                                       "      let count = 0;" +
                                       "      function GetCount() {" +
@@ -126,14 +126,14 @@ namespace wpf_call_js_from_csharp
                                       "        count = number;" +
                                       "      }" +
                                       "      function AutoTest(number) {" +
-                                      "        setInterval(function(){ webui.call('MyButton1'); }, 500);" +
+                                      "        setInterval(function(){ my_function_count(); }, 500);" +
                                       "      }" +
                                       "    </script>" +
                                       "  </body>" +
                                       "</html>";
 
-            _window.Bind("MyButton1");
-            _window.Bind("MyButton2");
+            _window.Bind("my_function_count");
+            _window.Bind("my_function_exit");
             _window.OnWebUIEvent += Window_OnWebUIEvent;
             _window.Show(my_html);
         }

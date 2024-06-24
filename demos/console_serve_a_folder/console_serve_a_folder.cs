@@ -11,7 +11,7 @@ WebUI_Events.mySecondWindow.Bind("Exit", WebUI_Events.exit_app);
 WebUI_Events.myWindow.BindAllEvents(WebUI_Events.events);
 
 // Make Deno as the `.ts` and `.js` interpreter
-WebUI_Events.myWindow.SetRuntime(webui_runtimes.Deno);
+WebUI_Events.myWindow.SetRuntime(webui_runtime.Deno);
 
 // Set a custom files handler
 WebUI_Events.myWindow.SetFileHandler(WebUI_Events.my_files_handler);

@@ -14,14 +14,14 @@ namespace wpf_text_editor
             InitializeComponent();
         }
 
-        public void Close(WebUIEvent e)
+        public void close_app(WebUIEvent e)
         {
             WebUI.Exit();
         }
 
         private void Window_OnWebUIEvent(object? sender, BindEventArgs e)
         {
-            Close(e.BindEvent);
+            close_app(e.BindEvent);
         }
 
         private void ShowBrowserBtn_Click(object sender, RoutedEventArgs e)
@@ -33,10 +33,10 @@ namespace wpf_text_editor
             _window.SetRootFolder(absPath);
 
             // Bind HTML elements with the specified ID to C functions
-            _window.Bind("__close-btn");
+            _window.Bind("close_app");
 
             // Show the window, preferably in a chromium based browser
-            if (!_window.ShowBrowser("index.html", webui_browsers.ChromiumBased))
+            if (!_window.ShowBrowser("index.html", webui_browser.ChromiumBased))
             {
                 _window.Show("index.html");
             }

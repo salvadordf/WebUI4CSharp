@@ -64,10 +64,10 @@
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
 <tr class="memitem:ab5a44f01f929a02e53fc9d952b25feb0" id="r_ab5a44f01f929a02e53fc9d952b25feb0"><td class="memItemLeft" align="right" valign="top">static string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab5a44f01f929a02e53fc9d952b25feb0">Encode</a> (string str)</td></tr>
-<tr class="memdesc:ab5a44f01f929a02e53fc9d952b25feb0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Base64 encoding. Use this to safely send text based data to the UI. If it fails it will return an empty string.  <br /></td></tr>
+<tr class="memdesc:ab5a44f01f929a02e53fc9d952b25feb0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Encode text to Base64.  <br /></td></tr>
 <tr class="separator:ab5a44f01f929a02e53fc9d952b25feb0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5e474065b9f8567df9ba12d22550ecfa" id="r_a5e474065b9f8567df9ba12d22550ecfa"><td class="memItemLeft" align="right" valign="top">static string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5e474065b9f8567df9ba12d22550ecfa">Decode</a> (string str)</td></tr>
-<tr class="memdesc:a5e474065b9f8567df9ba12d22550ecfa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Base64 decoding. Use this to safely decode received Base64 text from the UI. If it fails it will return an empty string.  <br /></td></tr>
+<tr class="memdesc:a5e474065b9f8567df9ba12d22550ecfa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Decode a Base64 encoded text.  <br /></td></tr>
 <tr class="separator:a5e474065b9f8567df9ba12d22550ecfa"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
@@ -96,14 +96,14 @@ Static Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Base64 decoding. Use this to safely decode received Base64 text from the UI. If it fails it will return an empty string. </p>
+<p>Decode a Base64 encoded text. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">str</td><td>The string to decode.</td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>Returns a decoded string.</dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>Returns the base64 decoded string.</dd></dl>
 
 </div>
 </div>
@@ -130,14 +130,14 @@ Static Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Base64 encoding. Use this to safely send text based data to the UI. If it fails it will return an empty string. </p>
+<p>Encode text to Base64. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">str</td><td>The string to encode.</td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>Returns a encoded string.</dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>Returns the base64 encoded string.</dd></dl>
 
 </div>
 </div>

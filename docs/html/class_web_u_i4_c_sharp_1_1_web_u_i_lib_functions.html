@@ -75,12 +75,18 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a856716644e385ccba2a8c0026702f46f" id="r_a856716644e385ccba2a8c0026702f46f"><td class="memItemLeft" align="right" valign="top">static UIntPtr&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a856716644e385ccba2a8c0026702f46f">webui_bind</a> (UIntPtr window, [MarshalAs(UnmanagedType.LPUTF8Str)] string element, <a class="el" href="namespace_web_u_i4_c_sharp.html#a3ddb2fec1678fdf4ee507e1b046e7144">BindCallback</a> func)</td></tr>
 <tr class="memdesc:a856716644e385ccba2a8c0026702f46f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Bind a specific html element click event with a function. Empty element means all events.  <br /></td></tr>
 <tr class="separator:a856716644e385ccba2a8c0026702f46f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab6cffac68994939dc23e373b80123034" id="r_ab6cffac68994939dc23e373b80123034"><td class="memItemLeft" align="right" valign="top">static UIntPtr&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab6cffac68994939dc23e373b80123034">webui_get_best_browser</a> (UIntPtr window)</td></tr>
+<tr class="memdesc:ab6cffac68994939dc23e373b80123034"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the recommended web browser ID to use. If you are already using one, this function will return the same ID.  <br /></td></tr>
+<tr class="separator:ab6cffac68994939dc23e373b80123034"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5b58a67e687e2e8e6a40e725f12c6f1c" id="r_a5b58a67e687e2e8e6a40e725f12c6f1c"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5b58a67e687e2e8e6a40e725f12c6f1c">webui_show</a> (UIntPtr window, [MarshalAs(UnmanagedType.LPUTF8Str)] string content)</td></tr>
 <tr class="memdesc:a5b58a67e687e2e8e6a40e725f12c6f1c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Show a window using embedded HTML, or a file. If the window is already open, it will be refreshed.  <br /></td></tr>
 <tr class="separator:a5b58a67e687e2e8e6a40e725f12c6f1c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4d8b6a1f1cd103902b51a1d28f747ace" id="r_a4d8b6a1f1cd103902b51a1d28f747ace"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4d8b6a1f1cd103902b51a1d28f747ace">webui_show_browser</a> (UIntPtr window, [MarshalAs(UnmanagedType.LPUTF8Str)] string content, UIntPtr browser)</td></tr>
 <tr class="memdesc:a4d8b6a1f1cd103902b51a1d28f747ace"><td class="mdescLeft">&#160;</td><td class="mdescRight">Same as <code>webui_show()</code>. But using a specific web browser.  <br /></td></tr>
 <tr class="separator:a4d8b6a1f1cd103902b51a1d28f747ace"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af766f4c3b88dcfefe37a750c5c384c33" id="r_af766f4c3b88dcfefe37a750c5c384c33"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af766f4c3b88dcfefe37a750c5c384c33">webui_show_wv</a> (UIntPtr window, [MarshalAs(UnmanagedType.LPUTF8Str)] string content)</td></tr>
+<tr class="memdesc:af766f4c3b88dcfefe37a750c5c384c33"><td class="mdescLeft">&#160;</td><td class="mdescRight">Show a WebView window using embedded HTML, or a file. If the window is already open, it will be refreshed. Note: Win32 need <code>WebView2Loader.dll</code>.  <br /></td></tr>
+<tr class="separator:af766f4c3b88dcfefe37a750c5c384c33"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a32df13b4edf1aaf600b99c34fb31dade" id="r_a32df13b4edf1aaf600b99c34fb31dade"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a32df13b4edf1aaf600b99c34fb31dade">webui_set_kiosk</a> (UIntPtr window, [MarshalAs(UnmanagedType.I1)] bool status)</td></tr>
 <tr class="memdesc:a32df13b4edf1aaf600b99c34fb31dade"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the window in Kiosk mode (Full screen).  <br /></td></tr>
 <tr class="separator:a32df13b4edf1aaf600b99c34fb31dade"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -109,16 +115,16 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:aa3c6a133bde0e4db0420451388be39f0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if the specified window is still running.  <br /></td></tr>
 <tr class="separator:aa3c6a133bde0e4db0420451388be39f0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abda973f07f83c7b06c97021dbbf0bdbd" id="r_abda973f07f83c7b06c97021dbbf0bdbd"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#abda973f07f83c7b06c97021dbbf0bdbd">webui_set_timeout</a> (UIntPtr second)</td></tr>
-<tr class="memdesc:abda973f07f83c7b06c97021dbbf0bdbd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the maximum time in seconds to wait for the browser to start.  <br /></td></tr>
+<tr class="memdesc:abda973f07f83c7b06c97021dbbf0bdbd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the maximum time in seconds to wait for the window to connect. This affects <code>show()</code> and <code>wait()</code>.  <br /></td></tr>
 <tr class="separator:abda973f07f83c7b06c97021dbbf0bdbd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abd89042e9fa6438951a00a3e353c6481" id="r_abd89042e9fa6438951a00a3e353c6481"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#abd89042e9fa6438951a00a3e353c6481">webui_set_icon</a> (UIntPtr window, [MarshalAs(UnmanagedType.LPUTF8Str)] string icon, [MarshalAs(UnmanagedType.LPUTF8Str)] string icon_type)</td></tr>
 <tr class="memdesc:abd89042e9fa6438951a00a3e353c6481"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the default embedded HTML favicon.  <br /></td></tr>
 <tr class="separator:abd89042e9fa6438951a00a3e353c6481"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1c57f29a0133451d781d5709a0d5ef6e" id="r_a1c57f29a0133451d781d5709a0d5ef6e"><td class="memItemLeft" align="right" valign="top">static string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1c57f29a0133451d781d5709a0d5ef6e">webui_encode</a> ([MarshalAs(UnmanagedType.LPUTF8Str)] string str)</td></tr>
-<tr class="memdesc:a1c57f29a0133451d781d5709a0d5ef6e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Base64 encoding. Use this to safely send text based data to the UI. If it fails it will return NULL.  <br /></td></tr>
+<tr class="memdesc:a1c57f29a0133451d781d5709a0d5ef6e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Encode text to Base64. The returned buffer need to be freed.  <br /></td></tr>
 <tr class="separator:a1c57f29a0133451d781d5709a0d5ef6e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af3f2a1a6f68d068610ee0442f0a7f3b2" id="r_af3f2a1a6f68d068610ee0442f0a7f3b2"><td class="memItemLeft" align="right" valign="top">static string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af3f2a1a6f68d068610ee0442f0a7f3b2">webui_decode</a> ([MarshalAs(UnmanagedType.LPUTF8Str)] string str)</td></tr>
-<tr class="memdesc:af3f2a1a6f68d068610ee0442f0a7f3b2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Base64 decoding. Use this to safely decode received Base64 text from the UI. If it fails it will return NULL.  <br /></td></tr>
+<tr class="memdesc:af3f2a1a6f68d068610ee0442f0a7f3b2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Decode a Base64 encoded text. The returned buffer need to be freed.  <br /></td></tr>
 <tr class="separator:af3f2a1a6f68d068610ee0442f0a7f3b2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a93cb651066fc32d1500eb70138a4b4b6" id="r_a93cb651066fc32d1500eb70138a4b4b6"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a93cb651066fc32d1500eb70138a4b4b6">webui_free</a> (IntPtr ptr)</td></tr>
 <tr class="memdesc:a93cb651066fc32d1500eb70138a4b4b6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Safely free a buffer allocated by WebUI using <code>webui_malloc()</code>.  <br /></td></tr>
@@ -142,7 +148,7 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:a2b2d4e1a6e810da1b29406f18e13dfc0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the web browser profile to use. An empty <code>name</code> and <code>path</code> means the default user profile. Need to be called before <code>webui_show()</code>.  <br /></td></tr>
 <tr class="separator:a2b2d4e1a6e810da1b29406f18e13dfc0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7cd4b42d9f0df03b774f3d825d19dab0" id="r_a7cd4b42d9f0df03b774f3d825d19dab0"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7cd4b42d9f0df03b774f3d825d19dab0">webui_set_proxy</a> (UIntPtr window, [MarshalAs(UnmanagedType.LPUTF8Str)] string proxy_server)</td></tr>
-<tr class="memdesc:a7cd4b42d9f0df03b774f3d825d19dab0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the web browser proxy_server to use. Need to be called before 'webui_show()'.  <br /></td></tr>
+<tr class="memdesc:a7cd4b42d9f0df03b774f3d825d19dab0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the web browser proxy server to use. Need to be called before <code>webui_show()</code>.  <br /></td></tr>
 <tr class="separator:a7cd4b42d9f0df03b774f3d825d19dab0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a74fdb7951fde99a80bcf25d764801959" id="r_a74fdb7951fde99a80bcf25d764801959"><td class="memItemLeft" align="right" valign="top">static string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a74fdb7951fde99a80bcf25d764801959">webui_get_url</a> (UIntPtr window)</td></tr>
 <tr class="memdesc:a74fdb7951fde99a80bcf25d764801959"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the full current URL.  <br /></td></tr>
@@ -169,8 +175,14 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:affd58d6b239bedf15d98d54c66918c95"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the ID of the last child process.  <br /></td></tr>
 <tr class="separator:affd58d6b239bedf15d98d54c66918c95"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1d2bad37a292e01117cdd7e3e0cd2fde" id="r_a1d2bad37a292e01117cdd7e3e0cd2fde"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1d2bad37a292e01117cdd7e3e0cd2fde">webui_set_port</a> (UIntPtr window, UIntPtr port)</td></tr>
-<tr class="memdesc:a1d2bad37a292e01117cdd7e3e0cd2fde"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set a custom web-server network port to be used by WebUI. This can be useful to determine the HTTP link of <code>webui.js</code> in case you are trying to use WebUI with an external web-server like NGNIX.  <br /></td></tr>
+<tr class="memdesc:a1d2bad37a292e01117cdd7e3e0cd2fde"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set a custom web-server/websocket network port to be used by WebUI. This can be useful to determine the HTTP link of <code>webui.js</code> in case you are trying to use WebUI with an external web-server like NGNIX.  <br /></td></tr>
 <tr class="separator:a1d2bad37a292e01117cdd7e3e0cd2fde"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaee5f9ea4cb979e20fe71a48c92b76e4" id="r_aaee5f9ea4cb979e20fe71a48c92b76e4"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aaee5f9ea4cb979e20fe71a48c92b76e4">webui_set_config</a> (UIntPtr option, [MarshalAs(UnmanagedType.I1)] bool status)</td></tr>
+<tr class="memdesc:aaee5f9ea4cb979e20fe71a48c92b76e4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Control the WebUI behaviour. It's better to call at the beginning.  <br /></td></tr>
+<tr class="separator:aaee5f9ea4cb979e20fe71a48c92b76e4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3a6a9a1e5248eee2424903c9e4c73b04" id="r_a3a6a9a1e5248eee2424903c9e4c73b04"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3a6a9a1e5248eee2424903c9e4c73b04">webui_set_event_blocking</a> (UIntPtr window, [MarshalAs(UnmanagedType.I1)] bool status)</td></tr>
+<tr class="memdesc:a3a6a9a1e5248eee2424903c9e4c73b04"><td class="mdescLeft">&#160;</td><td class="mdescRight">Control if UI events comming from this window should be processed one a time in a single blocking thread <code>True</code>, or process every event in a new non-blocking thread <code>False</code>. This update single window. You can use <code>webui_set_config(ui_event_blocking, ...)</code> to update all windows.  <br /></td></tr>
+<tr class="separator:a3a6a9a1e5248eee2424903c9e4c73b04"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac4b212ead61c55671e8f92c1092521ad" id="r_ac4b212ead61c55671e8f92c1092521ad"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac4b212ead61c55671e8f92c1092521ad">webui_set_tls_certificate</a> ([MarshalAs(UnmanagedType.LPUTF8Str)] string certificate_pem, [MarshalAs(UnmanagedType.LPUTF8Str)] string private_key_pem)</td></tr>
 <tr class="memdesc:ac4b212ead61c55671e8f92c1092521ad"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the SSL/TLS certificate and the private key content, both in PEM format. This works only with <code>webui-2-secure</code> library. If set empty WebUI will generate a self-signed certificate.  <br /></td></tr>
 <tr class="separator:ac4b212ead61c55671e8f92c1092521ad"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -183,12 +195,21 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a816ece0bc0da4dd7173e5f85020b93c7" id="r_a816ece0bc0da4dd7173e5f85020b93c7"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a816ece0bc0da4dd7173e5f85020b93c7">webui_set_runtime</a> (UIntPtr window, UIntPtr runtime)</td></tr>
 <tr class="memdesc:a816ece0bc0da4dd7173e5f85020b93c7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Chose between Deno and Nodejs as runtime for .js and .ts files.  <br /></td></tr>
 <tr class="separator:a816ece0bc0da4dd7173e5f85020b93c7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a50440e79666408eb20cf775e9fec145f" id="r_a50440e79666408eb20cf775e9fec145f"><td class="memItemLeft" align="right" valign="top">static UIntPtr&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a50440e79666408eb20cf775e9fec145f">webui_get_count</a> (ref <a class="el" href="struct_web_u_i4_c_sharp_1_1webui__event__t.html">webui_event_t</a> e)</td></tr>
+<tr class="memdesc:a50440e79666408eb20cf775e9fec145f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get how many arguments there are in an event.  <br /></td></tr>
+<tr class="separator:a50440e79666408eb20cf775e9fec145f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a93345d0d87e5350fd7a3c180579c1f78" id="r_a93345d0d87e5350fd7a3c180579c1f78"><td class="memItemLeft" align="right" valign="top">static long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a93345d0d87e5350fd7a3c180579c1f78">webui_get_int_at</a> (ref <a class="el" href="struct_web_u_i4_c_sharp_1_1webui__event__t.html">webui_event_t</a> e, UIntPtr index)</td></tr>
 <tr class="memdesc:a93345d0d87e5350fd7a3c180579c1f78"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get an argument as integer at a specific index.  <br /></td></tr>
 <tr class="separator:a93345d0d87e5350fd7a3c180579c1f78"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5805d816ba62e27df58a133033c999ba" id="r_a5805d816ba62e27df58a133033c999ba"><td class="memItemLeft" align="right" valign="top">static long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5805d816ba62e27df58a133033c999ba">webui_get_int</a> (ref <a class="el" href="struct_web_u_i4_c_sharp_1_1webui__event__t.html">webui_event_t</a> e)</td></tr>
 <tr class="memdesc:a5805d816ba62e27df58a133033c999ba"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the first argument as integer.  <br /></td></tr>
 <tr class="separator:a5805d816ba62e27df58a133033c999ba"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a00321611264042eed6a0666bbaa4f721" id="r_a00321611264042eed6a0666bbaa4f721"><td class="memItemLeft" align="right" valign="top">static double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a00321611264042eed6a0666bbaa4f721">webui_get_float_at</a> (ref <a class="el" href="struct_web_u_i4_c_sharp_1_1webui__event__t.html">webui_event_t</a> e, UIntPtr index)</td></tr>
+<tr class="memdesc:a00321611264042eed6a0666bbaa4f721"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get an argument as float at a specific index.  <br /></td></tr>
+<tr class="separator:a00321611264042eed6a0666bbaa4f721"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac35acc6f551c5a643d6dadffab71c187" id="r_ac35acc6f551c5a643d6dadffab71c187"><td class="memItemLeft" align="right" valign="top">static double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac35acc6f551c5a643d6dadffab71c187">webui_get_float</a> (ref <a class="el" href="struct_web_u_i4_c_sharp_1_1webui__event__t.html">webui_event_t</a> e)</td></tr>
+<tr class="memdesc:ac35acc6f551c5a643d6dadffab71c187"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the first argument as float.  <br /></td></tr>
+<tr class="separator:ac35acc6f551c5a643d6dadffab71c187"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4a43a88ed06da8e3b5ac5125506009c0" id="r_a4a43a88ed06da8e3b5ac5125506009c0"><td class="memItemLeft" align="right" valign="top">static IntPtr&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4a43a88ed06da8e3b5ac5125506009c0">webui_get_string_at</a> (ref <a class="el" href="struct_web_u_i4_c_sharp_1_1webui__event__t.html">webui_event_t</a> e, UIntPtr index)</td></tr>
 <tr class="memdesc:a4a43a88ed06da8e3b5ac5125506009c0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get an argument as string at a specific index.  <br /></td></tr>
 <tr class="separator:a4a43a88ed06da8e3b5ac5125506009c0"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -210,6 +231,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a04f2d3b6b030fdc6d041dbfdb8c46fc8" id="r_a04f2d3b6b030fdc6d041dbfdb8c46fc8"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a04f2d3b6b030fdc6d041dbfdb8c46fc8">webui_return_int</a> (ref <a class="el" href="struct_web_u_i4_c_sharp_1_1webui__event__t.html">webui_event_t</a> e, long n)</td></tr>
 <tr class="memdesc:a04f2d3b6b030fdc6d041dbfdb8c46fc8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the response to JavaScript as integer.  <br /></td></tr>
 <tr class="separator:a04f2d3b6b030fdc6d041dbfdb8c46fc8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3ed83d53d1aed9ba961136b11443f24b" id="r_a3ed83d53d1aed9ba961136b11443f24b"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3ed83d53d1aed9ba961136b11443f24b">webui_return_float</a> (ref <a class="el" href="struct_web_u_i4_c_sharp_1_1webui__event__t.html">webui_event_t</a> e, double f)</td></tr>
+<tr class="memdesc:a3ed83d53d1aed9ba961136b11443f24b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the response to JavaScript as float.  <br /></td></tr>
+<tr class="separator:a3ed83d53d1aed9ba961136b11443f24b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7d79432347166d261c547bafb3780756" id="r_a7d79432347166d261c547bafb3780756"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7d79432347166d261c547bafb3780756">webui_return_string</a> (ref <a class="el" href="struct_web_u_i4_c_sharp_1_1webui__event__t.html">webui_event_t</a> e, [MarshalAs(UnmanagedType.LPUTF8Str)] string s)</td></tr>
 <tr class="memdesc:a7d79432347166d261c547bafb3780756"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the response to JavaScript as string.  <br /></td></tr>
 <tr class="separator:a7d79432347166d261c547bafb3780756"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -349,14 +373,14 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Base64 decoding. Use this to safely decode received Base64 text from the UI. If it fails it will return NULL. </p>
+<p>Decode a Base64 encoded text. The returned buffer need to be freed. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">str</td><td>The string to decode (Should be null terminated).</td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>Returns a decoded string.</dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>Returns the base64 decoded string.</dd></dl>
 <p>WebUI source file: /include/webui.h (webui_decode)</p>
 
 </div>
@@ -449,14 +473,14 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Base64 encoding. Use this to safely send text based data to the UI. If it fails it will return NULL. </p>
+<p>Encode text to Base64. The returned buffer need to be freed. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">str</td><td>The string to encode (Should be null terminated).</td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>Returns a encoded string.</dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>Returns the base64 encoded string.</dd></dl>
 <p>WebUI source file: /include/webui.h (webui_encode)</p>
 
 </div>
@@ -504,6 +528,35 @@ Public Member Functions</h2></td></tr>
   </dd>
 </dl>
 <p>WebUI source file: /include/webui.h (webui_free)</p>
+
+</div>
+</div>
+<a id="ab6cffac68994939dc23e373b80123034" name="ab6cffac68994939dc23e373b80123034"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab6cffac68994939dc23e373b80123034">&#9670;&#160;</a></span>webui_get_best_browser()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">static UIntPtr WebUI4CSharp.WebUILibFunctions.webui_get_best_browser </td>
+          <td>(</td>
+          <td class="paramtype">UIntPtr</td>          <td class="paramname"><span class="paramname"><em>window</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get the recommended web browser ID to use. If you are already using one, this function will return the same ID. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">window</td><td>The window number.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Returns a web browser ID.</dd></dl>
+<p>WebUI source file: /include/webui.h (webui_get_best_browser)</p>
+<p><br  />
+ </p>
 
 </div>
 </div>
@@ -590,6 +643,92 @@ Public Member Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Returns the the child process id as integer.</dd></dl>
 <p>WebUI source file: /include/webui.h (webui_get_child_process_id)</p>
+
+</div>
+</div>
+<a id="a50440e79666408eb20cf775e9fec145f" name="a50440e79666408eb20cf775e9fec145f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a50440e79666408eb20cf775e9fec145f">&#9670;&#160;</a></span>webui_get_count()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">static UIntPtr WebUI4CSharp.WebUILibFunctions.webui_get_count </td>
+          <td>(</td>
+          <td class="paramtype">ref <a class="el" href="struct_web_u_i4_c_sharp_1_1webui__event__t.html">webui_event_t</a></td>          <td class="paramname"><span class="paramname"><em>e</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get how many arguments there are in an event. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">e</td><td>The event struct.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Returns the arguments count.</dd></dl>
+<p>WebUI source file: /include/webui.h (webui_get_count)</p>
+
+</div>
+</div>
+<a id="ac35acc6f551c5a643d6dadffab71c187" name="ac35acc6f551c5a643d6dadffab71c187"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac35acc6f551c5a643d6dadffab71c187">&#9670;&#160;</a></span>webui_get_float()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">static double WebUI4CSharp.WebUILibFunctions.webui_get_float </td>
+          <td>(</td>
+          <td class="paramtype">ref <a class="el" href="struct_web_u_i4_c_sharp_1_1webui__event__t.html">webui_event_t</a></td>          <td class="paramname"><span class="paramname"><em>e</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get the first argument as float. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">e</td><td>The event struct.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Returns argument as float.</dd></dl>
+<p>WebUI source file: /include/webui.h (webui_get_float)</p>
+
+</div>
+</div>
+<a id="a00321611264042eed6a0666bbaa4f721" name="a00321611264042eed6a0666bbaa4f721"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a00321611264042eed6a0666bbaa4f721">&#9670;&#160;</a></span>webui_get_float_at()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">static double WebUI4CSharp.WebUILibFunctions.webui_get_float_at </td>
+          <td>(</td>
+          <td class="paramtype">ref <a class="el" href="struct_web_u_i4_c_sharp_1_1webui__event__t.html">webui_event_t</a></td>          <td class="paramname"><span class="paramname"><em>e</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">UIntPtr</td>          <td class="paramname"><span class="paramname"><em>index</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get an argument as float at a specific index. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">e</td><td>The event struct.</td></tr>
+    <tr><td class="paramname">index</td><td>The argument position starting from 0.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Returns argument as float.</dd></dl>
+<p>WebUI source file: /include/webui.h (webui_get_float_at)</p>
 
 </div>
 </div>
@@ -1285,7 +1424,7 @@ Public Member Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>Returns the window number.</dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>Returns the same window number if success.</dd></dl>
 <p>WebUI source file: /include/webui.h (webui_new_window_id)</p>
 
 </div>
@@ -1349,6 +1488,37 @@ Public Member Functions</h2></td></tr>
   </dd>
 </dl>
 <p>WebUI source file: /include/webui.h (webui_return_string)</p>
+
+</div>
+</div>
+<a id="a3ed83d53d1aed9ba961136b11443f24b" name="a3ed83d53d1aed9ba961136b11443f24b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3ed83d53d1aed9ba961136b11443f24b">&#9670;&#160;</a></span>webui_return_float()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void WebUI4CSharp.WebUILibFunctions.webui_return_float </td>
+          <td>(</td>
+          <td class="paramtype">ref <a class="el" href="struct_web_u_i4_c_sharp_1_1webui__event__t.html">webui_event_t</a></td>          <td class="paramname"><span class="paramname"><em>e</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double</td>          <td class="paramname"><span class="paramname"><em>f</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Return the response to JavaScript as float. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">e</td><td>The event struct.</td></tr>
+    <tr><td class="paramname">f</td><td>The float number to be send to JavaScript.</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>WebUI source file: /include/webui.h (webui_return_float)</p>
 
 </div>
 </div>
@@ -1538,6 +1708,37 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
+<a id="aaee5f9ea4cb979e20fe71a48c92b76e4" name="aaee5f9ea4cb979e20fe71a48c92b76e4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaee5f9ea4cb979e20fe71a48c92b76e4">&#9670;&#160;</a></span>webui_set_config()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void WebUI4CSharp.WebUILibFunctions.webui_set_config </td>
+          <td>(</td>
+          <td class="paramtype">UIntPtr</td>          <td class="paramname"><span class="paramname"><em>option</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">[MarshalAs(UnmanagedType.I1)] bool</td>          <td class="paramname"><span class="paramname"><em>status</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Control the WebUI behaviour. It's better to call at the beginning. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">option</td><td>The desired option from <code>webui_config</code> enum.</td></tr>
+    <tr><td class="paramname">status</td><td>The status of the option, <code>true</code> or <code>false</code>.</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>WebUI source file: /include/webui.h (webui_set_config)</p>
+
+</div>
+</div>
 <a id="ad104e837ac8bb648fd412dc6134ed4d1" name="ad104e837ac8bb648fd412dc6134ed4d1"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ad104e837ac8bb648fd412dc6134ed4d1">&#9670;&#160;</a></span>webui_set_default_root_folder()</h2>
 
@@ -1562,6 +1763,37 @@ Public Member Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Returns True if the function was successful.</dd></dl>
 <p>WebUI source file: /include/webui.h (webui_set_default_root_folder)</p>
+
+</div>
+</div>
+<a id="a3a6a9a1e5248eee2424903c9e4c73b04" name="a3a6a9a1e5248eee2424903c9e4c73b04"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3a6a9a1e5248eee2424903c9e4c73b04">&#9670;&#160;</a></span>webui_set_event_blocking()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void WebUI4CSharp.WebUILibFunctions.webui_set_event_blocking </td>
+          <td>(</td>
+          <td class="paramtype">UIntPtr</td>          <td class="paramname"><span class="paramname"><em>window</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">[MarshalAs(UnmanagedType.I1)] bool</td>          <td class="paramname"><span class="paramname"><em>status</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Control if UI events comming from this window should be processed one a time in a single blocking thread <code>True</code>, or process every event in a new non-blocking thread <code>False</code>. This update single window. You can use <code>webui_set_config(ui_event_blocking, ...)</code> to update all windows. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">window</td><td>The window number.</td></tr>
+    <tr><td class="paramname">status</td><td>The blocking status <code>true</code> or <code>false</code>.</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>WebUI source file: /include/webui.h (webui_set_event_blocking)</p>
 
 </div>
 </div>
@@ -1714,7 +1946,7 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Set a custom web-server network port to be used by WebUI. This can be useful to determine the HTTP link of <code>webui.js</code> in case you are trying to use WebUI with an external web-server like NGNIX. </p>
+<p>Set a custom web-server/websocket network port to be used by WebUI. This can be useful to determine the HTTP link of <code>webui.js</code> in case you are trying to use WebUI with an external web-server like NGNIX. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">window</td><td>The window number.</td></tr>
@@ -1820,11 +2052,11 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Set the web browser proxy_server to use. Need to be called before 'webui_show()'. </p>
+<p>Set the web browser proxy server to use. Need to be called before <code>webui_show()</code>. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">window</td><td>The window number.</td></tr>
-    <tr><td class="paramname">proxy_server</td><td>The web browser proxy_server. For example '<a href="http://127.0.0.1:8888'">http://127.0.0.1:8888'</a></td></tr>
+    <tr><td class="paramname">proxy_server</td><td>The web browser proxy_server.</td></tr>
   </table>
   </dd>
 </dl>
@@ -1918,7 +2150,7 @@ Public Member Functions</h2></td></tr>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">window</td><td>The window number.</td></tr>
-    <tr><td class="paramname">runtime</td><td>Deno or Nodejs.</td></tr>
+    <tr><td class="paramname">runtime</td><td>Deno, Nodejs or None.</td></tr>
   </table>
   </dd>
 </dl>
@@ -1978,7 +2210,7 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Set the maximum time in seconds to wait for the browser to start. </p>
+<p>Set the maximum time in seconds to wait for the window to connect. This affects <code>show()</code> and <code>wait()</code>. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">second</td><td>The timeout in seconds.</td></tr>
@@ -2088,6 +2320,38 @@ Public Member Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Returns True if showing the window is successed.</dd></dl>
 <p>WebUI source file: /include/webui.h (webui_show_browser)</p>
+
+</div>
+</div>
+<a id="af766f4c3b88dcfefe37a750c5c384c33" name="af766f4c3b88dcfefe37a750c5c384c33"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af766f4c3b88dcfefe37a750c5c384c33">&#9670;&#160;</a></span>webui_show_wv()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">static bool WebUI4CSharp.WebUILibFunctions.webui_show_wv </td>
+          <td>(</td>
+          <td class="paramtype">UIntPtr</td>          <td class="paramname"><span class="paramname"><em>window</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">[MarshalAs(UnmanagedType.LPUTF8Str)] string</td>          <td class="paramname"><span class="paramname"><em>content</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Show a WebView window using embedded HTML, or a file. If the window is already open, it will be refreshed. Note: Win32 need <code>WebView2Loader.dll</code>. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">window</td><td>The window number.</td></tr>
+    <tr><td class="paramname">content</td><td>The HTML, URL, Or a local file.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Returns True if showing the window is successed.</dd></dl>
+<p>WebUI source file: /include/webui.h (webui_show_wv)</p>
 
 </div>
 </div>

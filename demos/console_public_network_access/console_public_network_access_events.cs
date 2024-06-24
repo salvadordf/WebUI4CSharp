@@ -10,13 +10,13 @@ namespace console_public_network_access
         {
             // This function gets called every time
             // there is an event
-            switch ((webui_events)e.event_type)
+            switch ((webui_event)e.event_type)
             {
-                case webui_events.WEBUI_EVENT_CONNECTED:
+                case webui_event.WEBUI_EVENT_CONNECTED:
                     prvWindow.Run("document.getElementById(\"Logs\").value += \"New connection.\\n\";");
                     break;
 
-                case webui_events.WEBUI_EVENT_DISCONNECTED:
+                case webui_event.WEBUI_EVENT_DISCONNECTED:
                     prvWindow.Run("document.getElementById(\"Logs\").value += \"Disconnected.\\n\";");
                     break;
             }

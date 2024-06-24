@@ -12,10 +12,10 @@ namespace WebUI4CSharp
         // The demos define the WEBUIDEMO conditional for convenience
         // Enable the right library depending on the selected platform target in each demo
         private const string _LibName = "..\\..\\..\\..\\..\\WebUI_binaries\\64bits\\webui-2.dll";  // Any CPU
-                                                                                                    //private const string _LibName = "..\\..\\..\\..\\..\\..\\WebUI_binaries\\64bits\\webui-2.dll"; // x64 
-                                                                                                    //private const string _LibName = "..\\..\\..\\..\\..\\..\\WebUI_binaries\\64bits\\webui-2_debug.dll"; // x64 (verbose logging) 
-                                                                                                    //private const string _LibName = "..\\..\\..\\..\\..\\..\\WebUI_binaries\\32bits\\webui-2.dll"; // x32 
-                                                                                                    //private const string _LibName = "..\\..\\..\\..\\..\\..\\WebUI_binaries\\32bits\\webui-2_debug.dll"; // x32 (verbose logging)
+        //private const string _LibName = "..\\..\\..\\..\\..\\..\\WebUI_binaries\\64bits\\webui-2.dll"; // x64 
+        //private const string _LibName = "..\\..\\..\\..\\..\\..\\WebUI_binaries\\64bits\\webui-2_debug.dll"; // x64 (verbose logging) 
+        //private const string _LibName = "..\\..\\..\\..\\..\\..\\WebUI_binaries\\32bits\\webui-2.dll"; // x32 
+        //private const string _LibName = "..\\..\\..\\..\\..\\..\\WebUI_binaries\\32bits\\webui-2_debug.dll"; // x32 (verbose logging)
 #else
         private const string _LibName = "webui-2";    
 #endif
@@ -34,7 +34,7 @@ namespace WebUI4CSharp
         /// Create a new webui window object using a specified window number.
         /// </summary>
         /// <param name="window_number">The window number (should be > 0, and < WEBUI_MAX_IDS).</param>
-        /// <returns>Returns the window number.</returns>
+        /// <returns>Returns the same window number if success.</returns>
         /// <remarks>
         /// <para><see href="https://github.com/webui-dev/webui/blob/main/include/webui.h">WebUI source file: /include/webui.h (webui_new_window_id)</see></para>
         /// </remarks>
@@ -65,6 +65,18 @@ namespace WebUI4CSharp
         public static extern UIntPtr webui_bind(UIntPtr window, [MarshalAs(UnmanagedType.LPUTF8Str)] string element, BindCallback func);
 
         /// <summary>
+        /// Get the recommended web browser ID to use. If you are already using one,
+        /// this function will return the same ID.
+        /// </summary>
+        /// <param name="window">The window number.</param>
+        /// <returns>Returns a web browser ID.</returns>
+        /// <remarks>
+        /// <para><see href="https://github.com/webui-dev/webui/blob/main/include/webui.h">WebUI source file: /include/webui.h (webui_get_best_browser)</see></para>
+        /// </remarks>        
+        [DllImport(_LibName, CallingConvention = CallingConvention.Cdecl)]
+        public static extern UIntPtr webui_get_best_browser(UIntPtr window);
+
+        /// <summary>
         /// Show a window using embedded HTML, or a file. If the window is already open, it will be refreshed.
         /// </summary>
         /// <param name="window">The window number.</param>
@@ -90,6 +102,20 @@ namespace WebUI4CSharp
         [DllImport(_LibName, CallingConvention = CallingConvention.Cdecl)]
         [return: MarshalAs(UnmanagedType.I1)]
         public static extern bool webui_show_browser(UIntPtr window, [MarshalAs(UnmanagedType.LPUTF8Str)] string content, UIntPtr browser);
+
+        /// <summary>
+        /// Show a WebView window using embedded HTML, or a file. If the window is already
+        /// open, it will be refreshed. Note: Win32 need `WebView2Loader.dll`.
+        /// </summary>
+        /// <param name="window">The window number.</param>
+        /// <param name="content">The HTML, URL, Or a local file.</param>
+        /// <returns>Returns True if showing the window is successed.</returns>
+        /// <remarks>
+        /// <para><see href="https://github.com/webui-dev/webui/blob/main/include/webui.h">WebUI source file: /include/webui.h (webui_show_wv)</see></para>
+        /// </remarks>
+        [DllImport(_LibName, CallingConvention = CallingConvention.Cdecl)]
+        [return: MarshalAs(UnmanagedType.I1)]
+        public static extern bool webui_show_wv(UIntPtr window, [MarshalAs(UnmanagedType.LPUTF8Str)] string content);
 
         /// <summary>
         /// Set the window in Kiosk mode (Full screen).
@@ -189,7 +215,7 @@ namespace WebUI4CSharp
         public static extern bool webui_is_shown(UIntPtr window);
 
         /// <summary>
-        /// Set the maximum time in seconds to wait for the browser to start.
+        /// Set the maximum time in seconds to wait for the window to connect. This affects `show()` and `wait()`.
         /// </summary>
         /// <param name="second">The timeout in seconds.</param>
         /// <remarks>
@@ -211,10 +237,10 @@ namespace WebUI4CSharp
         public static extern void webui_set_icon(UIntPtr window, [MarshalAs(UnmanagedType.LPUTF8Str)] string icon, [MarshalAs(UnmanagedType.LPUTF8Str)] string icon_type);
 
         /// <summary>
-        /// Base64 encoding. Use this to safely send text based data to the UI. If it fails it will return NULL.
+        /// Encode text to Base64. The returned buffer need to be freed.
         /// </summary>
         /// <param name="str">The string to encode (Should be null terminated).</param>
-        /// <returns>Returns a encoded string.</returns>
+        /// <returns>Returns the base64 encoded string.</returns>
         /// <remarks>
         /// <para><see href="https://github.com/webui-dev/webui/blob/main/include/webui.h">WebUI source file: /include/webui.h (webui_encode)</see></para>
         /// </remarks>
@@ -223,10 +249,10 @@ namespace WebUI4CSharp
         public static extern string webui_encode([MarshalAs(UnmanagedType.LPUTF8Str)] string str);
 
         /// <summary>
-        /// Base64 decoding. Use this to safely decode received Base64 text from the UI. If it fails it will return NULL.
+        /// Decode a Base64 encoded text. The returned buffer need to be freed.
         /// </summary>
         /// <param name="str">The string to decode (Should be null terminated).</param>
-        /// <returns>Returns a decoded string.</returns>
+        /// <returns>Returns the base64 decoded string.</returns>
         /// <remarks>
         /// <para><see href="https://github.com/webui-dev/webui/blob/main/include/webui.h">WebUI source file: /include/webui.h (webui_decode)</see></para>
         /// </remarks>
@@ -316,10 +342,10 @@ namespace WebUI4CSharp
         public static extern void webui_set_profile(UIntPtr window, [MarshalAs(UnmanagedType.LPUTF8Str)] string name, [MarshalAs(UnmanagedType.LPUTF8Str)] string path);
 
         /// <summary>
-        /// Set the web browser proxy_server to use. Need to be called before 'webui_show()'.
+        /// Set the web browser proxy server to use. Need to be called before `webui_show()`.
         /// </summary>
         /// <param name="window">The window number.</param>
-        /// <param name="proxy_server">The web browser proxy_server. For example 'http://127.0.0.1:8888'</param>
+        /// <param name="proxy_server">The web browser proxy_server.</param>
         /// <remarks>
         /// <para><see href="https://github.com/webui-dev/webui/blob/main/include/webui.h">WebUI source file: /include/webui.h (webui_set_proxy)</see></para>
         /// </remarks>
@@ -412,7 +438,7 @@ namespace WebUI4CSharp
         public static extern UIntPtr webui_get_child_process_id(UIntPtr window);
 
         /// <summary>
-        /// Set a custom web-server network port to be used by WebUI.
+        /// Set a custom web-server/websocket network port to be used by WebUI.
         /// This can be useful to determine the HTTP link of `webui.js` in case
         /// you are trying to use WebUI with an external web-server like NGNIX
         /// </summary>
@@ -425,6 +451,31 @@ namespace WebUI4CSharp
         [DllImport(_LibName, CallingConvention = CallingConvention.Cdecl)]
         [return: MarshalAs(UnmanagedType.I1)]
         public static extern bool webui_set_port(UIntPtr window, UIntPtr port);
+
+        /// <summary>
+        /// Control the WebUI behaviour. It's better to call at the beginning.
+        /// </summary>
+        /// <param name="option">The desired option from `webui_config` enum.</param>
+        /// <param name="status">The status of the option, `true` or `false`.</param>
+        /// <remarks>
+        /// <para><see href="https://github.com/webui-dev/webui/blob/main/include/webui.h">WebUI source file: /include/webui.h (webui_set_config)</see></para>
+        /// </remarks>
+        [DllImport(_LibName, CallingConvention = CallingConvention.Cdecl)]
+        public static extern void webui_set_config(UIntPtr option, [MarshalAs(UnmanagedType.I1)] bool status);
+
+        /// <summary>
+        /// Control if UI events comming from this window should be processed
+        /// one a time in a single blocking thread `True`, or process every event in
+        /// a new non-blocking thread `False`. This update single window. You can use
+        /// `webui_set_config(ui_event_blocking, ...)` to update all windows.
+        /// </summary>
+        /// <param name="window">The window number.</param>
+        /// <param name="status">The blocking status `true` or `false`.</param>
+        /// <remarks>
+        /// <para><see href="https://github.com/webui-dev/webui/blob/main/include/webui.h">WebUI source file: /include/webui.h (webui_set_event_blocking)</see></para>
+        /// </remarks>
+        [DllImport(_LibName, CallingConvention = CallingConvention.Cdecl)]
+        public static extern void webui_set_event_blocking(UIntPtr window, [MarshalAs(UnmanagedType.I1)] bool status);
 
         /// <summary>
         /// Set the SSL/TLS certificate and the private key content, both in PEM
@@ -473,12 +524,23 @@ namespace WebUI4CSharp
         /// Chose between Deno and Nodejs as runtime for .js and .ts files.
         /// </summary>
         /// <param name="window">The window number.</param>
-        /// <param name="runtime">Deno or Nodejs.</param>
+        /// <param name="runtime">Deno, Nodejs or None.</param>
         /// <remarks>
         /// <para><see href="https://github.com/webui-dev/webui/blob/main/include/webui.h">WebUI source file: /include/webui.h (webui_set_runtime)</see></para>
         /// </remarks>
         [DllImport(_LibName, CallingConvention = CallingConvention.Cdecl)]
         public static extern void webui_set_runtime(UIntPtr window, UIntPtr runtime);
+
+        /// <summary>
+        /// Get how many arguments there are in an event.
+        /// </summary>
+        /// <param name="e">The event struct.</param>
+        /// <returns>Returns the arguments count.</returns>
+        /// <remarks>
+        /// <para><see href="https://github.com/webui-dev/webui/blob/main/include/webui.h">WebUI source file: /include/webui.h (webui_get_count)</see></para>
+        /// </remarks>
+        [DllImport(_LibName, CallingConvention = CallingConvention.Cdecl)]
+        public static extern UIntPtr webui_get_count(ref webui_event_t e);
 
         /// <summary>
         /// Get an argument as integer at a specific index.
@@ -502,6 +564,29 @@ namespace WebUI4CSharp
         /// </remarks>
         [DllImport(_LibName, CallingConvention = CallingConvention.Cdecl)]
         public static extern long webui_get_int(ref webui_event_t e);
+
+        /// <summary>
+        /// Get an argument as float at a specific index.
+        /// </summary>
+        /// <param name="e">The event struct.</param>
+        /// <param name="index">The argument position starting from 0.</param>
+        /// <returns>Returns argument as float.</returns>
+        /// <remarks>
+        /// <para><see href="https://github.com/webui-dev/webui/blob/main/include/webui.h">WebUI source file: /include/webui.h (webui_get_float_at)</see></para>
+        /// </remarks>
+        [DllImport(_LibName, CallingConvention = CallingConvention.Cdecl)]
+        public static extern double webui_get_float_at(ref webui_event_t e, UIntPtr index);
+
+        /// <summary>
+        /// Get the first argument as float.
+        /// </summary>
+        /// <param name="e">The event struct.</param>
+        /// <returns>Returns argument as float.</returns>
+        /// <remarks>
+        /// <para><see href="https://github.com/webui-dev/webui/blob/main/include/webui.h">WebUI source file: /include/webui.h (webui_get_float)</see></para>
+        /// </remarks>
+        [DllImport(_LibName, CallingConvention = CallingConvention.Cdecl)]
+        public static extern double webui_get_float(ref webui_event_t e);
 
         /// <summary>
         /// Get an argument as string at a specific index.
@@ -584,6 +669,17 @@ namespace WebUI4CSharp
         /// </remarks>
         [DllImport(_LibName, CallingConvention = CallingConvention.Cdecl)]
         public static extern void webui_return_int(ref webui_event_t e, long n);
+
+        /// <summary>
+        /// Return the response to JavaScript as float.
+        /// </summary>
+        /// <param name="e">The event struct.</param>
+        /// <param name="f">The float number to be send to JavaScript.</param>
+        /// <remarks>
+        /// <para><see href="https://github.com/webui-dev/webui/blob/main/include/webui.h">WebUI source file: /include/webui.h (webui_return_float)</see></para>
+        /// </remarks>
+        [DllImport(_LibName, CallingConvention = CallingConvention.Cdecl)]
+        public static extern void webui_return_float(ref webui_event_t e, double f);
 
         /// <summary>
         /// Return the response to JavaScript as string.

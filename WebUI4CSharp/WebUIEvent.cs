@@ -51,7 +51,7 @@ namespace WebUI4CSharp
         /// <summary>
         /// Event type.
         /// </summary>
-        public webui_events EventType { get => (webui_events)_event.event_type; }
+        public webui_event EventType { get => (webui_event)_event.event_type; }
 
         /// <summary>
         /// HTML element ID.
@@ -94,6 +94,39 @@ namespace WebUI4CSharp
             if (Initialized)
             {
                 return WebUILibFunctions.webui_get_int_at(ref _event, index);
+            }
+            else
+            {
+                return 0;
+            }
+        }
+
+        /// <summary>
+        /// Get the first argument as float.
+        /// </summary>
+        /// <returns>Returns argument as float.</returns>
+        public double GetFloat()
+        {
+            if (Initialized)
+            {
+                return WebUILibFunctions.webui_get_float(ref _event);
+            }
+            else
+            {
+                return 0;
+            }
+        }
+
+        /// <summary>
+        /// Get an argument as float at a specific index.
+        /// </summary>
+        /// <param name="index">The argument position starting from 0.</param>
+        /// <returns>Returns argument as float.</returns>
+        public double GetFloatAt(UIntPtr index)
+        {
+            if (Initialized)
+            {
+                return WebUILibFunctions.webui_get_float_at(ref _event, index);
             }
             else
             {
@@ -236,6 +269,22 @@ namespace WebUI4CSharp
         }
 
         /// <summary>
+        /// Get how many arguments there are in an event.
+        /// </summary>
+        /// <returns>Returns the arguments count.</returns>
+        public UIntPtr GetCount()
+        {
+            if (Initialized)
+            {
+                return WebUILibFunctions.webui_get_count(ref _event);
+            }
+            else
+            {
+                return 0;
+            }
+        }
+
+        /// <summary>
         /// Return the response to JavaScript as integer.
         /// </summary>
         /// <param name="value">The integer to be send to JavaScript.</param>
@@ -244,6 +293,18 @@ namespace WebUI4CSharp
             if (Initialized)
             {
                 WebUILibFunctions.webui_return_int(ref _event, value);
+            }
+        }
+
+        /// <summary>
+        /// Return the response to JavaScript as float.
+        /// </summary>
+        /// <param name="value">The float number to be send to JavaScript.</param>
+        public void ReturnFloat(double value)
+        {
+            if (Initialized)
+            {
+                WebUILibFunctions.webui_return_float(ref _event, value);
             }
         }
 

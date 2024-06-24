@@ -23,19 +23,19 @@ namespace console_serve_a_folder
             WebUIEvent lEvent = new WebUIEvent(e);
             switch (lEvent.EventType)
             {
-                case webui_events.WEBUI_EVENT_CONNECTED:
+                case webui_event.WEBUI_EVENT_CONNECTED:
                     Console.WriteLine("connected.");
                     break;
 
-                case webui_events.WEBUI_EVENT_DISCONNECTED:
+                case webui_event.WEBUI_EVENT_DISCONNECTED:
                     Console.WriteLine("disconnected.");
                     break;
 
-                case webui_events.WEBUI_EVENT_MOUSE_CLICK:
+                case webui_event.WEBUI_EVENT_MOUSE_CLICK:
                     Console.WriteLine("click.");
                     break;
 
-                case webui_events.WEBUI_EVENT_NAVIGATION:
+                case webui_event.WEBUI_EVENT_NAVIGATION:
                     string? lUrl = lEvent.GetString();
                     string navmessage = $"Navigating to {lUrl}";
                     Console.WriteLine(navmessage);

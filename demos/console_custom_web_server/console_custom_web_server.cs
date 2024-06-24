@@ -9,9 +9,9 @@ window.BindAllEvents(WebUI_Events.events);
 // Bind HTML elements with C functions
 window.Bind("my_backend_func", WebUI_Events.my_backend_func);
 
-// Set web server network port WebUI should use
-// this mean `webui.js` will be available at:
-// http://localhost:8081/webui.js
+// Set the web-server/WebSocket port that WebUI should
+// use. This means `webui.js` will be available at:
+// http://localhost:MY_PORT_NUMBER/webui.js
 window.SetPort(8081);
 
 // Show a new window and show our custom web server

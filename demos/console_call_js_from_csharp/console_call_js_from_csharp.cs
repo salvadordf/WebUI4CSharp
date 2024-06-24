@@ -39,11 +39,11 @@ string my_html = "<!DOCTYPE html>" +
                           "    <br>" +
                           "    <h1 id=\"count\">0</h1>" +
                           "    <br>" +
-                          "    <button id=\"MyButton1\">Manual Count</button>" +
+                          "    <button OnClick=\"my_function_count();\">Manual Count</button>" +
                           "    <br>" +
                           "    <button id=\"MyTest\" OnClick=\"AutoTest();\">Auto Count (Every 500ms)</button>" +
                           "    <br>" +
-                          "    <button id=\"MyButton2\">Exit</button>" +
+                          "    <button OnClick=\"my_function_exit();\">Exit</button>" +
                           "    <script>" +
                           "      let count = 0;" +
                           "      function GetCount() {" +
@@ -54,15 +54,15 @@ string my_html = "<!DOCTYPE html>" +
                           "        count = number;" +
                           "      }" +
                           "      function AutoTest(number) {" +
-                          "        setInterval(function(){ webui.call('MyButton1'); }, 500);" +
+                          "        setInterval(function(){ my_function_count(); }, 500);" +
                           "      }" +
                           "    </script>" +
                           "  </body>" +
                           "</html>";
 
 WebUIWindow window = new WebUIWindow();
-window.Bind("MyButton1", WebUI_Events.my_function_count);
-window.Bind("MyButton2", WebUI_Events.my_function_exit);
+window.Bind("my_function_count", WebUI_Events.my_function_count);
+window.Bind("my_function_exit", WebUI_Events.my_function_exit);
 window.Show(my_html);
 WebUI.Wait();
 WebUI.Clean();

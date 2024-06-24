@@ -24,11 +24,11 @@ namespace wpf_public_network_access
             // there is an event
             switch (e.EventType)
             {
-                case webui_events.WEBUI_EVENT_CONNECTED:
+                case webui_event.WEBUI_EVENT_CONNECTED:
                     prvWindow.Run("document.getElementById(\"Logs\").value += \"New connection.\\n\";");
                     break;
 
-                case webui_events.WEBUI_EVENT_DISCONNECTED:
+                case webui_event.WEBUI_EVENT_DISCONNECTED:
                     prvWindow.Run("document.getElementById(\"Logs\").value += \"Disconnected.\\n\";");
                     break;
             }
@@ -125,7 +125,7 @@ namespace wpf_public_network_access
             pubWindow.SetPublic(true); // Make URL accessible from public networks
             pubWindow.BindAllEvents(); // Bind all events
             pubWindow.OnWebUIEvent += pubWindow_OnWebUIEvent;
-            pubWindow.ShowBrowser(public_html, webui_browsers.NoBrowser); // Set public window HTML
+            pubWindow.ShowBrowser(public_html, webui_browser.NoBrowser); // Set public window HTML
             public_win_url = pubWindow.Url; // Get URL of public window
 
             // Main Private Window

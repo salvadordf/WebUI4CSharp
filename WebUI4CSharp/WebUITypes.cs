@@ -5,7 +5,7 @@ namespace WebUI4CSharp
     /// <summary>
     /// Supported web browsers
     /// </summary>
-    public enum webui_browsers
+    public enum webui_browser
     {
         NoBrowser = 0,  // 0. No web browser
         AnyBrowser = 1, // 1. Default recommended web browser
@@ -25,7 +25,7 @@ namespace WebUI4CSharp
     /// <summary>
     /// Supported runtimes
     /// </summary>
-    public enum webui_runtimes
+    public enum webui_runtime
     {
         /// <summary>
         /// Prevent WebUI from using any runtime for .js and .ts files.
@@ -44,7 +44,7 @@ namespace WebUI4CSharp
     /// <summary>
     /// WebUI event types
     /// </summary>
-    public enum webui_events
+    public enum webui_event
     {
         /// <summary>
         /// Window disconnection event.
@@ -67,6 +67,27 @@ namespace WebUI4CSharp
         /// </summary>
         WEBUI_EVENT_CALLBACK,          
     };
+
+    /// <summary>
+    /// WebUI configuration.
+    /// </summary>
+    public enum webui_config
+    {
+        /// <summary>
+        /// Control if `webui_show()`, `webui_show_browser()` and
+        /// `webui_show_wv()` should wait for the window to connect
+        /// before returns or not. Default: True.
+        /// </summary>
+        show_wait_connection = 0,
+        /// <summary>
+        /// Control if WebUI should block and process the UI events
+        /// one a time in a single thread `True`, or process every
+        /// event in a new non-blocking thread `False`. This updates
+        /// all windows. You can use `webui_set_event_blocking()` for
+        /// a specific single window update. Default: False.
+        /// </summary>
+        ui_event_blocking,
+    }
 
     /// <summary>
     /// Structure with event information

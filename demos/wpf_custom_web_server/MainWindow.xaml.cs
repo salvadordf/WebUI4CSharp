@@ -32,19 +32,19 @@ namespace wpf_custom_web_server
             // there is an event
             switch (e.EventType)
             {
-                case webui_events.WEBUI_EVENT_CONNECTED:
+                case webui_event.WEBUI_EVENT_CONNECTED:
                     AddLog("connected.");
                     break;
 
-                case webui_events.WEBUI_EVENT_DISCONNECTED:
+                case webui_event.WEBUI_EVENT_DISCONNECTED:
                     AddLog("disconnected.");
                     break;
 
-                case webui_events.WEBUI_EVENT_MOUSE_CLICK:
+                case webui_event.WEBUI_EVENT_MOUSE_CLICK:
                     AddLog("click.");
                     break;
 
-                case webui_events.WEBUI_EVENT_NAVIGATION:
+                case webui_event.WEBUI_EVENT_NAVIGATION:
                     string? lUrl = e.GetString();
                     string navmessage = $"Navigating to {lUrl}";
                     AddLog(navmessage);
@@ -110,9 +110,9 @@ namespace wpf_custom_web_server
             // Bind HTML elements with C functions
             _window.Bind("my_backend_func");
 
-            // Set web server network port WebUI should use
-            // this mean `webui.js` will be available at:
-            // http://localhost:8081/webui.js
+            // Set the web-server/WebSocket port that WebUI should
+            // use. This means `webui.js` will be available at:
+            // http://localhost:MY_PORT_NUMBER/webui.js
             _window.SetPort(8081);
 
             _window.OnWebUIEvent += Window_OnWebUIEvent;

@@ -35,19 +35,19 @@ namespace winforms_serve_a_folder
             // there is an event
             switch (e.EventType)
             {
-                case webui_events.WEBUI_EVENT_CONNECTED:
+                case webui_event.WEBUI_EVENT_CONNECTED:
                     AddLog("connected.");
                     break;
 
-                case webui_events.WEBUI_EVENT_DISCONNECTED:
+                case webui_event.WEBUI_EVENT_DISCONNECTED:
                     AddLog("disconnected.");
                     break;
 
-                case webui_events.WEBUI_EVENT_MOUSE_CLICK:
+                case webui_event.WEBUI_EVENT_MOUSE_CLICK:
                     AddLog("click.");
                     break;
 
-                case webui_events.WEBUI_EVENT_NAVIGATION:
+                case webui_event.WEBUI_EVENT_NAVIGATION:
                     string? lUrl = e.GetString();
                     string navmessage = $"Navigating to {lUrl}";
                     AddLog(navmessage);
@@ -103,7 +103,7 @@ namespace winforms_serve_a_folder
             _Window.BindAllEvents();
 
             // Make Deno as the `.ts` and `.js` interpreter
-            _Window.SetRuntime(webui_runtimes.Deno);
+            _Window.SetRuntime(webui_runtime.Deno);
 
             // Set a custom files handler
             _Window.SetFileHandler();

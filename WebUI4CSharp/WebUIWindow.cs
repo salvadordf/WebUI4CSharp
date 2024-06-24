@@ -133,6 +133,25 @@ namespace WebUI4CSharp
         }
 
         /// <summary>
+        /// Get the recommended web browser ID to use. If you are already using one,
+        /// this function will return the same ID.
+        /// </summary>
+        public webui_browser BestBrowser
+        {
+            get
+            {
+                if (Initialized)
+                {
+                    return (webui_browser)WebUILibFunctions.webui_get_best_browser(_id);
+                }
+                else
+                {
+                    return webui_browser.NoBrowser;
+                }
+            }
+        }
+
+        /// <summary>
         /// Event triggered after binding a webui event.
         /// </summary>
         public event EventHandler<BindEventArgs>? OnWebUIEvent;
@@ -234,9 +253,20 @@ namespace WebUI4CSharp
         /// <param name="content">The HTML, URL, Or a local file.</param>
         /// <param name="browser">The web browser to be used.</param>
         /// <returns>Returns True if showing the window is successed.</returns>
-        public bool ShowBrowser(string content, webui_browsers browser)
+        public bool ShowBrowser(string content, webui_browser browser)
         {
             return Initialized && WebUILibFunctions.webui_show_browser(_id, content, (UIntPtr)browser);
+        }
+
+        /// <summary>
+        /// Show a WebView window using embedded HTML, or a file. If the window is already
+        /// open, it will be refreshed. Note: Win32 need `WebView2Loader.dll`.
+        /// </summary>
+        /// <param name="content">The HTML, URL, Or a local file.</param>
+        /// <returns>Returns True if showing the window is successed.</returns>
+        public bool ShowWV(string content)
+        {
+            return Initialized && WebUILibFunctions.webui_show_wv(_id, content);
         }
 
         /// <summary>
@@ -476,7 +506,7 @@ namespace WebUI4CSharp
         }
 
         /// <summary>
-        /// Set the web browser proxy_server to use. Need to be called before 'webui_show()'.
+        /// Set the web browser proxy server to use. Need to be called before `webui_show()`.
         /// </summary>
         /// <param name="proxy_server">The web browser proxy_server. For example 'http://127.0.0.1:8888'</param>
         public void SetProxy(string proxy_server)
@@ -523,7 +553,7 @@ namespace WebUI4CSharp
         }
 
         /// <summary>
-        /// Set a custom web-server network port to be used by WebUI.
+        /// Set a custom web-server/websocket network port to be used by WebUI.
         /// This can be useful to determine the HTTP link of `webui.js` in case
         /// you are trying to use WebUI with an external web-server like NGNIX
         /// </summary>
@@ -532,6 +562,21 @@ namespace WebUI4CSharp
         public bool SetPort(UIntPtr port)
         {
             return Initialized && WebUILibFunctions.webui_set_port(_id, port);
+        }
+
+        /// <summary>
+        /// Control if UI events comming from this window should be processed
+        /// one a time in a single blocking thread `True`, or process every event in
+        /// a new non-blocking thread `False`. This update single window. You can use
+        /// WebUI.SetConfig(ui_event_blocking, ...)` to update all windows.
+        /// </summary>
+        /// <param name="status">The blocking status `true` or `false`.</param>
+        public void SetEventBlocking(bool status)
+        {
+            if (Initialized)
+            {
+                WebUILibFunctions.webui_set_event_blocking(_id, status);
+            }
         }
 
         /// <summary>
@@ -582,8 +627,8 @@ namespace WebUI4CSharp
         /// <summary>
         /// Chose between Deno and Nodejs as runtime for .js and .ts files.
         /// </summary>
-        /// <param name="runtime">Deno or Nodejs.</param>
-        public void SetRuntime(webui_runtimes runtime)
+        /// <param name="runtime">Deno, Nodejs or None.</param>
+        public void SetRuntime(webui_runtime runtime)
         {
             if (Initialized)
             {
