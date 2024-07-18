@@ -70,3 +70,4 @@ You can also support this project with Liberapay.
 * [WebView4Delphi](https://github.com/salvadordf/WebView4Delphi)
 * [WebUI4Delphi](https://github.com/salvadordf/WebUI4Delphi)
 * [Doxygen](https://github.com/doxygen/doxygen)
+* [WebUI.NET](https://github.com/Juff-Ma/WebUI.NET)
