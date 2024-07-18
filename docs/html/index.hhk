@@ -16,15 +16,21 @@
   <LI><OBJECT type="text/sitemap"><param name="Local" value="class_web_u_i4_c_sharp_1_1_bind_event_args.html#a4e85021a33f3cbda0cc8dc3016f86a43"><param name="Name" value="BindEventArgs(WebUIEvent bindEvent)"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="class_web_u_i4_c_sharp_1_1_web_u_i_event.html#a8fe1848e6150a2fba3eaa23e1eec9f6d"><param name="Name" value="BindID"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="namespace_web_u_i4_c_sharp.html#ac5c8ab0b6219c047cfde9393ec6fb64aa8d091597127cc044520e13fae3a3af59"><param name="Name" value="Brave"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_web_u_i4_c_sharp_1_1_web_u_i.html#a23d0fabbd6afdd6d28f507798cff4a16"><param name="Name" value="BrowserExist(webui_browser browser)"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="namespace_web_u_i4_c_sharp.html#aab4e2ab08022f427a1e83ab312317b78a71d4491b5ac3124997fe3b4ec56efed9"><param name="Name" value="Bun"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="class_web_u_i4_c_sharp_1_1_web_u_i.html#a1db53ad70b8a236b96b02ff8fbdcb153"><param name="Name" value="CSharpStringToWebUIString(string srcString, out int rsltLength)"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="class_web_u_i4_c_sharp_1_1_web_u_i_window.html#a6f7a013dbc8e64c3ba8c418e2cb15f23"><param name="Name" value="ChildProcessId"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="namespace_web_u_i4_c_sharp.html#ac5c8ab0b6219c047cfde9393ec6fb64aa986c37480b1f1c2e443504b38b6361b4"><param name="Name" value="Chrome"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="namespace_web_u_i4_c_sharp.html#ac5c8ab0b6219c047cfde9393ec6fb64aa65d5644b4049b4215a6faa532e7e5ad5"><param name="Name" value="Chromium"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="namespace_web_u_i4_c_sharp.html#ac5c8ab0b6219c047cfde9393ec6fb64aaef8d6947d1754ce29a67c46b29136b3a"><param name="Name" value="ChromiumBased"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="class_web_u_i4_c_sharp_1_1_web_u_i.html#aca07fccd4a44c6f3ba26477efb897c90"><param name="Name" value="Clean()"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_web_u_i4_c_sharp_1_1_web_u_i_event.html#a33076b78a4412130d83117fd0272b704"><param name="Name" value="ClientID"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="class_web_u_i4_c_sharp_1_1_web_u_i_window.html#a9179de046e92451fe845b3338af62a6b"><param name="Name" value="Close()"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_web_u_i4_c_sharp_1_1_web_u_i_event.html#a245e2e8925567f01eabac07bfc3dfb2e"><param name="Name" value="CloseClient()"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="class_web_u_i4_c_sharp_1_1_web_u_i.html#a08e22ae23ab7f2d6413d0d06cd1ffe1f"><param name="Name" value="CommonBindCallback(ref webui_event_t e)"></OBJECT>
-  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_web_u_i4_c_sharp_1_1_web_u_i_base64.html#a5e474065b9f8567df9ba12d22550ecfa"><param name="Name" value="Decode(string str)"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_web_u_i4_c_sharp_1_1_web_u_i_event.html#acd4952b194ba0a6a74568c5d437a3953"><param name="Name" value="ConnectionID"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_web_u_i4_c_sharp_1_1_web_u_i_event.html#a190807132769550f4b4de9659f4ded22"><param name="Name" value="Cookies"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_web_u_i4_c_sharp_1_1_web_u_i_base64.html#ae99ffb94a3f0d82a615f6436911a19ff"><param name="Name" value="Decode(string str)"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="class_web_u_i4_c_sharp_1_1_web_u_i.html#ac4b2ff65477cab348f291584c835afa0"><param name="Name" value="DeleteAllProfiles()"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="class_web_u_i4_c_sharp_1_1_web_u_i_window.html#ad8ff0d075459502c922e4d28b71df794"><param name="Name" value="DeleteProfile()"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="namespace_web_u_i4_c_sharp.html#aab4e2ab08022f427a1e83ab312317b78a90a8e116f0c50b620808de22e7f89127"><param name="Name" value="Deno"></OBJECT>
@@ -33,7 +39,7 @@
   <LI><OBJECT type="text/sitemap"><param name="Local" value="class_web_u_i4_c_sharp_1_1_web_u_i_window.html#a51cb381fbea43601c4c6c484dabe9fb3"><param name="Name" value="DoFileHandlerEvent(IntPtr filename, out int length)"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="namespace_web_u_i4_c_sharp.html#ac5c8ab0b6219c047cfde9393ec6fb64aae4a297a0f76119a442c2595ac040673e"><param name="Name" value="Edge"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="class_web_u_i4_c_sharp_1_1_web_u_i_event.html#a10d6e12407a5d871fb585a41c8f8030c"><param name="Name" value="Element"></OBJECT>
-  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_web_u_i4_c_sharp_1_1_web_u_i_base64.html#ab5a44f01f929a02e53fc9d952b25feb0"><param name="Name" value="Encode(string str)"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_web_u_i4_c_sharp_1_1_web_u_i_base64.html#aec2f2bf6616431b0ce81b82c7826264a"><param name="Name" value="Encode(string str)"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="namespace_web_u_i4_c_sharp.html#ac5c8ab0b6219c047cfde9393ec6fb64aae3f530e977d74053c6d70eb84886e756"><param name="Name" value="Epic"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="class_web_u_i4_c_sharp_1_1_web_u_i_event.html#a2b95a9458db5652e61880a70f5af1871"><param name="Name" value="Event"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="class_web_u_i4_c_sharp_1_1_web_u_i_event.html#ad725b0424ccc4589d86fe08b4efe2b6e"><param name="Name" value="EventID"></OBJECT>
@@ -49,8 +55,10 @@
   <LI><OBJECT type="text/sitemap"><param name="Local" value="class_web_u_i4_c_sharp_1_1_web_u_i_event.html#a9b69fbd64297796119973ea4576e2336"><param name="Name" value="GetCount()"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="class_web_u_i4_c_sharp_1_1_web_u_i_event.html#a9f6444cbd3106a085ed355abf429c45a"><param name="Name" value="GetFloat()"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="class_web_u_i4_c_sharp_1_1_web_u_i_event.html#ab209425334f19a53825480458c266cbc"><param name="Name" value="GetFloatAt(UIntPtr index)"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_web_u_i4_c_sharp_1_1_web_u_i.html#ac118b66c9f3baf4e55fc2667834db2d8"><param name="Name" value="GetFreePort()"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="class_web_u_i4_c_sharp_1_1_web_u_i_event.html#acf35e49abc152b9c8f039dcc751e5471"><param name="Name" value="GetInt()"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="class_web_u_i4_c_sharp_1_1_web_u_i_event.html#a675cb42273ef7be2f34ec20c8ea54e9a"><param name="Name" value="GetIntAt(UIntPtr index)"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_web_u_i4_c_sharp_1_1_web_u_i.html#ad046e388fd9a23b0478da39c0e8fdd53"><param name="Name" value="GetMimeType(string file)"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="class_web_u_i4_c_sharp_1_1_web_u_i_window.html#ac0922750f706288fbe75305ee6ecfe0b"><param name="Name" value="GetNewWindowId()"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="class_web_u_i4_c_sharp_1_1_web_u_i_event.html#a7643cc1158a931dc06322f00a8120bbe"><param name="Name" value="GetSize()"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="class_web_u_i4_c_sharp_1_1_web_u_i_event.html#aa505855d3aa77210ecbe3ae6c5d51229"><param name="Name" value="GetSizeAt(UIntPtr index)"></OBJECT>
@@ -70,16 +78,20 @@
   </UL>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="namespace_web_u_i4_c_sharp.html#aa58fe7e28c38369950f140a087865535"><param name="Name" value="InterfaceEventCallback(UIntPtr window, UIntPtr event_type, IntPtr element, UIntPtr event_number, UIntPtr bind_id)"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="class_web_u_i4_c_sharp_1_1_web_u_i.html#aa9733a3ee4685d59df24c04d23e53084"><param name="Name" value="IsAppRunning()"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_web_u_i4_c_sharp_1_1_web_u_i.html#a27c091da65ef64917703fed8ab9803f4"><param name="Name" value="IsHighContrast()"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="class_web_u_i4_c_sharp_1_1_web_u_i_window.html#a0e39c472bcfb570002b5df323eed0472"><param name="Name" value="IsShown()"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="class_web_u_i4_c_sharp_1_1_web_u_i.html#a9fa8bde10cb7aa8be2ed988b879d1840"><param name="Name" value="Malloc(UIntPtr size)"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="class_web_u_i4_c_sharp_1_1_web_u_i_window.html#ab8e792ed1886e4f735f26bef42b1b6c6"><param name="Name" value="Navigate(string url)"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_web_u_i4_c_sharp_1_1_web_u_i_event.html#a05e1eacfae1d7793518b72b95ae2565e"><param name="Name" value="NavigateClient(string url)"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="namespace_web_u_i4_c_sharp.html#ac5c8ab0b6219c047cfde9393ec6fb64aa9e2e7e83a90d202448f64a313029911b"><param name="Name" value="NoBrowser"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="namespace_web_u_i4_c_sharp.html#aab4e2ab08022f427a1e83ab312317b78a46753be63b6ba8975974383d42485f70"><param name="Name" value="NodeJS"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="namespace_web_u_i4_c_sharp.html#aab4e2ab08022f427a1e83ab312317b78a6adf97f83acf6453d4a6a4b1070f3754"><param name="Name" value="None"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="class_web_u_i4_c_sharp_1_1_web_u_i_window.html#aa6d9453cf19f33e61bbab72a6398d64d"><param name="Name" value="OnFileHandlerEvent"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="class_web_u_i4_c_sharp_1_1_web_u_i_window.html#a47a041be32c117830f87e684c4f37299"><param name="Name" value="OnWebUIEvent"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_web_u_i4_c_sharp_1_1_web_u_i.html#a6363fb9f1c315cc78aa16c2d5c7f33bd"><param name="Name" value="OpenUrl(string url)"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="namespace_web_u_i4_c_sharp.html#ac5c8ab0b6219c047cfde9393ec6fb64aaa956e985535b8d57732d14dfa0e4c71a"><param name="Name" value="Opera"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="class_web_u_i4_c_sharp_1_1_web_u_i_window.html#a57a4cbd4814c804c7b0ce83d4e153e15"><param name="Name" value="ParentProcessId"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_web_u_i4_c_sharp_1_1_web_u_i_window.html#ac68cdfe85e0df27882ae905389710ef6"><param name="Name" value="Port"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="class_web_u_i4_c_sharp_1_1_web_u_i_event.html#a1a316328df065e3a10de5f9c476a7d34"><param name="Name" value="ReturnBool(bool value)"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="class_web_u_i4_c_sharp_1_1_web_u_i_event.html#ab29e7286620a42a2a3776c6d89df04df"><param name="Name" value="ReturnFloat(double value)"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="class_web_u_i4_c_sharp_1_1_web_u_i_event.html#a8e10016eee4dc48ccf48cb2feda27a87"><param name="Name" value="ReturnInt(long value)"></OBJECT>
@@ -87,16 +99,20 @@
   <LI><OBJECT type="text/sitemap"><param name="Local" value="class_web_u_i4_c_sharp_1_1_web_u_i_event.html#a4ce6f8cc2f05dd51e95a106428650a3a"><param name="Name" value="ReturnString(string value)"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="class_web_u_i4_c_sharp_1_1_file_handler_event_args.html#a4ac18a2215f40fb8f6db31722085daae"><param name="Name" value="ReturnValue"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="class_web_u_i4_c_sharp_1_1_web_u_i_window.html#aafc0f923dcc7b7c8ca931e37f5cbaa67"><param name="Name" value="Run(string script_)"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_web_u_i4_c_sharp_1_1_web_u_i_event.html#a1636cf1a8eeced247c111f3f5cc2b3a7"><param name="Name" value="RunClient(string script_)"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="namespace_web_u_i4_c_sharp.html#ac5c8ab0b6219c047cfde9393ec6fb64aa50de9bc68c93dc32d8c7c90593471760"><param name="Name" value="Safari"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="class_web_u_i4_c_sharp_1_1_web_u_i_window.html#a0b71183322fe6b1f80fd9fb2d4d2f7a1"><param name="Name" value="Script(string script_, UIntPtr timeout, out string response, UIntPtr response_length)"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_web_u_i4_c_sharp_1_1_web_u_i_event.html#a1d9ec628ddbdf1c98615eda6a44a4a4a"><param name="Name" value="ScriptClient(string script_, UIntPtr timeout, out string response, UIntPtr response_length)"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="class_web_u_i4_c_sharp_1_1_web_u_i.html#a09403160ca57681609fedf18247fec09"><param name="Name" value="SearchWindow(UIntPtr windowId)"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="class_web_u_i4_c_sharp_1_1_web_u_i_window.html#adbdafa3ff375d26f41aeaacc16170bd0"><param name="Name" value="SendRaw(string function, UIntPtr raw, UIntPtr size)"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_web_u_i4_c_sharp_1_1_web_u_i_event.html#a6bb1f80ecd452d32937f60394a301497"><param name="Name" value="SendRawClient(string function, UIntPtr raw, UIntPtr size)"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="class_web_u_i4_c_sharp_1_1_web_u_i.html#ab750df21b98d1817948b856f9a61e623"><param name="Name" value="SetConfig(webui_config option, bool status)"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="class_web_u_i4_c_sharp_1_1_web_u_i.html#a1b872e2269fa68bea29f398cd22f5c0e"><param name="Name" value="SetDefaultRootFolder(string path)"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="class_web_u_i4_c_sharp_1_1_web_u_i_window.html#a579258eea4156feaccb56189822b5a7a"><param name="Name" value="SetEventBlocking(bool status)"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="class_web_u_i4_c_sharp_1_1_web_u_i_window.html#a33284b7079453cb570e8ab7fcee203ff"><param name="Name" value="SetFileHandler()"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="class_web_u_i4_c_sharp_1_1_web_u_i_window.html#a8fd2185901ca9a99602c6dedca48ef62"><param name="Name" value="SetFileHandler(FileHandlerCallback handler)"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="class_web_u_i4_c_sharp_1_1_web_u_i_window.html#a5984d3873e6977933d5fd7254773d6dd"><param name="Name" value="SetHide(bool status)"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_web_u_i4_c_sharp_1_1_web_u_i_window.html#a8ff02b999261697bbb7c9a562f07962e"><param name="Name" value="SetHighContrast(bool status)"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="class_web_u_i4_c_sharp_1_1_web_u_i_window.html#a96c5866f3af8dcceacfada2d5460985b"><param name="Name" value="SetIcon(string icon, string icon_type)"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="class_web_u_i4_c_sharp_1_1_web_u_i_window.html#ad4bf8905ab011a6c7715c17c3c776f09"><param name="Name" value="SetKiosk(bool status)"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="class_web_u_i4_c_sharp_1_1_web_u_i_window.html#adc38e0eb0e5fc9ab02f4828bb2867ea8"><param name="Name" value="SetPort(UIntPtr port)"></OBJECT>
@@ -113,7 +129,9 @@
   <LI><OBJECT type="text/sitemap"><param name="Local" value="class_web_u_i4_c_sharp_1_1_web_u_i.html#a665b01ddf7f93dbb7a27c3fc2ba041b0"><param name="Name" value="SetTimeout(UIntPtr second)"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="class_web_u_i4_c_sharp_1_1_web_u_i_window.html#a1ef9f9571e139a1ef1360b5c0d320415"><param name="Name" value="Show(string content)"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="class_web_u_i4_c_sharp_1_1_web_u_i_window.html#ad96cb450657eb7b0f1e3ad4f8eeb83dd"><param name="Name" value="ShowBrowser(string content, webui_browser browser)"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_web_u_i4_c_sharp_1_1_web_u_i_event.html#a99cb7febb192c3b271b50089ceda4845"><param name="Name" value="ShowClient(string content)"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="class_web_u_i4_c_sharp_1_1_web_u_i_window.html#a7eb578d49ca30caca01150af1059ab72"><param name="Name" value="ShowWV(string content)"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_web_u_i4_c_sharp_1_1_web_u_i_window.html#a2ce5d1413a4662fb94278f451e57a7bd"><param name="Name" value="StartServer(string content)"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="class_web_u_i4_c_sharp_1_1_web_u_i_window.html#ab9831d0f0657dcb10a74f91ec3ea8c03"><param name="Name" value="Url"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="namespace_web_u_i4_c_sharp.html#ac5c8ab0b6219c047cfde9393ec6fb64aa38228d8549cbbc747592a34e58fb2ac2"><param name="Name" value="Vivaldi"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="namespace_web_u_i4_c_sharp.html#a4ca5572eafe04885135fca34ef09ffe3a31c3d9eb28dad1999b891ea64f1f870b"><param name="Name" value="WEBUI_EVENT_CALLBACK"></OBJECT>
@@ -155,6 +173,10 @@
   </UL>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="class_web_u_i4_c_sharp_1_1_web_u_i.html"><param name="Name" value="WebUI4CSharp::WebUI"></OBJECT>
   <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_web_u_i4_c_sharp_1_1_web_u_i.html#a23d0fabbd6afdd6d28f507798cff4a16"><param name="Name" value="BrowserExist(webui_browser browser)"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_web_u_i4_c_sharp_1_1_web_u_i.html"><param name="Name" value="WebUI4CSharp::WebUI"></OBJECT>
+  <UL>
     <LI><OBJECT type="text/sitemap"><param name="Local" value="class_web_u_i4_c_sharp_1_1_web_u_i.html#a1db53ad70b8a236b96b02ff8fbdcb153"><param name="Name" value="CSharpStringToWebUIString(string srcString, out int rsltLength)"></OBJECT>
   </UL>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="class_web_u_i4_c_sharp_1_1_web_u_i.html"><param name="Name" value="WebUI4CSharp::WebUI"></OBJECT>
@@ -179,11 +201,27 @@
   </UL>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="class_web_u_i4_c_sharp_1_1_web_u_i.html"><param name="Name" value="WebUI4CSharp::WebUI"></OBJECT>
   <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_web_u_i4_c_sharp_1_1_web_u_i.html#ac118b66c9f3baf4e55fc2667834db2d8"><param name="Name" value="GetFreePort()"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_web_u_i4_c_sharp_1_1_web_u_i.html"><param name="Name" value="WebUI4CSharp::WebUI"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_web_u_i4_c_sharp_1_1_web_u_i.html#ad046e388fd9a23b0478da39c0e8fdd53"><param name="Name" value="GetMimeType(string file)"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_web_u_i4_c_sharp_1_1_web_u_i.html"><param name="Name" value="WebUI4CSharp::WebUI"></OBJECT>
+  <UL>
     <LI><OBJECT type="text/sitemap"><param name="Local" value="class_web_u_i4_c_sharp_1_1_web_u_i.html#aa9733a3ee4685d59df24c04d23e53084"><param name="Name" value="IsAppRunning()"></OBJECT>
   </UL>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="class_web_u_i4_c_sharp_1_1_web_u_i.html"><param name="Name" value="WebUI4CSharp::WebUI"></OBJECT>
   <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_web_u_i4_c_sharp_1_1_web_u_i.html#a27c091da65ef64917703fed8ab9803f4"><param name="Name" value="IsHighContrast()"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_web_u_i4_c_sharp_1_1_web_u_i.html"><param name="Name" value="WebUI4CSharp::WebUI"></OBJECT>
+  <UL>
     <LI><OBJECT type="text/sitemap"><param name="Local" value="class_web_u_i4_c_sharp_1_1_web_u_i.html#a9fa8bde10cb7aa8be2ed988b879d1840"><param name="Name" value="Malloc(UIntPtr size)"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_web_u_i4_c_sharp_1_1_web_u_i.html"><param name="Name" value="WebUI4CSharp::WebUI"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_web_u_i4_c_sharp_1_1_web_u_i.html#a6363fb9f1c315cc78aa16c2d5c7f33bd"><param name="Name" value="OpenUrl(string url)"></OBJECT>
   </UL>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="class_web_u_i4_c_sharp_1_1_web_u_i.html"><param name="Name" value="WebUI4CSharp::WebUI"></OBJECT>
   <UL>
@@ -228,16 +266,32 @@
   <LI><OBJECT type="text/sitemap"><param name="Local" value="class_web_u_i4_c_sharp_1_1_web_u_i_base64.html"><param name="Name" value="WebUI4CSharp::WebUIBase64"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="class_web_u_i4_c_sharp_1_1_web_u_i_base64.html"><param name="Name" value="WebUI4CSharp::WebUIBase64"></OBJECT>
   <UL>
-    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_web_u_i4_c_sharp_1_1_web_u_i_base64.html#a5e474065b9f8567df9ba12d22550ecfa"><param name="Name" value="Decode(string str)"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_web_u_i4_c_sharp_1_1_web_u_i_base64.html#ae99ffb94a3f0d82a615f6436911a19ff"><param name="Name" value="Decode(string str)"></OBJECT>
   </UL>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="class_web_u_i4_c_sharp_1_1_web_u_i_base64.html"><param name="Name" value="WebUI4CSharp::WebUIBase64"></OBJECT>
   <UL>
-    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_web_u_i4_c_sharp_1_1_web_u_i_base64.html#ab5a44f01f929a02e53fc9d952b25feb0"><param name="Name" value="Encode(string str)"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_web_u_i4_c_sharp_1_1_web_u_i_base64.html#aec2f2bf6616431b0ce81b82c7826264a"><param name="Name" value="Encode(string str)"></OBJECT>
   </UL>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="class_web_u_i4_c_sharp_1_1_web_u_i_event.html"><param name="Name" value="WebUI4CSharp::WebUIEvent"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="class_web_u_i4_c_sharp_1_1_web_u_i_event.html"><param name="Name" value="WebUI4CSharp::WebUIEvent"></OBJECT>
   <UL>
     <LI><OBJECT type="text/sitemap"><param name="Local" value="class_web_u_i4_c_sharp_1_1_web_u_i_event.html#a8fe1848e6150a2fba3eaa23e1eec9f6d"><param name="Name" value="BindID"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_web_u_i4_c_sharp_1_1_web_u_i_event.html"><param name="Name" value="WebUI4CSharp::WebUIEvent"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_web_u_i4_c_sharp_1_1_web_u_i_event.html#a33076b78a4412130d83117fd0272b704"><param name="Name" value="ClientID"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_web_u_i4_c_sharp_1_1_web_u_i_event.html"><param name="Name" value="WebUI4CSharp::WebUIEvent"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_web_u_i4_c_sharp_1_1_web_u_i_event.html#a245e2e8925567f01eabac07bfc3dfb2e"><param name="Name" value="CloseClient()"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_web_u_i4_c_sharp_1_1_web_u_i_event.html"><param name="Name" value="WebUI4CSharp::WebUIEvent"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_web_u_i4_c_sharp_1_1_web_u_i_event.html#acd4952b194ba0a6a74568c5d437a3953"><param name="Name" value="ConnectionID"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_web_u_i4_c_sharp_1_1_web_u_i_event.html"><param name="Name" value="WebUI4CSharp::WebUIEvent"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_web_u_i4_c_sharp_1_1_web_u_i_event.html#a190807132769550f4b4de9659f4ded22"><param name="Name" value="Cookies"></OBJECT>
   </UL>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="class_web_u_i4_c_sharp_1_1_web_u_i_event.html"><param name="Name" value="WebUI4CSharp::WebUIEvent"></OBJECT>
   <UL>
@@ -313,6 +367,10 @@
   </UL>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="class_web_u_i4_c_sharp_1_1_web_u_i_event.html"><param name="Name" value="WebUI4CSharp::WebUIEvent"></OBJECT>
   <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_web_u_i4_c_sharp_1_1_web_u_i_event.html#a05e1eacfae1d7793518b72b95ae2565e"><param name="Name" value="NavigateClient(string url)"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_web_u_i4_c_sharp_1_1_web_u_i_event.html"><param name="Name" value="WebUI4CSharp::WebUIEvent"></OBJECT>
+  <UL>
     <LI><OBJECT type="text/sitemap"><param name="Local" value="class_web_u_i4_c_sharp_1_1_web_u_i_event.html#a1a316328df065e3a10de5f9c476a7d34"><param name="Name" value="ReturnBool(bool value)"></OBJECT>
   </UL>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="class_web_u_i4_c_sharp_1_1_web_u_i_event.html"><param name="Name" value="WebUI4CSharp::WebUIEvent"></OBJECT>
@@ -333,6 +391,18 @@
   </UL>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="class_web_u_i4_c_sharp_1_1_web_u_i_event.html"><param name="Name" value="WebUI4CSharp::WebUIEvent"></OBJECT>
   <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_web_u_i4_c_sharp_1_1_web_u_i_event.html#a1636cf1a8eeced247c111f3f5cc2b3a7"><param name="Name" value="RunClient(string script_)"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_web_u_i4_c_sharp_1_1_web_u_i_event.html"><param name="Name" value="WebUI4CSharp::WebUIEvent"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_web_u_i4_c_sharp_1_1_web_u_i_event.html#a1d9ec628ddbdf1c98615eda6a44a4a4a"><param name="Name" value="ScriptClient(string script_, UIntPtr timeout, out string response, UIntPtr response_length)"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_web_u_i4_c_sharp_1_1_web_u_i_event.html"><param name="Name" value="WebUI4CSharp::WebUIEvent"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_web_u_i4_c_sharp_1_1_web_u_i_event.html#a6bb1f80ecd452d32937f60394a301497"><param name="Name" value="SendRawClient(string function, UIntPtr raw, UIntPtr size)"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_web_u_i4_c_sharp_1_1_web_u_i_event.html"><param name="Name" value="WebUI4CSharp::WebUIEvent"></OBJECT>
+  <UL>
     <LI><OBJECT type="text/sitemap"><param name="Local" value="class_web_u_i4_c_sharp_1_1_web_u_i_event.html#ac9f18e1fd25dc13e8ae78e236af5fd46"><param name="Name" value="SetResponse(MemoryStream response)"></OBJECT>
   </UL>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="class_web_u_i4_c_sharp_1_1_web_u_i_event.html"><param name="Name" value="WebUI4CSharp::WebUIEvent"></OBJECT>
@@ -341,7 +411,11 @@
   </UL>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="class_web_u_i4_c_sharp_1_1_web_u_i_event.html"><param name="Name" value="WebUI4CSharp::WebUIEvent"></OBJECT>
   <UL>
-    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_web_u_i4_c_sharp_1_1_web_u_i_event.html#a2205c2d87b058f1445a915cbbae78080"><param name="Name" value="WebUIEvent(UIntPtr window, UIntPtr event_type, IntPtr element, UIntPtr event_number, UIntPtr bind_id)"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_web_u_i4_c_sharp_1_1_web_u_i_event.html#a99cb7febb192c3b271b50089ceda4845"><param name="Name" value="ShowClient(string content)"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_web_u_i4_c_sharp_1_1_web_u_i_event.html"><param name="Name" value="WebUI4CSharp::WebUIEvent"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_web_u_i4_c_sharp_1_1_web_u_i_event.html#a9940d647d9895d30d993aa36865ece83"><param name="Name" value="WebUIEvent(UIntPtr window, UIntPtr event_type, IntPtr element, UIntPtr event_number, UIntPtr bind_id, UIntPtr client_id, UIntPtr connection_id, IntPtr cookies)"></OBJECT>
   </UL>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="class_web_u_i4_c_sharp_1_1_web_u_i_event.html"><param name="Name" value="WebUI4CSharp::WebUIEvent"></OBJECT>
   <UL>
@@ -362,6 +436,10 @@
   </UL>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="class_web_u_i4_c_sharp_1_1_web_u_i_lib_functions.html"><param name="Name" value="WebUI4CSharp::WebUILibFunctions"></OBJECT>
   <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_web_u_i4_c_sharp_1_1_web_u_i_lib_functions.html#a813557ce8db4acfab446fc69c3d46c4b"><param name="Name" value="webui_browser_exist(UIntPtr window)"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_web_u_i4_c_sharp_1_1_web_u_i_lib_functions.html"><param name="Name" value="WebUI4CSharp::WebUILibFunctions"></OBJECT>
+  <UL>
     <LI><OBJECT type="text/sitemap"><param name="Local" value="class_web_u_i4_c_sharp_1_1_web_u_i_lib_functions.html#a9fdb86eac6a80727ef6755c84666e1dd"><param name="Name" value="webui_clean()"></OBJECT>
   </UL>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="class_web_u_i4_c_sharp_1_1_web_u_i_lib_functions.html"><param name="Name" value="WebUI4CSharp::WebUILibFunctions"></OBJECT>
@@ -370,7 +448,11 @@
   </UL>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="class_web_u_i4_c_sharp_1_1_web_u_i_lib_functions.html"><param name="Name" value="WebUI4CSharp::WebUILibFunctions"></OBJECT>
   <UL>
-    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_web_u_i4_c_sharp_1_1_web_u_i_lib_functions.html#af3f2a1a6f68d068610ee0442f0a7f3b2"><param name="Name" value="webui_decode([MarshalAs(UnmanagedType.LPUTF8Str)] string str)"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_web_u_i4_c_sharp_1_1_web_u_i_lib_functions.html#a286981cada334fc6db0a24633662d40f"><param name="Name" value="webui_close_client(ref webui_event_t e)"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_web_u_i4_c_sharp_1_1_web_u_i_lib_functions.html"><param name="Name" value="WebUI4CSharp::WebUILibFunctions"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_web_u_i4_c_sharp_1_1_web_u_i_lib_functions.html#a49db8ed77cdddc6b266ddd470f66af20"><param name="Name" value="webui_decode([MarshalAs(UnmanagedType.LPUTF8Str)] string str)"></OBJECT>
   </UL>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="class_web_u_i4_c_sharp_1_1_web_u_i_lib_functions.html"><param name="Name" value="WebUI4CSharp::WebUILibFunctions"></OBJECT>
   <UL>
@@ -386,7 +468,7 @@
   </UL>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="class_web_u_i4_c_sharp_1_1_web_u_i_lib_functions.html"><param name="Name" value="WebUI4CSharp::WebUILibFunctions"></OBJECT>
   <UL>
-    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_web_u_i4_c_sharp_1_1_web_u_i_lib_functions.html#a1c57f29a0133451d781d5709a0d5ef6e"><param name="Name" value="webui_encode([MarshalAs(UnmanagedType.LPUTF8Str)] string str)"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_web_u_i4_c_sharp_1_1_web_u_i_lib_functions.html#a53eab2c19cb42f127b575e74f0c30f7a"><param name="Name" value="webui_encode([MarshalAs(UnmanagedType.LPUTF8Str)] string str)"></OBJECT>
   </UL>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="class_web_u_i4_c_sharp_1_1_web_u_i_lib_functions.html"><param name="Name" value="WebUI4CSharp::WebUILibFunctions"></OBJECT>
   <UL>
@@ -426,6 +508,10 @@
   </UL>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="class_web_u_i4_c_sharp_1_1_web_u_i_lib_functions.html"><param name="Name" value="WebUI4CSharp::WebUILibFunctions"></OBJECT>
   <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_web_u_i4_c_sharp_1_1_web_u_i_lib_functions.html#a858fad6ea7519233a83d5015d3feaff7"><param name="Name" value="webui_get_free_port()"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_web_u_i4_c_sharp_1_1_web_u_i_lib_functions.html"><param name="Name" value="WebUI4CSharp::WebUILibFunctions"></OBJECT>
+  <UL>
     <LI><OBJECT type="text/sitemap"><param name="Local" value="class_web_u_i4_c_sharp_1_1_web_u_i_lib_functions.html#a5805d816ba62e27df58a133033c999ba"><param name="Name" value="webui_get_int(ref webui_event_t e)"></OBJECT>
   </UL>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="class_web_u_i4_c_sharp_1_1_web_u_i_lib_functions.html"><param name="Name" value="WebUI4CSharp::WebUILibFunctions"></OBJECT>
@@ -434,11 +520,19 @@
   </UL>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="class_web_u_i4_c_sharp_1_1_web_u_i_lib_functions.html"><param name="Name" value="WebUI4CSharp::WebUILibFunctions"></OBJECT>
   <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_web_u_i4_c_sharp_1_1_web_u_i_lib_functions.html#a5a023761b77421ef69879a8f2b042ee7"><param name="Name" value="webui_get_mime_type([MarshalAs(UnmanagedType.LPUTF8Str)] string file)"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_web_u_i4_c_sharp_1_1_web_u_i_lib_functions.html"><param name="Name" value="WebUI4CSharp::WebUILibFunctions"></OBJECT>
+  <UL>
     <LI><OBJECT type="text/sitemap"><param name="Local" value="class_web_u_i4_c_sharp_1_1_web_u_i_lib_functions.html#a56888932dd34b68ff86a80fd7aa7aaa8"><param name="Name" value="webui_get_new_window_id()"></OBJECT>
   </UL>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="class_web_u_i4_c_sharp_1_1_web_u_i_lib_functions.html"><param name="Name" value="WebUI4CSharp::WebUILibFunctions"></OBJECT>
   <UL>
     <LI><OBJECT type="text/sitemap"><param name="Local" value="class_web_u_i4_c_sharp_1_1_web_u_i_lib_functions.html#a5ed2fd509fb0f2b937a58e2133bf5d73"><param name="Name" value="webui_get_parent_process_id(UIntPtr window)"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_web_u_i4_c_sharp_1_1_web_u_i_lib_functions.html"><param name="Name" value="WebUI4CSharp::WebUILibFunctions"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_web_u_i4_c_sharp_1_1_web_u_i_lib_functions.html#aa727ce6f61497082775ff916ecb0c416"><param name="Name" value="webui_get_port(UIntPtr window)"></OBJECT>
   </UL>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="class_web_u_i4_c_sharp_1_1_web_u_i_lib_functions.html"><param name="Name" value="WebUI4CSharp::WebUILibFunctions"></OBJECT>
   <UL>
@@ -470,6 +564,10 @@
   </UL>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="class_web_u_i4_c_sharp_1_1_web_u_i_lib_functions.html"><param name="Name" value="WebUI4CSharp::WebUILibFunctions"></OBJECT>
   <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_web_u_i4_c_sharp_1_1_web_u_i_lib_functions.html#a6436139a9244ca5ed668d5f3f730dff8"><param name="Name" value="webui_interface_get_float_at(UIntPtr window, UIntPtr event_number, UIntPtr index)"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_web_u_i4_c_sharp_1_1_web_u_i_lib_functions.html"><param name="Name" value="WebUI4CSharp::WebUILibFunctions"></OBJECT>
+  <UL>
     <LI><OBJECT type="text/sitemap"><param name="Local" value="class_web_u_i4_c_sharp_1_1_web_u_i_lib_functions.html#a24d3a300c92d26dc14bbfd25b5fcf700"><param name="Name" value="webui_interface_get_int_at(UIntPtr window, UIntPtr event_number, UIntPtr index)"></OBJECT>
   </UL>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="class_web_u_i4_c_sharp_1_1_web_u_i_lib_functions.html"><param name="Name" value="WebUI4CSharp::WebUILibFunctions"></OBJECT>
@@ -498,6 +596,10 @@
   </UL>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="class_web_u_i4_c_sharp_1_1_web_u_i_lib_functions.html"><param name="Name" value="WebUI4CSharp::WebUILibFunctions"></OBJECT>
   <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_web_u_i4_c_sharp_1_1_web_u_i_lib_functions.html#a69bb494cf355ac9917b262950be9c0a1"><param name="Name" value="webui_is_high_contrast()"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_web_u_i4_c_sharp_1_1_web_u_i_lib_functions.html"><param name="Name" value="WebUI4CSharp::WebUILibFunctions"></OBJECT>
+  <UL>
     <LI><OBJECT type="text/sitemap"><param name="Local" value="class_web_u_i4_c_sharp_1_1_web_u_i_lib_functions.html#aa3c6a133bde0e4db0420451388be39f0"><param name="Name" value="webui_is_shown(UIntPtr window)"></OBJECT>
   </UL>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="class_web_u_i4_c_sharp_1_1_web_u_i_lib_functions.html"><param name="Name" value="WebUI4CSharp::WebUILibFunctions"></OBJECT>
@@ -510,11 +612,19 @@
   </UL>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="class_web_u_i4_c_sharp_1_1_web_u_i_lib_functions.html"><param name="Name" value="WebUI4CSharp::WebUILibFunctions"></OBJECT>
   <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_web_u_i4_c_sharp_1_1_web_u_i_lib_functions.html#a881447a8d302669a5854e92e58f479c0"><param name="Name" value="webui_navigate_client(ref webui_event_t e, [MarshalAs(UnmanagedType.LPUTF8Str)] string url)"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_web_u_i4_c_sharp_1_1_web_u_i_lib_functions.html"><param name="Name" value="WebUI4CSharp::WebUILibFunctions"></OBJECT>
+  <UL>
     <LI><OBJECT type="text/sitemap"><param name="Local" value="class_web_u_i4_c_sharp_1_1_web_u_i_lib_functions.html#ab259ca0dada1aa19c2cc8765d5aca93a"><param name="Name" value="webui_new_window()"></OBJECT>
   </UL>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="class_web_u_i4_c_sharp_1_1_web_u_i_lib_functions.html"><param name="Name" value="WebUI4CSharp::WebUILibFunctions"></OBJECT>
   <UL>
     <LI><OBJECT type="text/sitemap"><param name="Local" value="class_web_u_i4_c_sharp_1_1_web_u_i_lib_functions.html#a241d53da472a2778b551ce40f0279b9f"><param name="Name" value="webui_new_window_id(UIntPtr window_number)"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_web_u_i4_c_sharp_1_1_web_u_i_lib_functions.html"><param name="Name" value="WebUI4CSharp::WebUILibFunctions"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_web_u_i4_c_sharp_1_1_web_u_i_lib_functions.html#adaee52b9772ec051af546704f99dbaae"><param name="Name" value="webui_open_url([MarshalAs(UnmanagedType.LPUTF8Str)] string url)"></OBJECT>
   </UL>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="class_web_u_i4_c_sharp_1_1_web_u_i_lib_functions.html"><param name="Name" value="WebUI4CSharp::WebUILibFunctions"></OBJECT>
   <UL>
@@ -542,11 +652,23 @@
   </UL>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="class_web_u_i4_c_sharp_1_1_web_u_i_lib_functions.html"><param name="Name" value="WebUI4CSharp::WebUILibFunctions"></OBJECT>
   <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_web_u_i4_c_sharp_1_1_web_u_i_lib_functions.html#a5b813dbb04b38c5143665f7cf5041617"><param name="Name" value="webui_run_client(ref webui_event_t e, [MarshalAs(UnmanagedType.LPUTF8Str)] string script)"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_web_u_i4_c_sharp_1_1_web_u_i_lib_functions.html"><param name="Name" value="WebUI4CSharp::WebUILibFunctions"></OBJECT>
+  <UL>
     <LI><OBJECT type="text/sitemap"><param name="Local" value="class_web_u_i4_c_sharp_1_1_web_u_i_lib_functions.html#ac4a5de6073991f14655ab91d369e3681"><param name="Name" value="webui_script(UIntPtr window, [MarshalAs(UnmanagedType.LPUTF8Str)] string script, UIntPtr timeout, IntPtr buffer, UIntPtr buffer_length)"></OBJECT>
   </UL>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="class_web_u_i4_c_sharp_1_1_web_u_i_lib_functions.html"><param name="Name" value="WebUI4CSharp::WebUILibFunctions"></OBJECT>
   <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_web_u_i4_c_sharp_1_1_web_u_i_lib_functions.html#ad8b008b8e7dcf63ed3347b81d143d3bb"><param name="Name" value="webui_script_client(ref webui_event_t e, [MarshalAs(UnmanagedType.LPUTF8Str)] string script, UIntPtr timeout, IntPtr buffer, UIntPtr buffer_length)"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_web_u_i4_c_sharp_1_1_web_u_i_lib_functions.html"><param name="Name" value="WebUI4CSharp::WebUILibFunctions"></OBJECT>
+  <UL>
     <LI><OBJECT type="text/sitemap"><param name="Local" value="class_web_u_i4_c_sharp_1_1_web_u_i_lib_functions.html#ac2582ff18e2b48d261a71f6761aa00b2"><param name="Name" value="webui_send_raw(UIntPtr window, [MarshalAs(UnmanagedType.LPUTF8Str)] string function, UIntPtr raw, UIntPtr size)"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_web_u_i4_c_sharp_1_1_web_u_i_lib_functions.html"><param name="Name" value="WebUI4CSharp::WebUILibFunctions"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_web_u_i4_c_sharp_1_1_web_u_i_lib_functions.html#a332df08e82d7d4a0f05dc0aea677e310"><param name="Name" value="webui_send_raw_client(ref webui_event_t e, [MarshalAs(UnmanagedType.LPUTF8Str)] string function, UIntPtr raw, UIntPtr size)"></OBJECT>
   </UL>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="class_web_u_i4_c_sharp_1_1_web_u_i_lib_functions.html"><param name="Name" value="WebUI4CSharp::WebUILibFunctions"></OBJECT>
   <UL>
@@ -567,6 +689,10 @@
   <LI><OBJECT type="text/sitemap"><param name="Local" value="class_web_u_i4_c_sharp_1_1_web_u_i_lib_functions.html"><param name="Name" value="WebUI4CSharp::WebUILibFunctions"></OBJECT>
   <UL>
     <LI><OBJECT type="text/sitemap"><param name="Local" value="class_web_u_i4_c_sharp_1_1_web_u_i_lib_functions.html#ab10cd60b79226fc9d80f6c5f7ba2741b"><param name="Name" value="webui_set_hide(UIntPtr window, [MarshalAs(UnmanagedType.I1)] bool status)"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_web_u_i4_c_sharp_1_1_web_u_i_lib_functions.html"><param name="Name" value="WebUI4CSharp::WebUILibFunctions"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_web_u_i4_c_sharp_1_1_web_u_i_lib_functions.html#abfa243e1a7e752fea830fcec4c8f2e24"><param name="Name" value="webui_set_high_contrast(UIntPtr window, [MarshalAs(UnmanagedType.I1)] bool status)"></OBJECT>
   </UL>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="class_web_u_i4_c_sharp_1_1_web_u_i_lib_functions.html"><param name="Name" value="WebUI4CSharp::WebUILibFunctions"></OBJECT>
   <UL>
@@ -626,7 +752,15 @@
   </UL>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="class_web_u_i4_c_sharp_1_1_web_u_i_lib_functions.html"><param name="Name" value="WebUI4CSharp::WebUILibFunctions"></OBJECT>
   <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_web_u_i4_c_sharp_1_1_web_u_i_lib_functions.html#a37558a4150d9ab3a71cbb99aeae45a55"><param name="Name" value="webui_show_client(ref webui_event_t e, [MarshalAs(UnmanagedType.LPUTF8Str)] string content)"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_web_u_i4_c_sharp_1_1_web_u_i_lib_functions.html"><param name="Name" value="WebUI4CSharp::WebUILibFunctions"></OBJECT>
+  <UL>
     <LI><OBJECT type="text/sitemap"><param name="Local" value="class_web_u_i4_c_sharp_1_1_web_u_i_lib_functions.html#af766f4c3b88dcfefe37a750c5c384c33"><param name="Name" value="webui_show_wv(UIntPtr window, [MarshalAs(UnmanagedType.LPUTF8Str)] string content)"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_web_u_i4_c_sharp_1_1_web_u_i_lib_functions.html"><param name="Name" value="WebUI4CSharp::WebUILibFunctions"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_web_u_i4_c_sharp_1_1_web_u_i_lib_functions.html#adf2fb270cc0b3803ae772cb4acb85bbf"><param name="Name" value="webui_start_server(UIntPtr window, [MarshalAs(UnmanagedType.LPUTF8Str)] string content)"></OBJECT>
   </UL>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="class_web_u_i4_c_sharp_1_1_web_u_i_lib_functions.html"><param name="Name" value="WebUI4CSharp::WebUILibFunctions"></OBJECT>
   <UL>
@@ -715,6 +849,10 @@
   </UL>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="class_web_u_i4_c_sharp_1_1_web_u_i_window.html"><param name="Name" value="WebUI4CSharp::WebUIWindow"></OBJECT>
   <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_web_u_i4_c_sharp_1_1_web_u_i_window.html#ac68cdfe85e0df27882ae905389710ef6"><param name="Name" value="Port"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_web_u_i4_c_sharp_1_1_web_u_i_window.html"><param name="Name" value="WebUI4CSharp::WebUIWindow"></OBJECT>
+  <UL>
     <LI><OBJECT type="text/sitemap"><param name="Local" value="class_web_u_i4_c_sharp_1_1_web_u_i_window.html#aafc0f923dcc7b7c8ca931e37f5cbaa67"><param name="Name" value="Run(string script_)"></OBJECT>
   </UL>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="class_web_u_i4_c_sharp_1_1_web_u_i_window.html"><param name="Name" value="WebUI4CSharp::WebUIWindow"></OBJECT>
@@ -740,6 +878,10 @@
   <LI><OBJECT type="text/sitemap"><param name="Local" value="class_web_u_i4_c_sharp_1_1_web_u_i_window.html"><param name="Name" value="WebUI4CSharp::WebUIWindow"></OBJECT>
   <UL>
     <LI><OBJECT type="text/sitemap"><param name="Local" value="class_web_u_i4_c_sharp_1_1_web_u_i_window.html#a5984d3873e6977933d5fd7254773d6dd"><param name="Name" value="SetHide(bool status)"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_web_u_i4_c_sharp_1_1_web_u_i_window.html"><param name="Name" value="WebUI4CSharp::WebUIWindow"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_web_u_i4_c_sharp_1_1_web_u_i_window.html#a8ff02b999261697bbb7c9a562f07962e"><param name="Name" value="SetHighContrast(bool status)"></OBJECT>
   </UL>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="class_web_u_i4_c_sharp_1_1_web_u_i_window.html"><param name="Name" value="WebUI4CSharp::WebUIWindow"></OBJECT>
   <UL>
@@ -795,6 +937,10 @@
   </UL>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="class_web_u_i4_c_sharp_1_1_web_u_i_window.html"><param name="Name" value="WebUI4CSharp::WebUIWindow"></OBJECT>
   <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_web_u_i4_c_sharp_1_1_web_u_i_window.html#a2ce5d1413a4662fb94278f451e57a7bd"><param name="Name" value="StartServer(string content)"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_web_u_i4_c_sharp_1_1_web_u_i_window.html"><param name="Name" value="WebUI4CSharp::WebUIWindow"></OBJECT>
+  <UL>
     <LI><OBJECT type="text/sitemap"><param name="Local" value="class_web_u_i4_c_sharp_1_1_web_u_i_window.html#ab9831d0f0657dcb10a74f91ec3ea8c03"><param name="Name" value="Url"></OBJECT>
   </UL>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="class_web_u_i4_c_sharp_1_1_web_u_i_window.html"><param name="Name" value="WebUI4CSharp::WebUIWindow"></OBJECT>
@@ -809,6 +955,18 @@
   <LI><OBJECT type="text/sitemap"><param name="Local" value="struct_web_u_i4_c_sharp_1_1webui__event__t.html"><param name="Name" value="WebUI4CSharp::webui_event_t"></OBJECT>
   <UL>
     <LI><OBJECT type="text/sitemap"><param name="Local" value="struct_web_u_i4_c_sharp_1_1webui__event__t.html#a6eda1a3232836aeca66ae4731e5777f7"><param name="Name" value="bind_id"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="struct_web_u_i4_c_sharp_1_1webui__event__t.html"><param name="Name" value="WebUI4CSharp::webui_event_t"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="struct_web_u_i4_c_sharp_1_1webui__event__t.html#ade550b19b3af7194383c04f4d8173684"><param name="Name" value="client_id"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="struct_web_u_i4_c_sharp_1_1webui__event__t.html"><param name="Name" value="WebUI4CSharp::webui_event_t"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="struct_web_u_i4_c_sharp_1_1webui__event__t.html#a1f42a317ab20b783a8ef2c5075e939f7"><param name="Name" value="connection_id"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="struct_web_u_i4_c_sharp_1_1webui__event__t.html"><param name="Name" value="WebUI4CSharp::webui_event_t"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="struct_web_u_i4_c_sharp_1_1webui__event__t.html#abf1e12f138c2d4b1f61c10fe646e4340"><param name="Name" value="cookies"></OBJECT>
   </UL>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="struct_web_u_i4_c_sharp_1_1webui__event__t.html"><param name="Name" value="WebUI4CSharp::webui_event_t"></OBJECT>
   <UL>
@@ -837,6 +995,10 @@
   <LI><OBJECT type="text/sitemap"><param name="Local" value="namespace_web_u_i4_c_sharp.html"><param name="Name" value="WebUI4CSharp"></OBJECT>
   <UL>
     <LI><OBJECT type="text/sitemap"><param name="Local" value="namespace_web_u_i4_c_sharp.html#ac5c8ab0b6219c047cfde9393ec6fb64aa8d091597127cc044520e13fae3a3af59"><param name="Name" value="Brave"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="namespace_web_u_i4_c_sharp.html"><param name="Name" value="WebUI4CSharp"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="namespace_web_u_i4_c_sharp.html#aab4e2ab08022f427a1e83ab312317b78a71d4491b5ac3124997fe3b4ec56efed9"><param name="Name" value="Bun"></OBJECT>
   </UL>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="namespace_web_u_i4_c_sharp.html"><param name="Name" value="WebUI4CSharp"></OBJECT>
   <UL>
@@ -920,7 +1082,19 @@
   </UL>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="namespace_web_u_i4_c_sharp.html"><param name="Name" value="WebUI4CSharp"></OBJECT>
   <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="namespace_web_u_i4_c_sharp.html#ac5c8ab0b6219c047cfde9393ec6fb64aa0b18a4f587874cfcb63b20a1f2bab9ad"><param name="Name" value="Webview"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="namespace_web_u_i4_c_sharp.html"><param name="Name" value="WebUI4CSharp"></OBJECT>
+  <UL>
     <LI><OBJECT type="text/sitemap"><param name="Local" value="namespace_web_u_i4_c_sharp.html#ac5c8ab0b6219c047cfde9393ec6fb64aa0c0a230358d00f0fcf81c28d23bf6e8c"><param name="Name" value="Yandex"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="namespace_web_u_i4_c_sharp.html"><param name="Name" value="WebUI4CSharp"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="namespace_web_u_i4_c_sharp.html#ad1bbd721b28f54891333aa2bf2465b55a8bdc50a0033b329e3e6f51286d6513ef"><param name="Name" value="folder_monitor"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="namespace_web_u_i4_c_sharp.html"><param name="Name" value="WebUI4CSharp"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="namespace_web_u_i4_c_sharp.html#ad1bbd721b28f54891333aa2bf2465b55abf1126802746690f60fabe240551a554"><param name="Name" value="multi_client"></OBJECT>
   </UL>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="namespace_web_u_i4_c_sharp.html"><param name="Name" value="WebUI4CSharp"></OBJECT>
   <UL>
@@ -929,6 +1103,10 @@
   <LI><OBJECT type="text/sitemap"><param name="Local" value="namespace_web_u_i4_c_sharp.html"><param name="Name" value="WebUI4CSharp"></OBJECT>
   <UL>
     <LI><OBJECT type="text/sitemap"><param name="Local" value="namespace_web_u_i4_c_sharp.html#ad1bbd721b28f54891333aa2bf2465b55ae717477edfa6c454eb17c51e99c56337"><param name="Name" value="ui_event_blocking"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="namespace_web_u_i4_c_sharp.html"><param name="Name" value="WebUI4CSharp"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="namespace_web_u_i4_c_sharp.html#ad1bbd721b28f54891333aa2bf2465b55a4cc8ae2e4c670b7c0e126a672a0535d2"><param name="Name" value="use_cookies"></OBJECT>
   </UL>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="namespace_web_u_i4_c_sharp.html"><param name="Name" value="WebUI4CSharp"></OBJECT>
   <UL>
@@ -946,30 +1124,39 @@
   <UL>
     <LI><OBJECT type="text/sitemap"><param name="Local" value="namespace_web_u_i4_c_sharp.html#aab4e2ab08022f427a1e83ab312317b78"><param name="Name" value="webui_runtime"></OBJECT>
   </UL>
-  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_web_u_i4_c_sharp_1_1_web_u_i_event.html#a2205c2d87b058f1445a915cbbae78080"><param name="Name" value="WebUIEvent(UIntPtr window, UIntPtr event_type, IntPtr element, UIntPtr event_number, UIntPtr bind_id)"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_web_u_i4_c_sharp_1_1_web_u_i_event.html#a9940d647d9895d30d993aa36865ece83"><param name="Name" value="WebUIEvent(UIntPtr window, UIntPtr event_type, IntPtr element, UIntPtr event_number, UIntPtr bind_id, UIntPtr client_id, UIntPtr connection_id, IntPtr cookies)"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="class_web_u_i4_c_sharp_1_1_web_u_i_event.html#af86e0a098f152e4e114e11d574290f55"><param name="Name" value="WebUIEvent(webui_event_t e)"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="class_web_u_i4_c_sharp_1_1_web_u_i.html#abd1b85eddb9e255da78e453d7025db89"><param name="Name" value="WebUIStringToCSharpString(IntPtr srcString)"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="class_web_u_i4_c_sharp_1_1_web_u_i_window.html#a03c43ae30b2cb2d5dbbc0d277d9d4b66"><param name="Name" value="WebUIWindow()"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="class_web_u_i4_c_sharp_1_1_web_u_i_window.html#a33737f3fcc76bdb097ab039ffbbe31f5"><param name="Name" value="WebUIWindow(UIntPtr windowId)"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="namespace_web_u_i4_c_sharp.html#ac5c8ab0b6219c047cfde9393ec6fb64aa0b18a4f587874cfcb63b20a1f2bab9ad"><param name="Name" value="Webview"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="class_web_u_i4_c_sharp_1_1_web_u_i_event.html#ae5c28e06c22eeb7dc017f9c81e58cf15"><param name="Name" value="Window"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="class_web_u_i4_c_sharp_1_1_web_u_i_event.html#a7efde7191b9199dc86c20f511f6d2758"><param name="Name" value="WindowID"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="namespace_web_u_i4_c_sharp.html#ac5c8ab0b6219c047cfde9393ec6fb64aa0c0a230358d00f0fcf81c28d23bf6e8c"><param name="Name" value="Yandex"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="struct_web_u_i4_c_sharp_1_1webui__event__t.html#a6eda1a3232836aeca66ae4731e5777f7"><param name="Name" value="bind_id"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="struct_web_u_i4_c_sharp_1_1webui__event__t.html#ade550b19b3af7194383c04f4d8173684"><param name="Name" value="client_id"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="struct_web_u_i4_c_sharp_1_1webui__event__t.html#a1f42a317ab20b783a8ef2c5075e939f7"><param name="Name" value="connection_id"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="struct_web_u_i4_c_sharp_1_1webui__event__t.html#abf1e12f138c2d4b1f61c10fe646e4340"><param name="Name" value="cookies"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="struct_web_u_i4_c_sharp_1_1webui__event__t.html#a23add84fd9b53ff59ac9d5a93ab0bafe"><param name="Name" value="element"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="struct_web_u_i4_c_sharp_1_1webui__event__t.html#a6a6377779b14ee6c202de21eaec7393c"><param name="Name" value="event_number"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="struct_web_u_i4_c_sharp_1_1webui__event__t.html#a20d08e96003743598a40623809101abe"><param name="Name" value="event_type"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="namespace_web_u_i4_c_sharp.html#ad1bbd721b28f54891333aa2bf2465b55a8bdc50a0033b329e3e6f51286d6513ef"><param name="Name" value="folder_monitor"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="namespace_web_u_i4_c_sharp.html#ad1bbd721b28f54891333aa2bf2465b55abf1126802746690f60fabe240551a554"><param name="Name" value="multi_client"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="namespace_web_u_i4_c_sharp.html#ad1bbd721b28f54891333aa2bf2465b55a56fdd5442bb96e56817ec57f1979ed0d"><param name="Name" value="show_wait_connection"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="namespace_web_u_i4_c_sharp.html#ad1bbd721b28f54891333aa2bf2465b55ae717477edfa6c454eb17c51e99c56337"><param name="Name" value="ui_event_blocking"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="namespace_web_u_i4_c_sharp.html#ad1bbd721b28f54891333aa2bf2465b55a4cc8ae2e4c670b7c0e126a672a0535d2"><param name="Name" value="use_cookies"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="class_web_u_i4_c_sharp_1_1_web_u_i_lib_functions.html#a856716644e385ccba2a8c0026702f46f"><param name="Name" value="webui_bind(UIntPtr window, [MarshalAs(UnmanagedType.LPUTF8Str)] string element, BindCallback func)"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="namespace_web_u_i4_c_sharp.html#ac5c8ab0b6219c047cfde9393ec6fb64a"><param name="Name" value="webui_browser"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_web_u_i4_c_sharp_1_1_web_u_i_lib_functions.html#a813557ce8db4acfab446fc69c3d46c4b"><param name="Name" value="webui_browser_exist(UIntPtr window)"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="class_web_u_i4_c_sharp_1_1_web_u_i_lib_functions.html#a9fdb86eac6a80727ef6755c84666e1dd"><param name="Name" value="webui_clean()"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="class_web_u_i4_c_sharp_1_1_web_u_i_lib_functions.html#a5dda86c90e20e21448fa72aca72313e5"><param name="Name" value="webui_close(UIntPtr window)"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_web_u_i4_c_sharp_1_1_web_u_i_lib_functions.html#a286981cada334fc6db0a24633662d40f"><param name="Name" value="webui_close_client(ref webui_event_t e)"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="namespace_web_u_i4_c_sharp.html#ad1bbd721b28f54891333aa2bf2465b55"><param name="Name" value="webui_config"></OBJECT>
-  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_web_u_i4_c_sharp_1_1_web_u_i_lib_functions.html#af3f2a1a6f68d068610ee0442f0a7f3b2"><param name="Name" value="webui_decode([MarshalAs(UnmanagedType.LPUTF8Str)] string str)"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_web_u_i4_c_sharp_1_1_web_u_i_lib_functions.html#a49db8ed77cdddc6b266ddd470f66af20"><param name="Name" value="webui_decode([MarshalAs(UnmanagedType.LPUTF8Str)] string str)"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="class_web_u_i4_c_sharp_1_1_web_u_i_lib_functions.html#a92b7cabb38b9397d2879f39dc547738b"><param name="Name" value="webui_delete_all_profiles()"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="class_web_u_i4_c_sharp_1_1_web_u_i_lib_functions.html#a345ebee29a24ab493234676b717ae316"><param name="Name" value="webui_delete_profile(UIntPtr window)"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="class_web_u_i4_c_sharp_1_1_web_u_i_lib_functions.html#adddf16255ef3c14cb45026438f4efa07"><param name="Name" value="webui_destroy(UIntPtr window)"></OBJECT>
-  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_web_u_i4_c_sharp_1_1_web_u_i_lib_functions.html#a1c57f29a0133451d781d5709a0d5ef6e"><param name="Name" value="webui_encode([MarshalAs(UnmanagedType.LPUTF8Str)] string str)"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_web_u_i4_c_sharp_1_1_web_u_i_lib_functions.html#a53eab2c19cb42f127b575e74f0c30f7a"><param name="Name" value="webui_encode([MarshalAs(UnmanagedType.LPUTF8Str)] string str)"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="namespace_web_u_i4_c_sharp.html#a4ca5572eafe04885135fca34ef09ffe3"><param name="Name" value="webui_event"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="class_web_u_i4_c_sharp_1_1_web_u_i_lib_functions.html#a478e9b5217ee24a4d7172ad9c4447aab"><param name="Name" value="webui_exit()"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="class_web_u_i4_c_sharp_1_1_web_u_i_lib_functions.html#a93cb651066fc32d1500eb70138a4b4b6"><param name="Name" value="webui_free(IntPtr ptr)"></OBJECT>
@@ -980,10 +1167,13 @@
   <LI><OBJECT type="text/sitemap"><param name="Local" value="class_web_u_i4_c_sharp_1_1_web_u_i_lib_functions.html#a50440e79666408eb20cf775e9fec145f"><param name="Name" value="webui_get_count(ref webui_event_t e)"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="class_web_u_i4_c_sharp_1_1_web_u_i_lib_functions.html#ac35acc6f551c5a643d6dadffab71c187"><param name="Name" value="webui_get_float(ref webui_event_t e)"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="class_web_u_i4_c_sharp_1_1_web_u_i_lib_functions.html#a00321611264042eed6a0666bbaa4f721"><param name="Name" value="webui_get_float_at(ref webui_event_t e, UIntPtr index)"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_web_u_i4_c_sharp_1_1_web_u_i_lib_functions.html#a858fad6ea7519233a83d5015d3feaff7"><param name="Name" value="webui_get_free_port()"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="class_web_u_i4_c_sharp_1_1_web_u_i_lib_functions.html#a5805d816ba62e27df58a133033c999ba"><param name="Name" value="webui_get_int(ref webui_event_t e)"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="class_web_u_i4_c_sharp_1_1_web_u_i_lib_functions.html#a93345d0d87e5350fd7a3c180579c1f78"><param name="Name" value="webui_get_int_at(ref webui_event_t e, UIntPtr index)"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_web_u_i4_c_sharp_1_1_web_u_i_lib_functions.html#a5a023761b77421ef69879a8f2b042ee7"><param name="Name" value="webui_get_mime_type([MarshalAs(UnmanagedType.LPUTF8Str)] string file)"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="class_web_u_i4_c_sharp_1_1_web_u_i_lib_functions.html#a56888932dd34b68ff86a80fd7aa7aaa8"><param name="Name" value="webui_get_new_window_id()"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="class_web_u_i4_c_sharp_1_1_web_u_i_lib_functions.html#a5ed2fd509fb0f2b937a58e2133bf5d73"><param name="Name" value="webui_get_parent_process_id(UIntPtr window)"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_web_u_i4_c_sharp_1_1_web_u_i_lib_functions.html#aa727ce6f61497082775ff916ecb0c416"><param name="Name" value="webui_get_port(UIntPtr window)"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="class_web_u_i4_c_sharp_1_1_web_u_i_lib_functions.html#a6d79914ee5b3e9dfb64bf125b444e939"><param name="Name" value="webui_get_size(ref webui_event_t e)"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="class_web_u_i4_c_sharp_1_1_web_u_i_lib_functions.html#a4b71cf0a2198f69f5d28231349aba7ce"><param name="Name" value="webui_get_size_at(ref webui_event_t e, UIntPtr index)"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="class_web_u_i4_c_sharp_1_1_web_u_i_lib_functions.html#a80a53b2de5beccaa41dbebfcbf396f75"><param name="Name" value="webui_get_string(ref webui_event_t e)"></OBJECT>
@@ -991,6 +1181,7 @@
   <LI><OBJECT type="text/sitemap"><param name="Local" value="class_web_u_i4_c_sharp_1_1_web_u_i_lib_functions.html#a74fdb7951fde99a80bcf25d764801959"><param name="Name" value="webui_get_url(UIntPtr window)"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="class_web_u_i4_c_sharp_1_1_web_u_i_lib_functions.html#a840f0559c56df16ff3c9555b815fd82f"><param name="Name" value="webui_interface_bind(UIntPtr window, [MarshalAs(UnmanagedType.LPUTF8Str)] string element, InterfaceEventCallback func)"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="class_web_u_i4_c_sharp_1_1_web_u_i_lib_functions.html#a92e4575cd2d4da23d5a08b53d15b871e"><param name="Name" value="webui_interface_get_bool_at(UIntPtr window, UIntPtr event_number, UIntPtr index)"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_web_u_i4_c_sharp_1_1_web_u_i_lib_functions.html#a6436139a9244ca5ed668d5f3f730dff8"><param name="Name" value="webui_interface_get_float_at(UIntPtr window, UIntPtr event_number, UIntPtr index)"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="class_web_u_i4_c_sharp_1_1_web_u_i_lib_functions.html#a24d3a300c92d26dc14bbfd25b5fcf700"><param name="Name" value="webui_interface_get_int_at(UIntPtr window, UIntPtr event_number, UIntPtr index)"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="class_web_u_i4_c_sharp_1_1_web_u_i_lib_functions.html#ae1067a482dc86af7d07a017070aa530f"><param name="Name" value="webui_interface_get_size_at(UIntPtr window, UIntPtr event_number, UIntPtr index)"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="class_web_u_i4_c_sharp_1_1_web_u_i_lib_functions.html#ad1d9f4770b1eaa78ba68591efb7e8ad5"><param name="Name" value="webui_interface_get_string_at(UIntPtr window, UIntPtr event_number, UIntPtr index)"></OBJECT>
@@ -998,25 +1189,32 @@
   <LI><OBJECT type="text/sitemap"><param name="Local" value="class_web_u_i4_c_sharp_1_1_web_u_i_lib_functions.html#ae08bfdcc4077f5c7501692da4dbcae24"><param name="Name" value="webui_interface_is_app_running()"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="class_web_u_i4_c_sharp_1_1_web_u_i_lib_functions.html#a9f07dc2b3a460f77e250fbebe1b17e19"><param name="Name" value="webui_interface_set_buffer_response(UIntPtr window, UIntPtr event_number, ref byte[] buffer)"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="class_web_u_i4_c_sharp_1_1_web_u_i_lib_functions.html#ab9a3ab30954149ca2f8d307d19071ecc"><param name="Name" value="webui_interface_set_response(UIntPtr window, UIntPtr event_number, [MarshalAs(UnmanagedType.LPUTF8Str)] string response)"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_web_u_i4_c_sharp_1_1_web_u_i_lib_functions.html#a69bb494cf355ac9917b262950be9c0a1"><param name="Name" value="webui_is_high_contrast()"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="class_web_u_i4_c_sharp_1_1_web_u_i_lib_functions.html#aa3c6a133bde0e4db0420451388be39f0"><param name="Name" value="webui_is_shown(UIntPtr window)"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="class_web_u_i4_c_sharp_1_1_web_u_i_lib_functions.html#adcb0417671c1dd479b7854878c4c4dd8"><param name="Name" value="webui_malloc(UIntPtr size)"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="class_web_u_i4_c_sharp_1_1_web_u_i_lib_functions.html#a1782e956f74ea927ee910f046ac751d8"><param name="Name" value="webui_navigate(UIntPtr window, [MarshalAs(UnmanagedType.LPUTF8Str)] string url)"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_web_u_i4_c_sharp_1_1_web_u_i_lib_functions.html#a881447a8d302669a5854e92e58f479c0"><param name="Name" value="webui_navigate_client(ref webui_event_t e, [MarshalAs(UnmanagedType.LPUTF8Str)] string url)"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="class_web_u_i4_c_sharp_1_1_web_u_i_lib_functions.html#ab259ca0dada1aa19c2cc8765d5aca93a"><param name="Name" value="webui_new_window()"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="class_web_u_i4_c_sharp_1_1_web_u_i_lib_functions.html#a241d53da472a2778b551ce40f0279b9f"><param name="Name" value="webui_new_window_id(UIntPtr window_number)"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_web_u_i4_c_sharp_1_1_web_u_i_lib_functions.html#adaee52b9772ec051af546704f99dbaae"><param name="Name" value="webui_open_url([MarshalAs(UnmanagedType.LPUTF8Str)] string url)"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="class_web_u_i4_c_sharp_1_1_web_u_i_lib_functions.html#a057bfe99f9de49f178516014af3fabc0"><param name="Name" value="webui_return_bool(ref webui_event_t e, [MarshalAs(UnmanagedType.I1)] bool b)"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="class_web_u_i4_c_sharp_1_1_web_u_i_lib_functions.html#af910bb53d2cd9847e1414f1ab2ff3fe1"><param name="Name" value="webui_return_buffer(ref webui_event_t e, ref byte[] buffer)"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="class_web_u_i4_c_sharp_1_1_web_u_i_lib_functions.html#a3ed83d53d1aed9ba961136b11443f24b"><param name="Name" value="webui_return_float(ref webui_event_t e, double f)"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="class_web_u_i4_c_sharp_1_1_web_u_i_lib_functions.html#a04f2d3b6b030fdc6d041dbfdb8c46fc8"><param name="Name" value="webui_return_int(ref webui_event_t e, long n)"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="class_web_u_i4_c_sharp_1_1_web_u_i_lib_functions.html#a7d79432347166d261c547bafb3780756"><param name="Name" value="webui_return_string(ref webui_event_t e, [MarshalAs(UnmanagedType.LPUTF8Str)] string s)"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="class_web_u_i4_c_sharp_1_1_web_u_i_lib_functions.html#a31c05c86f151ede64310abae9b0bb907"><param name="Name" value="webui_run(UIntPtr window, [MarshalAs(UnmanagedType.LPUTF8Str)] string script)"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_web_u_i4_c_sharp_1_1_web_u_i_lib_functions.html#a5b813dbb04b38c5143665f7cf5041617"><param name="Name" value="webui_run_client(ref webui_event_t e, [MarshalAs(UnmanagedType.LPUTF8Str)] string script)"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="namespace_web_u_i4_c_sharp.html#aab4e2ab08022f427a1e83ab312317b78"><param name="Name" value="webui_runtime"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="class_web_u_i4_c_sharp_1_1_web_u_i_lib_functions.html#ac4a5de6073991f14655ab91d369e3681"><param name="Name" value="webui_script(UIntPtr window, [MarshalAs(UnmanagedType.LPUTF8Str)] string script, UIntPtr timeout, IntPtr buffer, UIntPtr buffer_length)"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_web_u_i4_c_sharp_1_1_web_u_i_lib_functions.html#ad8b008b8e7dcf63ed3347b81d143d3bb"><param name="Name" value="webui_script_client(ref webui_event_t e, [MarshalAs(UnmanagedType.LPUTF8Str)] string script, UIntPtr timeout, IntPtr buffer, UIntPtr buffer_length)"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="class_web_u_i4_c_sharp_1_1_web_u_i_lib_functions.html#ac2582ff18e2b48d261a71f6761aa00b2"><param name="Name" value="webui_send_raw(UIntPtr window, [MarshalAs(UnmanagedType.LPUTF8Str)] string function, UIntPtr raw, UIntPtr size)"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_web_u_i4_c_sharp_1_1_web_u_i_lib_functions.html#a332df08e82d7d4a0f05dc0aea677e310"><param name="Name" value="webui_send_raw_client(ref webui_event_t e, [MarshalAs(UnmanagedType.LPUTF8Str)] string function, UIntPtr raw, UIntPtr size)"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="class_web_u_i4_c_sharp_1_1_web_u_i_lib_functions.html#aaee5f9ea4cb979e20fe71a48c92b76e4"><param name="Name" value="webui_set_config(UIntPtr option, [MarshalAs(UnmanagedType.I1)] bool status)"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="class_web_u_i4_c_sharp_1_1_web_u_i_lib_functions.html#ad104e837ac8bb648fd412dc6134ed4d1"><param name="Name" value="webui_set_default_root_folder([MarshalAs(UnmanagedType.LPUTF8Str)] string path)"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="class_web_u_i4_c_sharp_1_1_web_u_i_lib_functions.html#a3a6a9a1e5248eee2424903c9e4c73b04"><param name="Name" value="webui_set_event_blocking(UIntPtr window, [MarshalAs(UnmanagedType.I1)] bool status)"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="class_web_u_i4_c_sharp_1_1_web_u_i_lib_functions.html#a071956dfb0874d43a17ff4ae54a15526"><param name="Name" value="webui_set_file_handler(UIntPtr window, FileHandlerCallback handler)"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="class_web_u_i4_c_sharp_1_1_web_u_i_lib_functions.html#ab10cd60b79226fc9d80f6c5f7ba2741b"><param name="Name" value="webui_set_hide(UIntPtr window, [MarshalAs(UnmanagedType.I1)] bool status)"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_web_u_i4_c_sharp_1_1_web_u_i_lib_functions.html#abfa243e1a7e752fea830fcec4c8f2e24"><param name="Name" value="webui_set_high_contrast(UIntPtr window, [MarshalAs(UnmanagedType.I1)] bool status)"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="class_web_u_i4_c_sharp_1_1_web_u_i_lib_functions.html#abd89042e9fa6438951a00a3e353c6481"><param name="Name" value="webui_set_icon(UIntPtr window, [MarshalAs(UnmanagedType.LPUTF8Str)] string icon, [MarshalAs(UnmanagedType.LPUTF8Str)] string icon_type)"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="class_web_u_i4_c_sharp_1_1_web_u_i_lib_functions.html#a32df13b4edf1aaf600b99c34fb31dade"><param name="Name" value="webui_set_kiosk(UIntPtr window, [MarshalAs(UnmanagedType.I1)] bool status)"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="class_web_u_i4_c_sharp_1_1_web_u_i_lib_functions.html#a1d2bad37a292e01117cdd7e3e0cd2fde"><param name="Name" value="webui_set_port(UIntPtr window, UIntPtr port)"></OBJECT>
@@ -1031,7 +1229,9 @@
   <LI><OBJECT type="text/sitemap"><param name="Local" value="class_web_u_i4_c_sharp_1_1_web_u_i_lib_functions.html#ac4b212ead61c55671e8f92c1092521ad"><param name="Name" value="webui_set_tls_certificate([MarshalAs(UnmanagedType.LPUTF8Str)] string certificate_pem, [MarshalAs(UnmanagedType.LPUTF8Str)] string private_key_pem)"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="class_web_u_i4_c_sharp_1_1_web_u_i_lib_functions.html#a5b58a67e687e2e8e6a40e725f12c6f1c"><param name="Name" value="webui_show(UIntPtr window, [MarshalAs(UnmanagedType.LPUTF8Str)] string content)"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="class_web_u_i4_c_sharp_1_1_web_u_i_lib_functions.html#a4d8b6a1f1cd103902b51a1d28f747ace"><param name="Name" value="webui_show_browser(UIntPtr window, [MarshalAs(UnmanagedType.LPUTF8Str)] string content, UIntPtr browser)"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_web_u_i4_c_sharp_1_1_web_u_i_lib_functions.html#a37558a4150d9ab3a71cbb99aeae45a55"><param name="Name" value="webui_show_client(ref webui_event_t e, [MarshalAs(UnmanagedType.LPUTF8Str)] string content)"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="class_web_u_i4_c_sharp_1_1_web_u_i_lib_functions.html#af766f4c3b88dcfefe37a750c5c384c33"><param name="Name" value="webui_show_wv(UIntPtr window, [MarshalAs(UnmanagedType.LPUTF8Str)] string content)"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_web_u_i4_c_sharp_1_1_web_u_i_lib_functions.html#adf2fb270cc0b3803ae772cb4acb85bbf"><param name="Name" value="webui_start_server(UIntPtr window, [MarshalAs(UnmanagedType.LPUTF8Str)] string content)"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="class_web_u_i4_c_sharp_1_1_web_u_i_lib_functions.html#a9144eba26349ccedee8df808dc7f6556"><param name="Name" value="webui_wait()"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="struct_web_u_i4_c_sharp_1_1webui__event__t.html#ad7f1b988f26f22d7ca9ad6bcaa6eaedd"><param name="Name" value="window"></OBJECT>
 </UL>

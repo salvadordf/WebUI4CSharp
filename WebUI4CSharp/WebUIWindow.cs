@@ -151,6 +151,37 @@ namespace WebUI4CSharp
             }
         }
 
+        public UIntPtr Port
+        {
+            get
+            {
+                if (Initialized)
+                {
+                    return WebUILibFunctions.webui_get_port(_id);
+                }
+                else
+                {
+                    return 0;
+                }
+            }
+            set
+            {
+                SetPort(value);
+            }
+        }
+
+        /// <summary>
+        /// Set a custom web-server/websocket network port to be used by WebUI.
+        /// This can be useful to determine the HTTP link of `webui.js` in case
+        /// you are trying to use WebUI with an external web-server like NGNIX
+        /// </summary>
+        /// <param name="port">The web-server network port WebUI should use.</param>
+        /// <returns>Returns True if the port is free and usable by WebUI.</returns>
+        public bool SetPort(UIntPtr port)
+        {
+            return Initialized && WebUILibFunctions.webui_set_port(_id, port);
+        }
+
         /// <summary>
         /// Event triggered after binding a webui event.
         /// </summary>
@@ -238,7 +269,8 @@ namespace WebUI4CSharp
         }
 
         /// <summary>
-        /// Show a window using embedded HTML, or a file. If the window is already open, it will be refreshed.
+        /// Show a window using embedded HTML, or a file. If the window is already open, it will be refreshed. 
+        /// This will refresh all windows in multi-client mode.
         /// </summary>
         /// <param name="content">The HTML, URL, Or a local file.</param>
         /// <returns>Returns True if showing the window is successed.</returns>
@@ -270,7 +302,7 @@ namespace WebUI4CSharp
         }
 
         /// <summary>
-        /// Bind a specific html element click event with a callback function. Empty element means all events.
+        /// <para>Bind an HTML element and a JavaScript object with a backend function. Empty element name means all events.</para>
         /// </summary>
         /// <param name="element">The HTML element ID.</param>
         /// <param name="func">The callback function.</param>
@@ -293,7 +325,7 @@ namespace WebUI4CSharp
         }
 
         /// <summary>
-        /// <para>Bind a specific html element click event with a callback function. Empty element means all events.</para>
+        /// <para>Bind an HTML element and a JavaScript object with a backend function. Empty element name means all events.</para>
         /// <para>The OnWebUIEvent event will be triggered for each WebUI event.</para>
         /// </summary>
         /// <param name="element">The HTML element ID.</param>
@@ -366,7 +398,7 @@ namespace WebUI4CSharp
         }
 
         /// <summary>
-        /// Close a specific window only. The window object will still exist.
+        /// Close a specific window only. The window object will still exist. All clients.
         /// </summary>
         public void Close()
         {
@@ -397,7 +429,7 @@ namespace WebUI4CSharp
         }
 
         /// <summary>
-        /// Set a custom handler to serve files.
+        /// Set a custom handler to serve files. This custom handler should return full HTTP header and body.
         /// </summary>
         /// <param name="handler">The handler function: `void myHandler(const char* filename, * int* length)`.</param>
         public void SetFileHandler(FileHandlerCallback handler)
@@ -409,7 +441,8 @@ namespace WebUI4CSharp
         }
 
         /// <summary>
-        /// Set a custom handler to serve files. The OnFileHandlerEvent event will be triggered for each file.
+        /// <para>Set a custom handler to serve files. This custom handler should return full HTTP header and body.</para> 
+        /// <para>The OnFileHandlerEvent event will be triggered for each file.</para>
         /// </summary>
         public void SetFileHandler()
         {
@@ -441,7 +474,7 @@ namespace WebUI4CSharp
         }
 
         /// <summary>
-        /// Safely send raw data to the UI.
+        /// Safely send raw data to the UI. All clients.
         /// </summary>
         /// <param name="function">The JavaScript function to receive raw data: `function * myFunc(myData){}`.</param>
         /// <param name="raw">The raw data buffer.</param>
@@ -530,7 +563,7 @@ namespace WebUI4CSharp
         }
 
         /// <summary>
-        /// Navigate to a specific URL.
+        /// Navigate to a specific URL. All clients.
         /// </summary>
         /// <param name="url">Full HTTP URL.</param>
         public void Navigate(string url)
@@ -553,18 +586,6 @@ namespace WebUI4CSharp
         }
 
         /// <summary>
-        /// Set a custom web-server/websocket network port to be used by WebUI.
-        /// This can be useful to determine the HTTP link of `webui.js` in case
-        /// you are trying to use WebUI with an external web-server like NGNIX
-        /// </summary>
-        /// <param name="port">The web-server network port WebUI should use.</param>
-        /// <returns>Returns True if the port is free and usable by WebUI.</returns>
-        public bool SetPort(UIntPtr port)
-        {
-            return Initialized && WebUILibFunctions.webui_set_port(_id, port);
-        }
-
-        /// <summary>
         /// Control if UI events comming from this window should be processed
         /// one a time in a single blocking thread `True`, or process every event in
         /// a new non-blocking thread `False`. This update single window. You can use
@@ -580,7 +601,7 @@ namespace WebUI4CSharp
         }
 
         /// <summary>
-        /// Run JavaScript without waiting for the response.
+        /// Run JavaScript without waiting for the response. All clients.
         /// </summary>
         /// <param name="script_">The JavaScript to be run.</param>
         public void Run(string script_)
@@ -596,7 +617,7 @@ namespace WebUI4CSharp
         /// Make sure response_length is big enough to hold the response.
         /// </summary>
         /// <param name="script_">The JavaScript to be run.</param>
-        /// <param name="timeout">The execution timeout.</param>
+        /// <param name="timeout">The execution timeout in seconds.</param>
         /// <param name="response">The response in string format.</param>
         /// <param name="response_length">The response size.</param>
         /// <returns>Returns True if there is no execution error.</returns>
@@ -627,12 +648,41 @@ namespace WebUI4CSharp
         /// <summary>
         /// Chose between Deno and Nodejs as runtime for .js and .ts files.
         /// </summary>
-        /// <param name="runtime">Deno, Nodejs or None.</param>
+        /// <param name="runtime">Deno, Bun, Nodejs or None.</param>
         public void SetRuntime(webui_runtime runtime)
         {
             if (Initialized)
             {
                 WebUILibFunctions.webui_set_runtime(_id, (UIntPtr)runtime);
+            }
+        }
+
+        /// <summary>
+        /// Same as `webui_show()`. But start only the web server and return the URL. No window will be shown.
+        /// </summary>
+        /// <param name="content">The HTML, Or a local file.</param>
+        /// <returns>Returns the url of this window server.</returns>
+        public string? StartServer(string content)
+        {
+            if (Initialized)
+            {
+                return WebUILibFunctions.webui_start_server(_id, content);
+            }
+            else
+            {
+                return null;
+            }
+        }
+
+        /// <summary>
+        /// Set the window with high-contrast support. Useful when you want to build a better high-contrast theme with CSS.
+        /// </summary>
+        /// <param name="status">True or False.</param>
+        public void SetHighContrast(bool status)
+        {
+            if (Initialized)
+            {
+                WebUILibFunctions.webui_set_high_contrast(_id, status);
             }
         }
     }

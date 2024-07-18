@@ -18,7 +18,7 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr id="projectrow">
-  <td id="projectlogo"><img alt="Logo" src="webui_240.png"/></td>
+  <td id="projectlogo"><img alt="Logo" src="webui_csharp.png"/></td>
   <td id="projectalign">
    <div id="projectname">WebUI4CSharp
    </div>
@@ -72,6 +72,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a33737f3fcc76bdb097ab039ffbbe31f5" id="r_a33737f3fcc76bdb097ab039ffbbe31f5"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a33737f3fcc76bdb097ab039ffbbe31f5">WebUIWindow</a> (UIntPtr windowId)</td></tr>
 <tr class="memdesc:a33737f3fcc76bdb097ab039ffbbe31f5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create a new webui window object using a specified window number.  <br /></td></tr>
 <tr class="separator:a33737f3fcc76bdb097ab039ffbbe31f5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adc38e0eb0e5fc9ab02f4828bb2867ea8" id="r_adc38e0eb0e5fc9ab02f4828bb2867ea8"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#adc38e0eb0e5fc9ab02f4828bb2867ea8">SetPort</a> (UIntPtr port)</td></tr>
+<tr class="memdesc:adc38e0eb0e5fc9ab02f4828bb2867ea8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set a custom web-server/websocket network port to be used by WebUI. This can be useful to determine the HTTP link of <code>webui.js</code> in case you are trying to use WebUI with an external web-server like NGNIX.  <br /></td></tr>
+<tr class="separator:adc38e0eb0e5fc9ab02f4828bb2867ea8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:adca0272b11af2ec8b64b5f3bdea81c41" id="r_adca0272b11af2ec8b64b5f3bdea81c41"><td class="memItemLeft" align="right" valign="top">Boolean&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#adca0272b11af2ec8b64b5f3bdea81c41">HasBindID</a> (UIntPtr id)</td></tr>
 <tr class="memdesc:adca0272b11af2ec8b64b5f3bdea81c41"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns true if the bind id belongs to this window.  <br /></td></tr>
 <tr class="separator:adca0272b11af2ec8b64b5f3bdea81c41"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -82,7 +85,7 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:a51cb381fbea43601c4c6c484dabe9fb3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Trigger the OnFileHandlerEvent event.  <br /></td></tr>
 <tr class="separator:a51cb381fbea43601c4c6c484dabe9fb3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1ef9f9571e139a1ef1360b5c0d320415" id="r_a1ef9f9571e139a1ef1360b5c0d320415"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1ef9f9571e139a1ef1360b5c0d320415">Show</a> (string content)</td></tr>
-<tr class="memdesc:a1ef9f9571e139a1ef1360b5c0d320415"><td class="mdescLeft">&#160;</td><td class="mdescRight">Show a window using embedded HTML, or a file. If the window is already open, it will be refreshed.  <br /></td></tr>
+<tr class="memdesc:a1ef9f9571e139a1ef1360b5c0d320415"><td class="mdescLeft">&#160;</td><td class="mdescRight">Show a window using embedded HTML, or a file. If the window is already open, it will be refreshed. This will refresh all windows in multi-client mode.  <br /></td></tr>
 <tr class="separator:a1ef9f9571e139a1ef1360b5c0d320415"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad96cb450657eb7b0f1e3ad4f8eeb83dd" id="r_ad96cb450657eb7b0f1e3ad4f8eeb83dd"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad96cb450657eb7b0f1e3ad4f8eeb83dd">ShowBrowser</a> (string content, <a class="el" href="namespace_web_u_i4_c_sharp.html#ac5c8ab0b6219c047cfde9393ec6fb64a">webui_browser</a> browser)</td></tr>
 <tr class="memdesc:ad96cb450657eb7b0f1e3ad4f8eeb83dd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Same as <code>webui_show()</code>. But using a specific web browser.  <br /></td></tr>
@@ -91,7 +94,6 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:a7eb578d49ca30caca01150af1059ab72"><td class="mdescLeft">&#160;</td><td class="mdescRight">Show a WebView window using embedded HTML, or a file. If the window is already open, it will be refreshed. Note: Win32 need <code>WebView2Loader.dll</code>.  <br /></td></tr>
 <tr class="separator:a7eb578d49ca30caca01150af1059ab72"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6fc4de971278c32b5f007fce0f5e480b" id="r_a6fc4de971278c32b5f007fce0f5e480b"><td class="memItemLeft" align="right" valign="top">UIntPtr&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6fc4de971278c32b5f007fce0f5e480b">Bind</a> (string element, <a class="el" href="namespace_web_u_i4_c_sharp.html#a3ddb2fec1678fdf4ee507e1b046e7144">BindCallback</a> func)</td></tr>
-<tr class="memdesc:a6fc4de971278c32b5f007fce0f5e480b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Bind a specific html element click event with a callback function. Empty element means all events.  <br /></td></tr>
 <tr class="separator:a6fc4de971278c32b5f007fce0f5e480b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a82f8c0667e122a16efd4d93b2918334c" id="r_a82f8c0667e122a16efd4d93b2918334c"><td class="memItemLeft" align="right" valign="top">UIntPtr&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a82f8c0667e122a16efd4d93b2918334c">Bind</a> (string element)</td></tr>
 <tr class="separator:a82f8c0667e122a16efd4d93b2918334c"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -103,7 +105,7 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:ad4bf8905ab011a6c7715c17c3c776f09"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the window in Kiosk mode (Full screen).  <br /></td></tr>
 <tr class="separator:ad4bf8905ab011a6c7715c17c3c776f09"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9179de046e92451fe845b3338af62a6b" id="r_a9179de046e92451fe845b3338af62a6b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9179de046e92451fe845b3338af62a6b">Close</a> ()</td></tr>
-<tr class="memdesc:a9179de046e92451fe845b3338af62a6b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Close a specific window only. The window object will still exist.  <br /></td></tr>
+<tr class="memdesc:a9179de046e92451fe845b3338af62a6b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Close a specific window only. The window object will still exist. All clients.  <br /></td></tr>
 <tr class="separator:a9179de046e92451fe845b3338af62a6b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abb46c3a1064cf778e62dc730ee8d4813" id="r_abb46c3a1064cf778e62dc730ee8d4813"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#abb46c3a1064cf778e62dc730ee8d4813">Destroy</a> ()</td></tr>
 <tr class="memdesc:abb46c3a1064cf778e62dc730ee8d4813"><td class="mdescLeft">&#160;</td><td class="mdescRight">Close the window and free all memory resources.  <br /></td></tr>
@@ -112,10 +114,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:a56526ee60fedb3c7766e8c3f822b7a3e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the web-server root folder path for a specific window.  <br /></td></tr>
 <tr class="separator:a56526ee60fedb3c7766e8c3f822b7a3e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8fd2185901ca9a99602c6dedca48ef62" id="r_a8fd2185901ca9a99602c6dedca48ef62"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8fd2185901ca9a99602c6dedca48ef62">SetFileHandler</a> (<a class="el" href="namespace_web_u_i4_c_sharp.html#a05a0eb7a96fb9315041e56d523bfe17c">FileHandlerCallback</a> handler)</td></tr>
-<tr class="memdesc:a8fd2185901ca9a99602c6dedca48ef62"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set a custom handler to serve files.  <br /></td></tr>
+<tr class="memdesc:a8fd2185901ca9a99602c6dedca48ef62"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set a custom handler to serve files. This custom handler should return full HTTP header and body.  <br /></td></tr>
 <tr class="separator:a8fd2185901ca9a99602c6dedca48ef62"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a33284b7079453cb570e8ab7fcee203ff" id="r_a33284b7079453cb570e8ab7fcee203ff"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a33284b7079453cb570e8ab7fcee203ff">SetFileHandler</a> ()</td></tr>
-<tr class="memdesc:a33284b7079453cb570e8ab7fcee203ff"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set a custom handler to serve files. The OnFileHandlerEvent event will be triggered for each file.  <br /></td></tr>
 <tr class="separator:a33284b7079453cb570e8ab7fcee203ff"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0e39c472bcfb570002b5df323eed0472" id="r_a0e39c472bcfb570002b5df323eed0472"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0e39c472bcfb570002b5df323eed0472">IsShown</a> ()</td></tr>
 <tr class="memdesc:a0e39c472bcfb570002b5df323eed0472"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if the specified window is still running.  <br /></td></tr>
@@ -124,7 +125,7 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:a96c5866f3af8dcceacfada2d5460985b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the default embedded HTML favicon.  <br /></td></tr>
 <tr class="separator:a96c5866f3af8dcceacfada2d5460985b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:adbdafa3ff375d26f41aeaacc16170bd0" id="r_adbdafa3ff375d26f41aeaacc16170bd0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#adbdafa3ff375d26f41aeaacc16170bd0">SendRaw</a> (string function, UIntPtr raw, UIntPtr size)</td></tr>
-<tr class="memdesc:adbdafa3ff375d26f41aeaacc16170bd0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Safely send raw data to the UI.  <br /></td></tr>
+<tr class="memdesc:adbdafa3ff375d26f41aeaacc16170bd0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Safely send raw data to the UI. All clients.  <br /></td></tr>
 <tr class="separator:adbdafa3ff375d26f41aeaacc16170bd0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5984d3873e6977933d5fd7254773d6dd" id="r_a5984d3873e6977933d5fd7254773d6dd"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5984d3873e6977933d5fd7254773d6dd">SetHide</a> (bool status)</td></tr>
 <tr class="memdesc:a5984d3873e6977933d5fd7254773d6dd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set a window in hidden mode. Should be called before <code>webui_show()</code>.  <br /></td></tr>
@@ -145,19 +146,16 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:aa5d595088aa0476b2e55038309a47e4a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Allow a specific window address to be accessible from a public network.  <br /></td></tr>
 <tr class="separator:aa5d595088aa0476b2e55038309a47e4a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab8e792ed1886e4f735f26bef42b1b6c6" id="r_ab8e792ed1886e4f735f26bef42b1b6c6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab8e792ed1886e4f735f26bef42b1b6c6">Navigate</a> (string url)</td></tr>
-<tr class="memdesc:ab8e792ed1886e4f735f26bef42b1b6c6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Navigate to a specific URL.  <br /></td></tr>
+<tr class="memdesc:ab8e792ed1886e4f735f26bef42b1b6c6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Navigate to a specific URL. All clients.  <br /></td></tr>
 <tr class="separator:ab8e792ed1886e4f735f26bef42b1b6c6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad8ff0d075459502c922e4d28b71df794" id="r_ad8ff0d075459502c922e4d28b71df794"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad8ff0d075459502c922e4d28b71df794">DeleteProfile</a> ()</td></tr>
 <tr class="memdesc:ad8ff0d075459502c922e4d28b71df794"><td class="mdescLeft">&#160;</td><td class="mdescRight">Delete a specific window web-browser local folder profile.  <br /></td></tr>
 <tr class="separator:ad8ff0d075459502c922e4d28b71df794"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:adc38e0eb0e5fc9ab02f4828bb2867ea8" id="r_adc38e0eb0e5fc9ab02f4828bb2867ea8"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#adc38e0eb0e5fc9ab02f4828bb2867ea8">SetPort</a> (UIntPtr port)</td></tr>
-<tr class="memdesc:adc38e0eb0e5fc9ab02f4828bb2867ea8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set a custom web-server/websocket network port to be used by WebUI. This can be useful to determine the HTTP link of <code>webui.js</code> in case you are trying to use WebUI with an external web-server like NGNIX.  <br /></td></tr>
-<tr class="separator:adc38e0eb0e5fc9ab02f4828bb2867ea8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a579258eea4156feaccb56189822b5a7a" id="r_a579258eea4156feaccb56189822b5a7a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a579258eea4156feaccb56189822b5a7a">SetEventBlocking</a> (bool status)</td></tr>
 <tr class="memdesc:a579258eea4156feaccb56189822b5a7a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Control if UI events comming from this window should be processed one a time in a single blocking thread <code>True</code>, or process every event in a new non-blocking thread <code>False</code>. This update single window. You can use WebUI.SetConfig(ui_event_blocking, ...)<code>to update all windows. &lt;/summary&gt; &lt;param name="status"&gt;The blocking status</code>true<code>or</code>false`. <br /></td></tr>
 <tr class="separator:a579258eea4156feaccb56189822b5a7a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aafc0f923dcc7b7c8ca931e37f5cbaa67" id="r_aafc0f923dcc7b7c8ca931e37f5cbaa67"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aafc0f923dcc7b7c8ca931e37f5cbaa67">Run</a> (string script_)</td></tr>
-<tr class="memdesc:aafc0f923dcc7b7c8ca931e37f5cbaa67"><td class="mdescLeft">&#160;</td><td class="mdescRight">Run JavaScript without waiting for the response.  <br /></td></tr>
+<tr class="memdesc:aafc0f923dcc7b7c8ca931e37f5cbaa67"><td class="mdescLeft">&#160;</td><td class="mdescRight">Run JavaScript without waiting for the response. All clients.  <br /></td></tr>
 <tr class="separator:aafc0f923dcc7b7c8ca931e37f5cbaa67"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0b71183322fe6b1f80fd9fb2d4d2f7a1" id="r_a0b71183322fe6b1f80fd9fb2d4d2f7a1"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0b71183322fe6b1f80fd9fb2d4d2f7a1">Script</a> (string script_, UIntPtr timeout, out string response, UIntPtr response_length)</td></tr>
 <tr class="memdesc:a0b71183322fe6b1f80fd9fb2d4d2f7a1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Run JavaScript and get the response back. Make sure response_length is big enough to hold the response.  <br /></td></tr>
@@ -165,6 +163,12 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a74fa0043dbabe95f7ad2afde6df5e376" id="r_a74fa0043dbabe95f7ad2afde6df5e376"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a74fa0043dbabe95f7ad2afde6df5e376">SetRuntime</a> (<a class="el" href="namespace_web_u_i4_c_sharp.html#aab4e2ab08022f427a1e83ab312317b78">webui_runtime</a> runtime)</td></tr>
 <tr class="memdesc:a74fa0043dbabe95f7ad2afde6df5e376"><td class="mdescLeft">&#160;</td><td class="mdescRight">Chose between Deno and Nodejs as runtime for .js and .ts files.  <br /></td></tr>
 <tr class="separator:a74fa0043dbabe95f7ad2afde6df5e376"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2ce5d1413a4662fb94278f451e57a7bd" id="r_a2ce5d1413a4662fb94278f451e57a7bd"><td class="memItemLeft" align="right" valign="top">string?&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2ce5d1413a4662fb94278f451e57a7bd">StartServer</a> (string content)</td></tr>
+<tr class="memdesc:a2ce5d1413a4662fb94278f451e57a7bd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Same as <code>webui_show()</code>. But start only the web server and return the URL. No window will be shown.  <br /></td></tr>
+<tr class="separator:a2ce5d1413a4662fb94278f451e57a7bd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8ff02b999261697bbb7c9a562f07962e" id="r_a8ff02b999261697bbb7c9a562f07962e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8ff02b999261697bbb7c9a562f07962e">SetHighContrast</a> (bool status)</td></tr>
+<tr class="memdesc:a8ff02b999261697bbb7c9a562f07962e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the window with high-contrast support. Useful when you want to build a better high-contrast theme with CSS.  <br /></td></tr>
+<tr class="separator:a8ff02b999261697bbb7c9a562f07962e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
@@ -192,6 +196,8 @@ Properties</h2></td></tr>
 <tr class="memitem:a7de8bacdff6a3d8a2a832a5a555bbd23" id="r_a7de8bacdff6a3d8a2a832a5a555bbd23"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespace_web_u_i4_c_sharp.html#ac5c8ab0b6219c047cfde9393ec6fb64a">webui_browser</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7de8bacdff6a3d8a2a832a5a555bbd23">BestBrowser</a><code> [get]</code></td></tr>
 <tr class="memdesc:a7de8bacdff6a3d8a2a832a5a555bbd23"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the recommended web browser ID to use. If you are already using one, this function will return the same ID.  <br /></td></tr>
 <tr class="separator:a7de8bacdff6a3d8a2a832a5a555bbd23"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac68cdfe85e0df27882ae905389710ef6" id="r_ac68cdfe85e0df27882ae905389710ef6"><td class="memItemLeft" align="right" valign="top">UIntPtr&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac68cdfe85e0df27882ae905389710ef6">Port</a><code> [get, set]</code></td></tr>
+<tr class="separator:ac68cdfe85e0df27882ae905389710ef6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="events" name="events"></a>
 Events</h2></td></tr>
@@ -258,7 +264,7 @@ Events</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Bind a specific html element click event with a callback function. Empty element means all events.</p>
+<p>Bind an HTML element and a JavaScript object with a backend function. Empty element name means all events.</p>
 <p>The OnWebUIEvent event will be triggered for each WebUI event.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
@@ -289,8 +295,7 @@ Events</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-
-<p>Bind a specific html element click event with a callback function. Empty element means all events. </p>
+<p>Bind an HTML element and a JavaScript object with a backend function. Empty element name means all events.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">element</td><td>The HTML element ID.</td></tr>
@@ -363,7 +368,7 @@ Events</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Close a specific window only. The window object will still exist. </p>
+<p>Close a specific window only. The window object will still exist. All clients. </p>
 
 </div>
 </div>
@@ -557,7 +562,7 @@ Events</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Navigate to a specific URL. </p>
+<p>Navigate to a specific URL. All clients. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">url</td><td>Full HTTP URL.</td></tr>
@@ -582,7 +587,7 @@ Events</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Run JavaScript without waiting for the response. </p>
+<p>Run JavaScript without waiting for the response. All clients. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">script_</td><td>The JavaScript to be run.</td></tr>
@@ -625,7 +630,7 @@ Events</h2></td></tr>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">script_</td><td>The JavaScript to be run.</td></tr>
-    <tr><td class="paramname">timeout</td><td>The execution timeout.</td></tr>
+    <tr><td class="paramname">timeout</td><td>The execution timeout in seconds.</td></tr>
     <tr><td class="paramname">response</td><td>The response in string format.</td></tr>
     <tr><td class="paramname">response_length</td><td>The response size.</td></tr>
   </table>
@@ -659,7 +664,7 @@ Events</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Safely send raw data to the UI. </p>
+<p>Safely send raw data to the UI. All clients. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">function</td><td>The JavaScript function to receive raw data: <code>function * myFunc(myData){}</code>.</td></tr>
@@ -704,8 +709,8 @@ Events</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-
-<p>Set a custom handler to serve files. The OnFileHandlerEvent event will be triggered for each file. </p>
+<p>Set a custom handler to serve files. This custom handler should return full HTTP header and body.</p>
+<p>The OnFileHandlerEvent event will be triggered for each file.</p>
 
 </div>
 </div>
@@ -724,7 +729,7 @@ Events</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Set a custom handler to serve files. </p>
+<p>Set a custom handler to serve files. This custom handler should return full HTTP header and body. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">handler</td><td>The handler function: <code>void myHandler(const char* filename, * int* length)</code>.</td></tr>
@@ -753,6 +758,31 @@ Events</h2></td></tr>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">status</td><td>The status: True or False.</td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a8ff02b999261697bbb7c9a562f07962e" name="a8ff02b999261697bbb7c9a562f07962e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8ff02b999261697bbb7c9a562f07962e">&#9670;&#160;</a></span>SetHighContrast()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void WebUI4CSharp.WebUIWindow.SetHighContrast </td>
+          <td>(</td>
+          <td class="paramtype">bool</td>          <td class="paramname"><span class="paramname"><em>status</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Set the window with high-contrast support. Useful when you want to build a better high-contrast theme with CSS. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">status</td><td>True or False.</td></tr>
   </table>
   </dd>
 </dl>
@@ -993,7 +1023,7 @@ Events</h2></td></tr>
 <p>Chose between Deno and Nodejs as runtime for .js and .ts files. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">runtime</td><td>Deno, Nodejs or None.</td></tr>
+    <tr><td class="paramname">runtime</td><td>Deno, Bun, Nodejs or None.</td></tr>
   </table>
   </dd>
 </dl>
@@ -1045,7 +1075,7 @@ Events</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Show a window using embedded HTML, or a file. If the window is already open, it will be refreshed. </p>
+<p>Show a window using embedded HTML, or a file. If the window is already open, it will be refreshed. This will refresh all windows in multi-client mode. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">content</td><td>The HTML, URL, Or a local file.</td></tr>
@@ -1110,6 +1140,32 @@ Events</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Returns True if showing the window is successed.</dd></dl>
+
+</div>
+</div>
+<a id="a2ce5d1413a4662fb94278f451e57a7bd" name="a2ce5d1413a4662fb94278f451e57a7bd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2ce5d1413a4662fb94278f451e57a7bd">&#9670;&#160;</a></span>StartServer()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">string? WebUI4CSharp.WebUIWindow.StartServer </td>
+          <td>(</td>
+          <td class="paramtype">string</td>          <td class="paramname"><span class="paramname"><em>content</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Same as <code>webui_show()</code>. But start only the web server and return the URL. No window will be shown. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">content</td><td>The HTML, Or a local file.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Returns the url of this window server.</dd></dl>
 
 </div>
 </div>
@@ -1231,6 +1287,28 @@ Events</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Get the ID of the parent process (The web browser may re-create another new process). </p>
+
+</div>
+</div>
+<a id="ac68cdfe85e0df27882ae905389710ef6" name="ac68cdfe85e0df27882ae905389710ef6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac68cdfe85e0df27882ae905389710ef6">&#9670;&#160;</a></span>Port</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">UIntPtr WebUI4CSharp.WebUIWindow.Port</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">get</span><span class="mlabel">set</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
 
 </div>
 </div>

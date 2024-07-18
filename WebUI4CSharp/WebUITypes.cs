@@ -20,6 +20,7 @@ namespace WebUI4CSharp
         Epic,           // 10. The Epic Browser
         Yandex,         // 11. The Yandex Browser
         ChromiumBased,  // 12. Any Chromium based browser
+        Webview,        // 13. WebView (Non-web-browser)
     };
 
     /// <summary>
@@ -38,7 +39,11 @@ namespace WebUI4CSharp
         /// <summary>
         /// Use Nodejs runtime for .js files.
         /// </summary>
-        NodeJS,   
+        NodeJS,
+        /// <summary>
+        /// Use Bun runtime for .js and .ts files
+        /// </summary>
+        Bun,      
     };
 
     /// <summary>
@@ -49,11 +54,11 @@ namespace WebUI4CSharp
         /// <summary>
         /// Window disconnection event.
         /// </summary>
-        WEBUI_EVENT_DISCONNECTED = 0, 
+        WEBUI_EVENT_DISCONNECTED = 0,
         /// <summary>
         /// Window connection event.
         /// </summary>
-        WEBUI_EVENT_CONNECTED,         
+        WEBUI_EVENT_CONNECTED,
         /// <summary>
         /// Mouse click event.
         /// </summary>
@@ -65,7 +70,7 @@ namespace WebUI4CSharp
         /// <summary>
         /// Function call event.
         /// </summary>
-        WEBUI_EVENT_CALLBACK,          
+        WEBUI_EVENT_CALLBACK,
     };
 
     /// <summary>
@@ -87,6 +92,23 @@ namespace WebUI4CSharp
         /// a specific single window update. Default: False.
         /// </summary>
         ui_event_blocking,
+        /// <summary>
+        /// Automatically refresh the window UI when any file in the
+        /// root folder gets changed. Default: False.
+        /// </summary>
+        folder_monitor,
+        /// <summary>
+        /// Allow multiple clients to connect to the same window,
+        /// This is helpful for web apps (non-desktop software),
+        /// Please see the documentation for more details. Default: False.
+        /// </summary>
+        multi_client,
+        /// <summary>
+        /// Allow multiple clients to connect to the same window,
+        /// This is helpful for web apps (non-desktop software),
+        /// Please see the documentation for more details. Default: False.
+        /// </summary>
+        use_cookies,
     }
 
     /// <summary>
@@ -114,7 +136,19 @@ namespace WebUI4CSharp
         /// <summary>
         /// Bind ID.
         /// </summary>
-        public UIntPtr bind_id;      
+        public UIntPtr bind_id;
+        /// <summary>
+        /// Client's unique ID.
+        /// </summary>
+        public UIntPtr client_id;
+        /// <summary>
+        /// Client's connection ID.
+        /// </summary>
+        public UIntPtr connection_id;
+        /// <summary>
+        /// Client's full cookies.
+        /// </summary>
+        public IntPtr cookies;          
     }
 
     /// <summary>

@@ -18,7 +18,7 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr id="projectrow">
-  <td id="projectlogo"><img alt="Logo" src="webui_240.png"/></td>
+  <td id="projectlogo"><img alt="Logo" src="webui_csharp.png"/></td>
   <td id="projectalign">
    <div id="projectname">WebUI4CSharp
    </div>
@@ -66,8 +66,8 @@
 Public Member Functions</h2></td></tr>
 <tr class="memitem:af86e0a098f152e4e114e11d574290f55" id="r_af86e0a098f152e4e114e11d574290f55"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af86e0a098f152e4e114e11d574290f55">WebUIEvent</a> (<a class="el" href="struct_web_u_i4_c_sharp_1_1webui__event__t.html">webui_event_t</a> e)</td></tr>
 <tr class="separator:af86e0a098f152e4e114e11d574290f55"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2205c2d87b058f1445a915cbbae78080" id="r_a2205c2d87b058f1445a915cbbae78080"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2205c2d87b058f1445a915cbbae78080">WebUIEvent</a> (UIntPtr window, UIntPtr event_type, IntPtr element, UIntPtr event_number, UIntPtr bind_id)</td></tr>
-<tr class="separator:a2205c2d87b058f1445a915cbbae78080"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9940d647d9895d30d993aa36865ece83" id="r_a9940d647d9895d30d993aa36865ece83"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9940d647d9895d30d993aa36865ece83">WebUIEvent</a> (UIntPtr window, UIntPtr event_type, IntPtr element, UIntPtr event_number, UIntPtr bind_id, UIntPtr client_id, UIntPtr connection_id, IntPtr cookies)</td></tr>
+<tr class="separator:a9940d647d9895d30d993aa36865ece83"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acf35e49abc152b9c8f039dcc751e5471" id="r_acf35e49abc152b9c8f039dcc751e5471"><td class="memItemLeft" align="right" valign="top">long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#acf35e49abc152b9c8f039dcc751e5471">GetInt</a> ()</td></tr>
 <tr class="memdesc:acf35e49abc152b9c8f039dcc751e5471"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the first argument as integer.  <br /></td></tr>
 <tr class="separator:acf35e49abc152b9c8f039dcc751e5471"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -128,6 +128,24 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:ac9f18e1fd25dc13e8ae78e236af5fd46" id="r_ac9f18e1fd25dc13e8ae78e236af5fd46"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac9f18e1fd25dc13e8ae78e236af5fd46">SetResponse</a> (MemoryStream response)</td></tr>
 <tr class="memdesc:ac9f18e1fd25dc13e8ae78e236af5fd46"><td class="mdescLeft">&#160;</td><td class="mdescRight">When using <code>webui_interface_bind()</code>, you may need this function to easily set a response.  <br /></td></tr>
 <tr class="separator:ac9f18e1fd25dc13e8ae78e236af5fd46"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a99cb7febb192c3b271b50089ceda4845" id="r_a99cb7febb192c3b271b50089ceda4845"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a99cb7febb192c3b271b50089ceda4845">ShowClient</a> (string content)</td></tr>
+<tr class="memdesc:a99cb7febb192c3b271b50089ceda4845"><td class="mdescLeft">&#160;</td><td class="mdescRight">Show a window using embedded HTML, or a file. If the window is already open, it will be refreshed.Single client.  <br /></td></tr>
+<tr class="separator:a99cb7febb192c3b271b50089ceda4845"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a245e2e8925567f01eabac07bfc3dfb2e" id="r_a245e2e8925567f01eabac07bfc3dfb2e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a245e2e8925567f01eabac07bfc3dfb2e">CloseClient</a> ()</td></tr>
+<tr class="memdesc:a245e2e8925567f01eabac07bfc3dfb2e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Close a specific client.  <br /></td></tr>
+<tr class="separator:a245e2e8925567f01eabac07bfc3dfb2e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6bb1f80ecd452d32937f60394a301497" id="r_a6bb1f80ecd452d32937f60394a301497"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6bb1f80ecd452d32937f60394a301497">SendRawClient</a> (string function, UIntPtr raw, UIntPtr size)</td></tr>
+<tr class="memdesc:a6bb1f80ecd452d32937f60394a301497"><td class="mdescLeft">&#160;</td><td class="mdescRight">Safely send raw data to the UI. Single client.  <br /></td></tr>
+<tr class="separator:a6bb1f80ecd452d32937f60394a301497"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a05e1eacfae1d7793518b72b95ae2565e" id="r_a05e1eacfae1d7793518b72b95ae2565e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a05e1eacfae1d7793518b72b95ae2565e">NavigateClient</a> (string url)</td></tr>
+<tr class="memdesc:a05e1eacfae1d7793518b72b95ae2565e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Navigate to a specific URL. Single client.  <br /></td></tr>
+<tr class="separator:a05e1eacfae1d7793518b72b95ae2565e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1636cf1a8eeced247c111f3f5cc2b3a7" id="r_a1636cf1a8eeced247c111f3f5cc2b3a7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1636cf1a8eeced247c111f3f5cc2b3a7">RunClient</a> (string script_)</td></tr>
+<tr class="memdesc:a1636cf1a8eeced247c111f3f5cc2b3a7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Run JavaScript without waiting for the response. Single client.  <br /></td></tr>
+<tr class="separator:a1636cf1a8eeced247c111f3f5cc2b3a7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1d9ec628ddbdf1c98615eda6a44a4a4a" id="r_a1d9ec628ddbdf1c98615eda6a44a4a4a"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1d9ec628ddbdf1c98615eda6a44a4a4a">ScriptClient</a> (string script_, UIntPtr timeout, out string response, UIntPtr response_length)</td></tr>
+<tr class="memdesc:a1d9ec628ddbdf1c98615eda6a44a4a4a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Run JavaScript and get the response back. Single client. Make sure your local buffer can hold the response.  <br /></td></tr>
+<tr class="separator:a1d9ec628ddbdf1c98615eda6a44a4a4a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="properties" name="properties"></a>
 Properties</h2></td></tr>
@@ -155,6 +173,15 @@ Properties</h2></td></tr>
 <tr class="memitem:a8fe1848e6150a2fba3eaa23e1eec9f6d" id="r_a8fe1848e6150a2fba3eaa23e1eec9f6d"><td class="memItemLeft" align="right" valign="top">UIntPtr&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8fe1848e6150a2fba3eaa23e1eec9f6d">BindID</a><code> [get]</code></td></tr>
 <tr class="memdesc:a8fe1848e6150a2fba3eaa23e1eec9f6d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Bind ID.  <br /></td></tr>
 <tr class="separator:a8fe1848e6150a2fba3eaa23e1eec9f6d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a33076b78a4412130d83117fd0272b704" id="r_a33076b78a4412130d83117fd0272b704"><td class="memItemLeft" align="right" valign="top">UIntPtr&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a33076b78a4412130d83117fd0272b704">ClientID</a><code> [get]</code></td></tr>
+<tr class="memdesc:a33076b78a4412130d83117fd0272b704"><td class="mdescLeft">&#160;</td><td class="mdescRight">Client's unique ID.  <br /></td></tr>
+<tr class="separator:a33076b78a4412130d83117fd0272b704"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acd4952b194ba0a6a74568c5d437a3953" id="r_acd4952b194ba0a6a74568c5d437a3953"><td class="memItemLeft" align="right" valign="top">UIntPtr&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#acd4952b194ba0a6a74568c5d437a3953">ConnectionID</a><code> [get]</code></td></tr>
+<tr class="memdesc:acd4952b194ba0a6a74568c5d437a3953"><td class="mdescLeft">&#160;</td><td class="mdescRight">Client's connection ID.  <br /></td></tr>
+<tr class="separator:acd4952b194ba0a6a74568c5d437a3953"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a190807132769550f4b4de9659f4ded22" id="r_a190807132769550f4b4de9659f4ded22"><td class="memItemLeft" align="right" valign="top">string?&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a190807132769550f4b4de9659f4ded22">Cookies</a><code> [get]</code></td></tr>
+<tr class="memdesc:a190807132769550f4b4de9659f4ded22"><td class="mdescLeft">&#160;</td><td class="mdescRight">Client's full cookies.  <br /></td></tr>
+<tr class="separator:a190807132769550f4b4de9659f4ded22"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Event wrapper for Event objects in WebUI. </p>
@@ -176,8 +203,8 @@ Properties</h2></td></tr>
 
 </div>
 </div>
-<a id="a2205c2d87b058f1445a915cbbae78080" name="a2205c2d87b058f1445a915cbbae78080"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2205c2d87b058f1445a915cbbae78080">&#9670;&#160;</a></span>WebUIEvent() <span class="overload">[2/2]</span></h2>
+<a id="a9940d647d9895d30d993aa36865ece83" name="a9940d647d9895d30d993aa36865ece83"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9940d647d9895d30d993aa36865ece83">&#9670;&#160;</a></span>WebUIEvent() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -205,7 +232,22 @@ Properties</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">UIntPtr</td>          <td class="paramname"><span class="paramname"><em>bind_id</em></span>&#160;)</td>
+          <td class="paramtype">UIntPtr</td>          <td class="paramname"><span class="paramname"><em>bind_id</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">UIntPtr</td>          <td class="paramname"><span class="paramname"><em>client_id</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">UIntPtr</td>          <td class="paramname"><span class="paramname"><em>connection_id</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">IntPtr</td>          <td class="paramname"><span class="paramname"><em>cookies</em></span>&#160;)</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -213,6 +255,25 @@ Properties</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
+<a id="a245e2e8925567f01eabac07bfc3dfb2e" name="a245e2e8925567f01eabac07bfc3dfb2e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a245e2e8925567f01eabac07bfc3dfb2e">&#9670;&#160;</a></span>CloseClient()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void WebUI4CSharp.WebUIEvent.CloseClient </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Close a specific client. </p>
+
+</div>
+</div>
 <a id="a063dc4db2dd20c86066bd8c21988d27a" name="a063dc4db2dd20c86066bd8c21988d27a"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a063dc4db2dd20c86066bd8c21988d27a">&#9670;&#160;</a></span>GetBool()</h2>
 
@@ -509,6 +570,31 @@ Properties</h2></td></tr>
 
 </div>
 </div>
+<a id="a05e1eacfae1d7793518b72b95ae2565e" name="a05e1eacfae1d7793518b72b95ae2565e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a05e1eacfae1d7793518b72b95ae2565e">&#9670;&#160;</a></span>NavigateClient()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void WebUI4CSharp.WebUIEvent.NavigateClient </td>
+          <td>(</td>
+          <td class="paramtype">string</td>          <td class="paramname"><span class="paramname"><em>url</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Navigate to a specific URL. Single client. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">url</td><td>Full HTTP URL.</td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <a id="a1a316328df065e3a10de5f9c476a7d34" name="a1a316328df065e3a10de5f9c476a7d34"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a1a316328df065e3a10de5f9c476a7d34">&#9670;&#160;</a></span>ReturnBool()</h2>
 
@@ -634,6 +720,111 @@ Properties</h2></td></tr>
 
 </div>
 </div>
+<a id="a1636cf1a8eeced247c111f3f5cc2b3a7" name="a1636cf1a8eeced247c111f3f5cc2b3a7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1636cf1a8eeced247c111f3f5cc2b3a7">&#9670;&#160;</a></span>RunClient()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void WebUI4CSharp.WebUIEvent.RunClient </td>
+          <td>(</td>
+          <td class="paramtype">string</td>          <td class="paramname"><span class="paramname"><em>script_</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Run JavaScript without waiting for the response. Single client. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">script_</td><td>The JavaScript to be run.</td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a1d9ec628ddbdf1c98615eda6a44a4a4a" name="a1d9ec628ddbdf1c98615eda6a44a4a4a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1d9ec628ddbdf1c98615eda6a44a4a4a">&#9670;&#160;</a></span>ScriptClient()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool WebUI4CSharp.WebUIEvent.ScriptClient </td>
+          <td>(</td>
+          <td class="paramtype">string</td>          <td class="paramname"><span class="paramname"><em>script_</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">UIntPtr</td>          <td class="paramname"><span class="paramname"><em>timeout</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">out string</td>          <td class="paramname"><span class="paramname"><em>response</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">UIntPtr</td>          <td class="paramname"><span class="paramname"><em>response_length</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Run JavaScript and get the response back. Single client. Make sure your local buffer can hold the response. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">e</td><td>The event struct.</td></tr>
+    <tr><td class="paramname">script_</td><td>The JavaScript to be run.</td></tr>
+    <tr><td class="paramname">timeout</td><td>The execution timeout in seconds.</td></tr>
+    <tr><td class="paramname">response</td><td>The response.</td></tr>
+    <tr><td class="paramname">response_length</td><td>The response size.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Returns True if there is no execution error.</dd></dl>
+
+</div>
+</div>
+<a id="a6bb1f80ecd452d32937f60394a301497" name="a6bb1f80ecd452d32937f60394a301497"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6bb1f80ecd452d32937f60394a301497">&#9670;&#160;</a></span>SendRawClient()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void WebUI4CSharp.WebUIEvent.SendRawClient </td>
+          <td>(</td>
+          <td class="paramtype">string</td>          <td class="paramname"><span class="paramname"><em>function</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">UIntPtr</td>          <td class="paramname"><span class="paramname"><em>raw</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">UIntPtr</td>          <td class="paramname"><span class="paramname"><em>size</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Safely send raw data to the UI. Single client. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">function</td><td>The JavaScript function to receive raw data: <code>function * myFunc(myData){}</code>.</td></tr>
+    <tr><td class="paramname">raw</td><td>The raw data buffer.</td></tr>
+    <tr><td class="paramname">size</td><td>The raw data size in bytes.</td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <a id="ac9f18e1fd25dc13e8ae78e236af5fd46" name="ac9f18e1fd25dc13e8ae78e236af5fd46"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ac9f18e1fd25dc13e8ae78e236af5fd46">&#9670;&#160;</a></span>SetResponse() <span class="overload">[1/2]</span></h2>
 
@@ -684,6 +875,32 @@ Properties</h2></td></tr>
 
 </div>
 </div>
+<a id="a99cb7febb192c3b271b50089ceda4845" name="a99cb7febb192c3b271b50089ceda4845"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a99cb7febb192c3b271b50089ceda4845">&#9670;&#160;</a></span>ShowClient()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool WebUI4CSharp.WebUIEvent.ShowClient </td>
+          <td>(</td>
+          <td class="paramtype">string</td>          <td class="paramname"><span class="paramname"><em>content</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Show a window using embedded HTML, or a file. If the window is already open, it will be refreshed.Single client. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">content</td><td>The HTML, URL, Or a local file.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Returns True if showing the window is successed.</dd></dl>
+
+</div>
+</div>
 <h2 class="groupheader">Property Documentation</h2>
 <a id="a8fe1848e6150a2fba3eaa23e1eec9f6d" name="a8fe1848e6150a2fba3eaa23e1eec9f6d"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a8fe1848e6150a2fba3eaa23e1eec9f6d">&#9670;&#160;</a></span>BindID</h2>
@@ -706,6 +923,78 @@ Properties</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Bind ID. </p>
+
+</div>
+</div>
+<a id="a33076b78a4412130d83117fd0272b704" name="a33076b78a4412130d83117fd0272b704"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a33076b78a4412130d83117fd0272b704">&#9670;&#160;</a></span>ClientID</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">UIntPtr WebUI4CSharp.WebUIEvent.ClientID</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">get</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Client's unique ID. </p>
+
+</div>
+</div>
+<a id="acd4952b194ba0a6a74568c5d437a3953" name="acd4952b194ba0a6a74568c5d437a3953"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acd4952b194ba0a6a74568c5d437a3953">&#9670;&#160;</a></span>ConnectionID</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">UIntPtr WebUI4CSharp.WebUIEvent.ConnectionID</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">get</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Client's connection ID. </p>
+
+</div>
+</div>
+<a id="a190807132769550f4b4de9659f4ded22" name="a190807132769550f4b4de9659f4ded22"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a190807132769550f4b4de9659f4ded22">&#9670;&#160;</a></span>Cookies</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">string? WebUI4CSharp.WebUIEvent.Cookies</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">get</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Client's full cookies. </p>
 
 </div>
 </div>

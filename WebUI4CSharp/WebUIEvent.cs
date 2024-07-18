@@ -17,15 +17,23 @@ namespace WebUI4CSharp
             _event.element = e.element;
             _event.event_number = e.event_number;
             _event.bind_id = e.bind_id;
+            _event.client_id = e.client_id;
+            _event.connection_id = e.connection_id;
+            _event.cookies = e.cookies;
         }
 
-        public WebUIEvent(UIntPtr window, UIntPtr event_type, IntPtr element, UIntPtr event_number, UIntPtr bind_id)
+        public WebUIEvent(UIntPtr window, UIntPtr event_type, IntPtr element, 
+            UIntPtr event_number, UIntPtr bind_id, UIntPtr client_id, 
+            UIntPtr connection_id, IntPtr cookies)
         {
             _event.window = window;
             _event.event_type = event_type;
             _event.element = element;
             _event.event_number = event_number;
             _event.bind_id = bind_id;
+            _event.client_id = client_id;
+            _event.connection_id = connection_id;
+            _event.cookies = cookies;
         }
 
         /// <summary>
@@ -67,6 +75,21 @@ namespace WebUI4CSharp
         /// Bind ID.
         /// </summary>
         public UIntPtr BindID { get => _event.bind_id; }
+
+        /// <summary>
+        /// Client's unique ID.
+        /// </summary>
+        public UIntPtr ClientID { get => _event.client_id; }
+
+        /// <summary>
+        /// Client's connection ID.
+        /// </summary>
+        public UIntPtr ConnectionID { get => _event.connection_id; }
+
+        /// <summary>
+        /// Client's full cookies.
+        /// </summary>
+        public string? Cookies { get => WebUI.WebUIStringToCSharpString(_event.cookies); }
 
         /// <summary>
         /// Get the first argument as integer.
@@ -368,6 +391,99 @@ namespace WebUI4CSharp
                 byte[] buffer = response.ToArray();
                 WebUILibFunctions.webui_interface_set_buffer_response(_event.window, _event.event_number, ref buffer);
             }
+        }
+
+        /// <summary>
+        /// Show a window using embedded HTML, or a file. If the window is already open, it will be refreshed.Single client.
+        /// </summary>
+        /// <param name="content">The HTML, URL, Or a local file.</param>
+        /// <returns>Returns True if showing the window is successed.</returns>
+        public bool ShowClient(string content)
+        {
+            return Initialized && WebUILibFunctions.webui_show_client(ref _event, content);
+        }
+
+        /// <summary>
+        /// Close a specific client.
+        /// </summary>
+        public void CloseClient()
+        {
+            if (Initialized)
+            {
+                WebUILibFunctions.webui_close_client(ref _event);
+            }
+        }
+
+        /// <summary>
+        /// Safely send raw data to the UI. Single client.
+        /// </summary>
+        /// <param name="function">The JavaScript function to receive raw data: `function * myFunc(myData){}`.</param>
+        /// <param name="raw">The raw data buffer.</param>
+        /// <param name="size">The raw data size in bytes.</param>
+        public void SendRawClient(string function, UIntPtr raw, UIntPtr size)
+        {
+            if (Initialized)
+            {
+                WebUILibFunctions.webui_send_raw_client(ref _event, function, raw, size);
+            }
+        }
+
+        /// <summary>
+        /// Navigate to a specific URL. Single client.
+        /// </summary>
+        /// <param name="url">Full HTTP URL.</param>
+        public void NavigateClient(string url)
+        {
+            if (Initialized)
+            {
+                WebUILibFunctions.webui_navigate_client(ref _event, url);
+            }
+        }
+
+        /// <summary>
+        /// Run JavaScript without waiting for the response. Single client.
+        /// </summary>
+        /// <param name="script_">The JavaScript to be run.</param>
+        public void RunClient(string script_)
+        {
+            if (Initialized)
+            {
+                WebUILibFunctions.webui_run_client(ref _event, script_);
+            }
+        }
+
+        /// <summary>
+        /// Run JavaScript and get the response back. Single client. 
+        /// Make sure your local buffer can hold the response.
+        /// </summary>
+        /// <param name="e">The event struct.</param>
+        /// <param name="script_">The JavaScript to be run.</param>
+        /// <param name="timeout">The execution timeout in seconds.</param>
+        /// <param name="response">The response.</param>
+        /// <param name="response_length">The response size.</param>
+        /// <returns>Returns True if there is no execution error.</returns>
+        public bool ScriptClient(string script_, UIntPtr timeout, out string response, UIntPtr response_length)
+        {
+            if (Initialized)
+            {
+                IntPtr buffer = WebUI.Malloc(response_length);
+                string? tempResponse = null;
+
+                if (WebUILibFunctions.webui_script_client(ref _event, script_, timeout, buffer, response_length))
+                {
+                    tempResponse = WebUI.WebUIStringToCSharpString(buffer);
+                }
+
+                WebUI.Free(buffer);
+
+                if (tempResponse != null)
+                {
+                    response = tempResponse;
+                    return true;
+                }
+            }
+            response = string.Empty;
+            return false;
         }
     }
 }

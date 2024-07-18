@@ -18,7 +18,7 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr id="projectrow">
-  <td id="projectlogo"><img alt="Logo" src="webui_240.png"/></td>
+  <td id="projectlogo"><img alt="Logo" src="webui_csharp.png"/></td>
   <td id="projectalign">
    <div id="projectname">WebUI4CSharp
    </div>
@@ -83,6 +83,7 @@ Enumerations</h2></td></tr>
 , <a class="el" href="namespace_web_u_i4_c_sharp.html#ac5c8ab0b6219c047cfde9393ec6fb64aa0c0a230358d00f0fcf81c28d23bf6e8c">WebUI4CSharp.Yandex</a>
 , <br />
 &#160;&#160;<a class="el" href="namespace_web_u_i4_c_sharp.html#ac5c8ab0b6219c047cfde9393ec6fb64aaef8d6947d1754ce29a67c46b29136b3a">WebUI4CSharp.ChromiumBased</a>
+, <a class="el" href="namespace_web_u_i4_c_sharp.html#ac5c8ab0b6219c047cfde9393ec6fb64aa0b18a4f587874cfcb63b20a1f2bab9ad">WebUI4CSharp.Webview</a>
 <br />
  }</td></tr>
 <tr class="memdesc:ac5c8ab0b6219c047cfde9393ec6fb64a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Supported web browsers.  <a href="namespace_web_u_i4_c_sharp.html#ac5c8ab0b6219c047cfde9393ec6fb64a">More...</a><br /></td></tr>
@@ -90,6 +91,7 @@ Enumerations</h2></td></tr>
 <tr class="memitem:aab4e2ab08022f427a1e83ab312317b78" id="r_aab4e2ab08022f427a1e83ab312317b78"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_web_u_i4_c_sharp.html#aab4e2ab08022f427a1e83ab312317b78">WebUI4CSharp.webui_runtime</a> { <a class="el" href="namespace_web_u_i4_c_sharp.html#aab4e2ab08022f427a1e83ab312317b78a6adf97f83acf6453d4a6a4b1070f3754">WebUI4CSharp.None</a> = 0
 , <a class="el" href="namespace_web_u_i4_c_sharp.html#aab4e2ab08022f427a1e83ab312317b78a90a8e116f0c50b620808de22e7f89127">WebUI4CSharp.Deno</a>
 , <a class="el" href="namespace_web_u_i4_c_sharp.html#aab4e2ab08022f427a1e83ab312317b78a46753be63b6ba8975974383d42485f70">WebUI4CSharp.NodeJS</a>
+, <a class="el" href="namespace_web_u_i4_c_sharp.html#aab4e2ab08022f427a1e83ab312317b78a71d4491b5ac3124997fe3b4ec56efed9">WebUI4CSharp.Bun</a>
  }</td></tr>
 <tr class="memdesc:aab4e2ab08022f427a1e83ab312317b78"><td class="mdescLeft">&#160;</td><td class="mdescRight">Supported runtimes.  <a href="namespace_web_u_i4_c_sharp.html#aab4e2ab08022f427a1e83ab312317b78">More...</a><br /></td></tr>
 <tr class="separator:aab4e2ab08022f427a1e83ab312317b78"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -104,8 +106,14 @@ Enumerations</h2></td></tr>
  }</td></tr>
 <tr class="memdesc:a4ca5572eafe04885135fca34ef09ffe3"><td class="mdescLeft">&#160;</td><td class="mdescRight">WebUI event types.  <a href="namespace_web_u_i4_c_sharp.html#a4ca5572eafe04885135fca34ef09ffe3">More...</a><br /></td></tr>
 <tr class="separator:a4ca5572eafe04885135fca34ef09ffe3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad1bbd721b28f54891333aa2bf2465b55" id="r_ad1bbd721b28f54891333aa2bf2465b55"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_web_u_i4_c_sharp.html#ad1bbd721b28f54891333aa2bf2465b55">WebUI4CSharp.webui_config</a> { <a class="el" href="namespace_web_u_i4_c_sharp.html#ad1bbd721b28f54891333aa2bf2465b55a56fdd5442bb96e56817ec57f1979ed0d">WebUI4CSharp.show_wait_connection</a> = 0
+<tr class="memitem:ad1bbd721b28f54891333aa2bf2465b55" id="r_ad1bbd721b28f54891333aa2bf2465b55"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_web_u_i4_c_sharp.html#ad1bbd721b28f54891333aa2bf2465b55">WebUI4CSharp.webui_config</a> { <br />
+&#160;&#160;<a class="el" href="namespace_web_u_i4_c_sharp.html#ad1bbd721b28f54891333aa2bf2465b55a56fdd5442bb96e56817ec57f1979ed0d">WebUI4CSharp.show_wait_connection</a> = 0
 , <a class="el" href="namespace_web_u_i4_c_sharp.html#ad1bbd721b28f54891333aa2bf2465b55ae717477edfa6c454eb17c51e99c56337">WebUI4CSharp.ui_event_blocking</a>
+, <a class="el" href="namespace_web_u_i4_c_sharp.html#ad1bbd721b28f54891333aa2bf2465b55a8bdc50a0033b329e3e6f51286d6513ef">WebUI4CSharp.folder_monitor</a>
+, <a class="el" href="namespace_web_u_i4_c_sharp.html#ad1bbd721b28f54891333aa2bf2465b55abf1126802746690f60fabe240551a554">WebUI4CSharp.multi_client</a>
+, <br />
+&#160;&#160;<a class="el" href="namespace_web_u_i4_c_sharp.html#ad1bbd721b28f54891333aa2bf2465b55a4cc8ae2e4c670b7c0e126a672a0535d2">WebUI4CSharp.use_cookies</a>
+<br />
  }</td></tr>
 <tr class="memdesc:ad1bbd721b28f54891333aa2bf2465b55"><td class="mdescLeft">&#160;</td><td class="mdescRight">WebUI configuration.  <a href="namespace_web_u_i4_c_sharp.html#ad1bbd721b28f54891333aa2bf2465b55">More...</a><br /></td></tr>
 <tr class="separator:ad1bbd721b28f54891333aa2bf2465b55"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -113,10 +121,10 @@ Enumerations</h2></td></tr>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
 <tr class="memitem:a3ddb2fec1678fdf4ee507e1b046e7144" id="r_a3ddb2fec1678fdf4ee507e1b046e7144"><td class="memItemLeft" align="right" valign="top">delegate void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_web_u_i4_c_sharp.html#a3ddb2fec1678fdf4ee507e1b046e7144">WebUI4CSharp.BindCallback</a> (ref <a class="el" href="struct_web_u_i4_c_sharp_1_1webui__event__t.html">webui_event_t</a> e)</td></tr>
-<tr class="memdesc:a3ddb2fec1678fdf4ee507e1b046e7144"><td class="mdescLeft">&#160;</td><td class="mdescRight">Callback used by <a class="el" href="class_web_u_i4_c_sharp_1_1_web_u_i_window.html#a6fc4de971278c32b5f007fce0f5e480b" title="Bind a specific html element click event with a callback function. Empty element means all events.">WebUIWindow.Bind</a>.  <br /></td></tr>
+<tr class="memdesc:a3ddb2fec1678fdf4ee507e1b046e7144"><td class="mdescLeft">&#160;</td><td class="mdescRight">Callback used by <a class="el" href="class_web_u_i4_c_sharp_1_1_web_u_i_window.html#a6fc4de971278c32b5f007fce0f5e480b">WebUIWindow.Bind</a>.  <br /></td></tr>
 <tr class="separator:a3ddb2fec1678fdf4ee507e1b046e7144"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a05a0eb7a96fb9315041e56d523bfe17c" id="r_a05a0eb7a96fb9315041e56d523bfe17c"><td class="memItemLeft" align="right" valign="top">delegate IntPtr&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_web_u_i4_c_sharp.html#a05a0eb7a96fb9315041e56d523bfe17c">WebUI4CSharp.FileHandlerCallback</a> (IntPtr filename, out int length)</td></tr>
-<tr class="memdesc:a05a0eb7a96fb9315041e56d523bfe17c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Callback used by <a class="el" href="class_web_u_i4_c_sharp_1_1_web_u_i_window.html#a8fd2185901ca9a99602c6dedca48ef62" title="Set a custom handler to serve files.">WebUIWindow.SetFileHandler</a>.  <br /></td></tr>
+<tr class="memdesc:a05a0eb7a96fb9315041e56d523bfe17c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Callback used by <a class="el" href="class_web_u_i4_c_sharp_1_1_web_u_i_window.html#a8fd2185901ca9a99602c6dedca48ef62" title="Set a custom handler to serve files. This custom handler should return full HTTP header and body.">WebUIWindow.SetFileHandler</a>.  <br /></td></tr>
 <tr class="separator:a05a0eb7a96fb9315041e56d523bfe17c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa58fe7e28c38369950f140a087865535" id="r_aa58fe7e28c38369950f140a087865535"><td class="memItemLeft" align="right" valign="top">delegate void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_web_u_i4_c_sharp.html#aa58fe7e28c38369950f140a087865535">WebUI4CSharp.InterfaceEventCallback</a> (UIntPtr window, UIntPtr event_type, IntPtr element, UIntPtr event_number, UIntPtr bind_id)</td></tr>
 <tr class="memdesc:aa58fe7e28c38369950f140a087865535"><td class="mdescLeft">&#160;</td><td class="mdescRight">Callback used by <a class="el" href="class_web_u_i4_c_sharp_1_1_web_u_i_lib_functions.html#a840f0559c56df16ff3c9555b815fd82f" title="Bind a specific HTML element click event with a function. Empty element means all events.">WebUILibFunctions.webui_interface_bind</a>.  <br /></td></tr>

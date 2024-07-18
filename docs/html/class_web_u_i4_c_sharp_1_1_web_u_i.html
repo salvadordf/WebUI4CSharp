@@ -18,7 +18,7 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr id="projectrow">
-  <td id="projectlogo"><img alt="Logo" src="webui_240.png"/></td>
+  <td id="projectlogo"><img alt="Logo" src="webui_csharp.png"/></td>
   <td id="projectalign">
    <div id="projectname">WebUI4CSharp
    </div>
@@ -74,7 +74,7 @@ Static Public Member Functions</h2></td></tr>
 <tr class="memdesc:a1b872e2269fa68bea29f398cd22f5c0e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the web-server root folder path for all windows. Should be used before <code>webui_show()</code>.  <br /></td></tr>
 <tr class="separator:a1b872e2269fa68bea29f398cd22f5c0e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a665b01ddf7f93dbb7a27c3fc2ba041b0" id="r_a665b01ddf7f93dbb7a27c3fc2ba041b0"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a665b01ddf7f93dbb7a27c3fc2ba041b0">SetTimeout</a> (UIntPtr second)</td></tr>
-<tr class="memdesc:a665b01ddf7f93dbb7a27c3fc2ba041b0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the maximum time in seconds to wait for the window to connect. This affects <code>show()</code> and <code>wait()</code>.  <br /></td></tr>
+<tr class="memdesc:a665b01ddf7f93dbb7a27c3fc2ba041b0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the maximum time in seconds to wait for the window to connect. This effect <code>show()</code> and <code>wait()</code>. Value of <code>0</code> means wait forever.  <br /></td></tr>
 <tr class="separator:a665b01ddf7f93dbb7a27c3fc2ba041b0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a483305996f69587d0d2308e52ec434d2" id="r_a483305996f69587d0d2308e52ec434d2"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a483305996f69587d0d2308e52ec434d2">Free</a> (IntPtr ptr)</td></tr>
 <tr class="memdesc:a483305996f69587d0d2308e52ec434d2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Safely free a buffer allocated by WebUI using <code>webui_malloc()</code>.  <br /></td></tr>
@@ -110,12 +110,27 @@ Static Public Member Functions</h2></td></tr>
 <tr class="memitem:a08e22ae23ab7f2d6413d0d06cd1ffe1f" id="r_a08e22ae23ab7f2d6413d0d06cd1ffe1f"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a08e22ae23ab7f2d6413d0d06cd1ffe1f">CommonBindCallback</a> (ref <a class="el" href="struct_web_u_i4_c_sharp_1_1webui__event__t.html">webui_event_t</a> e)</td></tr>
 <tr class="separator:a08e22ae23ab7f2d6413d0d06cd1ffe1f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab750df21b98d1817948b856f9a61e623" id="r_ab750df21b98d1817948b856f9a61e623"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab750df21b98d1817948b856f9a61e623">SetConfig</a> (<a class="el" href="namespace_web_u_i4_c_sharp.html#ad1bbd721b28f54891333aa2bf2465b55">webui_config</a> option, bool status)</td></tr>
-<tr class="memdesc:ab750df21b98d1817948b856f9a61e623"><td class="mdescLeft">&#160;</td><td class="mdescRight">Control the WebUI behaviour. It's better to call at the beginning.  <br /></td></tr>
+<tr class="memdesc:ab750df21b98d1817948b856f9a61e623"><td class="mdescLeft">&#160;</td><td class="mdescRight">Control the WebUI behaviour. It's recommended to be called at the beginning.  <br /></td></tr>
 <tr class="separator:ab750df21b98d1817948b856f9a61e623"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a27c091da65ef64917703fed8ab9803f4" id="r_a27c091da65ef64917703fed8ab9803f4"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a27c091da65ef64917703fed8ab9803f4">IsHighContrast</a> ()</td></tr>
+<tr class="memdesc:a27c091da65ef64917703fed8ab9803f4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get OS high contrast preference.  <br /></td></tr>
+<tr class="separator:a27c091da65ef64917703fed8ab9803f4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a23d0fabbd6afdd6d28f507798cff4a16" id="r_a23d0fabbd6afdd6d28f507798cff4a16"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a23d0fabbd6afdd6d28f507798cff4a16">BrowserExist</a> (<a class="el" href="namespace_web_u_i4_c_sharp.html#ac5c8ab0b6219c047cfde9393ec6fb64a">webui_browser</a> browser)</td></tr>
+<tr class="memdesc:a23d0fabbd6afdd6d28f507798cff4a16"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if a web browser is installed.  <br /></td></tr>
+<tr class="separator:a23d0fabbd6afdd6d28f507798cff4a16"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6363fb9f1c315cc78aa16c2d5c7f33bd" id="r_a6363fb9f1c315cc78aa16c2d5c7f33bd"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6363fb9f1c315cc78aa16c2d5c7f33bd">OpenUrl</a> (string url)</td></tr>
+<tr class="memdesc:a6363fb9f1c315cc78aa16c2d5c7f33bd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Open an URL in the native default web browser.  <br /></td></tr>
+<tr class="separator:a6363fb9f1c315cc78aa16c2d5c7f33bd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac118b66c9f3baf4e55fc2667834db2d8" id="r_ac118b66c9f3baf4e55fc2667834db2d8"><td class="memItemLeft" align="right" valign="top">static UIntPtr&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac118b66c9f3baf4e55fc2667834db2d8">GetFreePort</a> ()</td></tr>
+<tr class="memdesc:ac118b66c9f3baf4e55fc2667834db2d8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get an available usable free network port.  <br /></td></tr>
+<tr class="separator:ac118b66c9f3baf4e55fc2667834db2d8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad046e388fd9a23b0478da39c0e8fdd53" id="r_ad046e388fd9a23b0478da39c0e8fdd53"><td class="memItemLeft" align="right" valign="top">static string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad046e388fd9a23b0478da39c0e8fdd53">GetMimeType</a> (string file)</td></tr>
+<tr class="memdesc:ad046e388fd9a23b0478da39c0e8fdd53"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the HTTP mime type of a file.  <br /></td></tr>
+<tr class="separator:ad046e388fd9a23b0478da39c0e8fdd53"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-static-attribs" name="pub-static-attribs"></a>
 Static Public Attributes</h2></td></tr>
-<tr class="memitem:a9941550aa5cb15fa9be1368bc80230c3" id="r_a9941550aa5cb15fa9be1368bc80230c3"><td class="memItemLeft" align="right" valign="top">const string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9941550aa5cb15fa9be1368bc80230c3">WEBUI_VERSION</a> = &quot;2.5.0-beta.1&quot;</td></tr>
+<tr class="memitem:a9941550aa5cb15fa9be1368bc80230c3" id="r_a9941550aa5cb15fa9be1368bc80230c3"><td class="memItemLeft" align="right" valign="top">const string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9941550aa5cb15fa9be1368bc80230c3">WEBUI_VERSION</a> = &quot;2.5.0-beta.2&quot;</td></tr>
 <tr class="memdesc:a9941550aa5cb15fa9be1368bc80230c3"><td class="mdescLeft">&#160;</td><td class="mdescRight">WebUI library version.  <br /></td></tr>
 <tr class="separator:a9941550aa5cb15fa9be1368bc80230c3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a86efbd20fc7386ab6942d3b782d602a9" id="r_a86efbd20fc7386ab6942d3b782d602a9"><td class="memItemLeft" align="right" valign="top">const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a86efbd20fc7386ab6942d3b782d602a9">WEBUI_MAX_IDS</a> = 256</td></tr>
@@ -152,6 +167,34 @@ Static Public Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Add an WebUIWindow instance to the list. </p>
+
+</div>
+</div>
+<a id="a23d0fabbd6afdd6d28f507798cff4a16" name="a23d0fabbd6afdd6d28f507798cff4a16"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a23d0fabbd6afdd6d28f507798cff4a16">&#9670;&#160;</a></span>BrowserExist()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static bool WebUI4CSharp.WebUI.BrowserExist </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="namespace_web_u_i4_c_sharp.html#ac5c8ab0b6219c047cfde9393ec6fb64a">webui_browser</a></td>          <td class="paramname"><span class="paramname"><em>browser</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Check if a web browser is installed. </p>
+<dl class="section return"><dt>Returns</dt><dd>Returns True if the specified browser is available.</dd></dl>
 
 </div>
 </div>
@@ -334,6 +377,68 @@ Static Public Attributes</h2></td></tr>
 
 </div>
 </div>
+<a id="ac118b66c9f3baf4e55fc2667834db2d8" name="ac118b66c9f3baf4e55fc2667834db2d8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac118b66c9f3baf4e55fc2667834db2d8">&#9670;&#160;</a></span>GetFreePort()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static UIntPtr WebUI4CSharp.WebUI.GetFreePort </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Get an available usable free network port. </p>
+<dl class="section return"><dt>Returns</dt><dd>Returns a free port.</dd></dl>
+
+</div>
+</div>
+<a id="ad046e388fd9a23b0478da39c0e8fdd53" name="ad046e388fd9a23b0478da39c0e8fdd53"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad046e388fd9a23b0478da39c0e8fdd53">&#9670;&#160;</a></span>GetMimeType()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static string WebUI4CSharp.WebUI.GetMimeType </td>
+          <td>(</td>
+          <td class="paramtype">string</td>          <td class="paramname"><span class="paramname"><em>file</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Get the HTTP mime type of a file. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">file</td><td>The file name.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Returns the HTTP mime string.</dd></dl>
+
+</div>
+</div>
 <a id="aa9733a3ee4685d59df24c04d23e53084" name="aa9733a3ee4685d59df24c04d23e53084"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aa9733a3ee4685d59df24c04d23e53084">&#9670;&#160;</a></span>IsAppRunning()</h2>
 
@@ -359,6 +464,34 @@ Static Public Attributes</h2></td></tr>
 
 <p>Check if the app still running. </p>
 <dl class="section return"><dt>Returns</dt><dd>Returns True if app is running.</dd></dl>
+
+</div>
+</div>
+<a id="a27c091da65ef64917703fed8ab9803f4" name="a27c091da65ef64917703fed8ab9803f4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a27c091da65ef64917703fed8ab9803f4">&#9670;&#160;</a></span>IsHighContrast()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static bool WebUI4CSharp.WebUI.IsHighContrast </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Get OS high contrast preference. </p>
+<dl class="section return"><dt>Returns</dt><dd>Returns True if OS is using high contrast theme.</dd></dl>
 
 </div>
 </div>
@@ -393,6 +526,39 @@ Static Public Attributes</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd></dd></dl>
+
+</div>
+</div>
+<a id="a6363fb9f1c315cc78aa16c2d5c7f33bd" name="a6363fb9f1c315cc78aa16c2d5c7f33bd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6363fb9f1c315cc78aa16c2d5c7f33bd">&#9670;&#160;</a></span>OpenUrl()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void WebUI4CSharp.WebUI.OpenUrl </td>
+          <td>(</td>
+          <td class="paramtype">string</td>          <td class="paramname"><span class="paramname"><em>url</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Open an URL in the native default web browser. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">url</td><td>The URL to open.</td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -450,7 +616,7 @@ Static Public Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Control the WebUI behaviour. It's better to call at the beginning. </p>
+<p>Control the WebUI behaviour. It's recommended to be called at the beginning. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">option</td><td>The desired option from <code>webui_config</code> enum.</td></tr>
@@ -518,7 +684,7 @@ Static Public Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Set the maximum time in seconds to wait for the window to connect. This affects <code>show()</code> and <code>wait()</code>. </p>
+<p>Set the maximum time in seconds to wait for the window to connect. This effect <code>show()</code> and <code>wait()</code>. Value of <code>0</code> means wait forever. </p>
 
 </div>
 </div>
@@ -681,7 +847,7 @@ Static Public Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">const string WebUI4CSharp.WebUI.WEBUI_VERSION = &quot;2.5.0-beta.1&quot;</td>
+          <td class="memname">const string WebUI4CSharp.WebUI.WEBUI_VERSION = &quot;2.5.0-beta.2&quot;</td>
         </tr>
       </table>
   </td>

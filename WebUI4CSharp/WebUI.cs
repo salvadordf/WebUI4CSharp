@@ -11,7 +11,7 @@ namespace WebUI4CSharp
         /// <summary>
         /// WebUI library version.
         /// </summary>
-        public const string WEBUI_VERSION = "2.5.0-beta.1";
+        public const string WEBUI_VERSION = "2.5.0-beta.2";
 
         /// <summary>
         /// Max windows, servers and threads
@@ -54,7 +54,8 @@ namespace WebUI4CSharp
         }
 
         /// <summary>
-        /// Set the maximum time in seconds to wait for the window to connect. This affects `show()` and `wait()`.
+        /// Set the maximum time in seconds to wait for the window to connect.
+        /// This effect `show()` and `wait()`. Value of `0` means wait forever.
         /// </summary>
         public static void SetTimeout(UIntPtr second)
         {
@@ -213,13 +214,66 @@ namespace WebUI4CSharp
         }
 
         /// <summary>
-        /// Control the WebUI behaviour. It's better to call at the beginning.
+        /// Control the WebUI behaviour. It's recommended to be called at the beginning.
         /// </summary>
         /// <param name="option">The desired option from `webui_config` enum.</param>
         /// <param name="status">The status of the option, `true` or `false`.</param>
         public static void SetConfig(webui_config option, bool status)
         {
             WebUILibFunctions.webui_set_config((UIntPtr) option, status);
+        }
+
+        /// <summary>
+        /// Get OS high contrast preference.
+        /// </summary>
+        /// <returns>Returns True if OS is using high contrast theme.</returns>
+        public static bool IsHighContrast()
+        {
+            return WebUILibFunctions.webui_is_high_contrast();
+        }
+
+        /// <summary>
+        /// Check if a web browser is installed.
+        /// </summary>
+        /// <returns>Returns True if the specified browser is available.</returns>
+        public static bool BrowserExist(webui_browser browser)
+        {
+            return WebUILibFunctions.webui_browser_exist((UIntPtr)browser);
+        }
+
+        /// <summary>
+        /// Open an URL in the native default web browser.
+        /// </summary>
+        /// <param name="url">The URL to open.</param>
+        public static void OpenUrl(string url)
+        {
+            WebUILibFunctions.webui_open_url(url);
+        }
+
+        /// <summary>
+        /// Get an available usable free network port.
+        /// </summary>
+        /// <returns>Returns a free port.</returns>
+        public static UIntPtr GetFreePort()
+        {
+            return WebUILibFunctions.webui_get_free_port();
+        }
+
+        /// <summary>
+        /// Get the HTTP mime type of a file.
+        /// </summary>
+        /// <param name="file">The file name.</param>
+        /// <returns>Returns the HTTP mime string.</returns>
+        public static string GetMimeType(string file)
+        {
+            string? response = null;
+            IntPtr buffer = WebUILibFunctions.webui_get_mime_type(file);
+            if (buffer != IntPtr.Zero)
+            {
+                response = WebUI.WebUIStringToCSharpString(buffer);
+                WebUI.Free(buffer);
+            }
+            return string.IsNullOrEmpty(response) ? "text/plain" : response;
         }
     }
 }
