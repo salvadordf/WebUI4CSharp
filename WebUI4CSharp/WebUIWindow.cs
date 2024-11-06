@@ -1,6 +1,5 @@
 ﻿using System;
-using System.Runtime.InteropServices;
-using System.Xml.Linq;
+using System.Collections.Generic;
 
 namespace WebUI4CSharp
 {
@@ -37,7 +36,7 @@ namespace WebUI4CSharp
     /// </summary>
     public class WebUIWindow
     {
-        private UIntPtr _id = 0;
+        private UIntPtr _id = UIntPtr.Zero;
         private FileHandlerCallback? _fileHandlerCallback;
         private static List<UIntPtr> _bindIdList = new List<UIntPtr>();
         private Object _lockObj = new Object();
@@ -57,7 +56,7 @@ namespace WebUI4CSharp
         /// </summary>
         public WebUIWindow(UIntPtr windowId)
         {
-            if ((windowId > 0) && (windowId < WebUI.WEBUI_MAX_IDS))
+            if ((windowId != UIntPtr.Zero) && ((int)windowId < WebUI.WEBUI_MAX_IDS))
             {
                 _id = WebUILibFunctions.webui_new_window_id(windowId);
             }
@@ -77,7 +76,7 @@ namespace WebUI4CSharp
         /// <summary>
         /// Returns true if the Window was created successfully.
         /// </summary>
-        public bool Initialized { get => Id > 0; }
+        public bool Initialized { get => _id != UIntPtr.Zero; }
 
         /// <summary>
         /// Get the full current URL.
@@ -109,7 +108,7 @@ namespace WebUI4CSharp
                 }
                 else
                 {
-                    return 0;
+                    return UIntPtr.Zero;
                 }
             } 
         }
@@ -127,7 +126,7 @@ namespace WebUI4CSharp
                 }
                 else
                 {
-                    return 0;
+                    return UIntPtr.Zero;
                 }
             }
         }
@@ -161,7 +160,7 @@ namespace WebUI4CSharp
                 }
                 else
                 {
-                    return 0;
+                    return UIntPtr.Zero;
                 }
             }
             set
@@ -197,7 +196,7 @@ namespace WebUI4CSharp
         /// </summary>
         private void AddBindID(UIntPtr id)
         {
-            if (id > 0)
+            if (id != UIntPtr.Zero)
             {
                 lock (_lockObj)
                 {
@@ -211,7 +210,7 @@ namespace WebUI4CSharp
         /// </summary>
         public Boolean HasBindID(UIntPtr id)
         {
-            if (id > 0)
+            if (id != UIntPtr.Zero)
             {
                 lock (_lockObj)
                 {
@@ -320,7 +319,7 @@ namespace WebUI4CSharp
             }
             else
             {
-                return 0;
+                return UIntPtr.Zero;
             }
         }
 
@@ -343,7 +342,7 @@ namespace WebUI4CSharp
             }
             else
             {
-                return 0;
+                return UIntPtr.Zero;
             }
         }
 
@@ -362,7 +361,7 @@ namespace WebUI4CSharp
             }
             else
             {
-                return 0;
+                return UIntPtr.Zero;
             }
         }
 
@@ -381,7 +380,7 @@ namespace WebUI4CSharp
             }
             else
             {
-                return 0;
+                return UIntPtr.Zero;
             }
         }
 
@@ -415,7 +414,7 @@ namespace WebUI4CSharp
             if (Initialized)
             {
                 WebUILibFunctions.webui_destroy(_id);
-                _id = 0;
+                _id = UIntPtr.Zero;
             }
         }
 

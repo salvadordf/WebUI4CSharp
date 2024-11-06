@@ -1,4 +1,6 @@
-﻿namespace WebUI4CSharp
+﻿using System;
+
+namespace WebUI4CSharp
 {
     /// <summary>
     /// Wrapper class for the Base64 conversion functions in WebUI.

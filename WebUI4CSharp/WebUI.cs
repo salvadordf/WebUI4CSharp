@@ -1,4 +1,6 @@
-﻿using System.Runtime.InteropServices;
+﻿using System;
+using System.Collections.Generic;
+using System.Runtime.InteropServices;
 using System.Text;
 
 namespace WebUI4CSharp
@@ -146,7 +148,7 @@ namespace WebUI4CSharp
         /// </summary>
         public static WebUIWindow? SearchWindow(UIntPtr windowId)
         {
-            if (windowId > 0)
+            if ((int)windowId > 0)
             {
                 lock (_lockObj)
                 {

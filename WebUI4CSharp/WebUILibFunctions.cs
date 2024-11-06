@@ -1,9 +1,5 @@
 ﻿using System;
-using System.Diagnostics.Contracts;
-using System.Diagnostics.Metrics;
-using System.Reflection.PortableExecutable;
 using System.Runtime.InteropServices;
-using System.Xml.Linq;
 
 namespace WebUI4CSharp
 {
@@ -12,17 +8,7 @@ namespace WebUI4CSharp
     /// </summary>
     public static class WebUILibFunctions
     {
-#if WEBUIDEMO
-        // The demos define the WEBUIDEMO conditional for convenience
-        // Enable the right library depending on the selected platform target in each demo
-        private const string _LibName = "..\\..\\..\\..\\..\\WebUI_binaries\\64bits\\webui-2.dll";  // Any CPU
-        //private const string _LibName = "..\\..\\..\\..\\..\\..\\WebUI_binaries\\64bits\\webui-2.dll"; // x64 
-        //private const string _LibName = "..\\..\\..\\..\\..\\..\\WebUI_binaries\\64bits\\webui-2_debug.dll"; // x64 (verbose logging) 
-        //private const string _LibName = "..\\..\\..\\..\\..\\..\\WebUI_binaries\\32bits\\webui-2.dll"; // x32 
-        //private const string _LibName = "..\\..\\..\\..\\..\\..\\WebUI_binaries\\32bits\\webui-2_debug.dll"; // x32 (verbose logging)
-#else
         private const string _LibName = "webui-2";    
-#endif
 
         /// <summary>
         /// Create a new WebUI window object.

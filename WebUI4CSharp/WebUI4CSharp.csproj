@@ -1,0 +1,50 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.1</TargetFramework>
+    <GenerateTargetFrameworkAttribute>false</GenerateTargetFrameworkAttribute>
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+    <LangVersion>8.0</LangVersion>
+    <Version>2.5.0-beta.2</Version>
+    <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+    <ApplicationIcon>..\webui_csharp.ico</ApplicationIcon>
+    <RepositoryUrl>https://github.com/salvadordf/WebUI4CSharp</RepositoryUrl>
+    <WarningLevel>9999</WarningLevel>
+    <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+    <Title>WebUI4CSharp</Title>
+    <Authors>Salvador Diaz Fau</Authors>
+    <Company></Company>
+    <Description>WebUI4CSharp is a WebUI wrapper, which allows you to use any web browser as a GUI, with C# in the backend and HTML5 in the frontend.</Description>
+    <Copyright>Copyright (C) 2024 Salvador Diaz Fau.</Copyright>
+    <PackageProjectUrl>https://webui.me</PackageProjectUrl>
+    <IncludeSymbols>False</IncludeSymbols>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <PackageIcon>webui_csharp.png</PackageIcon>
+    <PackageTags>webui;browser;javascript;webapp;gui;typescript;web</PackageTags>
+    <AssemblyVersion>$(Version)</AssemblyVersion>
+    <FileVersion>$(Version)</FileVersion>
+    <PackageReleaseNotes>Initial Nuget release</PackageReleaseNotes>
+    <SymbolPackageFormat>snupkg</SymbolPackageFormat>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)'=='Debug'">
+    <TreatWarningsAsErrors>False</TreatWarningsAsErrors>
+    <DebugType>embedded</DebugType>
+    <IncludeSymbols>False</IncludeSymbols>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)'=='Release'">
+    <TreatWarningsAsErrors>True</TreatWarningsAsErrors>
+    <DebugType>portable</DebugType>
+    <IncludeSymbols>True</IncludeSymbols>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Include="..\README.md" Pack="True" PackagePath="\" />
+    <None Include="..\LICENSE" Pack="True" PackagePath="\" />
+    <None Include="..\webui_csharp.png" Pack="True" PackagePath="\" />
+    <None Include="..\webui_csharp.ico" Pack="True" PackagePath="\" />
+  </ItemGroup>
+
+</Project>

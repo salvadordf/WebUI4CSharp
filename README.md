@@ -41,11 +41,17 @@ This [text_editor](https://github.com/salvadordf/WebUI4CSharp/tree/main/demos/co
 ![text_editor](https://github.com/salvadordf/WebUI4CSharp/assets/17946341/caf363cf-a226-4635-9e1b-8d93f73e3a1e)
 
 
-## Building
+## Installation
+Use the Nuget Package Manager to install the WebUI4CSharp and WebUI4CSharp.Natives packages or use the following commands :
+```bash
+dotnet add package WebUI4CSharp
+dotnet add package WebUI4CSharp.Natives
+```
 
-* Open the file WebUI4CSharp\WebUI4CSharp.sln.
-* Press Control+Shift+B to build the solution
+## Building the demos
 
+* Open the file WebUI4CSharp.Samples\WebUI4CSharp.Samples.sln.
+* Press Control+Shift+B to build the demos
 
 ## Links
 * [Developer Forums](https://www.briskbard.com/forum)

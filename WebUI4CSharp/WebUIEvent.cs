@@ -1,4 +1,5 @@
-﻿using System.IO;
+﻿using System;
+using System.IO;
 using System.Runtime.InteropServices;
 
 namespace WebUI4CSharp
@@ -22,8 +23,8 @@ namespace WebUI4CSharp
             _event.cookies = e.cookies;
         }
 
-        public WebUIEvent(UIntPtr window, UIntPtr event_type, IntPtr element, 
-            UIntPtr event_number, UIntPtr bind_id, UIntPtr client_id, 
+        public WebUIEvent(UIntPtr window, UIntPtr event_type, IntPtr element,
+            UIntPtr event_number, UIntPtr bind_id, UIntPtr client_id,
             UIntPtr connection_id, IntPtr cookies)
         {
             _event.window = window;
@@ -39,7 +40,7 @@ namespace WebUI4CSharp
         /// <summary>
         /// Returns true if the Window was created successfully.
         /// </summary>
-        public bool Initialized { get => _event.window > 0; }
+        public bool Initialized { get => (uint)_event.window > 0; }
 
         /// <summary>
         /// WebUI event struct.
@@ -49,7 +50,7 @@ namespace WebUI4CSharp
         /// <summary>
         /// Window wrapper for the Window object of this event.
         /// </summary>
-        public WebUIWindow? Window { get => WebUI.SearchWindow(_event.window); } 
+        public WebUIWindow? Window { get => WebUI.SearchWindow(_event.window); }
 
         /// <summary>
         /// The window object number or ID.
@@ -102,7 +103,7 @@ namespace WebUI4CSharp
                 return WebUILibFunctions.webui_get_int(ref _event);
             }
             else
-            { 
+            {
                 return 0;
             }
         }
@@ -161,7 +162,7 @@ namespace WebUI4CSharp
         /// Get the first argument as string.
         /// </summary>
         /// <returns>Returns argument as string.</returns>
-        public string? GetString() 
+        public string? GetString()
         {
             if (Initialized)
             {
@@ -201,9 +202,9 @@ namespace WebUI4CSharp
                 IntPtr buffer = WebUILibFunctions.webui_get_string(ref _event);
                 UIntPtr bufferSize = WebUILibFunctions.webui_get_size(ref _event);
                 MemoryStream stream = new MemoryStream((int)bufferSize);
-                for (UIntPtr i = 0; i < bufferSize; i++)
+                for (int i = 0; i < (uint)bufferSize; i++)
                 {
-                    stream.WriteByte(Marshal.ReadByte(buffer, (int)i));
+                    stream.WriteByte(Marshal.ReadByte(buffer, i));
                 }
                 stream.Position = 0;
                 return stream;
@@ -226,9 +227,9 @@ namespace WebUI4CSharp
                 IntPtr buffer = WebUILibFunctions.webui_get_string_at(ref _event, index);
                 UIntPtr bufferSize = WebUILibFunctions.webui_get_size_at(ref _event, index);
                 MemoryStream stream = new MemoryStream((int)bufferSize);
-                for (UIntPtr i = 0; i < bufferSize; i++)
+                for (int i = 0; i < (uint)bufferSize; i++)
                 {
-                    stream.WriteByte(Marshal.ReadByte(buffer, (int)i));
+                    stream.WriteByte(Marshal.ReadByte(buffer, i));
                 }
                 stream.Position = 0;
                 return stream;
@@ -270,7 +271,7 @@ namespace WebUI4CSharp
             }
             else
             {
-                return 0;
+                return UIntPtr.Zero;
             }
         }
 
@@ -287,7 +288,7 @@ namespace WebUI4CSharp
             }
             else
             {
-                return 0;
+                return UIntPtr.Zero;
             }
         }
 
@@ -303,7 +304,7 @@ namespace WebUI4CSharp
             }
             else
             {
-                return 0;
+                return UIntPtr.Zero;
             }
         }
 
